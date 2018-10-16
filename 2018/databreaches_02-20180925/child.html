@@ -1,0 +1,112 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Where breaches occur
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"type": "2010", "desktop": "0.3", "elecrecord": "0.8", "email": "0.01", "laptop": "1.5", "server": "1.1", "paper": "0.2"}, {"type": "2011", "desktop": "2.3", "elecrecord": "2.5", "email": "0.03", "laptop": "2.0", "server": "1.7", "paper": "0.5"}, {"type": "2012", "desktop": "2.4", "elecrecord": "2.7", "email": "0.3", "laptop": "2.5", "server": "2.7", "paper": "0.7"}, {"type": "2013", "desktop": "6.7", "elecrecord": "2.7", "email": "0.4", "laptop": "3.6", "server": "3.1", "paper": "1.3"}, {"type": "2014", "desktop": "9.1", "elecrecord": "2.8", "email": "2.9", "laptop": "7.3", "server": "12.4", "paper": "1.9"}, {"type": "2015", "desktop": "9.4", "elecrecord": "6.8", "email": "3.6", "laptop": "7.8", "server": "123.7", "paper": "2.3"}, {"type": "2016", "desktop": "9.5", "elecrecord": "7.3", "email": "4.6", "laptop": "8.6", "server": "137.0", "paper": "3.2"}, {"type": "2017", "desktop": "10.2", "elecrecord": "7.5", "email": "5.2", "laptop": "8.8", "server": "139.9", "paper": "3.4"}];
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+
+    <h2><strong>Where breaches occur</strong></h2>
+    <p>Breaches through network servers have surpassed paper or film in terms of numbers of records exposed.<br><strong>Cumulative number of records breached by type of access, <i>in millions</i></strong><br>
+    <small>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Study of U.S. Health and Human Services Office of Civil Rights breach database, published in the Journal of the American Medical Association</i></p>
+        <p class="gfxcredit">Modern Healthcare</p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1537904334"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    CVS Aetna merger timeline
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+{% include 'headers/header_timeline.html' %} <!-- MUST -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+</script>
+<style type="text/css">
+
+html, body {
+  width:100%;
+  padding: 0px;
+  margin: 0px;
+}
+.tl-timeline {
+
+}
+.graphic {
+  height:500px;
+  width:100%;
+ }
+</style>
+
+    <div id='timeline-embed' class='graphic'></div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+      <br>
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>{{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

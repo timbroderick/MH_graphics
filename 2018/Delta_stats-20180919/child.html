@@ -1,0 +1,227 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Delta snapshot
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="../../static/leaflet/leaflet.css" type="text/css">
+        <script src="../../static/leaflet/leaflet.js"></script> <!-- adding leaflet -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var info = [{"ail": "HIV/AIDs", "core": "4.4", "other": "2.5"}, {"ail": "Homicide and legal interventions", "core": "24.2", "other": "11.1"}, {"ail": "Diabetes", "core": "65.9", "other": "34.0"}, {"ail": "Chronic obstructive pulmonary disease/emphysema", "core": "68.8", "other": "71.0"}, {"ail": "Heart disease", "core": "280.1", "other": "262.3"}];
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+
+.leaflet-container {
+	background: #f7f7f7;
+	outline: 0;
+	}
+
+  hr.mhchaps {
+      margin-top: 0px !important;
+      margin-bottom: 5px !important;
+      line-height: 1  !important;
+      border-top-color: #bbb;
+  }
+
+  div.bar {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid;
+  opacity: 0.8;
+  }
+  .FIRST {
+  background-color: #028575;
+  }
+  .SECOND {
+  background-color: #97D5C9;
+  }
+  .THIRD {
+  background-color: #FFF9B8;
+  }
+  .FOURTH {
+  background-color: #FECF8D;
+  }
+  .FIFTH {
+  background-color: #FAA634;
+  }
+
+</style>
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+            <div class="col-xs-7">
+              <h2><strong><strong>Delta snapshot</strong></strong></h2>
+              <p>Here is a look at how counties that make up the Mississippi Delta area compare with the rest of the state</p>
+              </div>
+              <div class="col-xs-5">
+            <img src="js/CoreDelta.png" class="img-responsive">
+          </div>
+        </div>
+        <br>
+        <hr class="mhchaps">
+          <div class="row">
+              <div class="col-sm-5">
+                    <p><strong>Median household income</strong><br>
+                    <div class="bar FIRST"></div> $40,239 and above<br>
+                    <div class="bar SECOND"></div> $36,385 to $40,239<br>
+                    <div class="bar THIRD"></div> $33,021 to $36,385<br>
+                    <div class="bar FOURTH"></div> $29,855 to $33,021<br>
+                    <div class="bar FIFTH"></div> Less than $29,855<br>
+                    </p>
+              </div>
+              <div class="col-sm-7">
+                <p><strong><small>Note: This map is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></strong>
+                <div id="graphic" class="graphic"></div>
+              </div>
+            </div>
+<br>
+<hr class="mhchaps">
+<p><strong>Cause of death</strong> <i>(rate per 100,000)</i></p>
+<table class="table table-hover table-striped table-condensed" width="100%" >
+  <thead>
+    <th>Core Delta counties</th>
+    <th>All other counties</th>
+  </thead>
+  <tbody>
+
+    
+    <tr><td class="tdLEFT"><strong>HIV/AIDs</strong></td><td></td></tr>
+    <tr><td>4.4</td><td>2.5</td></tr>
+    
+    <tr><td class="tdLEFT"><strong>Homicide and legal interventions</strong></td><td></td></tr>
+    <tr><td>24.2</td><td>11.1</td></tr>
+    
+    <tr><td class="tdLEFT"><strong>Diabetes</strong></td><td></td></tr>
+    <tr><td>65.9</td><td>34.0</td></tr>
+    
+    <tr><td class="tdLEFT"><strong>Chronic obstructive pulmonary disease/emphysema</strong></td><td></td></tr>
+    <tr><td>68.8</td><td>71.0</td></tr>
+    
+    <tr><td class="tdLEFT"><strong>Heart disease</strong></td><td></td></tr>
+    <tr><td>280.1</td><td>262.3</td></tr>
+    
+</tbody>
+</table>
+<br>
+<hr class="mhchaps">
+<div class="row">
+<div class="col-sm-5">
+<p><strong>Poverty level</strong><br>
+Percentage whose income was below the federal poverty level.</p>
+      <div class="bar FIRST"></div> Less than 15%<br>
+      <div class="bar SECOND"></div> 15% to 18%<br>
+      <div class="bar THIRD"></div> 18% to 20%<br>
+      <div class="bar FOURTH"></div> 20% to 26%<br>
+      <div class="bar FIFTH"></div> 26% to 40%<br>
+      </p>
+    </div>
+    <div class="col-sm-7">
+      <p><strong><small>Note: This map is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></strong>
+      <div id="graphic2" class="graphic"></div>
+    </div>
+  </div>
+
+
+    <br>
+    
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p>Core Delta counties are Bolivar, Coahoma, Humphreys, Issaquena, Leflore, Quitman, Sharkey, Sunflower, Tallahatchie, Tunica and Washington, as designated by the state</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Mississippi STatistically Automated Health Resource System (MSTAHRS); American Community Survey 2016 five-year estimates</i></p>
+        <p class="gfxcredit">Modern Healthcare</p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            </div>
+          </div>
+        </div>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1537550073"></script>
+
+
+</body>
+</html>

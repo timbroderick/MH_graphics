@@ -1,0 +1,191 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Top tech hazard
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<script>
+var DATA = [{"year": "2017", "loss": "10", "hack": "99", "access": "77", "theft": "38", "disposal": "7", "total": "231"}, {"year": "2018", "loss": "11", "hack": "103", "access": "98", "theft": "32", "disposal": "6", "total": "250"}];
+var LIST = [{"year": "2018", "name": "Iowa Health System d/b/a UnityPoint Health", "state": "IA", "type": "Business Associate", "number": "1,421,107 ", "breach": "Hacking/IT Incident", "where": "Email"}, {"year": "2017", "name": "Commonwealth Health Corporation", "state": "KY", "type": "Healthcare Provider", "number": "697,800 ", "breach": "Unauthorized Access/Disclosure", "where": null}, {"year": "2018", "name": "CA Department of Developmental Services", "state": "CA", "type": "Health Plan", "number": "582,174 ", "breach": "Theft", "where": "Paper/Films"}, {"year": "2018", "name": "MSK Group", "state": "TN", "type": "Healthcare Provider", "number": "566,236 ", "breach": "Hacking/IT Incident", "where": "Network Server"}, {"year": "2018", "name": "LifeBridge Health, Inc", "state": "MD", "type": "Healthcare Provider", "number": "538,127 ", "breach": "Hacking/IT Incident", "where": "Network Server"}, {"year": "2018", "name": "Health Management Concepts, Inc.", "state": "FL", "type": "Business Associate", "number": "502,416 ", "breach": "Hacking/IT Incident", "where": "Network Server"}, {"year": "2017", "name": "Airway Oxygen, Inc.", "state": "MI", "type": "Healthcare Provider", "number": "500,000 ", "breach": "Hacking/IT Incident", "where": null}, {"year": "2018", "name": "AU Medical Center, INC", "state": "GA", "type": "Healthcare Provider", "number": "417,000 ", "breach": "Hacking/IT Incident", "where": "Email"}, {"year": "2018", "name": "SSM Health St. Mary's Hospital - Jefferson City", "state": "MO", "type": "Healthcare Provider", "number": "301,000 ", "breach": "Improper Disposal", "where": "Paper/Films"}, {"year": "2017", "name": "Women's Health Care Group of PA, LLC", "state": "PA", "type": "Healthcare Provider", "number": "300,000 ", "breach": "Hacking/IT Incident", "where": null}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+    <h2><strong>Top tech hazard</strong></h2>
+    <p>The ECRI Institute named remote-access system hacks as the top health technology hazard for 2019. Here are the healthcare-related data breaches for 2017 and 2018, through Aug. 31 for each year.<br>
+    <strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+<br>
+<p><strong>Top ten 2017, 2018 data breaches</strong> through Aug. 31 for each year, by number of records breached<br></p>
+
+<table id="gfx" class="table" width="100%" >
+  <tbody>
+
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>Iowa Health System d/b/a UnityPoint Health</strong>, a Business Associate in IA. <strong>1,421,107  records were breached</strong> in 2018, via Hacking/IT Incident.  <strong>What was breached:</strong> Email</li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>Commonwealth Health Corporation</strong>, a Healthcare Provider in KY. <strong>697,800  records were breached</strong> in 2017, via Unauthorized Access/Disclosure. </li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>CA Department of Developmental Services</strong>, a Health Plan in CA. <strong>582,174  records were breached</strong> in 2018, via Theft.  <strong>What was breached:</strong> Paper/Films</li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>MSK Group</strong>, a Healthcare Provider in TN. <strong>566,236  records were breached</strong> in 2018, via Hacking/IT Incident.  <strong>What was breached:</strong> Network Server</li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>LifeBridge Health, Inc</strong>, a Healthcare Provider in MD. <strong>538,127  records were breached</strong> in 2018, via Hacking/IT Incident.  <strong>What was breached:</strong> Network Server</li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>Health Management Concepts, Inc.</strong>, a Business Associate in FL. <strong>502,416  records were breached</strong> in 2018, via Hacking/IT Incident.  <strong>What was breached:</strong> Network Server</li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>Airway Oxygen, Inc.</strong>, a Healthcare Provider in MI. <strong>500,000  records were breached</strong> in 2017, via Hacking/IT Incident. </li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>AU Medical Center, INC</strong>, a Healthcare Provider in GA. <strong>417,000  records were breached</strong> in 2018, via Hacking/IT Incident.  <strong>What was breached:</strong> Email</li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>SSM Health St. Mary's Hospital - Jefferson City</strong>, a Healthcare Provider in MO. <strong>301,000  records were breached</strong> in 2018, via Improper Disposal.  <strong>What was breached:</strong> Paper/Films</li>
+      </ul>
+    </td></tr>
+    
+    <tr><td class="tdLEFT">
+        <ul>
+          <li><strong>Women's Health Care Group of PA, LLC</strong>, a Healthcare Provider in PA. <strong>300,000  records were breached</strong> in 2017, via Hacking/IT Incident. </li>
+      </ul>
+    </td></tr>
+    
+</tbody></table>
+</p>
+
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: HHS&#8217; Office for Civil Rights, ECRI Institute</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+          </div>
+        </div>
+      </div>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1539112930"></script>
+
+
+</body>
+</html>

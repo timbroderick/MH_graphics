@@ -1,0 +1,104 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Average deductibles
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+
+    <script type="text/javascript" src="../../static/js/lib/modernizr.svg.min.js"></script>
+
+    <base target="_blank">
+
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+    <script>
+        var $ = jQuery;
+    </script>
+
+  </head>
+  <body> <!-- MUST-->
+
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+
+    <h2><strong><strong>Average deductibles surge</strong></strong></h2>
+    <p>Average health plan deductibles for single coverage increased <strong>157.7%</strong> from 2006 to 2017<br>
+    <strong><small>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+      <!-- Name of the div. Must replace with new chart -->
+<div id="highcharts-25a2726a-2aa7-4b55-8c80-dc649dbd60a1"></div>
+
+<!-- Leave top portiong -->
+<script>
+(function(){ var files = ["../../static/js/code/editor/highstock.js","../../static/js/code/editor/data.js","../../static/js/code/editor/highcharts-more.js","../../static/js/code/editor/highcharts-3d.js","../../static/js/code/editor/exporting.js","../../static/js/code/editor/funnel.js","../../static/js/code/editor/annotations.js","../../static/js/code/editor/solid-gauge.js"],loaded = 0;
+
+if (typeof window["HighchartsEditor"] === "undefined") {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} else {if (window.HighchartsEditor.hasLoaded) {cl();} else {window.HighchartsEditor.ondone.push(cl);}}function isScriptAlreadyIncluded(src){var scripts = document.getElementsByTagName("script");for (var i = 0; i < scripts.length; i++) {if (scripts[i].hasAttribute("src")) {if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {return true;}}}return false;}function check() {if (loaded === files.length) {for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {try {window.HighchartsEditor.ondone[i]();} catch(e) {console.error(e);}}window.HighchartsEditor.hasLoaded = true;}}function include(script) {function next() {++loaded;if (loaded < files.length) {include(files[loaded]);}check();}if (isScriptAlreadyIncluded(script)) {return next();}var sc=document.createElement("script");sc.src = script;sc.type="text/javascript";sc.onload=function() { next(); };document.head.appendChild(sc);}function each(a, fn){if (typeof a.forEach !== "undefined"){a.forEach(fn);}else{for (var i = 0; i < a.length; i++){if (fn) {fn(a[i]);}}}}var inc = {},incl=[]; each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1; }); function cl() {if(typeof window["Highcharts"] !== "undefined"){Highcharts.setOptions({lang:{"thousandsSep":","}});var options={"chart":{"type":"line"},"title":{"text":""},"subtitle":{"text":""},"series":[{"name":"Average deductible"}],"data":{"csv":"\"Year\";\"Average deductible\"\n2006;584\n2007;616\n2008;735\n2009;826\n2010;917\n2011;991\n2012;1097\n2013;1135\n2014;1217\n2015;1318\n2016;1478\n2017;1505","googleSpreadsheetKey":false,"googleSpreadsheetWorksheet":false},"yAxis":[{"labels":{"format":"${value}"},"min":0,"minorTickInterval":100,"minorTicks":true,"tickInterval":200,"title":{"text":"Average deductible"}}],"xAxis":[{}],"credits":{"enabled":false},"pane":{"background":[]},"responsive":{"rules":[]},"exporting":{"enabled":false},"legend":{"enabled":false},"tooltip":{"valuePrefix":"$","useHTML":true},"lang":{"thousandsSep":","}};new Highcharts.Chart("highcharts-25a2726a-2aa7-4b55-8c80-dc649dbd60a1", options);}}})();
+</script> <!-- MUST -->
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Kaiser Family Foundation/HRET Survey of Employer-Sponsored Health Benefits</i></p>
+        <p class="gfxcredit">Modern Healthcare</p>
+    </div>
+<br>
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+        
+        
+        <script type="text/javascript" src="js/graphic-footer.js?1537377852"></script>
+    
+
+</body>
+</html>

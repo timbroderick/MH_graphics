@@ -1,0 +1,117 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Number of VC deals by sector
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"type": "Pharma", "y2006": "327", "y2007": "415", "y2008": "413.0", "y2009": "415.0", "y2010": "482.0", "y2011": "478.0", "y2012": "517.0", "y2013": "579.0", "y2014": "633.0", "y2015": "661.0", "y2016": "597.0", "y2017": "666.0", "y2018": "548.0"}, {"type": "services", "y2006": "126", "y2007": "179", "y2008": "175.0", "y2009": "200.0", "y2010": "248.0", "y2011": "301.0", "y2012": "361.0", "y2013": "434.0", "y2014": "471.0", "y2015": "542.0", "y2016": "517.0", "y2017": "510.0", "y2018": "376.0"}, {"type": "devices", "y2006": "341", "y2007": "414", "y2008": "461.0", "y2009": "454.0", "y2010": "479.0", "y2011": "554.0", "y2012": "575.0", "y2013": "580.0", "y2014": "607.0", "y2015": "619.0", "y2016": "523.0", "y2017": "572.0", "y2018": "433.0"}, {"type": "other", "y2006": "2546", "y2007": "3310", "y2008": "3671.0", "y2009": "3405.0", "y2010": "4190.0", "y2011": "5419.0", "y2012": "6418.0", "y2013": "7679.0", "y2014": "8833.0", "y2015": "8839.0", "y2016": "7450.0", "y2017": "7511.0", "y2018": "5226.0"}, {"type": "Software", "y2006": "1112", "y2007": "1382", "y2008": "1670.0", "y2009": "1449.0", "y2010": "1869.0", "y2011": "2625.0", "y2012": "3226.0", "y2013": "3862.0", "y2014": "4504.0", "y2015": "4266.0", "y2016": "3698.0", "y2017": "3668.0", "y2018": "2735.0"}, {"type": "Other", "y2006": "458", "y2007": "605", "y2008": "658.0", "y2009": "684.0", "y2010": "823.0", "y2011": "1026.0", "y2012": "1193.0", "y2013": "1576.0", "y2014": "2003.0", "y2015": "2339.0", "y2016": "2044.0", "y2017": "2288.0", "y2018": "1479.0"}, {"type": "Media", "y2006": "151", "y2007": "281", "y2008": "265.0", "y2009": "231.0", "y2010": "286.0", "y2011": "367.0", "y2012": "430.0", "y2013": "435.0", "y2014": "465.0", "y2015": "393.0", "y2016": "281.0", "y2017": "244.0", "y2018": "145.0"}, {"type": "IT Hardware", "y2006": "398", "y2007": "401", "y2008": "335.0", "y2009": "319.0", "y2010": "309.0", "y2011": "296.0", "y2012": "262.0", "y2013": "289.0", "y2014": "301.0", "y2015": "266.0", "y2016": "204.0", "y2017": "254.0", "y2018": "156.0"}, {"type": "Energy", "y2006": "79", "y2007": "148", "y2008": "178.0", "y2009": "157.0", "y2010": "216.0", "y2011": "216.0", "y2012": "210.0", "y2013": "200.0", "y2014": "213.0", "y2015": "189.0", "y2016": "176.0", "y2017": "137.0", "y2018": "104.0"}, {"type": "Consumer Goods & Recreation", "y2006": "68", "y2007": "85", "y2008": "105.0", "y2009": "116.0", "y2010": "162.0", "y2011": "239.0", "y2012": "305.0", "y2013": "364.0", "y2014": "401.0", "y2015": "444.0", "y2016": "347.0", "y2017": "303.0", "y2018": "165.0"}, {"type": "Commercial Services", "y2006": "280", "y2007": "408", "y2008": "460.0", "y2009": "449.0", "y2010": "525.0", "y2011": "650.0", "y2012": "792.0", "y2013": "953.0", "y2014": "946.0", "y2015": "942.0", "y2016": "700.0", "y2017": "617.0", "y2018": "442.0"}];
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+    <h2><strong>Venture capital investment into U.S. healthcare companies, number of deals</strong></h2>
+    <p>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">* 2018 data is as of September 30.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: 3Q 2018 PitchBook-NVCA Venture Monitor</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1539118571"></script>
+
+
+</body>
+</html>

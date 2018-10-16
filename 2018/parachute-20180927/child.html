@@ -1,0 +1,112 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    LifePoint parachutes
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"name": "William F. Carpenter III", "severance": "8842500.0", "equity": "41317754.0", "pension": "52088.0", "reimburse": "19508085.0", "total": "69720427.0", "severance1": "8,842,500.00", "equity1": "41,317,754.00", "pension1": "52,088.00", "reimburse1": "19,508,085.00", "total1": "69,720,427.00"}, {"name": "David M. Dill", "severance": "4242000.0", "equity": "14175044.0", "pension": "26044.0", "reimburse": "6825610.0", "total": "25268698.0", "severance1": "4,242,000.00", "equity1": "14,175,044.00", "pension1": "26,044.00", "reimburse1": "6,825,610.00", "total1": "25,268,698.00"}, {"name": "Michael S. Coggin", "severance": "2935500.0", "equity": "6296089.0", "pension": "26044.0", "reimburse": "4168413.0", "total": "13426046.0", "severance1": "2,935,500.00", "equity1": "6,296,089.00", "pension1": "26,044.00", "reimburse1": "4,168,413.00", "total1": "13,426,046.00"}, {"name": "John P. Bumpus", "severance": "2703750.0", "equity": "5704584.0", "pension": "26044.0", "reimburse": "3044692.0", "total": "11479070.0", "severance1": "2,703,750.00", "equity1": "5,704,584.00", "pension1": "26,044.00", "reimburse1": "3,044,692.00", "total1": "11,479,070.00"}];
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+
+    
+    <p><br>
+    <strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: LifePoint Health SEC filing</i></p>
+        <p class="gfxcredit">Modern Healthcare</p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1538078076"></script>
+
+
+</body>
+</html>

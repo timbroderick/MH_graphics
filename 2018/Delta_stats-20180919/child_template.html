@@ -1,0 +1,161 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Delta snapshot
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_mapping.html' %} <!-- adding leaflet -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var info = {{ COPY.data.json() }};
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+
+.leaflet-container {
+	background: #f7f7f7;
+	outline: 0;
+	}
+
+  hr.mhchaps {
+      margin-top: 0px !important;
+      margin-bottom: 5px !important;
+      line-height: 1  !important;
+      border-top-color: #bbb;
+  }
+
+  div.bar {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid;
+  opacity: 0.8;
+  }
+  .FIRST {
+  background-color: #028575;
+  }
+  .SECOND {
+  background-color: #97D5C9;
+  }
+  .THIRD {
+  background-color: #FFF9B8;
+  }
+  .FOURTH {
+  background-color: #FECF8D;
+  }
+  .FIFTH {
+  background-color: #FAA634;
+  }
+
+</style>
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+            <div class="col-xs-7">
+              {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+              <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+              </div>
+              <div class="col-xs-5">
+            <img src="js/CoreDelta.png" class="img-responsive">
+          </div>
+        </div>
+        <br>
+        <hr class="mhchaps">
+          <div class="row">
+              <div class="col-sm-5">
+                    <p><strong>Median household income</strong><br>
+                    <div class="bar FIRST"></div> $40,239 and above<br>
+                    <div class="bar SECOND"></div> $36,385 to $40,239<br>
+                    <div class="bar THIRD"></div> $33,021 to $36,385<br>
+                    <div class="bar FOURTH"></div> $29,855 to $33,021<br>
+                    <div class="bar FIFTH"></div> Less than $29,855<br>
+                    </p>
+              </div>
+              <div class="col-sm-7">
+                <p><strong><small>Note: This map is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></strong>
+                <div id="graphic" class="graphic"></div>
+              </div>
+            </div>
+<br>
+<hr class="mhchaps">
+<p><strong>Cause of death</strong> <i>(rate per 100,000)</i></p>
+<table class="table table-hover table-striped table-condensed" width="100%" >
+  <thead>
+    <th>Core Delta counties</th>
+    <th>All other counties</th>
+  </thead>
+  <tbody>
+
+    {% for row in COPY.data %}
+    <tr><td class="tdLEFT"><strong>{{ row.ail }}</strong></td><td></td></tr>
+    <tr><td>{{ row.core }}</td><td>{{ row.other }}</td></tr>
+    {% endfor %}
+</tbody>
+</table>
+<br>
+<hr class="mhchaps">
+<div class="row">
+<div class="col-sm-5">
+<p><strong>Poverty level</strong><br>
+Percentage whose income was below the federal poverty level.</p>
+      <div class="bar FIRST"></div> Less than 15%<br>
+      <div class="bar SECOND"></div> 15% to 18%<br>
+      <div class="bar THIRD"></div> 18% to 20%<br>
+      <div class="bar FOURTH"></div> 20% to 26%<br>
+      <div class="bar FIFTH"></div> 26% to 40%<br>
+      </p>
+    </div>
+    <div class="col-sm-7">
+      <p><strong><small>Note: This map is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></strong>
+      <div id="graphic2" class="graphic"></div>
+    </div>
+  </div>
+
+
+    <br>
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="gfxcredit">{{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}
