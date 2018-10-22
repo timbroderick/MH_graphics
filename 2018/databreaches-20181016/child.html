@@ -1,0 +1,168 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Top data breaches
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"entity": "Anthem", "org": "health plan", "affect": "78,800,000 ", "affect2": "78.8 million", "date": "03/13/2015", "type": "hacking/IT incident", "location": "Network server", "url": "http://www.modernhealthcare.com/article/20150204/NEWS/302049928"}, {"entity": "Premera Blue Cross", "org": "health plan", "affect": "11,000,000 ", "affect2": "11 million", "date": "03/17/2015", "type": "hacking/IT incident", "location": "Network server", "url": "http://www.modernhealthcare.com/article/20150317/NEWS/150319904"}, {"entity": "Excellus Health Plan", "org": "health plan", "affect": "10,000,000 ", "affect2": "10 million", "date": "09/09/2015", "type": "hacking/IT incident", "location": "Network server", "url": "http://www.modernhealthcare.com/article/20150909/NEWS/150909880"}, {"entity": "UCLA Health", "org": "healthcare provider", "affect": "4,500,000 ", "affect2": "4.5 million", "date": "07/17/2015", "type": "hacking/IT incident", "location": "Network server", "url": null}, {"entity": "Medical Informatics Engineering", "org": "business associate", "affect": "3,900,000 ", "affect2": "3.9 million", "date": "07/23/2015", "type": "hacking/IT incident", "location": "Electronic medical record", "url": "http://www.modernhealthcare.com/article/20150611/NEWS/150619973"}, {"entity": "Banner Health", "org": "healthcare provider", "affect": "3,620,000 ", "affect2": "3.6 million", "date": "08/03/2016", "type": "hacking/IT incident", "location": "Network server, other", "url": "http://www.modernhealthcare.com/article/20160803/NEWS/160809954"}, {"entity": "Newkirk Products", "org": "business associate", "affect": "3,466,120 ", "affect2": "3.5 million", "date": "08/09/2016", "type": "hacking/IT incident", "location": "Network server", "url": null}, {"entity": "21st Century Oncology", "org": "healthcare provider", "affect": "2,213,597 ", "affect2": "2.2 million", "date": "03/04/2016", "type": "hacking/IT incident", "location": "Network server", "url": "http://www.modernhealthcare.com/article/20180102/NEWS/180109994"}, {"entity": "UnityPoint Health", "org": "healthcare provider", "affect": "1,421,107 ", "affect2": "1.4 million", "date": "07/30/2018", "type": "hacking/IT incident", "location": "Email", "url": "http://www.modernhealthcare.com/article/20180801/NEWS/180809995"}, {"entity": "CareFirst Blue Cross and Blue Shield", "org": "health plan", "affect": "1,100,000 ", "affect2": "1.1 million", "date": "05/20/2015", "type": "hacking/IT incident", "location": "Network server", "url": "http://www.modernhealthcare.com/article/20150520/NEWS/150529986"}];
+</script>
+
+
+    <h2><strong>Largest data breaches</strong></h2>
+    <p>Jan. 1, 2015 - Oct. 1, 2018</p>
+
+    <table id="gfx" class="table" width="100%" >
+      <tbody>
+
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>03/13/2015: <strong>Anthem</strong>, a health plan. <a href="http://www.modernhealthcare.com/article/20150204/NEWS/302049928" target="_blank"><strong>78.8 million people were affected</strong></a> in a hacking/IT incident. Network servers were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>03/17/2015: <strong>Premera Blue Cross</strong>, a health plan. <a href="http://www.modernhealthcare.com/article/20150317/NEWS/150319904" target="_blank"><strong>11 million people were affected</strong></a> in a hacking/IT incident. Network servers were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>09/09/2015: <strong>Excellus Health Plan</strong>, a health plan. <a href="http://www.modernhealthcare.com/article/20150909/NEWS/150909880" target="_blank"><strong>10 million people were affected</strong></a> in a hacking/IT incident. Network servers were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>07/17/2015: <strong>UCLA Health</strong>, a healthcare provider. <strong>4.5 million people were affected</strong> in a hacking/IT incident. Network servers were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>07/23/2015: <strong>Medical Informatics Engineering</strong>, a business associate. <a href="http://www.modernhealthcare.com/article/20150611/NEWS/150619973" target="_blank"><strong>3.9 million people were affected</strong></a> in a hacking/IT incident. Electronic medical records were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>08/03/2016: <strong>Banner Health</strong>, a healthcare provider. <a href="http://www.modernhealthcare.com/article/20160803/NEWS/160809954" target="_blank"><strong>3.6 million people were affected</strong></a> in a hacking/IT incident. Network server, others were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>08/09/2016: <strong>Newkirk Products</strong>, a business associate. <strong>3.5 million people were affected</strong> in a hacking/IT incident. Network servers were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>03/04/2016: <strong>21st Century Oncology</strong>, a healthcare provider. <a href="http://www.modernhealthcare.com/article/20180102/NEWS/180109994" target="_blank"><strong>2.2 million people were affected</strong></a> in a hacking/IT incident. Network servers were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>07/30/2018: <strong>UnityPoint Health</strong>, a healthcare provider. <a href="http://www.modernhealthcare.com/article/20180801/NEWS/180809995" target="_blank"><strong>1.4 million people were affected</strong></a> in a hacking/IT incident. Emails were targeted.</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+            <ul>
+              <li>05/20/2015: <strong>CareFirst Blue Cross and Blue Shield</strong>, a health plan. <a href="http://www.modernhealthcare.com/article/20150520/NEWS/150529986" target="_blank"><strong>1.1 million people were affected</strong></a> in a hacking/IT incident. Network servers were targeted.</li>
+          </ul>
+        </td></tr>
+        
+    </tbody></table>
+    </p>
+
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Breach Portal, HHS&#8217; Office for Civil Rights</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1539961929"></script>
+
+
+</body>
+</html>

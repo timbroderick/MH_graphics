@@ -1,0 +1,117 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Marijuan use and pregnancy
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"women": "pregnant", "month": "7.6", "year": "7.4"}, {"women": "nonpreg", "month": "3.9", "year": "7.0"}, {"women": "first", "month": "7.4", "year": "8.5"}, {"women": "second", "month": "2.8", "year": "6.9"}, {"women": "third", "month": "1.8", "year": "5.7"}];
+</script>
+
+<style type="text/css">
+.graphic { height:375px }
+</style>
+
+    <h2><strong>Marijuana use during pregnancy</strong></h2>
+    <p>More than 1 in 10 women aged 18 to 44 reported using marijuana in the past 12 months, a study of National Survey of Drug Use and Health data from 2007 to 2012 found. <hr class="breakline"><strong>Use of marijuana by pregnant and nonpregnant women</strong><br>
+    <small>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit"><strong>* Use in the past year does not include use in the past month</strong></p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Ko JY, Farr SL, Tong VT, et al. Prevalence and patterns of marijuana use among pregnant and nonpregnant women of reproductive age. Am J Obstet Gynecol 2015;213:201.e1-10.</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1539901984"></script>
+
+
+</body>
+</html>
