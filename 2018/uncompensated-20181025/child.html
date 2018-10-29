@@ -1,0 +1,112 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Uncompensated care costs
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"Year": "1990", "Hospitals": "5,370 ", "uncompensated": "12.1"}, {"Year": "1991", "Hospitals": "5,329 ", "uncompensated": "13.4"}, {"Year": "1992", "Hospitals": "5,287 ", "uncompensated": "14.7"}, {"Year": "1993", "Hospitals": "5,252 ", "uncompensated": "16.0"}, {"Year": "1994", "Hospitals": "5,206 ", "uncompensated": "16.8"}, {"Year": "1995", "Hospitals": "5,166 ", "uncompensated": "17.5"}, {"Year": "1996", "Hospitals": "5,134 ", "uncompensated": "18.0"}, {"Year": "1997", "Hospitals": "5,057 ", "uncompensated": "18.5"}, {"Year": "1998", "Hospitals": "5,015 ", "uncompensated": "19.0"}, {"Year": "1999", "Hospitals": "4,956 ", "uncompensated": "20.7"}, {"Year": "2000", "Hospitals": "4,915 ", "uncompensated": "21.6"}, {"Year": "2001", "Hospitals": "4,908 ", "uncompensated": "21.5"}, {"Year": "2002", "Hospitals": "4,927 ", "uncompensated": "22.3"}, {"Year": "2003", "Hospitals": "4,895 ", "uncompensated": "24.9"}, {"Year": "2004", "Hospitals": "4,919 ", "uncompensated": "26.9"}, {"Year": "2005", "Hospitals": "4,936 ", "uncompensated": "28.9"}, {"Year": "2006", "Hospitals": "4,927 ", "uncompensated": "31.2"}, {"Year": "2007", "Hospitals": "4,897 ", "uncompensated": "34.0"}, {"Year": "2008", "Hospitals": "5,010 ", "uncompensated": "36.4"}, {"Year": "2009", "Hospitals": "5,008 ", "uncompensated": "39.1"}, {"Year": "2010", "Hospitals": "4,985 ", "uncompensated": "39.3"}, {"Year": "2011", "Hospitals": "4,973 ", "uncompensated": "41.1"}, {"Year": "2012", "Hospitals": "4,999 ", "uncompensated": "45.9"}, {"Year": "2013", "Hospitals": "4,974 ", "uncompensated": "46.4"}, {"Year": "2014", "Hospitals": "4,926 ", "uncompensated": "42.8"}, {"Year": "2015", "Hospitals": "4,862 ", "uncompensated": "35.7"}, {"Year": "2016", "Hospitals": "4,840 ", "uncompensated": "38.3"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+    <h2><strong>Uncompensated care provided by hospitals</strong></h2>
+    <p><br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: AHA Annual Survey Data, 1990-2016</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1540563263"></script>
+
+
+</body>
+</html>
