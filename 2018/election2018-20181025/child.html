@@ -1,0 +1,198 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Election 2018
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<script>
+var BAL = [{"state": "Calif.", "proposal": "Proposition 4, Children's Hospitals construction", "description": "Borrow $1.5 billion for improvements at children's hospitals across the state.", "result": "Yes", "link": null}, {"state": "Calif.", "proposal": "Proposition 8, Kidney Dialysis Clinic charges", "description": "Require dialysis clinics to issue refunds to patients or patients' payers for revenue above 115 percent of the costs of direct patient care and healthcare improvements.", "result": "No", "link": null}, {"state": "Calif.", "proposal": "Livermore Measure U, healthcare charges", "description": "Limit healthcare charges to 115% of costs of direct patient care when the predetermined cost is exceeded.", "result": "No", "link": null}, {"state": "Calif.", "proposal": "Palo Alto Measure F, healthcare charges", "description": "Limit healthcare charges to 115% of costs of direct patient care when the predetermined cost is exceeded.", "result": "No", "link": null}, {"state": "Idaho", "proposal": "Proposition 2, Medicaid Expansion Initiative", "description": "Provide Medicaid coverage to adults with incomes up to 138% of poverty and who are not eligible for other state insurance coverage.", "result": "Yes", "link": "https://sos.idaho.gov/elect/results/index.html#general"}, {"state": "Maine", "proposal": "Question 1, Home Care Program Initiative", "description": "Enact a payroll tax and non-wage income tax to fund a Universal Home Care Program, which would provide long-term care to seniors and disabled people in their homes at no cost to them or their families.", "result": "No", "link": "https://www.maine.gov/sos/cec/elec/results/index.html"}, {"state": "Mass.", "proposal": "Question 1, Nurse-patient ratio", "description": "Establish mandatory nurse-patient ratios in hospitals", "result": "No", "link": null}, {"state": "Mont.", "proposal": "I-185, Extend Medicaid Expansion", "description": "Extend expanded Medicaid coverage for adults with incomes up to 138% of poverty; raise taxes on tobacco products to fund the state\u2019s expansion, which would otherwise expire on June 30, 2019, as well as other healthcare programs.", "result": "No", "link": "http://mtelectionresults.gov/"}, {"state": "Neb.", "proposal": "Initiative 427, Medicaid Expansion Initiative", "description": "Provide Medicaid coverage to adults with incomes up to 138% of poverty.", "result": "Yes", "link": "http://electionresults.sos.ne.gov/"}, {"state": "Utah", "proposal": "Proposition 3, Medicaid Expansion Initiative", "description": "Provide Medicaid coverage for adults with incomes up to 138% of poverty; increase the state sales tax by .15% to finance the state\u2019s portion of the cost.<br>", "result": "Yes", "link": "https://electionresults.utah.gov/elections/ballotprops"}];
+</script>
+    <p><h4><strong>2018 ballot measures</strong></h4>Ballot measures across the U.S. that could affect health and healthcare<br>
+    <small>Updated: 11/8/2018 &nbsp;|&nbsp; <img src="election/check.svg" width="20px"> = Yes &nbsp;|&nbsp; <img src="election/cross.svg" width="20px"> = No</small><br>
+              <table class="table table-hover table-striped table-condensed display">
+                  <thead>
+                      <tr>
+                          <th class="thLEFT">Ballot proposal</th>
+                          <th>Result</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Calif.: <i>Proposition 4, Children's Hospitals construction</i></strong><br>
+                            Borrow $1.5 billion for improvements at children's hospitals across the state.
+                        </td>
+                        <td>
+                           <img src="election/check.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Calif.: <i>Proposition 8, Kidney Dialysis Clinic charges</i></strong><br>
+                            Require dialysis clinics to issue refunds to patients or patients' payers for revenue above 115 percent of the costs of direct patient care and healthcare improvements.
+                        </td>
+                        <td>
+                           <img src="election/cross.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Calif.: <i>Livermore Measure U, healthcare charges</i></strong><br>
+                            Limit healthcare charges to 115% of costs of direct patient care when the predetermined cost is exceeded.
+                        </td>
+                        <td>
+                           <img src="election/cross.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Calif.: <i>Palo Alto Measure F, healthcare charges</i></strong><br>
+                            Limit healthcare charges to 115% of costs of direct patient care when the predetermined cost is exceeded.
+                        </td>
+                        <td>
+                           <img src="election/cross.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Idaho: <i>Proposition 2, Medicaid Expansion Initiative</i></strong><br>
+                            Provide Medicaid coverage to adults with incomes up to 138% of poverty and who are not eligible for other state insurance coverage.
+                        </td>
+                        <td>
+                           <img src="election/check.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Maine: <i>Question 1, Home Care Program Initiative</i></strong><br>
+                            Enact a payroll tax and non-wage income tax to fund a Universal Home Care Program, which would provide long-term care to seniors and disabled people in their homes at no cost to them or their families.
+                        </td>
+                        <td>
+                           <img src="election/cross.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Mass.: <i>Question 1, Nurse-patient ratio</i></strong><br>
+                            Establish mandatory nurse-patient ratios in hospitals
+                        </td>
+                        <td>
+                           <img src="election/cross.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Mont.: <i>I-185, Extend Medicaid Expansion</i></strong><br>
+                            Extend expanded Medicaid coverage for adults with incomes up to 138% of poverty; raise taxes on tobacco products to fund the state’s expansion, which would otherwise expire on June 30, 2019, as well as other healthcare programs.
+                        </td>
+                        <td>
+                           <img src="election/cross.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Neb.: <i>Initiative 427, Medicaid Expansion Initiative</i></strong><br>
+                            Provide Medicaid coverage to adults with incomes up to 138% of poverty.
+                        </td>
+                        <td>
+                           <img src="election/check.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>Utah: <i>Proposition 3, Medicaid Expansion Initiative</i></strong><br>
+                            Provide Medicaid coverage for adults with incomes up to 138% of poverty; increase the state sales tax by .15% to finance the state’s portion of the cost.<br>
+                        </td>
+                        <td>
+                           <img src="election/check.svg" width="20px"> 
+                        </td>
+                      </tr>
+                    
+                  </tbody>
+              </table>
+</p><br>
+
+    
+
+    <div class="footer">
+        
+        
+    </div>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+        
+        
+        <script type="text/javascript" src="js/graphic-footer.js?1541806116"></script>
+    
+
+</body>
+</html>

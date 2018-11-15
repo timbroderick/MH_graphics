@@ -1,0 +1,134 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    AMI inpatient mortality
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2015", "benchmark": "0.83", "peer": "1.02"}, {"year": "2016", "benchmark": "0.76", "peer": "0.99"}, {"year": "2017", "benchmark": "0.79", "peer": "1.05"}, {"year": "2018", "benchmark": "0.87", "peer": "1.02"}, {"year": "2019", "benchmark": "0.62", "peer": "1.01"}];
+var DATA2 = [{"year": "2015", "benchmark": "0.77", "peer": "1.01"}, {"year": "2016", "benchmark": "0.79", "peer": "0.99"}, {"year": "2017", "benchmark": "0.76", "peer": "1.02"}, {"year": "2018", "benchmark": "0.79", "peer": "1.0"}, {"year": "2019", "benchmark": "0.73", "peer": "1.01"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+    <h2><strong>Heart attack inpatient mortality index</strong></h2>
+    <p>Here is the index over time for IBM Watson&#8217;s top cardiovascular teaching hospitals without a cardiocascular residency program, as well as the index for all hospitals in the study.<br>Mission Health is among the teaching hospitals named as one of IBM Watson top cardiovascular hospitals for 2010. <br><small><i>An index value lower than 1.00 is better. A value of 1.15 indicates 15 percent more events than predicted; a value of 0.85 indicates 15 percent fewer. </i></small><br>
+    <small>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p><strong>Teaching hospitals without a cardiocascular residency program</strong></p>
+          <div id="graphic" class="graphic">
+                  <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <p><br><strong>All hospitals in study</strong></p>
+          <div id="graphic1" class="graphic">
+                  <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Benchmark and peer groups have different members each year.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: IBM Watson Health</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1540917734"></script>
+
+
+</body>
+</html>

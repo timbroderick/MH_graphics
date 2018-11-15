@@ -1,0 +1,207 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"Company": "Aetna", "closing": "208.84", "perchange": "0.86", "change": "1.79", "type": "Insurer"}, {"Company": "Anthem", "closing": "289.94", "perchange": "6.59", "change": "17.93", "type": "Insurer"}, {"Company": "Centene Corp.", "closing": "142.96", "perchange": "9.23", "change": "12.08", "type": "Insurer"}, {"Company": "Cigna Corp.", "closing": "220.29", "perchange": "2.82", "change": "6.05", "type": "Insurer"}, {"Company": "Humana", "closing": "353.98", "perchange": "6.62", "change": "21.98", "type": "Insurer"}, {"Company": "WellCare", "closing": "275.21", "perchange": "7.3", "change": "18.73", "type": "Insurer"}, {"Company": "UnitedHealth Group", "closing": "274.63", "perchange": "4.21", "change": "11.09", "type": "Insurer"}, {"Company": "Molina", "closing": "137.32", "perchange": "10.54", "change": "13.09", "type": "Insurer"}, {"Company": "HCA", "closing": "141.65", "perchange": "4.74", "change": "6.41", "type": "Hospital"}, {"Company": "Universal Health Services", "closing": "129.49", "perchange": "2.82", "change": "3.55", "type": "Hospital"}, {"Company": "Tenet Helathcare Corp.", "closing": "26.64", "perchange": "8.12", "change": "2.0", "type": "Hospital"}, {"Company": "LifePoint", "closing": "64.92", "perchange": "0.03", "change": "0.02", "type": "Hospital"}, {"Company": "CHS", "closing": "3.73", "perchange": "2.47", "change": "0.09", "type": "Hospital"}, {"Company": "DaVita, Inc.", "closing": "76.08", "perchange": "9.86", "change": "6.83", "type": "Dialysis provider"}, {"Company": "Fresenius", "closing": "43.17", "perchange": "8.85", "change": "3.51", "type": "Dialysis provider"}];
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+
+    <h2><strong>Healthcare stocks rise in the wake of midterm elections</strong></h2>
+    <p></p>
+
+    <table class="table table-hover table-striped table-condensed display">
+        <thead>
+            <tr>
+                <th class="thLEFT"><strong>Company</strong><br>
+                  <span style="float:right;">Wednesday's close</span></th>
+                <th>% change</th>
+                <th>Change</th>
+            </tr>
+        </thead>
+        <tbody>
+      
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Aetna</strong>: <small><i>Insurer</i></small>
+            </td></tr>
+            <tr><td>208.84</td><td>0.86%</td><td>1.79</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Anthem</strong>: <small><i>Insurer</i></small>
+            </td></tr>
+            <tr><td>289.94</td><td>6.59%</td><td>17.93</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Centene Corp.</strong>: <small><i>Insurer</i></small>
+            </td></tr>
+            <tr><td>142.96</td><td>9.23%</td><td>12.08</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Cigna Corp.</strong>: <small><i>Insurer</i></small>
+            </td></tr>
+            <tr><td>220.29</td><td>2.82%</td><td>6.05</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Humana</strong>: <small><i>Insurer</i></small>
+            </td></tr>
+            <tr><td>353.98</td><td>6.62%</td><td>21.98</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>WellCare</strong>: <small><i>Insurer</i></small>
+            </td></tr>
+            <tr><td>275.21</td><td>7.3%</td><td>18.73</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>UnitedHealth Group</strong>: <small><i>Insurer</i></small>
+            </td></tr>
+            <tr><td>274.63</td><td>4.21%</td><td>11.09</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Molina</strong>: <small><i>Insurer</i></small>
+            </td></tr>
+            <tr><td>137.32</td><td>10.54%</td><td>13.09</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>HCA</strong>: <small><i>Hospital</i></small>
+            </td></tr>
+            <tr><td>141.65</td><td>4.74%</td><td>6.41</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Universal Health Services</strong>: <small><i>Hospital</i></small>
+            </td></tr>
+            <tr><td>129.49</td><td>2.82%</td><td>3.55</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Tenet Helathcare Corp.</strong>: <small><i>Hospital</i></small>
+            </td></tr>
+            <tr><td>26.64</td><td>8.12%</td><td>2.0</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>LifePoint</strong>: <small><i>Hospital</i></small>
+            </td></tr>
+            <tr><td>64.92</td><td>0.03%</td><td>0.02</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>CHS</strong>: <small><i>Hospital</i></small>
+            </td></tr>
+            <tr><td>3.73</td><td>2.47%</td><td>0.09</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>DaVita, Inc.</strong>: <small><i>Dialysis provider</i></small>
+            </td></tr>
+            <tr><td>76.08</td><td>9.86%</td><td>6.83</td></tr>
+            
+            <tr><td class="tdLEFT" colspan="3">
+                <strong>Fresenius</strong>: <small><i>Dialysis provider</i></small>
+            </td></tr>
+            <tr><td>43.17</td><td>8.85%</td><td>3.51</td></tr>
+            
+        </tbody>
+    </table>
+
+    
+
+    <div class="footer">
+        
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1541629209"></script>
+
+
+</body>
+</html>

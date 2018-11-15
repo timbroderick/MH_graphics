@@ -1,0 +1,131 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    HF 30-day readmissions
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2015", "benchmark": "21.9", "peer": "22.5"}, {"year": "2016", "benchmark": "20.1", "peer": "21.7"}, {"year": "2017", "benchmark": "20.1", "peer": "21.7"}, {"year": "2018", "benchmark": "19.9", "peer": "21.4"}, {"year": "2019", "benchmark": "20.3", "peer": "21.3"}];
+var DATA2 = [{"year": "2015", "benchmark": "22.2", "peer": "22.7"}, {"year": "2016", "benchmark": "20.7", "peer": "21.7"}, {"year": "2017", "benchmark": "20.5", "peer": "21.7"}, {"year": "2018", "benchmark": "20.5", "peer": "21.4"}, {"year": "2019", "benchmark": "20.6", "peer": "21.3"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+    <h2><strong>Heart failure 30-day readmissions</strong></h2>
+    <p>Here are the 30-day readmission rates over time for IBM Watson Health&#8217;s top community hospitals, as well as the rates for all hospitals in the <i>50 Top Cardiovascular Study.</i><br>Bellin Health is among the community hospitals named as one of IBM Watson top cardiovascular hospitals for 2019. <br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p><strong>Community hospitals</strong></p>
+              <div id="graphic" class="graphic">
+                      <img src="fallback.png" alt="[Chart]" class="fallback" />
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <p><strong>All hospitals in study</strong></p>
+              <div id="graphic1" class="graphic">
+                      <img src="fallback.png" alt="[Chart]" class="fallback" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Benchmark and peer groups have different members each year.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: IBM Watson Health 50 Top Cadiovascular Study</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1540917747"></script>
+
+
+</body>
+</html>

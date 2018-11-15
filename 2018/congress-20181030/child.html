@@ -1,0 +1,418 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    2018 congressional races
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<script src="../../static/js/code/modules/annotations.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<style>
+  .trline {
+    border-top: 1px solid #ddd;
+  }
+  .tdgray {
+    padding:2px;
+    margin:2px;
+    background-color: #eee;
+  }
+  .tdnot {
+    padding:2px;
+    margin:2px;
+    background-color: #fff;
+  }
+</style>
+
+<script>
+var DATA = [{"party": "Dem - no race", "result": "23.0"}, {"party": "Dem", "result": "21.0"}, {"party": "Other", "result": "2.0"}, {"party": "Too close to call", "result": "3"}, {"party": "GOP", "result": "7.0"}, {"party": "GOP - no race", "result": "44.0"}, {"party": null, "result": "100"}];
+var DATA2 = [{"party": "Dem", "result": "225.0"}, {"party": "Too close to call", "result": "13"}, {"party": "GOP", "result": "197.0"}, {"party": null, "result": "435"}];
+var keyraces = [{"Race": "CA-10", "Republican": "Jeff Denham", "rwin": null, "Democrat": "Josh Harder", "dwin": null}, {"Race": "CA-25", "Republican": "Steve Knight", "rwin": null, "Democrat": "Katie Hill", "dwin": null}, {"Race": "CA-45", "Republican": "Mimi Walters", "rwin": null, "Democrat": "Katie Porter", "dwin": null}, {"Race": "CA-48", "Republican": "Dana Rohrabacher", "rwin": null, "Democrat": "Harley Rouda", "dwin": "Yes"}, {"Race": "CA-49", "Republican": "Diane Harkey", "rwin": null, "Democrat": "Mike Levin", "dwin": "Yes"}, {"Race": "FL-26", "Republican": "Carlos Curbelo", "rwin": null, "Democrat": "Debbie Mucarsel-Powell", "dwin": "Yes"}, {"Race": "FL-27", "Republican": "Maria Elvira Salazar", "rwin": null, "Democrat": "Donna Shalala", "dwin": "Yes"}, {"Race": "IL-06", "Republican": "Peter Roskam", "rwin": null, "Democrat": "Sean Casten", "dwin": "Yes"}, {"Race": "IL-14", "Republican": "Randy Hultgren", "rwin": null, "Democrat": "Lauren Underwood", "dwin": "Yes"}, {"Race": "IA-03", "Republican": "David Young", "rwin": null, "Democrat": "Cindy Axne", "dwin": "Yes"}, {"Race": "NJ-03", "Republican": "Tom MacArthur", "rwin": null, "Democrat": "Andrew Kim", "dwin": "Yes"}, {"Race": "NY-27", "Republican": "Chris Collins", "rwin": "Yes", "Democrat": "Nate McMurray", "dwin": null}, {"Race": "TX-32", "Republican": "Pete Sessions", "rwin": null, "Democrat": "Colin Allred", "dwin": "Yes"}, {"Race": "WA-05", "Republican": "Cathy McMorris-Rodgers", "rwin": "Yes", "Democrat": "Lisa Brown", "dwin": null}];
+</script>
+
+<style type="text/css">
+.graphic { height:150px }
+</style>
+
+    
+    <p><h4><strong>Balance of power</strong></h4>For the U.S. Senate and House of Representatives.<br>
+    <small>Updated: 11/9/2018</small><br>
+    <strong>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p><strong>U.S. Senate</strong> <small>100 seats, 51 needed for a majority</small></p>
+                      <div id="graphic" class="graphic">
+                              <img src="fallback.png" alt="[Chart]" class="fallback" />
+                      </div>
+                      <p><small>Other includes two independents who caucus with the Democrats</small></p>
+                    </div>
+                    <div class="col-sm-6">
+                      <p><strong>U.S. House</strong> <small>435 seats, 218 needed for a majority</small></p>
+                      <div id="graphic1" class="graphic">
+                              <img src="fallback.png" alt="[Chart]" class="fallback" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<br>
+
+<div>
+<h4><strong>Key House races</strong> <small>Note: If no winner is checked, race may be too close to call</small>
+          <table class="table table-hover table-striped table-condensed display">
+              <thead>
+                  <tr>
+                      <th class="thLEFT">Race</th>
+                      <th class="thLEFT">Republican</th>
+                      <th class="thLEFT"></th>
+                      <th class="thLEFT">Democrat</th>
+                      <th class="thdLEFT"></th>
+                  </tr>
+              </thead>
+              <tbody>
+            
+                  <tr>
+                    <td class="tdLEFT">
+                        CA-10
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Jeff Denham</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Josh Harder</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        CA-25
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Steve Knight</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Katie Hill</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        CA-45
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Mimi Walters</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Katie Porter</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        CA-48
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Dana Rohrabacher</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Harley Rouda</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        CA-49
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Diane Harkey</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Mike Levin</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        FL-26
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Carlos Curbelo</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Debbie Mucarsel-Powell</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        FL-27
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Maria Elvira Salazar</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Donna Shalala</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        IL-06
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Peter Roskam</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Sean Casten</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        IL-14
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Randy Hultgren</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Lauren Underwood</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        IA-03
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>David Young</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Cindy Axne</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        NJ-03
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Tom MacArthur</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Andrew Kim</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        NY-27
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Chris Collins</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Nate McMurray</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        TX-32
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Pete Sessions</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Colin Allred</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                </tr>
+                
+                  <tr>
+                    <td class="tdLEFT">
+                        WA-05
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Cathy McMorris-Rodgers</strong>
+                    </td>
+                    <td class="tdLEFT">
+                       <img src="election/check.svg" width="20px"> 
+                    </td>
+                    <td class="tdLEFT">
+                      <strong>Lisa Brown</strong>
+                    </td>
+                    <td class="tdLEFT">
+                        
+                    </td>
+                </tr>
+                
+              </tbody>
+          </table>
+      </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Modern Healthcare reporting, news reports, state election sites</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1541806113"></script>
+
+
+</body>
+</html>

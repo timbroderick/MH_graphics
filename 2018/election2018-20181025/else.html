@@ -1,0 +1,126 @@
+<div class="g-clearfix" id="noexpansion_table">
+    <h4 class="g-clearfix">No expansion</h4>
+    <p>Party control in 19 states that have resisted Medicaid expansion</p>
+    <table class="table">
+        <thead>
+            <tr class="table-header">
+                <th class="state-name"></th>
+                <th class="type" colspan="2">Governor's seat</th>
+                <th class="type" colspan="2">House control</th>
+                <th class="type" colspan="2">Senate control</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr class="table-header">
+                <th class="state-name"></th>
+                <th class="rating">Before</th>
+                <th class="rating">After</th>
+                <th class="rating">Before</th>
+                <th class="rating">After</th>
+                <th class="rating">Before</th>
+                <th class="rating">After</th>
+            </tr>
+        </thead><tbody>
+          {% for row in COPY.expansion %}
+          <tr class="table-row">
+            <td class="tdLEFT">
+                {{ row.state }}
+            </td>
+            <td class="before">
+                <div class="rating-swatch {% if row.gov_before == 'R' %} solid-rep {% elif row.gov_before == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                    {{ row.gov_before }}
+                </div>
+            </td>
+            <td class="after">
+                <div class="rating-swatch {% if row.gov_after == 'R' %} solid-rep {% elif row.gov_after == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                    {{ row.gov_after }}
+                </div>
+            </td>
+            <td class="before">
+                <div class="rating-swatch {% if row.house_before == 'R' %} solid-rep {% elif row.house_before == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                    {{ row.house_before }}
+                </div>
+            </td>
+            <td class="after">
+                <div class="rating-swatch {% if row.house_after == 'R' %} solid-rep {% elif row.house_after == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                    {{ row.house_after }}
+                </div>
+            </td>
+            <td class="before">
+                <div class="rating-swatch {% if row.sen_before == 'R' %} solid-rep {% elif row.sen_before == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                    {{ row.sen_before }}
+                </div>
+            </td>
+            <td class="after">
+                <div class="rating-swatch {% if row.sen_after == 'R' %} solid-rep {% elif row.sen_after == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                    {{ row.sen_after }}
+                </div>
+            </td>
+        </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="g-clearfix" id="expansion_table">
+        <h4>Expansion vulnerable to change in state leadership</h4>
+        <p>Three states where changes in state leadership could lead to changes to expansion programs</p>
+        <table class="table">
+            <thead>
+                <tr class="table-header">
+                    <th class="state-name"></th>
+                    <th class="type" colspan="2">Governor's seat</th>
+                    <th class="type" colspan="2">House control</th>
+                    <th class="type" colspan="2">Senate control</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr class="table-header">
+                    <th class="state-name"></th>
+                    <th class="rating">Before</th>
+                    <th class="rating">After</th>
+                    <th class="rating">Before</th>
+                    <th class="rating">After</th>
+                    <th class="rating">Before</th>
+                    <th class="rating">After</th>
+                </tr>
+            </thead><tbody>
+            {% for row in COPY.leadership %}
+            <tr class="table-row">
+              <td class="tdLEFT">
+                  {{ row.state }}
+              </td>
+              <td class="before">
+                  <div class="rating-swatch {% if row.gov_before == 'R' %} solid-rep {% elif row.gov_before == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                      {{ row.gov_before }}
+                  </div>
+              </td>
+              <td class="after">
+                  <div class="rating-swatch {% if row.gov_after == 'R' %} solid-rep {% elif row.gov_after == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                      {{ row.gov_after }}
+                  </div>
+              </td>
+              <td class="before">
+                  <div class="rating-swatch {% if row.house_before == 'R' %} solid-rep {% elif row.house_before == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                      {{ row.house_before }}
+                  </div>
+              </td>
+              <td class="after">
+                  <div class="rating-swatch {% if row.house_after == 'R' %} solid-rep {% elif row.house_after == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                      {{ row.house_after }}
+                  </div>
+              </td>
+              <td class="before">
+                  <div class="rating-swatch {% if row.sen_before == 'R' %} solid-rep {% elif row.sen_before == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                      {{ row.sen_before }}
+                  </div>
+              </td>
+              <td class="after">
+                  <div class="rating-swatch {% if row.sen_after == 'R' %} solid-rep {% elif row.sen_after == 'D' %} solid-dem {% else %} tossup {% endif %}">
+                      {{ row.sen_after }}
+                  </div>
+              </td>
+          </tr>
+            {% endfor %}
+          </tbody>
+          </table>
+      </div>

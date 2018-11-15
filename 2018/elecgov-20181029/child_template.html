@@ -1,0 +1,110 @@
+{% extends 'crains_template.html' %}
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    hex map
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+{% include 'headers/header_chartend.html' %} <!-- MUST-->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+      <small>Updated: {{ COPY.labels.datetime }}</small></p>
+
+    </div>
+    <div class="col-sm-7">
+
+    <!-- Mapping portion -->
+    	 <style type="text/css">
+    		 div.bar {
+    		 display: inline-block;
+    		 width: 12px;
+    		 height: 12px;
+    		 border: 1px solid;
+    		 opacity: 0.8;
+    		 }
+    		 .Rnow {
+    		 background-color: #fdddd7;
+    		 fill: #fdddd7;
+    		 }
+    		 .Dnow {
+    		 background-color: #D0EFFF;
+    		 fill: #D0EFFF;
+    		 }
+    		 .Inow {
+    		 background-color: #c7a0cb;
+    		 fill: #c7a0cb;
+    		 }
+    		 .R {
+    		 background-color: #f8abad;
+    		 fill: #f8abad;
+    		 }
+    		 .D {
+    		 background-color: #9ddcf9;
+    		 fill: #9ddcf9;
+    		 }
+    		 .Rflip {
+    		 background-color: #ae1b1f;
+    		 fill: #ae1b1f;
+    		 }
+    		 .Dflip {
+    		 background-color: #0067ac;
+    		 fill: #0067ac;
+    		 }
+    		 .norace {
+    		 background-color: #DDDDDD;
+    		 fill: #DDDDDD;
+    		 }
+    		 .trline {
+    			 border-top: 1px solid #ddd;
+    		 }
+    		 .tdgray {
+    			 padding:2px;
+    			 margin:2px;
+    			 background-color: #eee;
+    		 }
+    		 .tdnot {
+    			 padding:2px;
+    			 margin:2px;
+    			 background-color: #fff;
+    		 }
+    	 </style>
+    	 <h5><strong>MAP KEY</strong></h5>
+    	 <table><tbody>
+    		 <tr class='trline'><td class="tdLEFT tdgray" colspan="2"><strong> &nbsp; BEFORE ELECTION</strong></td><td class="tdgray"></td></tr>
+    		 <tr class='trline'><td class="tdLEFT tdnot"> &nbsp;<div class="bar Rnow"></div> Republican</td><td class="tdLEFT tdnot"> &nbsp;<div class="bar Dnow"></div> Democrat &nbsp;</td></tr>
+    		 <tr class='trline'><td class="tdLEFT tdnot" colspan="2">&nbsp;<div class="bar Inow"></div> Independent &nbsp;</td></tr>
+    		 <tr class='trline'><td class="tdLEFT tdgray" colspan="2"><strong> &nbsp; ELECTION RESULT</strong></td><td class="tdgray"></td></tr>
+    		 <tr class='trline'><td class="tdLEFT tdnot"> &nbsp;<div class="bar R"></div> Stays Republican &nbsp;</td><td class="tdnot tdLEFT"> &nbsp;<div class="bar D"></div> Stays Democrat &nbsp;</td></tr>
+    		 <tr class='trline'><td class="tdLEFT tdnot"> &nbsp;<div class="bar Rflip"></div><strong> Flips Republican &nbsp;</strong></td><td class="tdnot tdLEFT"> &nbsp;<div class="bar Dflip"></div><strong> Flips Democrat &nbsp;</strong></td></tr>
+    	 </table>
+     <br>
+     </div>
+    </div>
+    </div>
+    <div id="graphic" class="graphic">
+      {% include 'hexmap.html' %} <!-- MUST -->
+    </div>
+
+<br>
+
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+{% endblock content %}

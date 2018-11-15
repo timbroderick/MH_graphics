@@ -1,0 +1,230 @@
+
+<style type="text/css">
+h4{
+    font-weight: 100;
+        font: 700 18px Helvetica, Arial, sans-serif;
+}
+body{
+    font-family: sans-serif;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 19px;
+}
+.table-header {
+    padding: 8px 0 12px;
+    font-size: 12px;
+    vertical-align: bottom;
+}
+.table-row td {
+    font-size: 14px;
+    border-bottom: solid 1px #ddd;
+    padding: 0 !important;
+}
+.table-header th {
+    font-size: 14px;
+    padding: 4px 0;
+    font-weight: 200;
+}
+
+.inset-content {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+.inset-padding {
+    margin: 0 20px;
+    position: relative;
+}
+.dem {
+    color: #3989cb;
+}
+.rep {
+    color: #d75c5c;
+}
+.rating-swatch, .description,  .proposal {
+    font-size: 13px;
+    padding: 0 3px;
+    text-align: center;
+    font-weight: 500;
+}
+.table-header .rating,.table-row .rating {
+    text-align: center;
+    font: 400 12px/1.1em Helvetica, Arial, sans-serif;
+    letter-spacing: 0.04em;
+    color: #888;
+    margin-bottom: 4px;
+}
+.table-row .rating {
+    padding: 0;
+    white-space: nowrap;
+}
+.table-row:not(:last-child) .rating {
+    border-bottom-color: #fff;
+}
+.table-row .rating--none {
+    border-bottom-color: #ddd !important;
+}
+.table-row .rating-swatch {
+    margin-left: 1px;
+    padding: 4px 0;
+}
+.table-row .rating-swatch .party-interior {
+    display: none;
+}
+.viewport-large-20 .table-row .rating-swatch .party-interior {
+    display: inline;
+}
+.rating-swatch.solid-dem,.rating-swatch.solid-rep {
+    text-shadow: 0 0 2px #000;
+}
+
+.solid-dem {
+    background-color: #3989cb;
+    color: #fff;
+}
+
+.solid-rep {
+    background-color: #d75c5c;
+    color: #fff;
+}
+
+.tossup {
+    background-color: #FFF8F2;
+}
+
+
+.na {
+    background-color: #eee;
+}
+
+.line {
+    stroke-linejoin: round;
+}
+.type{
+    font-weight: bold !important;
+    text-align: center;
+}
+
+.left_description{
+    text-align:left !important;
+}
+.before, .after{
+    border-bottom-color: white !important;
+}
+#ballot_table tr:hover {background-color: #FFE677 !important}
+#ballot_table .table-header:hover {background-color: white !important}
+#ballot_table tr:nth-child(even) {background-color: #FEF8ED}
+#ballot_table .table-row td {
+    font-size: 14px;
+    border-bottom: solid 1px white;
+}
+#ballot_table, #expansion_table, #noexpansion_table{
+    margin-bottom: 10px;
+    border-top: 1px solid #e2e2e2;
+    padding: 10px 0 15px;
+}
+.publish_date{
+    color:#982329;
+    font-size: 8px;
+}
+.related_story{
+    margin-bottom: 50px;
+}
+.credit{
+    color:#ddd;
+}
+#newshead{
+    font-size:1em;
+    font-family: Cambria,'Hoefler Text',Utopia,'Liberation Serif','Nimbus Roman No9 L Regular',Times,'Times New Roman',serif;
+    font-weight: 700;
+}
+
+/******SCROLLDOWNCSS***********/
+.g-title {
+  font: 700 18px Helvetica, Arial, sans-serif;
+  margin-bottom: 20px;
+}
+.g-title .g-subtitle {
+  color: #999;
+  margin-left: 4px;
+}
+.g-promos, .g-stories {
+  margin-bottom: 50px;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 30px 0 35px;
+  margin: auto;
+}
+
+.g-promo {
+  margin: 20px 0;
+}
+.g-promo:last-child {
+  margin-bottom: 0;
+}
+.g-promo .g-icon, .g-photo {
+  position: relative;
+  float: left;
+  top: 6px;
+  left: -2px;
+  margin-bottom: 10px;
+}
+.g-promo .g-text {
+  padding-bottom: 31px;
+}
+
+.g-promo .g-promo-hed {
+  position: relative;
+  font: 400 20px/1.1em  Helvetica, Arial, sans-serif;
+}
+.g-promo .g-promo-kicker {
+  font: 400 14px/1.1em  Helvetica, Arial, sans-serif;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.04em;
+  /* color: #09577b; */
+  margin-bottom: 3px;
+}
+.g-clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.g-photo{
+    width: 129px;
+    margin: -10px 20px 10px 0;
+}
+/****************/
+@media only screen and (max-width: 35.5em){
+.table-header th {
+    font-size: 11px;
+    padding: 4px 0;
+    LINE-HEIGHT: 13PX;
+}
+.table-header .rating, .table-row .rating {
+    text-align: center;
+    font: 400 9px/1.1em Helvetica, Arial, sans-serif;
+    letter-spacing: 0.04em;
+    color: #888;
+    margin-bottom: 4px;
+}
+#ballot_table .table-row td {
+    font-size: 11px;
+    border-bottom: solid 1px white;
+}
+.rating-swatch, .proposal, .description {
+    font-size: 11px;
+    padding: 0 3px;
+    text-align: center;
+    font-weight: 500;
+}
+.g-photo {
+    width: 244px;
+    margin: -10px 20px 10px 0;
+}
+}
+</style>

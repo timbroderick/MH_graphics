@@ -1,0 +1,58 @@
+{% extends 'crains_template.html' %}
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Election 2018
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+
+<script>
+var BAL = {{ COPY.ballots.json() }};
+</script>
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+    <small>Updated: {{ COPY.labels.datetime }} &nbsp;|&nbsp; <img src="election/check.svg" width="20px"> = Yes &nbsp;|&nbsp; <img src="election/cross.svg" width="20px"> = No</small><br>
+              <table class="table table-hover table-striped table-condensed display">
+                  <thead>
+                      <tr>
+                          <th class="thLEFT">Ballot proposal</th>
+                          <th>Result</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                {% for row in COPY.ballots %}
+                      <tr>
+                        <td class="tdLEFT">
+                            <strong>{{ row.state }}: <i>{{ row.proposal }}</i></strong><br>
+                            {{ row.description }}
+                        </td>
+                        <td>
+                          {% if row.result == 'Yes' %} <img src="election/check.svg" width="20px"> {% elif row.result == 'No' %} <img src="election/cross.svg" width="20px"> {% else %} <strong>{{ row.result }}</strong> {% endif %}
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+</p><br>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><strong>Notes</strong></h4>
+        <p>{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="gfxcredit">{{ COPY.labels.credit|smarty }}</p>{% endif %}
+    </div>
+
+{% endblock content %}
