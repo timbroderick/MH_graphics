@@ -1,0 +1,89 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Benefit how
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+
+<link rel="stylesheet" type="text/css" href="../../static/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="../../static/slick/slick-theme.css">
+<script src="../../static/slick/slick.js" type="text/javascript" charset="utf-8"></script> <!-- adding fancy slider -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+
+
+    <div class="slidesize">
+      <section class="imgslider slider">
+        <div>
+          <img src="skedh_part1.png">
+        </div>
+        <div>
+          <img src="skedh_part2.png">
+        </div>
+        <div>
+          <img src="skedh_part3.png">
+        </div>
+      </section>
+    </div>
+
+      <script type="text/javascript">
+        $(document).on('ready', function() {
+          $(".imgslider").slick({
+            dots: true,
+            infinite: false,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            slidesToScroll: 1,
+            mobileFirst: true,
+            lazyLoad: 'ondemand', // ondemand progressive anticipated
+          });
+        });
+      </script>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

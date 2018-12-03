@@ -388,6 +388,62 @@
                 "text": "<p>Guertin <a href='http://www.modernhealthcare.com/article/20181010/NEWS/181019980' target='_blank'>steps down</a> ''for personal and family reasons'' hours after the DOJ clears the merger, to be replaced by Eva Boratto, CVS’ chief accounting officer and controller.</p>"
             },
             "unique_id": ""
+        },{
+            "start_date": {
+                "year":			"2018",
+                "month":		"11",
+                "day": 			"15",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "",
+                "text": "<p>California regulators grant conditional approval, among other things, demanding minimal price increases.</p>"
+            },
+            "unique_id": ""
+        },{
+          "background": {
+              "color": "#000",
+              "opacity": 50,
+              "url": null
+          },
+          "start_date": {
+                "year":			"2018",
+                "month":		"11",
+                "day": 			"26",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "",
+                "text": "<p>New York and remaining states OK the deal.</p>"
+            },
+            "unique_id": ""
+        },{
+          "start_date": {
+                "year":			"2018",
+                "month":		"11",
+                "day": 			"28",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "Done",
+                "text": "<p>CVS completes its acquisition of Aetna.</p>"
+            },
+            "unique_id": ""
         }
     ]
 }

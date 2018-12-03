@@ -1,0 +1,155 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Benefit how
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+        <div class="col-md-10">
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+
+    <style type="text/css">
+      .firstone {
+        height:400px;
+        width:400px;
+      }
+      .pcenter {
+        text-align: center;
+       }
+    </style>
+
+    <div id='button1'>
+      <p class='pcenter'>
+        <input type="button" name="to2" class="to2"
+        onclick="console.log( 'clicked' );"
+        value="NEXT &#x25BA;" >
+      </p>
+      <p><span style="padding:3px; margin:3px; color:white; background-color: #000;"><strong>A</strong></span> The Medicaid net community benefit can be a negative number due to supplemental Medicaid payments that lift offsetting revenue higher than the total community benefit. ...</p>
+      <div class="row">
+        <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <img src="SkedH_1.png" class="img-responsive">
+          </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+    <div id='button2'>
+      <p class='pcenter'>
+        <input type="button" name="to1" class="to1"
+        onclick="console.log( 'clicked' );"
+        value="&#x25C4; BACK" > &nbsp;  &nbsp;
+        <input type="button" name="to3" class="to3"
+        onclick="console.log( 'clicked' );"
+        value="NEXT &#x25BA;" >
+      </p>
+      <p><span style="padding:3px; margin:3px; color:white; background-color: #000;"><strong>B</strong></span> ... But instead of reporting a negative percentage, under IRS direction <strong>the value as a “percent of total expense” is not calculated.</strong></p>
+      <div class="row">
+        <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <img src="SkedH_2.png" class="img-responsive">
+          </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+    <div id='button3'>
+      <p class='pcenter'>
+        <input type="button" name="to2" class="to2"
+        onclick="console.log( 'clicked' );"
+        value="&#x25C4; BACK" >
+      </p>
+      <p><span style="padding:3px; margin:3px; color:white; background-color: #000;"><strong>C</strong></span> The net benefit and percentages are summed without the negative value, <strong>resulting in an inaccurate picture of a provider’s total net community benefit</strong> <span style="padding:3px; margin:3px; color:white; background-color: #000;"><strong>D</strong></span>.</p>
+      <div class="row">
+        <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <img src="SkedH_3.png" class="img-responsive">
+          </div>
+        <div class="col-sm-1"></div>
+      </div>
+      <p><small>Note: Figures are from the tax year 2015 Form 990 for Mount Sinai Hospital Medical Center</small></p>
+    </div>
+    <br>
+
+    <script>
+
+    var junkvar = '0';
+    console.log(junkvar);
+
+    $('#button1').show();
+    $('#button2').hide();
+    $('#button3').hide();
+
+      $(".to1").click(function() {
+        junkvar = '1';
+        console.log(junkvar);
+        $('#button1').show();
+        $('#button2').hide();
+        $('#button3').hide();
+        //$('#firstone').html("<a href='' id='to2'>NEXT &#x25BA;</a> This is the first one");
+      });
+
+      $(".to2").click(function() {
+        junkvar = '2';
+        console.log(junkvar);
+        $('#button1').hide();
+        $('#button2').show();
+        $('#button3').hide();
+        //$('#firstone').html("<a href='' id='to1'>&#x25C4; PREVIOUS</a> | <a href='' class='to3'>NEXT &#x25BA;</a>This is the second one")
+        //$('#firstone').html("This is the second one");
+      });
+
+      $(".to3").click(function() {
+        junkvar = '3';
+        console.log(junkvar);
+        $('#button1').hide();
+        $('#button2').hide();
+        $('#button3').show();
+        //$('#firstone').html("<a href='' id='to2'>&#x25C4; PREVIOUS</a> | <a href='' class='to1'>RETURN TO START</a> This is the third one");
+      });
+
+    </script>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

@@ -1,0 +1,121 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_charts.html' %} <!-- adding highcharts -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+</script>
+
+<style type="text/css">
+.graphic { height:300px }
+</style>
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+
+    <p><strong>Number of deals closed</strong><small><br><i>2008-18*</i> | The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+    <p><strong>Total value of deals</strong><small><br><i>2009-18*</i> | The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+    <div id="graphic1" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4><strong>Top deals by size</strong><br><small>In $ millions, 2008-18*</small></h4>
+              <table class="table table-hover table-striped table-condensed display">
+                  <thead>
+                      <tr>
+                          <th class="thLEFT">Company</th>
+                          <th>Size<br>of deal</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                {% for row in COPY.topdeals %}
+                      <tr>
+                        <td class="tdLEFT">
+                            {{ row.company }}
+                        </td>
+                        <td>
+                          <strong>${{ row.size }}</strong>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+            </div>
+            <div class="col-sm-6">
+              <h4><strong>Top investors by deals closed</strong><br><small>2008-18*</small></h4>
+                  <table class="table table-hover table-striped table-condensed display">
+                      <thead>
+                          <tr>
+                              <th class="thLEFT">Company</th>
+                              <th>Number<br>of deals</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                    {% for row in COPY.invest %}
+                          <tr>
+                            <td class="tdLEFT">
+                                {{ row.Investor }}
+                            </td>
+                            <td>
+                              <strong>{{ row.deals }}</strong>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                  </table>
+            </div>
+          </div>
+        </div>
+        <br>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

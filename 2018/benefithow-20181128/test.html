@@ -1,0 +1,106 @@
+
+<!DOCTYPE HTML>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+  <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+
+<title>
+    Benefit how
+</title>
+
+<script>
+var $ = jQuery;
+</script>
+
+</head>
+  <body> <!-- MUST -->
+
+<style type="text/css">
+  .firstone {
+    height:400px;
+    width:400px;
+  }
+  .pcenter {
+    text-align: center;
+   }
+</style>
+
+<br>
+
+<div id='button1'>
+  <p class='pcenter'>
+  <input type="button" name="to2" class="to2"
+  onclick="console.log( 'clicked' );"
+  value="NEXT (to 2) &#x25BA;" >
+</p>
+</div>
+<div id='button2'>
+  <p class='pcenter'>
+  <input type="button" name="to1" class="to1"
+  onclick="console.log( 'clicked' );"
+  value="&#x25C4; BACK (to 1)" > |
+  <input type="button" name="to3" class="to3"
+  onclick="console.log( 'clicked' );"
+  value="NEXT (to 3) &#x25BA;" >
+  </p>
+</div>
+<div id='button3'>
+  <p class='pcenter'>
+  <input type="button" name="to2" class="to2"
+  onclick="console.log( 'clicked' );"
+  value="&#x25C4; BACK (to 2)" > |
+  <input type="button" name="to1" class="to1"
+  onclick="console.log( 'clicked' );"
+  value="RETURN (to 1) &#x25BA;" >
+  </p>
+</div>
+
+<br>
+<div class="firstone" id="firstone"></div>
+
+<script>
+
+var junkvar = '0';
+console.log(junkvar);
+
+$('#button1').show();
+$('#button2').hide();
+$('#button3').hide();
+
+  $(".to1").click(function() {
+    junkvar = '1';
+    console.log(junkvar);
+    $('#button1').show();
+    $('#button2').hide();
+    $('#button3').hide();
+    //$('#firstone').html("<a href='' id='to2'>NEXT &#x25BA;</a> This is the first one");
+  });
+
+  $(".to2").click(function() {
+    junkvar = '2';
+    console.log(junkvar);
+    $('#button1').hide();
+    $('#button2').show();
+    $('#button3').hide();
+    //$('#firstone').html("<a href='' id='to1'>&#x25C4; PREVIOUS</a> | <a href='' class='to3'>NEXT &#x25BA;</a>This is the second one")
+    //$('#firstone').html("This is the second one");
+  });
+
+  $(".to3").click(function() {
+    junkvar = '3';
+    console.log(junkvar);
+    $('#button1').hide();
+    $('#button2').hide();
+    $('#button3').show();
+    //$('#firstone').html("<a href='' id='to2'>&#x25C4; PREVIOUS</a> | <a href='' class='to1'>RETURN TO START</a> This is the third one");
+  });
+
+</script>
+
+
+</body>
+</html>

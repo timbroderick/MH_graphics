@@ -1,0 +1,391 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2008.0", "value": "N/A", "deals": "5", "value1": "0.0"}, {"year": "2009.0", "value": "$17.5", "deals": "5", "value1": "17.5"}, {"year": "2010.0", "value": "N/A", "deals": "3", "value1": "0.0"}, {"year": "2011.0", "value": "$3.0", "deals": "14", "value1": "2.97"}, {"year": "2012.0", "value": "$73.0", "deals": "12", "value1": "73.0"}, {"year": "2013.0", "value": "$188.5", "deals": "12", "value1": "188.51"}, {"year": "2014.0", "value": "$58.6", "deals": "11", "value1": "58.6"}, {"year": "2015.0", "value": "$168.3", "deals": "19", "value1": "168.34"}, {"year": "2016.0", "value": "$228.6", "deals": "28", "value1": "228.55"}, {"year": "2017.0", "value": "$66.5", "deals": "21", "value1": "66.51"}, {"year": "2018.0", "value": "$320.0", "deals": "26", "value1": "320.0"}];
+</script>
+
+<style type="text/css">
+.graphic { height:300px }
+</style>
+
+    <h2><strong>Growing interest</strong></h2>
+    <p>Private Equity acquisitions of companies specializing in substance abuse treament have increased dramatically since 2008</p>
+
+    <p><strong>Number of deals closed</strong><small><br><i>2008-18*</i> | The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+    <p><strong>Total value of deals</strong><small><br><i>2009-18*</i> | The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+    <div id="graphic1" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4><strong>Top deals by size</strong><br><small>In $ millions, 2008-18*</small></h4>
+              <table class="table table-hover table-striped table-condensed display">
+                  <thead>
+                      <tr>
+                          <th class="thLEFT">Company</th>
+                          <th>Size<br>of deal</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                
+                      <tr>
+                        <td class="tdLEFT">
+                            Addiction Campuses
+                        </td>
+                        <td>
+                          <strong>$275.0</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            The Meadows of Wickenburg
+                        </td>
+                        <td>
+                          <strong>$180.0</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            Meridian Behavioral Health
+                        </td>
+                        <td>
+                          <strong>$120.0</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            Genoa Healthcare
+                        </td>
+                        <td>
+                          <strong>$77.2</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            Lakeview Health
+                        </td>
+                        <td>
+                          <strong>$73.0</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            ReNew Life Formulas
+                        </td>
+                        <td>
+                          <strong>$62.0</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            Habit Opco
+                        </td>
+                        <td>
+                          <strong>$58.0</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            Oceans Healthcare
+                        </td>
+                        <td>
+                          <strong>$48.2</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            Sun Behavioral Health
+                        </td>
+                        <td>
+                          <strong>$44.4</strong>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td class="tdLEFT">
+                            Ideal Option
+                        </td>
+                        <td>
+                          <strong>$35.0</strong>
+                        </td>
+                    </tr>
+                    
+                  </tbody>
+              </table>
+            </div>
+            <div class="col-sm-6">
+              <h4><strong>Top investors by deals closed</strong><br><small>2008-18*</small></h4>
+                  <table class="table table-hover table-striped table-condensed display">
+                      <thead>
+                          <tr>
+                              <th class="thLEFT">Company</th>
+                              <th>Number<br>of deals</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                    
+                          <tr>
+                            <td class="tdLEFT">
+                                Clearview Capital
+                            </td>
+                            <td>
+                              <strong>10</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Frontenac
+                            </td>
+                            <td>
+                              <strong>10</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Summit Behavioral Healthcare
+                            </td>
+                            <td>
+                              <strong>9</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Flexpoint Ford
+                            </td>
+                            <td>
+                              <strong>9</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Behavioral Health Group
+                            </td>
+                            <td>
+                              <strong>8</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Pinnacle Treatment Centers
+                            </td>
+                            <td>
+                              <strong>7</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Pyramid Healthcare
+                            </td>
+                            <td>
+                              <strong>7</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                NewSpring Capital
+                            </td>
+                            <td>
+                              <strong>7</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Webster Capital
+                            </td>
+                            <td>
+                              <strong>6</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Celerity Partners
+                            </td>
+                            <td>
+                              <strong>5</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Audax Group
+                            </td>
+                            <td>
+                              <strong>5</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Centre Partners
+                            </td>
+                            <td>
+                              <strong>5</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Brookside Mezzanine Partners
+                            </td>
+                            <td>
+                              <strong>5</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Revelstoke Capital Partners
+                            </td>
+                            <td>
+                              <strong>5</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Cambria Group
+                            </td>
+                            <td>
+                              <strong>5</strong>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td class="tdLEFT">
+                                Northstar Capital
+                            </td>
+                            <td>
+                              <strong>5</strong>
+                            </td>
+                        </tr>
+                        
+                      </tbody>
+                  </table>
+            </div>
+          </div>
+        </div>
+        <br>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">2018 data is as of Nov. 20</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Pitchbook</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1542749859"></script>
+
+
+</body>
+</html>

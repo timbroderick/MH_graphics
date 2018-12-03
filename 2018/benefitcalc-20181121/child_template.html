@@ -1,0 +1,296 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Community Benefit calculations
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data3.json() }};
+</script>
+
+<style>
+  .table { font-size: 14px; }
+</style>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+    <p>
+      <div class="media teaz">
+        <div class="media-left">
+          <img src="turn.png" width="50px" height="30px" border="0"  class="media-object">
+        </div>
+        <div class="media-body">
+          <p><small>Note: For best results on mobile, please view as landscape.</small></p>
+        </div>
+      </div>
+      <br>
+      <select name="hosreturn" size="1" id="hosreturn">
+        <option value='' >Select a return</option>
+        <option value='5'>CA. | 2014) Adventist Health Clearlake Hospital Inc</option>
+        <option value='6'>CA. | 2015) Adventist Health Clearlake Hospital Inc</option>
+        <option value='7'>CA. | 2013) Central Valley General Hospital</option>
+        <option value='8'>CA. | 2014) Central Valley General Hospital</option>
+        <option value='9'>CA. | 2015) Central Valley General Hospital</option>
+        <option value='26'>CA. | 2014) Community Hospital Of San Bernardino</option>
+        <option value='10'>CA. | 2013) Feather River Hospital</option>
+        <option value='11'>CA. | 2015) Feather River Hospital</option>
+        <option value='12'>CA. | 2016) Feather River Hospital</option>
+        <option value='14'>CA. | 2014) Redwood Memorial Hospital</option>
+        <option value='15'>CA. | 2015) Redwood Memorial Hospital</option>
+        <option value='0'>CA. | 2013) Reedley Community Hospital</option>
+        <option value='1'>CA. | 2014) Reedley Community Hospital</option>
+        <option value='2'>CA. | 2015) Reedley Community Hospital</option>
+        <option value='3'>CA. | 2016) Reedley Community Hospital</option>
+        <option value='25'>CA. | 2015) Sharp Coronado Hospital &</option>
+        <option value='24'>CA. | 2014) Sharp Coronado Hospital & Healthcare Center</option>
+        <option value='16'>CA. | 2013) Sonora Community Hospital</option>
+        <option value='17'>CA. | 2014) Sonora Community Hospital</option>
+        <option value='18'>CA. | 2015) Sonora Community Hospital</option>
+        <option value='19'>CA. | 2016) Sonora Community Hospital</option>
+        <option value='13'>CA. | 2015) St Joseph Hospital Of Eureka</option>
+        <option value='20'>CA. | 2013) Ukiah Adventist Hospital</option>
+        <option value='21'>CA. | 2014) Ukiah Adventist Hospital</option>
+        <option value='22'>CA. | 2015) Ukiah Adventist Hospital</option>
+        <option value='23'>CA. | 2016) Ukiah Adventist Hospital</option>
+        <option value='27'>CA. | 2014) Valley Presbyterian Hospital</option>
+        <option value='28'>CA. | 2013) White Memorial Medical Center</option>
+        <option value='4'>CA. | 2014) Willits Hospital Inc</option>
+        <option value='32'>FL. | 2016) Baker County Medical Services Inc</option>
+        <option value='29'>FL. | 2013) Madison County Hospital Health</option>
+        <option value='30'>FL. | 2014) Madison County Hospital Health</option>
+        <option value='31'>FL. | 2015) Madison County Hospital Health</option>
+        <option value='46'>IL. | 2013) Community Memorial Hospital Association</option>
+        <option value='42'>IL. | 2014) Gottlieb Memorial Hospital</option>
+        <option value='38'>IL. | 2014) Holy Cross Hospital</option>
+        <option value='39'>IL. | 2015) Holy Cross Hospital</option>
+        <option value='40'>IL. | 2014) La Rabida Children'S Hospital</option>
+        <option value='41'>IL. | 2013) Mercy Hospital And Medical Center</option>
+        <option value='33'>IL. | 2014) Mount Sinai Hospital Medical Center</option>
+        <option value='34'>IL. | 2015) Mount Sinai Hospital Medical Center</option>
+        <option value='35'>IL. | 2013) Norwegian American Hospital Inc</option>
+        <option value='36'>IL. | 2014) Norwegian American Hospital Inc</option>
+        <option value='37'>IL. | 2015) Norwegian American Hospital Inc</option>
+        <option value='51'>IL. | 2014) Saint Anthony Hospital</option>
+        <option value='43'>IL. | 2014) Thorek Memorial Hospital</option>
+        <option value='44'>IL. | 2015) Thorek Memorial Hospital</option>
+        <option value='45'>IL. | 2016) Thorek Memorial Hospital</option>
+        <option value='47'>IL. | 2013) Touchette Regional Hospital</option>
+        <option value='48'>IL. | 2014) Touchette Regional Hospital</option>
+        <option value='49'>IL. | 2015) Touchette Regional Hospital</option>
+        <option value='50'>IL. | 2016) Touchette Regional Hospital</option>
+        <option value='53'>NY. | 2015) Blythedale Children'S Hospital</option>
+        <option value='54'>NY. | 2015) Blythedale Children'S Hospital</option>
+        <option value='56'>NY. | 2014) Carthage Area Hospital Inc</option>
+        <option value='52'>NY. | 2016) Interfaith Medical Center Inc</option>
+        <option value='57'>NY. | 2013) Orleans Community Health</option>
+        <option value='55'>NY. | 2013) Westchester-Ellenville Regional Hospital Inc</option>
+        <option value='77'>TX. | 2015) Baylor Specialty Health Centers</option>
+        <option value='67'>TX. | 2015) Bellville St Joseph Health Center</option>
+        <option value='64'>TX. | 2014) Comanche County Medical Center Company</option>
+        <option value='65'>TX. | 2015) Comanche County Medical Center Company</option>
+        <option value='66'>TX. | 2016) Comanche County Medical Center Company</option>
+        <option value='73'>TX. | 2013) Crosbyton Clinic Hospital</option>
+        <option value='74'>TX. | 2014) Crosbyton Clinic Hospital</option>
+        <option value='75'>TX. | 2015) Crosbyton Clinic Hospital</option>
+        <option value='76'>TX. | 2016) Crosbyton Clinic Hospital</option>
+        <option value='59'>TX. | 2013) Dimmit Regional Hospital</option>
+        <option value='60'>TX. | 2014) Dimmit Regional Hospital</option>
+        <option value='61'>TX. | 2015) Dimmit Regional Hospital</option>
+        <option value='62'>TX. | 2016) Dimmit Regional Hospital</option>
+        <option value='58'>TX. | 2014) El Paso Children'S Hospital Corporation</option>
+        <option value='69'>TX. | 2013) Frio Hospital Association</option>
+        <option value='70'>TX. | 2014) Frio Hospital Association</option>
+        <option value='78'>TX. | 2015) Mother Frances Hospital - Winnsboro</option>
+        <option value='63'>TX. | 2013) Scott & White Hospital - Llano</option>
+        <option value='68'>TX. | 2015) Scott & White Hospital-College Station</option>
+        <option value='71'>TX. | 2014) Sid Peterson Memorial Hospital</option>
+        <option value='72'>TX. | 2014) St Mark's Medical Center</option>
+      </select>
+      <input type="button" name="searchItems" id="searchItems"
+      onclick="console.log( $('#hosreturn').val() );"
+      value="Select 990" >
+    </p>
+    <hr>
+    <h3><small>Reported community benefit for</small><br><strong><span id="facility"></span></strong></h3>
+    <ul>
+      <li>City, state: <strong><span id="city"></span></strong>, <strong><span id="state"></span></strong></li>
+      <li>Tax year: <strong><span id="year"></span></strong></li>
+      <li>Total expense: <strong><span id="expense"></span></strong> | Net income: <strong><span id="net"></span></strong></li>
+    </ul>
+    <table id="gfx" class="table table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT" colspan="2"></th>
+        <th colspan="2">Column E) Net community benefit expense</th>
+        <th colspan="2">Column F) Reported percent of total expense</th>
+      </thead>
+      <tbody>
+        <tr><td class="tdLEFT" colspan="2"><strong>Schedule H, Line 7</strong></td><td><span>Reported</span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span>Calculated</span></td><td><span>Reported</span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span>Calculated</span></td></tr>
+        <tr><td class="tdLEFT" colspan="2" style="padding:2px; margin:2px; background-color: #eee;"><strong>Financial-Assistance and means-tested government programs</strong></td><td style="padding:2px; margin:2px; background-color: #eee;" colspan="2"></td><td style="padding:2px; margin:2px; background-color: #eee;" colspan="2"></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7A)</strong> Financial Assistance at cost</td><td><span id="lineacole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="lineacolecalc"></span></td><td><span id="lineacolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="lineacalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7B)</strong> Medicaid</td><td><span id="linebcole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linebcolecalc"></td><td><span id="linebcolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linebcalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7C)</strong> Costs of other means-tested government programs</td><td><span id="lineccole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="lineccolecalc"></td><td><span id="lineccolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="lineccalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7D)</strong> Total financial assistance and means-tested government programs</td><td><span id="linedcole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linedcolecalc"></td><td><span id="linedcolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linedcalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2" style="padding:2px; margin:2px; background-color: #eee;"><strong>Other benefits</strong></td><td style="padding:2px; margin:2px; background-color: #eee;" colspan="2"></td><td style="padding:2px; margin:2px; background-color: #eee;" colspan="2"></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7E)</strong> Community health improvement services and community benefit operations</td><td><span id="lineecole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="lineecolecalc"></td><td><span id="lineecolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="lineecalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7F)</strong> Health professions education</td><td><span id="linefcole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linefcolecalc"></td><td><span id="linefcolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linefcalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7G)</strong> Subsidized health services</td><td><span id="linegcole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linegcolecalc"></td><td><span id="linegcolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linegcalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7H)</strong> Research</td><td><span id="linehcole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linehcolecalc"></td><td><span id="linehcolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linehcalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7I)</strong> Cash and in-kind contributions for community benefit</td><td><span id="lineicole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="lineicolecalc"></td><td><span id="lineicolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="lineicalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7J)</strong> Total other benefits</td><td><span id="linejcole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linejcolecalc"></td><td><span id="linejcolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linejcalc"></span></td></tr>
+        <tr><td class="tdLEFT" colspan="2"><strong>Line 7K)</strong> Total Add lines 7d and 7j</td><td><span id="linekcole"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linekcolecalc"></td><td><span id="linekcolf"></span></td><td style="padding: 2px 5px; margin: 0px; background-color: #fff9b8;"><span id="linekcalc"></span></td></tr>
+    </tbody>
+  </table>
+</p>
+
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+<script>
+var it = '5';
+$('#facility').html(DATA[it].facility);
+$('#city').html(DATA[it].city);
+$('#state').html(DATA[it].state);
+$('#year').html(DATA[it].tax_year);
+$('#expense').html(DATA[it].expense);
+$('#net').html(DATA[it].net);
+$('#lineacole').html(DATA[it].linea_cole);
+$('#lineacolf').html(DATA[it].linea_colf);
+$('#lineacalc').html(DATA[it].linea_calc);
+$('#linebcole').html(DATA[it].lineb_cole);
+$('#linebcolf').html(DATA[it].lineb_colf);
+$('#linebcalc').html(DATA[it].lineb_calc);
+$('#lineccole').html(DATA[it].linec_cole);
+$('#lineccolf').html(DATA[it].linec_colf);
+$('#lineccalc').html(DATA[it].linec_calc);
+$('#linedcole').html(DATA[it].lined_cole);
+$('#linedcolf').html(DATA[it].lined_colf);
+$('#linedcalc').html(DATA[it].lined_calc);
+$('#lineecole').html(DATA[it].linee_cole);
+$('#lineecolf').html(DATA[it].linee_colf);
+$('#lineecalc').html(DATA[it].linee_calc);
+$('#linefcole').html(DATA[it].linef_cole);
+$('#linefcolf').html(DATA[it].linefcolf);
+$('#linefcalc').html(DATA[it].linef_calc);
+$('#linegcole').html(DATA[it].lineg_cole);
+$('#linegcolf').html(DATA[it].lineg_colf);
+$('#linegcalc').html(DATA[it].lineg_calc);
+$('#linehcole').html(DATA[it].lineh_cole);
+$('#linehcolf').html(DATA[it].lineh_colf);
+$('#linehcalc').html(DATA[it].lineh_calc);
+$('#lineicole').html(DATA[it].linei_cole);
+$('#lineicolf').html(DATA[it].linei_colf);
+$('#lineicalc').html(DATA[it].linei_calc);
+$('#linejcole').html(DATA[it].linej_cole);
+$('#linejcolf').html(DATA[it].linej_colf);
+$('#linejcalc').html(DATA[it].linej_calc);
+$('#linekcole').html(DATA[it].linek_cole);
+$('#linekcolf').html(DATA[it].linek_colf);
+$('#linekcalc').html(DATA[it].linek_calc);
+$('#lineacolecalc').html(DATA[it].linea_cole_calc);
+$('#linebcolecalc').html(DATA[it].lineb_cole_calc);
+$('#lineccolecalc').html(DATA[it].linec_cole_calc);
+$('#linedcolecalc').html(DATA[it].lined_cole_calc);
+$('#lineecolecalc').html(DATA[it].linee_cole_calc);
+$('#linefcolecalc').html(DATA[it].linef_cole_calc);
+$('#linegcolecalc').html(DATA[it].lineg_cole_calc);
+$('#linehcolecalc').html(DATA[it].lineh_cole_calc);
+$('#lineicolecalc').html(DATA[it].linei_cole_calc);
+$('#linejcolecalc').html(DATA[it].linej_cole_calc);
+$('#linekcolecalc').html(DATA[it].linek_cole_calc);
+$('#searchItems').click(function() {
+    var it = $('#hosreturn').val();
+    $('#facility').html(DATA[it].facility);
+    $('#city').html(DATA[it].city);
+    $('#state').html(DATA[it].state);
+    $('#year').html(DATA[it].tax_year);
+    $('#expense').html(DATA[it].expense);
+    $('#net').html(DATA[it].net);
+    $('#lineacole').html(DATA[it].linea_cole);
+    $('#lineacolf').html(DATA[it].linea_colf);
+    $('#lineacalc').html(DATA[it].linea_calc);
+    $('#linebcole').html(DATA[it].lineb_cole);
+    $('#linebcolf').html(DATA[it].lineb_colf);
+    $('#linebcalc').html(DATA[it].lineb_calc);
+    $('#lineccole').html(DATA[it].linec_cole);
+    $('#lineccolf').html(DATA[it].linec_colf);
+    $('#lineccalc').html(DATA[it].linec_calc);
+    $('#linedcole').html(DATA[it].lined_cole);
+    $('#linedcolf').html(DATA[it].lined_colf);
+    $('#linedcalc').html(DATA[it].lined_calc);
+    $('#lineecole').html(DATA[it].linee_cole);
+    $('#lineecolf').html(DATA[it].linee_colf);
+    $('#lineecalc').html(DATA[it].linee_calc);
+    $('#linefcole').html(DATA[it].linef_cole);
+    $('#linefcolf').html(DATA[it].linefcolf);
+    $('#linefcalc').html(DATA[it].linef_calc);
+    $('#linegcole').html(DATA[it].lineg_cole);
+    $('#linegcolf').html(DATA[it].lineg_colf);
+    $('#linegcalc').html(DATA[it].lineg_calc);
+    $('#linehcole').html(DATA[it].lineh_cole);
+    $('#linehcolf').html(DATA[it].lineh_colf);
+    $('#linehcalc').html(DATA[it].lineh_calc);
+    $('#lineicole').html(DATA[it].linei_cole);
+    $('#lineicolf').html(DATA[it].linei_colf);
+    $('#lineicalc').html(DATA[it].linei_calc);
+    $('#linejcole').html(DATA[it].linej_cole);
+    $('#linejcolf').html(DATA[it].linej_colf);
+    $('#linejcalc').html(DATA[it].linej_calc);
+    $('#linekcole').html(DATA[it].linek_cole);
+    $('#linekcolf').html(DATA[it].linek_colf);
+    $('#linekcalc').html(DATA[it].linek_calc);
+    $('#lineacolecalc').html(DATA[it].linea_cole_calc);
+    $('#linebcolecalc').html(DATA[it].lineb_cole_calc);
+    $('#lineccolecalc').html(DATA[it].linec_cole_calc);
+    $('#linedcolecalc').html(DATA[it].lined_cole_calc);
+    $('#lineecolecalc').html(DATA[it].linee_cole_calc);
+    $('#linefcolecalc').html(DATA[it].linef_cole_calc);
+    $('#linegcolecalc').html(DATA[it].lineg_cole_calc);
+    $('#linehcolecalc').html(DATA[it].lineh_cole_calc);
+    $('#lineicolecalc').html(DATA[it].linei_cole_calc);
+    $('#linejcolecalc').html(DATA[it].linej_cole_calc);
+    $('#linekcolecalc').html(DATA[it].linek_cole_calc);
+});
+</script>
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <!--</div>
+          </div>
+        </div>-->
+
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}
