@@ -1,0 +1,187 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"issue": "Financial challenges", "rank": "2.8"}, {"issue": "Governmental mandates", "rank": "5.1"}, {"issue": "Patient safety and quality", "rank": "5.1"}, {"issue": "Personnel shortages", "rank": "5.2"}, {"issue": "Behavioral health<br>addiction issues", "rank": "5.3"}, {"issue": "Patient satisfaction", "rank": "6.1"}, {"issue": "Access to care", "rank": "6.2"}, {"issue": "Physician-hospital relations", "rank": "6.6"}, {"issue": "Technology", "rank": "7.7"}, {"issue": "Population health<br>management", "rank": "8.1"}, {"issue": "Reorganization", "rank": "8.3"}];
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+    <h2><strong>Top issues facing hospital CEOs </strong></h2>
+    <p>Annual survey by the American College of Healthcare Executives shows financial challenges considered highest among issues ranked.<br><strong>1 = highest concern, 10 = lowest concern</strong></p>
+
+    <table class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">Issue</th>
+        <th></th>
+        <th>Rank</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Financial challenges</td>
+            <td>2.8</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Governmental mandates</td>
+            <td>5.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Patient safety and quality</td>
+            <td>5.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Personnel shortages</td>
+            <td>5.2</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Behavioral health<br>addiction issues</td>
+            <td>5.3</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Patient satisfaction</td>
+            <td>6.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Access to care</td>
+            <td>6.2</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Physician-hospital relations</td>
+            <td>6.6</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Technology</td>
+            <td>7.7</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Population health<br>management</td>
+            <td>8.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Reorganization</td>
+            <td>8.3</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit"><ul><li>Average rank given to each issue was used to place the issue in order of how pressing they are to hospital CEOs.</li><li>Reorganization refers to issues such as mergers, acquisitions, restructuring and partnerships.</li><li>The survey was confined to CEOs of community hospitals (nonfederal, short-term, nonspecialty hospitals).</li></ul>
+</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: American College of Healthcare Executives annual survey</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1547756823"></script>
+
+
+</body>
+</html>

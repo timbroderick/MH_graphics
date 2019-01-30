@@ -1,0 +1,385 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    CEOs on boards
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+
+var DATA = [{"first": "Richard", "last": "Afable", "Health system": "Providence St Joseph Health", "City, State": "Renton, Wash.", "Board Director of:": "Aclerx Pharmaceuticals ", "Amount of Shares": "67875.0", "Value of shares": "0", "Latest Annual Director Compensation": "47500.0", "Director Since": "2013.0", "Stock price": null, "Ticker": "NA", "DO NOT SORT THESE COLUMNS": "39.04"}, {"first": "Barclay", "last": "Berdan", "Health system": "Texas Health Resources", "City, State": "Arlington, Texas", "Board Director of:": "Premier ", "Amount of Shares": "1908703.0", "Value of shares": "74515765.12", "Latest Annual Director Compensation": "169750.0", "Director Since": "2015.0", "Stock price": "39.04", "Ticker": "pinc", "DO NOT SORT THESE COLUMNS": "55.81"}, {"first": "Marna", "last": "Borgstrom", "Health system": "Yale New Haven Hospital", "City, State": "New Haven, Conn.", "Board Director of:": "Cryolife ", "Amount of Shares": "3456.0", "Value of shares": "0", "Latest Annual Director Compensation": null, "Director Since": "2018.0", "Stock price": null, "Ticker": null, "DO NOT SORT THESE COLUMNS": "139.24"}, {"first": "Richard", "last": "Breon", "Health system": "Spectrum Health", "City, State": "Grand Rapids, Mich.", "Board Director of:": "WellCare Health Plans ", "Amount of Shares": "8906.0", "Value of shares": "2246627.56", "Latest Annual Director Compensation": "119000.0", "Director Since": "2013.0", "Stock price": "252.26", "Ticker": "wcg", "DO NOT SORT THESE COLUMNS": "327.18"}, {"first": "Lloyd", "last": "Dean", "Health system": "Dignity Health", "City, State": "San Francisco", "Board Director of:": "McDonalds", "Amount of Shares": "4406.0", "Value of shares": "815286.24", "Latest Annual Director Compensation": "110000.0", "Director Since": "2015.0", "Stock price": "185.04", "Ticker": "mcd", "DO NOT SORT THESE COLUMNS": "78.21"}, {"first": "David", "last": "Feinberg", "Health system": "Geisinger Health System", "City, State": "Danville, Pa.", "Board Director of:": "Douglas Emmett ", "Amount of Shares": "36386.0", "Value of shares": "1321539.52", "Latest Annual Director Compensation": "149644.0", "Director Since": "2011.0", "Stock price": "36.32", "Ticker": "dei", "DO NOT SORT THESE COLUMNS": "133.62"}, {"first": "Peter", "last": "Fine", "Health system": "Banner Health", "City, State": "Phoenix", "Board Director of:": "Premier ", "Amount of Shares": "2635715.0", "Value of shares": "102898313.6", "Latest Annual Director Compensation": "221000.0", "Director Since": "2013.0", "Stock price": "39.04", "Ticker": "pinc", "DO NOT SORT THESE COLUMNS": "36.32"}, {"first": "Teri", "last": "Fontenot", "Health system": "Woman's Hospital", "City, State": "Baton Rouge, La.", "Board Director of:": "Amerisafe ", "Amount of Shares": "1995.0", "Value of shares": "125126.4", "Latest Annual Director Compensation": "60000.0", "Director Since": "2016.0", "Stock price": "62.72", "Ticker": "amsf", "DO NOT SORT THESE COLUMNS": "94.37"}, {"first": "Dean", "last": "Harrison", "Health system": "Northwestern Memorial HealthCare", "City, State": "Chicago", "Board Director of:": "Northern Trust ", "Amount of Shares": "3573.0", "Value of shares": "337184.01", "Latest Annual Director Compensation": "130000.0", "Director Since": "2015.0", "Stock price": "94.37", "Ticker": "ntrs", "DO NOT SORT THESE COLUMNS": "28.23"}, {"first": "Nancy", "last": "Howell Agee", "Health system": "Carilion Clinic", "City, State": "Roanoke, Va.", "Board Director of:": "RGC Resources ", "Amount of Shares": "31669.0", "Value of shares": "868680.67", "Latest Annual Director Compensation": "6800.0", "Director Since": "2005.0", "Stock price": "27.43", "Ticker": "rgco", "DO NOT SORT THESE COLUMNS": "96.49"}, {"first": "Laura", "last": "Kaiser", "Health system": "SSM Health", "City, State": "St. Louis", "Board Director of:": "Nuance Communications ", "Amount of Shares": "30156.0", "Value of shares": "472846.08", "Latest Annual Director Compensation": null, "Director Since": "2018.0", "Stock price": "15.68", "Ticker": "nuan", "DO NOT SORT THESE COLUMNS": "37.85"}, {"first": "Stephen", "last": "Klasko", "Health system": "Jefferson Health", "City, State": "Philadelphia", "Board Director of:": "Teleflex ", "Amount of Shares": "27565.0", "Value of shares": "7337251.7", "Latest Annual Director Compensation": "63000.0", "Director Since": "2008.0", "Stock price": "266.18", "Ticker": "tfx", "DO NOT SORT THESE COLUMNS": "24.74"}, {"first": "Mark", "last": "Laret", "Health system": "University of California San Francisco Medical Center", "City, State": "San Francisco", "Board Director of:": "Nuance Communications ", "Amount of Shares": "64147.0", "Value of shares": "1005824.96", "Latest Annual Director Compensation": "87643.0", "Director Since": "2010.0", "Stock price": "15.68", "Ticker": "nuan", "DO NOT SORT THESE COLUMNS": "22.16"}, {"first": "John", "last": "Lloyd", "Health system": "Hackensack Meridian Health", "City, State": "Edison, N.J.", "Board Director of:": "OceanFirst Financial Corp", "Amount of Shares": "1595.0", "Value of shares": "39460.3", "Latest Annual Director Compensation": null, "Director Since": "2018.0", "Stock price": "24.74", "Ticker": "ocfc", "DO NOT SORT THESE COLUMNS": "69.55"}, {"first": "Kevin", "last": "Lofton", "Health system": "Catholic Health Initiatives", "City, State": "Englewood, Colo.", "Board Director of:": "Gilead Sciences ", "Amount of Shares": "156435.0", "Value of shares": "10880054.25", "Latest Annual Director Compensation": "115000.0", "Director Since": "2009.0", "Stock price": "69.55", "Ticker": "gild", "DO NOT SORT THESE COLUMNS": "1.04"}, {"first": "Kevin", "last": "Lofton", "Health system": "Catholic Health Initiatives", "City, State": "Englewood, Colo.", "Board Director of:": "Rite Aid ", "Amount of Shares": "114074.0", "Value of shares": "118636.96", "Latest Annual Director Compensation": "110000.0", "Director Since": "2013.0", "Stock price": "1.04", "Ticker": "rad", "DO NOT SORT THESE COLUMNS": "15.68"}, {"first": "Jody", "last": "Lomeo", "Health system": "Kaleida Health ", "City, State": "Buffalo, N.Y.", "Board Director of:": "Evans Bancorp ", "Amount of Shares": "1074.0", "Value of shares": "40650.9", "Latest Annual Director Compensation": "11456.0", "Director Since": "2017.0", "Stock price": "37.85", "Ticker": "evbn", "DO NOT SORT THESE COLUMNS": "185.04"}, {"first": "Michael", "last": "Murphy", "Health system": "Sharp HealthCare", "City, State": "San Diego", "Board Director of:": "Jack In The Box ", "Amount of Shares": "61317.0", "Value of shares": "5301467.82", "Latest Annual Director Compensation": "95000.0", "Director Since": "2002.0", "Stock price": "86.46", "Ticker": "jack", "DO NOT SORT THESE COLUMNS": "252.26"}, {"first": "Elizabeth", "last": "Nabel", "Health system": "Brigham Health", "City, State": "Boston", "Board Director of:": "Medtronic ", "Amount of Shares": "6400.0", "Value of shares": "617536", "Latest Annual Director Compensation": "203875.0", "Director Since": "2014.0", "Stock price": "96.49", "Ticker": "mdt", "DO NOT SORT THESE COLUMNS": "40.77"}, {"first": "John", "last": "Noseworthy", "Health system": "Mayo Clinic", "City, State": "Rochester, Minn.", "Board Director of:": "Merck & Co. ", "Amount of Shares": "3847.0", "Value of shares": "300873.87", "Latest Annual Director Compensation": "64167.0", "Director Since": "2017.0", "Stock price": "78.21", "Ticker": "mrk", "DO NOT SORT THESE COLUMNS": "64.07"}, {"first": "Barry", "last": "Ostrowsky", "Health system": "RWJBarnabas Health", "City, State": "West Orange, N.J.", "Board Director of:": "Public Service Enterprise Group", "Amount of Shares": "2604.0", "Value of shares": "145329.24", "Latest Annual Director Compensation": null, "Director Since": "2018.0", "Stock price": "55.81", "Ticker": "peg", "DO NOT SORT THESE COLUMNS": "123.15"}, {"first": "Ronald", "last": "Paulus", "Health system": "Mission Health", "City, State": "Asheville, N.C.", "Board Director of:": "Vocera Communications ", "Amount of Shares": "3774.0", "Value of shares": "151526.1", "Latest Annual Director Compensation": null, "Director Since": "2018.0", "Stock price": "40.15", "Ticker": "vcra", "DO NOT SORT THESE COLUMNS": "40.15"}, {"first": "Scott", "last": "Reiner", "Health system": "Adventist Health", "City, State": "Roseville, Calif.", "Board Director of:": "Premier ", "Amount of Shares": "3160984.0", "Value of shares": "123404815.4", "Latest Annual Director Compensation": "191750.0", "Director Since": "2015.0", "Stock price": "39.04", "Ticker": "pinc", "DO NOT SORT THESE COLUMNS": "266.18"}, {"first": "Ronald", "last": "Rittenmeyer", "Health system": "Tenet Healthcare", "City, State": "Dallas", "Board Director of:": "American International Group", "Amount of Shares": "15704.0", "Value of shares": "640252.08", "Latest Annual Director Compensation": "170000.0", "Director Since": "2010.0", "Stock price": "40.77", "Ticker": "aig", "DO NOT SORT THESE COLUMNS": "70.04"}, {"first": "Ronald", "last": "Rittenmeyer", "Health system": "Tenet Healthcare", "City, State": "Dallas", "Board Director of:": "IQVIA Holdings ", "Amount of Shares": "76435.0", "Value of shares": "9412970.25", "Latest Annual Director Compensation": "135000.0", "Director Since": "2016.0", "Stock price": "123.15", "Ticker": "iqv", "DO NOT SORT THESE COLUMNS": "62.72"}, {"first": "William", "last": "Roper", "Health system": "UNC Health Care System", "City, State": "Chapel Hill, N.C.", "Board Director of:": "DaVita ", "Amount of Shares": "61824.0", "Value of shares": "3961063.68", "Latest Annual Director Compensation": "155000.0", "Director Since": "2001.0", "Stock price": "64.07", "Ticker": "dva", "DO NOT SORT THESE COLUMNS": "0.6826"}, {"first": "William", "last": "Roper", "Health system": "UNC Health Care System", "City, State": "Chapel Hill, N.C.", "Board Director of:": "Express Scripts Holding Co.", "Amount of Shares": "31491.0", "Value of shares": "3112570.44", "Latest Annual Director Compensation": "115000.0", "Director Since": "2012.0", "Stock price": "98.84", "Ticker": "esrx", "DO NOT SORT THESE COLUMNS": "98.84"}, {"first": "Paul", "last": "Rothman", "Health system": "Johns Hopkins Medicine", "City, State": "Baltimore", "Board Director of:": "Merck & Co. ", "Amount of Shares": "7758.0", "Value of shares": "606753.18", "Latest Annual Director Compensation": "115833.0", "Director Since": "2015.0", "Stock price": "78.21", "Ticker": "mrk", "DO NOT SORT THESE COLUMNS": "86.46"}, {"first": "Kenneth", "last": "Samet", "Health system": "MedStar Health ", "City, State": "Columbia, Md.", "Board Director of:": "Evolent Health ", "Amount of Shares": "12420.0", "Value of shares": "275227.2", "Latest Annual Director Compensation": "52500.0", "Director Since": "2015.0", "Stock price": "22.16", "Ticker": "evh", "DO NOT SORT THESE COLUMNS": "27.43"}, {"first": "Bernard", "last": "Tyson", "Health system": "Kaiser Permanente", "City, State": "Oakland, Calif.", "Board Director of:": "Salesforce ", "Amount of Shares": "2468.0", "Value of shares": "343644.32", "Latest Annual Director Compensation": "12500.0", "Director Since": "2017.0", "Stock price": "139.24", "Ticker": "crm", "DO NOT SORT THESE COLUMNS": null}, {"first": "Christopher", "last": "Van Gorder", "Health system": "Scripps Health", "City, State": "San Diego", "Board Director of:": "Abiomed ", "Amount of Shares": "5244.0", "Value of shares": "1715731.92", "Latest Annual Director Compensation": "65000.0", "Director Since": "2016.0", "Stock price": "327.18", "Ticker": "abmd", "DO NOT SORT THESE COLUMNS": null}, {"first": "Thomas", "last": "Zenty", "Health system": "University Hospitals", "City, State": "Cleveland", "Board Director of:": "Endologix ", "Amount of Shares": "69396.0", "Value of shares": "47369.7096", "Latest Annual Director Compensation": "41400.0", "Director Since": "2013.0", "Stock price": "0.6826", "Ticker": "elgx", "DO NOT SORT THESE COLUMNS": null}];
+
+$(document).ready(function() {
+    $('#gfx').DataTable( {
+      "paging": false,
+      "iDisplayLength": 40
+      } );
+} );
+
+</script>
+
+
+    <h2><strong>Corporate board compensation among health system CEOs</strong></h2>
+    <p>An examination of healthcare CEOs sitting on boards found a wide range of payment rates.<br>
+    <small><strong>The list below is interactive: <span style="color:red">Sort</span> by clicking on the column heading, or <span style="color:red">look for specifics</span> using the search box.</strong></small></p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%"  >
+        <thead>
+        <th class="thLEFT">Company | CEO name</th>
+      </thead><tbody>
+        
+        <tr><td class="tdLEFT">
+          <strong>Adventist Health (Calif.)</strong> |  Scott Reiner<br>
+          <ul>
+            <li><strong>Board:</strong> Premier</li>
+            <li><strong>Latest annual director compensation:</strong> $191,750</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Banner Health</strong> |  Peter Fine<br>
+          <ul>
+            <li><strong>Board:</strong> Premier</li>
+            <li><strong>Latest annual director compensation:</strong> $221,000</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Brigham Health</strong> |  Dr. Elizabeth Nabel<br>
+          <ul>
+            <li><strong>Board:</strong> Medtronic</li>
+            <li><strong>Latest annual director compensation:</strong> $378,892</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Carilion Clinic</strong> |  Nancy Howell Agee<br>
+          <ul>
+            <li><strong>Board:</strong> RGC Resources</li>
+            <li><strong>Latest annual director compensation:</strong> $31,767</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Catholic Health Initiatives</strong> |  Kevin Lofton<br>
+          <ul>
+            <li><strong>Board:</strong> Gilead Sciences</li>
+            <li><strong>Latest annual director compensation:</strong> $415,803</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Catholic Health Initiatives</strong> |  Kevin Lofton<br>
+          <ul>
+            <li><strong>Board:</strong> Rite Aid</li>
+            <li><strong>Latest annual director compensation:</strong> $230,083</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Dignity Health</strong> |  Lloyd Dean<br>
+          <ul>
+            <li><strong>Board:</strong> McDonald’s Corp.</li>
+            <li><strong>Latest annual director compensation:</strong> $280,800</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Geisinger</strong> |  Dr. David Feinberg<br>
+          <ul>
+            <li><strong>Board:</strong> Douglas Emmett</li>
+            <li><strong>Latest annual director compensation:</strong> $149,644</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Hackensack Meridian Health</strong> |  John Lloyd<br>
+          <ul>
+            <li><strong>Board:</strong> OceanFirst Financial Corp.</li>
+            
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Jefferson Health</strong> |  Dr. Stephen Klasko<br>
+          <ul>
+            <li><strong>Board:</strong> Teleflex</li>
+            <li><strong>Latest annual director compensation:</strong> $205,085</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Johns Hopkins Medicine</strong> |  Dr. Paul Rothman<br>
+          <ul>
+            <li><strong>Board:</strong> Merck & Co.</li>
+            <li><strong>Latest annual director compensation:</strong> $311,833</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Kaiser Permanente</strong> |  Bernard Tyson<br>
+          <ul>
+            <li><strong>Board:</strong> Salesforce</li>
+            <li><strong>Latest annual director compensation:</strong> $151,165</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Kaleida Health</strong> |  Jody Lomeo<br>
+          <ul>
+            <li><strong>Board:</strong> Evans Bancorp</li>
+            <li><strong>Latest annual director compensation:</strong> $21,596</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Mayo Clinic</strong> |  Dr. John Noseworthy<br>
+          <ul>
+            <li><strong>Board:</strong> Merck & Co.</li>
+            <li><strong>Latest annual director compensation:</strong> $234,167</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>MedStar Health</strong> |  Kenneth Samet<br>
+          <ul>
+            <li><strong>Board:</strong> Evolent Health</li>
+            <li><strong>Latest annual director compensation:</strong> $177,500</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Mission Health</strong> |  Dr. Ronald Paulus<br>
+          <ul>
+            <li><strong>Board:</strong> Vocera Communications</li>
+            
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Northwell Health</strong> |  Michael Dowling<br>
+          <ul>
+            <li><strong>Board:</strong> BankUnited</li>
+            <li><strong>Latest annual director compensation:</strong> $134,410</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Northwestern Memorial HealthCare</strong> |  Dean Harrison<br>
+          <ul>
+            <li><strong>Board:</strong> Northern Trust</li>
+            <li><strong>Latest annual director compensation:</strong> $239,964</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>RWJBarnabas Health</strong> |  Barry Ostrowsky<br>
+          <ul>
+            <li><strong>Board:</strong> Public Service Enterprise Group</li>
+            <li><strong>Latest annual director compensation:</strong> $135,043</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Scripps Health</strong> |  Chris Van Gorder<br>
+          <ul>
+            <li><strong>Board:</strong> Abiomed</li>
+            <li><strong>Latest annual director compensation:</strong> $269,956</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Sharp HealthCare</strong> |  Michael Murphy<br>
+          <ul>
+            <li><strong>Board:</strong> Jack In The Box</li>
+            <li><strong>Latest annual director compensation:</strong> $263,852</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Spectrum Health</strong> |  Richard Breon<br>
+          <ul>
+            <li><strong>Board:</strong> WellCare Health Plans</li>
+            <li><strong>Latest annual director compensation:</strong> $293,955</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>SSM Health</strong> |  Laura Kaiser<br>
+          <ul>
+            <li><strong>Board:</strong> Nuance Communications</li>
+            
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Tenet Healthcare</strong> |  Ronald Rittenmeyer<br>
+          <ul>
+            <li><strong>Board:</strong> American International Group</li>
+            <li><strong>Latest annual director compensation:</strong> $299,978</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Tenet Healthcare</strong> |  Ronald Rittenmeyer<br>
+          <ul>
+            <li><strong>Board:</strong> IQVIA Holdings</li>
+            <li><strong>Latest annual director compensation:</strong> $334,947</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Texas Health Resources</strong> |  Barclay Berdan<br>
+          <ul>
+            <li><strong>Board:</strong> Premier</li>
+            <li><strong>Latest annual director compensation:</strong> $169,750</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>UNC Health Care System</strong> |  Dr. William Roper<br>
+          <ul>
+            <li><strong>Board:</strong> DaVita</li>
+            <li><strong>Latest annual director compensation:</strong> $339,857</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>UNC Health Care System</strong> |  Dr. William Roper<br>
+          <ul>
+            <li><strong>Board:</strong> Express Scripts Holding Co.</li>
+            <li><strong>Latest annual director compensation:</strong> $315,000</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>University Hospitals (Ohio)</strong> |  Thomas Zenty<br>
+          <ul>
+            <li><strong>Board:</strong> Endologix</li>
+            <li><strong>Latest annual director compensation:</strong> $151,558</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>UCSF Health</strong> |  Mark Laret<br>
+          <ul>
+            <li><strong>Board:</strong> Nuance Communications</li>
+            <li><strong>Latest annual director compensation:</strong> $327,476</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Woman's Hospital (La.)</strong> |  Teri Fontenot<br>
+          <ul>
+            <li><strong>Board:</strong> Amerisafe</li>
+            <li><strong>Latest annual director compensation:</strong> $109,972</li>
+          </ul>
+        </td></tr>
+        
+        <tr><td class="tdLEFT">
+          <strong>Yale New Haven Health</strong> |  Marna Borgstrom<br>
+          <ul>
+            <li><strong>Board:</strong> Cryolife</li>
+            
+          </ul>
+        </td></tr>
+        
+    </tbody></table>
+
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Modern Healthcare research; latest Securities and Exchange Commission proxy statements</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1544220405"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    CEOs on boards
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+
+var DATA = {{ COPY.data.json() }};
+
+$(document).ready(function() {
+    $('#gfx').DataTable( {
+      "paging": false,
+      "iDisplayLength": 40
+      } );
+} );
+
+</script>
+
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+    <small><strong>The list below is interactive: <span style="color:red">Sort</span> by clicking on the column heading, or <span style="color:red">look for specifics</span> using the search box.</strong></small></p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%"  >
+        <thead>
+        <th class="thLEFT">Company | CEO name</th>
+      </thead><tbody>
+        {% for row in COPY.datacopy %}
+        <tr><td class="tdLEFT">
+          <strong>{{ row.system }}</strong> |  {{ row.name }}<br>
+          <ul>
+            <li><strong>Board:</strong> {{ row.board }}</li>
+            {% if row.latest_comp %}<li><strong>Latest annual director compensation:</strong> {{ row.latest_comp }}</li>{% endif %}
+          </ul>
+        </td></tr>
+        {% endfor %}
+    </tbody></table>
+
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

@@ -1,0 +1,152 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>Sutter&#8217;s chargemaster</strong></h2>
+    <p>Sutter Health published their list of retail charges in a large file and a format difficult for the average consumer to use.<br>Modern Healthcare decided to see how long it would take to present the data in a more consumer-friendly format. It took less than two hours - with a break for lunch - to create the 29 PDF files linked below.</p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">Facility</th>
+        <th>File</th>
+      </thead>
+      <tbody>
+        <tr><td class="tdLEFT">Alta Bates Summit Medical Center - Alta Bates Campus</td><td><a href="files/ABMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Alta Bates Summit Medical Center - Summit Campus</td><td><a href="files/SMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">California Pacific Medical Center</td><td><a href="files/CPMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">California Pacific Medical Center - Davies Campus</td><td><a href="files/CPMCD_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">California Pacific Medical Center - Pacific Campus</td><td><a href="files/CPMCP_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Eden Medical Center</td><td><a href="files/EMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Kahi Mohala</td><td><a href="files/Kahi_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Memorial Hospital Los Banos</td><td><a href="files/MHLB_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Memorial Medical Center, Modesto</td><td><a href="files/MMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Mills-Peninsula Health Services</td><td><a href="files/MPHS_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Menlo Park Surgical Hospital</td><td><a href="files/MPSH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Novato Community Hospital</td><td><a href="files/NCH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Auburn Faith Hospital</td><td><a href="files/SAFH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Amador Hospital</td><td><a href="files/SAH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Coast Hospital</td><td><a href="files/SCH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Center for Psychiatry</td><td><a href="files/SCP_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Davis Hospital</td><td><a href="files/SDH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Delta Medical Center</td><td><a href="files/SDMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Surgical Hospital North Valley</td><td><a href="files/SHNV_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Lakeside Hospital</td><td><a href="files/SLH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Medical Center Sacramento</td><td><a href="files/SMCS_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Medical Center of Santa Rosa</td><td><a href="files/SMCSR_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Maternity & Surgery Center of Santa Cruz</td><td><a href="files/SMSC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Roseville Medical Center</td><td><a href="files/SRMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Stanislaus Surgical Hospital</td><td><a href="files/SSH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Solano Medical Center</td><td><a href="files/SSMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Tracy Community Hospital</td><td><a href="files/STCH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">St. Luke's Hospital</td><td><a href="files/STLH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Pharmacy</td><td><a href="files/sutter_pharma.pdf" target="_blank">Click here for PDF</a></td></tr>
+    </tbody>
+  </table>
+</p>
+
+
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">These files are not intended to be a replacement for the data available from the file at sutterhealth.org/for-patients/chargemaster-2019.json</p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Sutter chargemaster file at sutterhealth.org/for-patients/chargemaster-2019.json
+</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1547071681"></script>
+
+
+</body>
+</html>

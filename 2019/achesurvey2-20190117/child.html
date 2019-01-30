@@ -1,0 +1,316 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"concern": "Increasing costs for staff, supplies, etc.", "percent": "70%"}, {"concern": "Medicaid reimbursement (including adequacy and timeliness of payment, etc.)", "percent": "68%"}, {"concern": "Reducing operating costs", "percent": "59%"}, {"concern": "Bad debt (including uncollectable emergency department and other charges)", "percent": "56%"}, {"concern": "Competition from other providers (of any type\u2014inpatient, outpatient, ambulatory care, diagnostic, retail, etc.)", "percent": "50%"}, {"concern": "Managed care and other commercial insurance payments", "percent": "50%"}, {"concern": "Medicare reimbursement (including adequacy and timeliness of payment, etc.)", "percent": "49%"}, {"concern": "Government funding cuts (other than reduced reimbursement for Medicaid or Medicare)", "percent": "48%"}, {"concern": "Transition from volume to value", "percent": "48%"}, {"concern": "Revenue cycle management (converting charges to cash)", "percent": "43%"}, {"concern": "Inadequate funding for capital improvements", "percent": "37%"}, {"concern": "Emergency department overuse", "percent": "31%"}, {"concern": "Moving away from fee-for-service", "percent": "30%"}, {"concern": "Pricing and price transparency", "percent": "29%"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>Specific financial, regulatory and patient safety concerns</strong></h2>
+    <p>Percentage of community hospital CEOs who identified each issue as a specific concern for their hospital.  </p>
+    <br>
+    <h4><strong>Main financial challenges</strong></h4>
+    <table class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">Concern</th>
+        <th></th>
+        <th>Percent</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Increasing costs for staff, supplies, etc.</td>
+            <td>70%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Medicaid reimbursement (including adequacy and timeliness of payment, etc.)</td>
+            <td>68%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Reducing operating costs</td>
+            <td>59%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Bad debt (including uncollectable emergency department and other charges)</td>
+            <td>56%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Competition from other providers (of any type—inpatient, outpatient, ambulatory care, diagnostic, retail, etc.)</td>
+            <td>50%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Managed care and other commercial insurance payments</td>
+            <td>50%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Medicare reimbursement (including adequacy and timeliness of payment, etc.)</td>
+            <td>49%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Government funding cuts (other than reduced reimbursement for Medicaid or Medicare)</td>
+            <td>48%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Transition from volume to value</td>
+            <td>48%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Revenue cycle management (converting charges to cash)</td>
+            <td>43%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Inadequate funding for capital improvements</td>
+            <td>37%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Emergency department overuse</td>
+            <td>31%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Moving away from fee-for-service</td>
+            <td>30%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Pricing and price transparency</td>
+            <td>29%</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <br>
+    <h4><strong>Concerns about governmental mandates</strong></h4>
+    <table class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">Concern</th>
+        <th></th>
+        <th>Percent</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">CMS regulations</td>
+            <td>70%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Regulatory/legislative uncertainty affecting strategic planning</td>
+            <td>61%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Cost of demonstrating compliance</td>
+            <td>59%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">State and local regulations/mandates</td>
+            <td>50%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">CMS audits (RAC, MAC, CERT)</td>
+            <td>46%</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <br>
+    <h4><strong>Patient safety and quality concerns</strong></h4>
+    <table class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">Concern</th>
+        <th></th>
+        <th>Percent</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">High price/insufficient reimbursement for medications</td>
+            <td>57%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Engaging physicians in improving the culture of quality/safety</td>
+            <td>56%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Engaging physicians in reducing clinically unnecessary tests and procedures</td>
+            <td>51%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Redesigning care processes</td>
+            <td>50%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Lack of availability of medications</td>
+            <td>45%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Redesigning work environment to reduce errors</td>
+            <td>40%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Public reporting of outcomes data (including being transparent, fairness of measures, reporting burden)</td>
+            <td>39%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Compliance with accrediting organizations (e.g., Joint Commission, NCQA)</td>
+            <td>37%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Pay for performance</td>
+            <td>32%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Leapfrog demands (i.e., computerized physician order entry, ICU staffing by trained intensivists and evidence-based hospital referral)</td>
+            <td>31%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="2">Medication errors</td>
+            <td>14%</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">CEOs could choose as many issues as desired.  Any specific concern with fewer than 50 responses was not included.</p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Survey sent to 1,402 community hospital CEOs who are ACHE members with 355 responses.</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1547756848"></script>
+
+
+</body>
+</html>

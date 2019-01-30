@@ -1,0 +1,112 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"date": "Jan-2007", "share_1to8": "28.37", "share_9to10": "71.63", "share_11to25": "0.0"}, {"date": "Feb-2007", "share_1to8": "27.72", "share_9to10": "72.28", "share_11to25": "0.0"}, {"date": "Mar-2007", "share_1to8": "27.84", "share_9to10": "72.16", "share_11to25": "0.0"}, {"date": "Apr-2007", "share_1to8": "27.33", "share_9to10": "72.67", "share_11to25": "0.0"}, {"date": "May-2007", "share_1to8": "26.88", "share_9to10": "73.12", "share_11to25": "0.0"}, {"date": "Jun-2007", "share_1to8": "26.61", "share_9to10": "73.39", "share_11to25": "0.0"}, {"date": "Jul-2007", "share_1to8": "25.97", "share_9to10": "74.03", "share_11to25": "0.0"}, {"date": "Aug-2007", "share_1to8": "25.60", "share_9to10": "74.40", "share_11to25": "0.0"}, {"date": "Sep-2007", "share_1to8": "25.45", "share_9to10": "74.55", "share_11to25": "0.0"}, {"date": "Oct-2007", "share_1to8": "22.78", "share_9to10": "77.22", "share_11to25": "0.0"}, {"date": "Nov-2007", "share_1to8": "23.08", "share_9to10": "76.92", "share_11to25": "0.0"}, {"date": "Dec-2007", "share_1to8": "23.93", "share_9to10": "76.07", "share_11to25": "0.0"}, {"date": "Jan-2008", "share_1to8": "23.06", "share_9to10": "76.94", "share_11to25": "0.0"}, {"date": "Feb-2008", "share_1to8": "23.22", "share_9to10": "76.78", "share_11to25": "0.0"}, {"date": "Mar-2008", "share_1to8": "22.65", "share_9to10": "77.35", "share_11to25": "0.0"}, {"date": "Apr-2008", "share_1to8": "21.51", "share_9to10": "78.49", "share_11to25": "0.0"}, {"date": "May-2008", "share_1to8": "21.40", "share_9to10": "78.60", "share_11to25": "0.0"}, {"date": "Jun-2008", "share_1to8": "21.12", "share_9to10": "78.88", "share_11to25": "0.0"}, {"date": "Jul-2008", "share_1to8": "20.21", "share_9to10": "79.79", "share_11to25": "0.0"}, {"date": "Aug-2008", "share_1to8": "20.32", "share_9to10": "79.68", "share_11to25": "0.0"}, {"date": "Sep-2008", "share_1to8": "20.50", "share_9to10": "79.50", "share_11to25": "0.0"}, {"date": "Oct-2008", "share_1to8": "19.60", "share_9to10": "80.40", "share_11to25": "0.0"}, {"date": "Nov-2008", "share_1to8": "19.64", "share_9to10": "80.36", "share_11to25": "0.0"}, {"date": "Dec-2008", "share_1to8": "19.94", "share_9to10": "80.06", "share_11to25": "0.0"}, {"date": "Jan-2009", "share_1to8": "19.16", "share_9to10": "80.84", "share_11to25": "0.0"}, {"date": "Feb-2009", "share_1to8": "18.28", "share_9to10": "81.72", "share_11to25": "0.0"}, {"date": "Mar-2009", "share_1to8": "18.19", "share_9to10": "81.81", "share_11to25": "0.0"}, {"date": "Apr-2009", "share_1to8": "17.98", "share_9to10": "82.02", "share_11to25": "0.0"}, {"date": "May-2009", "share_1to8": "18.08", "share_9to10": "81.92", "share_11to25": "0.0"}, {"date": "Jun-2009", "share_1to8": "17.78", "share_9to10": "82.22", "share_11to25": "0.0"}, {"date": "Jul-2009", "share_1to8": "17.33", "share_9to10": "82.67", "share_11to25": "0.0"}, {"date": "Aug-2009", "share_1to8": "16.91", "share_9to10": "83.09", "share_11to25": "0.0"}, {"date": "Sep-2009", "share_1to8": "16.69", "share_9to10": "83.31", "share_11to25": "0.0"}, {"date": "Oct-2009", "share_1to8": "16.61", "share_9to10": "83.39", "share_11to25": "0.0"}, {"date": "Nov-2009", "share_1to8": "16.98", "share_9to10": "83.02", "share_11to25": "0.0"}, {"date": "Dec-2009", "share_1to8": "17.06", "share_9to10": "82.94", "share_11to25": "0.0"}, {"date": "Jan-2010", "share_1to8": "16.34", "share_9to10": "83.66", "share_11to25": "0.0"}, {"date": "Feb-2010", "share_1to8": "15.93", "share_9to10": "84.02", "share_11to25": "0.05"}, {"date": "Mar-2010", "share_1to8": "15.95", "share_9to10": "83.95", "share_11to25": "0.1"}, {"date": "Apr-2010", "share_1to8": "15.68", "share_9to10": "84.13", "share_11to25": "0.19"}, {"date": "May-2010", "share_1to8": "15.73", "share_9to10": "83.97", "share_11to25": "0.29"}, {"date": "Jun-2010", "share_1to8": "15.32", "share_9to10": "84.31", "share_11to25": "0.37"}, {"date": "Jul-2010", "share_1to8": "15.38", "share_9to10": "84.06", "share_11to25": "0.56"}, {"date": "Aug-2010", "share_1to8": "14.94", "share_9to10": "84.24", "share_11to25": "0.82"}, {"date": "Sep-2010", "share_1to8": "15.05", "share_9to10": "83.70", "share_11to25": "1.25"}, {"date": "Oct-2010", "share_1to8": "14.85", "share_9to10": "83.00", "share_11to25": "2.16"}, {"date": "Nov-2010", "share_1to8": "14.83", "share_9to10": "80.85", "share_11to25": "4.32"}, {"date": "Dec-2010", "share_1to8": "15.44", "share_9to10": "57.14", "share_11to25": "27.42"}, {"date": "Jan-2011", "share_1to8": "15.17", "share_9to10": "14.97", "share_11to25": "69.86"}, {"date": "Feb-2011", "share_1to8": "14.69", "share_9to10": "14.48", "share_11to25": "70.83"}, {"date": "Mar-2011", "share_1to8": "14.57", "share_9to10": "14.30", "share_11to25": "71.13"}, {"date": "Apr-2011", "share_1to8": "14.52", "share_9to10": "13.84", "share_11to25": "71.65"}, {"date": "May-2011", "share_1to8": "14.48", "share_9to10": "13.94", "share_11to25": "71.58"}, {"date": "Jun-2011", "share_1to8": "14.29", "share_9to10": "13.65", "share_11to25": "72.07"}, {"date": "Jul-2011", "share_1to8": "14.14", "share_9to10": "13.59", "share_11to25": "72.26"}, {"date": "Aug-2011", "share_1to8": "13.88", "share_9to10": "13.27", "share_11to25": "72.85"}, {"date": "Sep-2011", "share_1to8": "13.82", "share_9to10": "13.33", "share_11to25": "72.85"}, {"date": "Oct-2011", "share_1to8": "13.60", "share_9to10": "12.93", "share_11to25": "73.48"}, {"date": "Nov-2011", "share_1to8": "14.15", "share_9to10": "12.76", "share_11to25": "73.09"}, {"date": "Dec-2011", "share_1to8": "14.40", "share_9to10": "12.66", "share_11to25": "72.94"}, {"date": "Jan-2012", "share_1to8": "13.90", "share_9to10": "12.47", "share_11to25": "73.63"}, {"date": "Feb-2012", "share_1to8": "13.39", "share_9to10": "12.26", "share_11to25": "74.34"}, {"date": "Mar-2012", "share_1to8": "13.60", "share_9to10": "12.14", "share_11to25": "74.26"}, {"date": "Apr-2012", "share_1to8": "13.31", "share_9to10": "11.85", "share_11to25": "74.84"}, {"date": "May-2012", "share_1to8": "13.07", "share_9to10": "11.79", "share_11to25": "75.14"}, {"date": "Jun-2012", "share_1to8": "13.20", "share_9to10": "11.79", "share_11to25": "75.02"}, {"date": "Jul-2012", "share_1to8": "12.99", "share_9to10": "11.48", "share_11to25": "75.53"}, {"date": "Aug-2012", "share_1to8": "12.88", "share_9to10": "11.56", "share_11to25": "75.56"}, {"date": "Sep-2012", "share_1to8": "12.91", "share_9to10": "11.93", "share_11to25": "75.16"}, {"date": "Oct-2012", "share_1to8": "12.47", "share_9to10": "11.55", "share_11to25": "75.98"}, {"date": "Nov-2012", "share_1to8": "12.91", "share_9to10": "11.61", "share_11to25": "75.48"}, {"date": "Dec-2012", "share_1to8": "13.65", "share_9to10": "11.64", "share_11to25": "74.72"}, {"date": "Jan-2013", "share_1to8": "13.47", "share_9to10": "11.39", "share_11to25": "75.14"}, {"date": "Feb-2013", "share_1to8": "12.01", "share_9to10": "10.96", "share_11to25": "77.03"}, {"date": "Mar-2013", "share_1to8": "11.92", "share_9to10": "10.88", "share_11to25": "77.2"}, {"date": "Apr-2013", "share_1to8": "11.71", "share_9to10": "10.79", "share_11to25": "77.5"}, {"date": "May-2013", "share_1to8": "11.71", "share_9to10": "10.66", "share_11to25": "77.64"}, {"date": "Jun-2013", "share_1to8": "11.82", "share_9to10": "10.59", "share_11to25": "77.58"}, {"date": "Jul-2013", "share_1to8": "11.37", "share_9to10": "10.37", "share_11to25": "78.26"}, {"date": "Aug-2013", "share_1to8": "11.36", "share_9to10": "10.24", "share_11to25": "78.41"}, {"date": "Sep-2013", "share_1to8": "11.27", "share_9to10": "10.23", "share_11to25": "78.5"}, {"date": "Oct-2013", "share_1to8": "10.82", "share_9to10": "9.85", "share_11to25": "79.33"}, {"date": "Nov-2013", "share_1to8": "10.76", "share_9to10": "10.02", "share_11to25": "79.23"}, {"date": "Dec-2013", "share_1to8": "11.60", "share_9to10": "10.47", "share_11to25": "77.93"}, {"date": "Jan-2014", "share_1to8": "11.53", "share_9to10": "10.33", "share_11to25": "78.14"}, {"date": "Feb-2014", "share_1to8": "10.42", "share_9to10": "10.08", "share_11to25": "79.51"}, {"date": "Mar-2014", "share_1to8": "10.60", "share_9to10": "9.98", "share_11to25": "79.42"}, {"date": "Apr-2014", "share_1to8": "10.66", "share_9to10": "9.83", "share_11to25": "79.51"}, {"date": "May-2014", "share_1to8": "10.51", "share_9to10": "9.78", "share_11to25": "79.71"}, {"date": "Jun-2014", "share_1to8": "10.34", "share_9to10": "9.57", "share_11to25": "80.08"}, {"date": "Jul-2014", "share_1to8": "10.12", "share_9to10": "9.41", "share_11to25": "80.48"}, {"date": "Aug-2014", "share_1to8": "9.96", "share_9to10": "9.39", "share_11to25": "80.65"}, {"date": "Sep-2014", "share_1to8": "10.09", "share_9to10": "9.37", "share_11to25": "80.55"}, {"date": "Oct-2014", "share_1to8": "10.22", "share_9to10": "9.14", "share_11to25": "80.64"}, {"date": "Nov-2014", "share_1to8": "10.65", "share_9to10": "9.52", "share_11to25": "79.83"}];
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+    <h2><strong>Diagnosis codes for Medicare claims rise as readmissions fall</strong></h2>
+    <p>A new study found that hospital admissions with more diagnosis codes in their Medicare claims reported lower readmission rates than those who used less. In January 2011 (<small><span style="color:red"><strong>Red line</strong></span></small>), the CMS allowed hospitals to report more than 10 and up to 25 diagnosis codes per claim. <br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Analysis of Medicare claims data for acute-care hospital inpatient admissions, January 2007 to November 2014. From &#8220;Decreases in Readmissions Credited to Medicare&#8217;s Program to Reduce Hospital Readmissions have been Overstated&#8221; published in Health Affairs journal.</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1546899579"></script>
+
+
+</body>
+</html>

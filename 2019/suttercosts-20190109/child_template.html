@@ -1,0 +1,100 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">Facility</th>
+        <th>File</th>
+      </thead>
+      <tbody>
+        <tr><td class="tdLEFT">Alta Bates Summit Medical Center - Alta Bates Campus</td><td><a href="files/ABMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Alta Bates Summit Medical Center - Summit Campus</td><td><a href="files/SMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">California Pacific Medical Center</td><td><a href="files/CPMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">California Pacific Medical Center - Davies Campus</td><td><a href="files/CPMCD_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">California Pacific Medical Center - Pacific Campus</td><td><a href="files/CPMCP_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Eden Medical Center</td><td><a href="files/EMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Kahi Mohala</td><td><a href="files/Kahi_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Memorial Hospital Los Banos</td><td><a href="files/MHLB_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Memorial Medical Center, Modesto</td><td><a href="files/MMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Mills-Peninsula Health Services</td><td><a href="files/MPHS_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Menlo Park Surgical Hospital</td><td><a href="files/MPSH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Novato Community Hospital</td><td><a href="files/NCH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Auburn Faith Hospital</td><td><a href="files/SAFH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Amador Hospital</td><td><a href="files/SAH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Coast Hospital</td><td><a href="files/SCH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Center for Psychiatry</td><td><a href="files/SCP_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Davis Hospital</td><td><a href="files/SDH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Delta Medical Center</td><td><a href="files/SDMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Surgical Hospital North Valley</td><td><a href="files/SHNV_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Lakeside Hospital</td><td><a href="files/SLH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Medical Center Sacramento</td><td><a href="files/SMCS_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Medical Center of Santa Rosa</td><td><a href="files/SMCSR_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Maternity & Surgery Center of Santa Cruz</td><td><a href="files/SMSC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Roseville Medical Center</td><td><a href="files/SRMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Stanislaus Surgical Hospital</td><td><a href="files/SSH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Solano Medical Center</td><td><a href="files/SSMC_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Sutter Tracy Community Hospital</td><td><a href="files/STCH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">St. Luke's Hospital</td><td><a href="files/STLH_chargemaster2019.pdf" target="_blank">Click here for PDF</a></td></tr>
+        <tr><td class="tdLEFT">Pharmacy</td><td><a href="files/sutter_pharma.pdf" target="_blank">Click here for PDF</a></td></tr>
+    </tbody>
+  </table>
+</p>
+
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <!--</div>
+          </div>
+        </div>-->
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

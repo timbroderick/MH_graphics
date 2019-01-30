@@ -1,0 +1,112 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"parent": "UnitedHealth Group", "total2019": "5736356.0", "total2018": "5238259.0", "total2019txt": "5,736,356", "total2018txt": "5,238,259", "share2019": "25.60%", "share2018": "0.2501", "change": "0.09508827265", "percchange": "9.51"}, {"parent": "Humana", "total2019": "3873494.0", "total2018": "3509556.0", "total2019txt": "3,873,494", "total2018txt": "3,509,556", "share2019": "17.30%", "share2018": "0.1676", "change": "0.1036991574", "percchange": "10.37"}, {"parent": "CVS Health Corp.<br>(formerly Aetna)", "total2019": "2161253.0", "total2018": "1705423.0", "total2019txt": "2,161,253", "total2018txt": "1,705,423", "share2019": "9.70%", "share2018": "0.0814", "change": "0.2672826624", "percchange": "26.73"}, {"parent": "Kaiser Foundation Health Plan", "total2019": "1623855.0", "total2018": "1571909.0", "total2019txt": "1,623,855", "total2018txt": "1,571,909", "share2019": "7.30%", "share2018": "0.075", "change": "0.03304644226", "percchange": "3.3"}, {"parent": "Anthem", "total2019": "1110786.0", "total2018": "725398.0", "total2019txt": "1,110,786", "total2018txt": "725,398", "share2019": "5.00%", "share2018": "0.0346", "change": "0.5312780019", "percchange": "53.13"}, {"parent": "WellCare Health Plans", "total2019": "547171.0", "total2018": "500787.0", "total2019txt": "547,171", "total2018txt": "500,787", "share2019": "2.40%", "share2018": "0.0239", "change": "0.09262221264", "percchange": "9.26"}, {"parent": "Blue Cross and Blue Shield<br>of Michigan Mutual Insurance", "total2019": "518977.0", "total2018": "526296.0", "total2019txt": "518,977", "total2018txt": "526,296", "share2019": "2.30%", "share2018": "0.0251", "change": "-0.01390662289", "percchange": "-1.39"}, {"parent": "Cigna", "total2019": "441294.0", "total2018": "431906.0", "total2019txt": "441,294", "total2018txt": "431,906", "share2019": "2.00%", "share2018": "0.0206", "change": "0.02173621112", "percchange": "2.17"}, {"parent": "Centene Corp.", "total2019": "310296.0", "total2018": "303726.0", "total2019txt": "310,296", "total2018txt": "303,726", "share2019": "1.40%", "share2018": "0.0145", "change": "0.02163133877", "percchange": "2.16"}, {"parent": "InnovaCare ", "total2019": "235631.0", "total2018": "197389.0", "total2019txt": "235,631", "total2018txt": "197,389", "share2019": "1.10%", "share2018": "0.0094", "change": "0.1937392661", "percchange": "19.37"}];
+</script>
+
+<style type="text/css">
+.graphic { height:425px }
+</style>
+
+    <h2><strong>Top 10 Medicare Advantage organizations</strong></h2>
+    <p>By number of enrollees, January 2019<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: CMS.gov</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1547660522"></script>
+
+
+</body>
+</html>

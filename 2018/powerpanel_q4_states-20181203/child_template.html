@@ -1,0 +1,85 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    power panel - states
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_charts.html' %} <!-- adding highcharts -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+var DATA2 = {{ COPY.data2.json() }};
+</script>
+
+<style type="text/css">
+  .graphic { height:300px }
+
+  .graphic2 { height:350px }
+
+  hr.mhchaps {
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+    line-height: 1  !important;
+    border-top-color: #bbb;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+      <p><small><strong>The charts shown are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+      <hr class="mhchaps">
+      {% if COPY.labels.gfx1 %}<h4><strong>{{ COPY.labels.gfx1|smarty }}</strong></h4>{% endif %}
+      <div id="graphic1" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+      </div>
+      <p><small>Note: Numbers may not add up to 100% due to rounding</small></p>
+  <br>
+  <hr class="mhchaps">
+  {% if COPY.labels.gfx2 %}<h4><strong>{{ COPY.labels.gfx2|smarty }}</strong></h4>{% endif %}
+  <div id="graphic2" class="graphic2">
+    <img src="fallback.png" alt="[Chart]" class="fallback" />
+  </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

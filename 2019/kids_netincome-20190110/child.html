@@ -1,0 +1,123 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"facility": "Lurie Children's Hospital of Chicago", "contrib": "65.9", "net": "162.3", "diff": "96.4", "perc": "8.1"}, {"facility": "Arkansas Children's Hospital, Little Rock", "contrib": "40.1", "net": "45.2", "diff": "5.1", "perc": "7.4"}, {"facility": "UPMC Children's Hospital of Pittsburgh", "contrib": "25.2", "net": "78.4", "diff": "53.2", "perc": "3.8"}, {"facility": "Dayton (Ohio) Children's Hospital", "contrib": "12.3", "net": "53.7", "diff": "41.4", "perc": "3.7"}, {"facility": "Children's Hospital Colorado, Aurora", "contrib": "30.0", "net": "76.8", "diff": "46.8", "perc": "2.9"}, {"facility": "Texas Children's Hospital, Houston", "contrib": "46.8", "net": "99.3", "diff": "52.5", "perc": "2.4"}, {"facility": "Children's National, Washington, D.C.", "contrib": "26.5", "net": "45.5", "diff": "19", "perc": "2.3"}, {"facility": "Lucile Packard Children's Hospital", "contrib": "29.5", "net": "33.3", "diff": "3.8", "perc": "2.1"}, {"facility": "Children's Minnesota, Minneapolis", "contrib": "15.7", "net": "97.5", "diff": "81.8", "perc": "1.9"}, {"facility": "Children's Hospital of the<br>King's Daughters, Norfolk, Va.", "contrib": "6.3", "net": "37.3", "diff": "31", "perc": "1.6"}];
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+    <h2><strong>Pediatric problems</strong></h2>
+    <p>Children&#8217;s hospitals, with their heavy reliance on outside contributions for revenue, coud be hit especially hard by an expected drop-off in charitable donations after changes to the tax code enacted in 2017<br>
+    <small><strong>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <h4><strong>Contributions as portion of total net income</strong></h4>
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+    <h4><strong>Contributions as percentage of total operating revenue</strong></h4>
+    <div id="graphic2" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">List represents hospitals reporting the highest rate of contributions as a percentage of operating revenue in their Medicare cost reports. </p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Modern Healthcare Metrics</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1547234696"></script>
+
+
+</body>
+</html>

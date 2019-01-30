@@ -1,0 +1,117 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "1992", "dsh": "109.0", "nondsh": "0.0", "ch": "354.0", "nonch": "256.0", "dshtxt": "109", "nondshtxt": "0", "chtxt": "354", "nonchtxt": "256"}, {"year": "1993", "dsh": "158.0", "nondsh": "0.0", "ch": "384.0", "nonch": "283.0", "dshtxt": "158", "nondshtxt": "0", "chtxt": "384", "nonchtxt": "283"}, {"year": "1994", "dsh": "176.0", "nondsh": "0.0", "ch": "390.0", "nonch": "323.0", "dshtxt": "176", "nondshtxt": "0", "chtxt": "390", "nonchtxt": "323"}, {"year": "1995", "dsh": "266.0", "nondsh": "0.0", "ch": "525.0", "nonch": "506.0", "dshtxt": "266", "nondshtxt": "0", "chtxt": "525", "nonchtxt": "506"}, {"year": "1996", "dsh": "301.0", "nondsh": "0.0", "ch": "636.0", "nonch": "710.0", "dshtxt": "301", "nondshtxt": "0", "chtxt": "636", "nonchtxt": "710"}, {"year": "1997", "dsh": "332.0", "nondsh": "0.0", "ch": "753.0", "nonch": "1094.0", "dshtxt": "332", "nondshtxt": "0", "chtxt": "753", "nonchtxt": "1,094"}, {"year": "1998", "dsh": "478.0", "nondsh": "0.0", "ch": "929.0", "nonch": "5358.0", "dshtxt": "478", "nondshtxt": "0", "chtxt": "929", "nonchtxt": "5,358"}, {"year": "1999", "dsh": "533.0", "nondsh": "0.0", "ch": "1059.0", "nonch": "6005.0", "dshtxt": "533", "nondshtxt": "0", "chtxt": "1,059", "nonchtxt": "6,005"}, {"year": "2000", "dsh": "577.0", "nondsh": "0.0", "ch": "1156.0", "nonch": "6736.0", "dshtxt": "577", "nondshtxt": "0", "chtxt": "1,156", "nonchtxt": "6,736"}, {"year": "2001", "dsh": "673.0", "nondsh": "0.0", "ch": "1365.0", "nonch": "7235.0", "dshtxt": "673", "nondshtxt": "0", "chtxt": "1,365", "nonchtxt": "7,235"}, {"year": "2002", "dsh": "757.0", "nondsh": "0.0", "ch": "1556.0", "nonch": "7579.0", "dshtxt": "757", "nondshtxt": "0", "chtxt": "1,556", "nonchtxt": "7,579"}, {"year": "2003", "dsh": "1002.0", "nondsh": "0.0", "ch": "1841.0", "nonch": "8374.0", "dshtxt": "1,002", "nondshtxt": "0", "chtxt": "1,841", "nonchtxt": "8,374"}, {"year": "2004", "dsh": "1710.0", "nondsh": "0.0", "ch": "2367.0", "nonch": "8692.0", "dshtxt": "1,710", "nondshtxt": "0", "chtxt": "2,367", "nonchtxt": "8,692"}, {"year": "2005", "dsh": "2495.0", "nondsh": "0.0", "ch": "2802.0", "nonch": "8542.0", "dshtxt": "2,495", "nondshtxt": "0", "chtxt": "2,802", "nonchtxt": "8,542"}, {"year": "2006", "dsh": "2732.0", "nondsh": "0.0", "ch": "3015.0", "nonch": "7455.0", "dshtxt": "2,732", "nondshtxt": "0", "chtxt": "3,015", "nonchtxt": "7,455"}, {"year": "2007", "dsh": "2608.0", "nondsh": "0.0", "ch": "3258.0", "nonch": "7529.0", "dshtxt": "2,608", "nondshtxt": "0", "chtxt": "3,258", "nonchtxt": "7,529"}, {"year": "2008", "dsh": "2080.0", "nondsh": "0.0", "ch": "3571.0", "nonch": "7664.0", "dshtxt": "2,080", "nondshtxt": "0", "chtxt": "3,571", "nonchtxt": "7,664"}, {"year": "2009", "dsh": "2394.0", "nondsh": "24.0", "ch": "3831.0", "nonch": "7987.0", "dshtxt": "2,394", "nondshtxt": "24", "chtxt": "3,831", "nonchtxt": "7,987"}, {"year": "2010", "dsh": "2714.0", "nondsh": "680.0", "ch": "4177.0", "nonch": "7757.0", "dshtxt": "2,714", "nondshtxt": "680", "chtxt": "4,177", "nonchtxt": "7,757"}, {"year": "2011", "dsh": "2966.0", "nondsh": "1361.0", "ch": "4383.0", "nonch": "7974.0", "dshtxt": "2,966", "nondshtxt": "1,361", "chtxt": "4,383", "nonchtxt": "7,974"}, {"year": "2012", "dsh": "4913.0", "nondsh": "1814.0", "ch": "4711.0", "nonch": "7849.0", "dshtxt": "4,913", "nondshtxt": "1,814", "chtxt": "4,711", "nonchtxt": "7,849"}, {"year": "2013", "dsh": "7313.0", "nondsh": "2606.0", "ch": "5396.0", "nonch": "8274.0", "dshtxt": "7,313", "nondshtxt": "2,606", "chtxt": "5,396", "nonchtxt": "8,274"}, {"year": "2014", "dsh": "10100.0", "nondsh": "3589.0", "ch": "6090.0", "nonch": "8449.0", "dshtxt": "10,100", "nondshtxt": "3,589", "chtxt": "6,090", "nonchtxt": "8,449"}, {"year": "2015", "dsh": "12938.0", "nondsh": "4436.0", "ch": "6699.0", "nonch": "9129.0", "dshtxt": "12,938", "nondshtxt": "4,436", "chtxt": "6,699", "nonchtxt": "9,129"}, {"year": "2016", "dsh": "15883.0", "nondsh": "4849.0", "ch": "7867.0", "nonch": "9292.0", "dshtxt": "15,883", "nondshtxt": "4,849", "chtxt": "7,867", "nonchtxt": "9,292"}, {"year": "2017", "dsh": "18382.0", "nondsh": "5603.0", "ch": "8639.0", "nonch": "9718.0", "dshtxt": "18,382", "nondshtxt": "5,603", "chtxt": "8,639", "nonchtxt": "9,718"}, {"year": "2018", "dsh": "19813.0", "nondsh": "6695.0", "ch": "9318.0", "nonch": "9825.0", "dshtxt": "19,813", "nondshtxt": "6,695", "chtxt": "9,318", "nonchtxt": "9,825"}];
+</script>
+
+<style type="text/css">
+.graphic { height:450px }
+</style>
+
+    <h2><strong>340B program participation</strong></h2>
+    <p>Number of covered entities, by year.<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit"><ul><li>Entities are any facility with a unique 340B ID number. A single hospital could include several entities.</li><li>Family planning entities accounted for most of the increase for &#8220;all other&#8221; in 1998.</li><li>Starting in 2010, eligibility was opened up to hospitals other than disproportionate-share hospitals, including children&#8217;s hospitals, critical-access hospitals and free-standing cancer hospitals.</li></ul></p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Health Resources & Services Administration Office of Pharmacy Affairs</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1547143894"></script>
+
+
+</body>
+</html>
