@@ -1,0 +1,123 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"item": "Financial health", "percent": "85"}, {"item": "Patient experience", "percent": "80"}, {"item": "Quality of care,<br>clinical outcomes", "percent": "80"}, {"item": "Operational efficiency", "percent": "69"}, {"item": "Strategic growth", "percent": "62"}, {"item": "Employee growth/<br>retention", "percent": "52"}];
+var DATA2 = [{"item": "Creating better<br>dashboards,visuals", "percent": "67.0"}, {"item": "Pulling data from<br>multiple sources<br>into a single report", "percent": "64.0"}, {"item": "Accessing clean,<br>consistent, trusted data", "percent": "52.0"}, {"item": "Drilling into reports<br>to understand<br>underlying data", "percent": "50.0"}, {"item": "Ease of<br>report creation", "percent": "47.0"}, {"item": "Delivering meaningful<br>ad hoc reporting<br>for end users", "percent": "45.0"}, {"item": "Integrating reports<br>into other applications", "percent": "24.0"}];
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+    <h2><strong>CFO outlook</strong></h2>
+    <p>CFOs listed core performance measures and reporting challenges in the 2019 Kaufman Hall survey<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <h4><strong>Key organizational performance measures</strong></h4>
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br><h4><strong>Financial reporting challenges</strong></h4>
+    <div id="graphic2" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Respondents could choose more than one item</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Kaufman, Hall & Associates, 2019 CFO Outlook survey</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1548890194"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "1990", "claims": "38", "indv": "11.02", "non": "26.98", "indv_math": "0.29", "non_math": "0.71", "indv_perc": "29%", "non_perc": "71%"}, {"year": "1991", "claims": "31", "indv": "12.09", "non": "18.91", "indv_math": "0.39", "non_math": "0.61", "indv_perc": "39%", "non_perc": "61%"}, {"year": "1992", "claims": "41", "indv": "15.17", "non": "25.83", "indv_math": "0.37", "non_math": "0.63", "indv_perc": "37%", "non_perc": "63%"}, {"year": "1993", "claims": "60", "indv": "37.8", "non": "22.2", "indv_math": "0.63", "non_math": "0.37", "indv_perc": "63%", "non_perc": "37%"}, {"year": "1994", "claims": "117", "indv": "74.88", "non": "42.12", "indv_math": "0.64", "non_math": "0.36", "indv_perc": "64%", "non_perc": "36%"}, {"year": "1995", "claims": "113", "indv": "87.01", "non": "25.99", "indv_math": "0.77", "non_math": "0.23", "indv_perc": "77%", "non_perc": "23%"}, {"year": "1996", "claims": "197", "indv": "177.3", "non": "19.7", "indv_math": "0.9", "non_math": "0.1", "indv_perc": "90%", "non_perc": "10%"}, {"year": "1997", "claims": "317", "indv": "269.45", "non": "47.55", "indv_math": "0.85", "non_math": "0.15", "indv_perc": "85%", "non_perc": "15%"}, {"year": "1998", "claims": "311", "indv": "276.79", "non": "34.21", "indv_math": "0.89", "non_math": "0.11", "indv_perc": "89%", "non_perc": "11%"}, {"year": "1999", "claims": "342", "indv": "314.64", "non": "27.36", "indv_math": "0.92", "non_math": "0.08", "indv_perc": "92%", "non_perc": "8%"}, {"year": "2000", "claims": "247", "indv": "212.42", "non": "34.58", "indv_math": "0.86", "non_math": "0.14", "indv_perc": "86%", "non_perc": "14%"}, {"year": "2001", "claims": "215", "indv": "180.6", "non": "34.4", "indv_math": "0.84", "non_math": "0.16", "indv_perc": "84%", "non_perc": "16%"}, {"year": "2002", "claims": "216", "indv": "194.4", "non": "21.6", "indv_math": "0.9", "non_math": "0.1", "indv_perc": "90%", "non_perc": "10%"}, {"year": "2003", "claims": "241", "indv": "214.49", "non": "26.51", "indv_math": "0.89", "non_math": "0.11", "indv_perc": "89%", "non_perc": "11%"}, {"year": "2004", "claims": "301", "indv": "273.91", "non": "27.09", "indv_math": "0.91", "non_math": "0.09", "indv_perc": "91%", "non_perc": "9%"}, {"year": "2005", "claims": "304", "indv": "270.56", "non": "33.44", "indv_math": "0.89", "non_math": "0.11", "indv_perc": "89%", "non_perc": "11%"}, {"year": "2006", "claims": "234", "indv": "215.28", "non": "18.72", "indv_math": "0.92", "non_math": "0.08", "indv_perc": "92%", "non_perc": "8%"}, {"year": "2007", "claims": "224", "indv": "199.36", "non": "24.64", "indv_math": "0.89", "non_math": "0.11", "indv_perc": "89%", "non_perc": "11%"}, {"year": "2008", "claims": "291", "indv": "229.89", "non": "61.11", "indv_math": "0.79", "non_math": "0.21", "indv_perc": "79%", "non_perc": "21%"}, {"year": "2009", "claims": "313", "indv": "278.57", "non": "34.43", "indv_math": "0.89", "non_math": "0.11", "indv_perc": "89%", "non_perc": "11%"}, {"year": "2010", "claims": "428", "indv": "385.2", "non": "42.8", "indv_math": "0.9", "non_math": "0.1", "indv_perc": "90%", "non_perc": "10%"}, {"year": "2011", "claims": "455", "indv": "418.6", "non": "36.4", "indv_math": "0.92", "non_math": "0.08", "indv_perc": "92%", "non_perc": "8%"}, {"year": "2012", "claims": "443", "indv": "416.42", "non": "26.58", "indv_math": "0.94", "non_math": "0.06", "indv_perc": "94%", "non_perc": "6%"}, {"year": "2013", "claims": "531", "indv": "504.45", "non": "26.55", "indv_math": "0.95", "non_math": "0.05", "indv_perc": "95%", "non_perc": "5%"}, {"year": "2014", "claims": "502", "indv": "471.88", "non": "30.12", "indv_math": "0.94", "non_math": "0.06", "indv_perc": "94%", "non_perc": "6%"}, {"year": "2015", "claims": "452", "indv": "424.88", "non": "27.12", "indv_math": "0.94", "non_math": "0.06", "indv_perc": "94%", "non_perc": "6%"}, {"year": "2016", "claims": "573", "indv": "504.24", "non": "68.76", "indv_math": "0.88", "non_math": "0.12", "indv_perc": "88%", "non_perc": "12%"}, {"year": "2017", "claims": "550", "indv": "495", "non": "55", "indv_math": "0.9", "non_math": "0.1", "indv_perc": "90%", "non_perc": "10%"}, {"year": "2018", "claims": "506", "indv": "445.28", "non": "60.72", "indv_math": "0.88", "non_math": "0.12", "indv_perc": "88%", "non_perc": "12%"}];
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+</style>
+
+    <h2><strong>Healthcare-related False Claims Act cases</strong></h2>
+    <p>Claims brought by individual whistleblowers account for the bulk of growth in cases, though government-filed cases have increased over the last three years<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Health Care Enforcement Year in Review & 2019 Outlook: Analysis of Health Care FCA Litigation Trends, Mintz.com</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1550244528"></script>
+
+
+</body>
+</html>

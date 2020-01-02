@@ -1,0 +1,193 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"state": "Alabama", "something": "400", "another_thing": "1219", "another_thing_txt": "1,219", "third_thing": "South"}, {"state": "Alaska", "something": "500", "another_thing": "1358", "another_thing_txt": "1,358", "third_thing": "Northwest"}, {"state": "Arizona", "something": "400", "another_thing": "1312", "another_thing_txt": "1,312", "third_thing": "Southwest"}, {"state": "Arkansas", "something": "500", "another_thing": "1236", "another_thing_txt": "1,236", "third_thing": "South"}, {"state": "California", "something": "400", "another_thing": "1250", "another_thing_txt": "1,250", "third_thing": "West"}, {"state": "Colorado", "something": "500", "another_thing": "1276", "another_thing_txt": "1,276", "third_thing": "West"}, {"state": "Connecticut", "something": "300", "another_thing": "1188", "another_thing_txt": "1,188", "third_thing": "East"}, {"state": "Illinois", "something": "600", "another_thing": "900", "another_thing_txt": "600", "third_thing": "Midwest"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:250px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9fa7d4;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Surveying the industry&#8217;s progress on diversity and inclusion</strong></h2>
+    <p>911 executives responded to Modern Healthcare&#8217;s survey examining gender discrimination and sexual harassment in the workplace<br>
+    <small><strong>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Percentage reporting they have <strong>experienced</strong> <span style="color:#6a1240"><strong>gender discrimination</strong></span> in the workplace</p>
+          <div id="expgen" class="graphic">
+                  <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <p>Percentage reporting they have <strong>witnessed</strong> <span style="color:#6a1240"><strong>gender discrimination</strong></span> in the workplace</p>
+          <div id="witgen" class="graphic">
+                  <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+      </div>
+
+      <hr class="mhchaps">
+
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Percentage reporting they have <strong>experienced</strong> <span style="color:#6a1240"><strong>sexual harassment</strong></span> in the workplace</p>
+          <div id="exphar" class="graphic">
+                  <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <p>Percentage reporting they have <strong>witnessed</strong> <span style="color:#6a1240"><strong>sexual harassment</strong></span> in the workplace</p>
+          <div id="withar" class="graphic">
+                  <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+      </div>
+
+      <hr class="mhchaps">
+
+      <div class="row">
+        <p><strong>Of the 320 written responses to the questions of what was done to address the incidents of <span style="color:#6a1240"><strong>gender discrimination</strong></span> or <span style="color:#6a1240"><strong>sexual harassment</strong></span> they experienced or witnessed...</strong></p>
+        <div class="col-sm-6">
+          <p><span style="color:#6a1240"><strong>35%</strong></span> said <strong>nothing was done</strong>.</p>
+          <div id="done" class="graphic">
+                  <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <p><span style="color:#6a1240"><strong>11%</strong></span> said they <strong>did not report it</strong>.</p>
+          <div id="report" class="graphic">
+                  <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Note: Modern Healthcare surveyed 911 readers. 75% of those surveyed were female, 23% were male. Most common age group was 55-64 (38%) followed by 45-54 (23%). 84% of those surveyed identified as white. 31% reported working at a company with more than 5,000 employees. In comparison, Modern Healthcare Metrics estimates health systems with more than 5,000 employees make up at least 35% of all systems.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Modern Healthcare research, Modern Healthcare Metrics
+</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1565298120"></script>
+
+
+</body>
+</html>

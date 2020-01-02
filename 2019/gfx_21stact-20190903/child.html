@@ -1,0 +1,137 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"date": "October 2017", "task": "Draft guidance for the breakthrough devices program."}, {"date": "November 2017", "task": "Draft guidance for expedited programs for regenerative medicine therapies for serious conditions."}, {"date": "June 2018", "task": "Draft guidance for patient-focused drug development."}, {"date": "June 2018", "task": "Draft guidance for the humanitarian device-exemption program. Deadline for final guidance not specified."}, {"date": "December 2018", "task": "Final guidance for the breakthrough devices program."}, {"date": "December 2018", "task": "Framework for the real-world evidence program."}, {"date": "February 2019", "task": "Final guidance for expedited programs for regenerative medicine therapies for serious conditions."}, {"date": "December 2019", "task": "Deadline for draft guidance on the qualification of drug development tools. Deadline for final guidance is six months after the public comment period for the draft closes."}, {"date": "June 2020", "task": "Deadline for revised or final guidance for patient-focused drug development."}, {"date": "December 2021", "task": "Deadline for draft guidance on the real-world evidence program. Deadline for revised or final guidance is 18 months after the public-comment period for the draft closes."}];
+
+console.log(DATA);
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>21st Century Cures Act provisions</strong></h2>
+    <p>Timeline of the FDA&#8217;s progress</p>
+
+    <table id="gfx" class="table table-hover table-condensed display" width="100%" >
+      <tbody>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2017</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">October<td class="tdLEFT" colspan="2"><ul><li>Draft guidance for the Breakthrough
+Devices Program.</li></ul></td></tr>
+          <tr><td class="tdLEFT" colspan="1">November<td class="tdLEFT" colspan="2"><ul><li>Draft guidance for expedited programs for regenerative medicine therapies for serious conditions.</li></ul></td></tr>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2018</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">June<td class="tdLEFT" colspan="2"><ul><li>Draft guidance for patient-focused drug development.</li><li>Draft guidance for the Humanitarian Device Exemption program. Deadline for final guidance not specified.</li></ul></td></tr>
+          <tr><td class="tdLEFT" colspan="1">December<td class="tdLEFT" colspan="2"><ul><li>Final guidance for the Breakthrough
+Devices program.</li><li>Framework for the Real-World Evidence Program.</li></ul></td></tr>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2019</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">February<td class="tdLEFT" colspan="2"><ul><li>Final guidance for expedited programs for regenerative medicine therapies for serious conditions.</li></ul></td></tr>
+          <tr><td class="tdLEFT" colspan="1">December<td class="tdLEFT" colspan="2"><ul><li>Deadline for draft guidance on the qualification of drug development tools. Deadline for final guidance is six months after the public
+comment period for the draft closes.</li></ul></td></tr>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2020</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">June<td class="tdLEFT" colspan="2"><ul><li>Deadline for revised or final guidance for patient-focused drug development.</li></ul></td></tr>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2021</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">December<td class="tdLEFT" colspan="2"><ul><li>Deadline for draft guidance on the 
+Real-World Evidence Program.</li><li>Deadline for revised or final guidance is 18 months after the public comment period for the draft closes.</li></ul></td></tr>
+    </tbody>
+  </table>
+</p>
+
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Food and Drug Administration, Modern Healthcare research
+</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1567780846"></script>
+
+
+</body>
+</html>

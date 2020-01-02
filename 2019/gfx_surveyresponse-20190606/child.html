@@ -1,0 +1,122 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.src.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"order": "0", "state": "Alabama", "value": "-19", "legend": "-19", "y2009": "45", "y2018": "26"}, {"order": "1", "state": "Alaska", "value": "-15", "legend": "-15", "y2009": "35", "y2018": "20"}, {"order": "2", "state": "Arizona", "value": "-6", "legend": "-6", "y2009": "34", "y2018": "28"}, {"order": "3", "state": "Arkansas", "value": "-7", "legend": "-7", "y2009": "32", "y2018": "25"}, {"order": "4", "state": "California", "value": "-9", "legend": "-9", "y2009": "31", "y2018": "22"}, {"order": "5", "state": "Colorado", "value": "-8", "legend": "-8", "y2009": "35", "y2018": "27"}, {"order": "6", "state": "Connecticut", "value": "-3", "legend": "-3", "y2009": "31", "y2018": "28"}, {"order": "7", "state": "Delaware", "value": "-6", "legend": "-6", "y2009": "29", "y2018": "23"}, {"order": "8", "state": "District of Columbia", "value": "-6", "legend": "-6", "y2009": "28", "y2018": "22"}, {"order": "9", "state": "Florida", "value": "-8", "legend": "-8", "y2009": "30", "y2018": "22"}, {"order": "10", "state": "Georgia", "value": "-6", "legend": "-6", "y2009": "27", "y2018": "21"}, {"order": "11", "state": "Hawaii", "value": "-10", "legend": "-10", "y2009": "35", "y2018": "25"}, {"order": "12", "state": "Idaho", "value": "-10", "legend": "-10", "y2009": "43", "y2018": "33"}, {"order": "13", "state": "Illinois", "value": "-7", "legend": "-7", "y2009": "33", "y2018": "26"}, {"order": "14", "state": "Indiana", "value": "-7", "legend": "-7", "y2009": "35", "y2018": "28"}, {"order": "15", "state": "Iowa", "value": "-8", "legend": "-8", "y2009": "42", "y2018": "34"}, {"order": "16", "state": "Kansas", "value": "-8", "legend": "-8", "y2009": "40", "y2018": "32"}, {"order": "17", "state": "Kentucky", "value": "-6", "legend": "-6", "y2009": "31", "y2018": "25"}, {"order": "18", "state": "Louisiana", "value": "-8", "legend": "-8", "y2009": "32", "y2018": "24"}, {"order": "19", "state": "Maine", "value": "-5", "legend": "-5", "y2009": "33", "y2018": "28"}, {"order": "20", "state": "Maryland", "value": "-8", "legend": "-8", "y2009": "30", "y2018": "22"}, {"order": "21", "state": "Massachusetts", "value": "-11", "legend": "-11", "y2009": "36", "y2018": "25"}, {"order": "22", "state": "Michigan", "value": "-8", "legend": "-8", "y2009": "38", "y2018": "30"}, {"order": "23", "state": "Minnesota", "value": "-9", "legend": "-9", "y2009": "43", "y2018": "34"}, {"order": "24", "state": "Mississippi", "value": "-6", "legend": "-6", "y2009": "28", "y2018": "22"}, {"order": "25", "state": "Missouri", "value": "-8", "legend": "-8", "y2009": "36", "y2018": "28"}, {"order": "26", "state": "Montana", "value": "1", "legend": "1", "y2009": "32", "y2018": "33"}, {"order": "27", "state": "Nebraska", "value": "-4", "legend": "-4", "y2009": "41", "y2018": "37"}, {"order": "28", "state": "Nevada", "value": "-9", "legend": "-9", "y2009": "29", "y2018": "20"}, {"order": "29", "state": "New Hampshire", "value": "-13", "legend": "-13", "y2009": "40", "y2018": "27"}, {"order": "30", "state": "New Jersey", "value": "-7", "legend": "-7", "y2009": "28", "y2018": "21"}, {"order": "31", "state": "New Mexico", "value": "-8", "legend": "-8", "y2009": "28", "y2018": "20"}, {"order": "32", "state": "New York", "value": "-7", "legend": "-7", "y2009": "31", "y2018": "24"}, {"order": "33", "state": "North Carolina", "value": "-12", "legend": "-12", "y2009": "35", "y2018": "23"}, {"order": "34", "state": "North Dakota", "value": "-3", "legend": "-3", "y2009": "39", "y2018": "36"}, {"order": "35", "state": "Ohio", "value": "-7", "legend": "-7", "y2009": "35", "y2018": "28"}, {"order": "36", "state": "Oklahoma", "value": "-11", "legend": "-11", "y2009": "37", "y2018": "26"}, {"order": "37", "state": "Oregon", "value": "-10", "legend": "-10", "y2009": "36", "y2018": "26"}, {"order": "38", "state": "Pennsylvania", "value": "-8", "legend": "-8", "y2009": "38", "y2018": "30"}, {"order": "39", "state": "Rhode Island", "value": "-8", "legend": "-8", "y2009": "35", "y2018": "27"}, {"order": "40", "state": "South Carolina", "value": "-6", "legend": "-6", "y2009": "29", "y2018": "23"}, {"order": "41", "state": "South Dakota", "value": "-18", "legend": "-18", "y2009": "49", "y2018": "31"}, {"order": "42", "state": "Tennessee", "value": "-3", "legend": "-3", "y2009": "31", "y2018": "28"}, {"order": "43", "state": "Texas", "value": "-10", "legend": "-10", "y2009": "33", "y2018": "23"}, {"order": "44", "state": "Utah", "value": "-15", "legend": "-15", "y2009": "40", "y2018": "25"}, {"order": "45", "state": "Vermont", "value": "-8", "legend": "-8", "y2009": "39", "y2018": "31"}, {"order": "46", "state": "Virginia", "value": "-9", "legend": "-9", "y2009": "33", "y2018": "24"}, {"order": "47", "state": "Washington", "value": "-10", "legend": "-10", "y2009": "35", "y2018": "25"}, {"order": "48", "state": "West Virginia", "value": "-7", "legend": "-7", "y2009": "35", "y2018": "28"}, {"order": "49", "state": "Wisconsin", "value": "-9", "legend": "-9", "y2009": "44", "y2018": "35"}, {"order": "50", "state": "Wyoming", "value": "-9", "legend": "-9", "y2009": "37", "y2018": "28"}];
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+</style>
+
+    <h2><strong>HCAHPS survey response rate</strong></h2>
+    <p>Nationwide, the response rate to the HCAHPS survey fell 7 percentage points, from 34% for July 2008 to June 2009, to 27% for July 2017 to June 2018.<br>Here is the percentage-point change in response rate by state<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Hospital Consumer Assessment of Healthcare Providers and Systems survey results
+</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575500826"></script>
+
+
+</body>
+</html>

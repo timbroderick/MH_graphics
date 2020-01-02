@@ -1,0 +1,140 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"rating": "1", "old": "258", "new": "282", "difference": "24", "oldperc": "7.0", "newperc": "7.6", "diff": "0.5"}, {"rating": "2", "old": "749", "new": "799", "difference": "50", "oldperc": "20.4", "newperc": "21.5", "diff": "1.0"}, {"rating": "3", "old": "1172", "new": "1263", "difference": "91", "oldperc": "32.0", "newperc": "33.9", "diff": "1.9"}, {"rating": "4", "old": "1151", "new": "1087", "difference": "-64", "oldperc": "31.4", "newperc": "29.2", "diff": "-2.2"}, {"rating": "5", "old": "335", "new": "293", "difference": "-42", "oldperc": "9.1", "newperc": "7.9", "diff": "-1.3"}, {"rating": "Not Available", "old": "1119", "new": "1060", "difference": "-59", "oldperc": null, "newperc": null, "diff": null}, {"rating": "Grand Total", "old": "4784", "new": "4784", "difference": "0", "oldperc": null, "newperc": null, "diff": null}, {"rating": null, "old": "3665", "new": "3724", "difference": null, "oldperc": null, "newperc": null, "diff": null}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>CMS updates hospital star ratings</strong></h2>
+    <p>After nearly 15 months, the CMS updated the ratings for hospitals on Hospital Compare with small changes compared with December 2017. Like previous years, most hospitals received two, three or four stars while few received one or five stars. There was likely little shift because the agency only made one minor change to the methodology. <br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">For hospitals rated in February 2019 data release. Of these&#8230; <ul><li><small>3,665 received a star rating in December 2017 with ratings not available for 1,119.</small></li><li><small>3,724 received a star rating this month, with 1,060 not available.</small></li></ul></p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: CMS</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1551473989"></script>
+
+
+</body>
+</html>

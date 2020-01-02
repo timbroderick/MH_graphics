@@ -1,0 +1,141 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_charts.html' %} <!-- adding highcharts -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9fa7d4;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <hr class="mhchaps">
+    <br>
+    <p>Top companies by total revenue for each sector:</p>
+    <h4><strong>Health systems, for-profit</strong></h4>
+      <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+        <thead><th class="thLEFT">Company</th><th class="thRIGHT">Total revenue</th><th class="thRIGHT">Net income</th><th class="thRIGHT">Margin</th></thead>
+        <tbody>
+          <tr><td class="tdLEFT">HCA Healthcare</td><td class="tdRIGHT">$46.7 billion</td><td class="tdRIGHT">$3.8 billion</td><td class="tdRIGHT">9.4%</td></tr>
+          <tr><td class="tdLEFT">Tenet Healthcare Corp.</td><td class="tdRIGHT">$18.3 billion</td><td class="tdRIGHT">$111 million</td><td class="tdRIGHT">0.6%</td></tr>
+          <tr><td class="tdLEFT">Community Health Systems</td><td class="tdRIGHT">$14.2 billion</td><td class="tdRIGHT">$788 million</td><td class="tdRIGHT">-5.6%</td></tr>
+          <tr><td class="tdLEFT">Universal Health Services</td><td class="tdRIGHT">$10.8 billion</td><td class="tdRIGHT">$779.7 million</td><td class="tdRIGHT">7.2%</td></tr>
+        </tbody>
+      </table>
+      <hr class="mhchaps">
+      <br>
+      <h4><strong>Health systems, not-for-profit</strong></h4>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th class="thLEFT">Company</th><th class="thRIGHT">Total revenue</th><th class="thRIGHT">Net income</th><th class="thRIGHT">Margin</th></thead>
+          <tbody>
+            <tr><td class="tdLEFT">Kaiser Foundation Hospitals</td><td class="tdRIGHT">$80.3 billion</td><td class="tdRIGHT">$2.5 billion</td><td class="tdRIGHT">3.12%</td></tr>
+            <tr><td class="tdLEFT">Ascension Health</td><td class="tdRIGHT">$25.4 billion</td><td class="tdRIGHT">$2.4 billion</td><td class="tdRIGHT">9.34%</td></tr>
+            <tr><td class="tdLEFT">Providence St. Joseph Health</td><td class="tdRIGHT">$24 billion</td><td class="tdRIGHT">-$445 million</td><td class="tdRIGHT">-1.86%</td></tr>
+            <tr><td class="tdLEFT">Trinity Health</td><td class="tdRIGHT">$19.2 billion</td><td class="tdRIGHT">$949 million</td><td class="tdRIGHT">4.95%</td></tr>
+            <tr><td class="tdLEFT">UPMC</td><td class="tdRIGHT">$18.4 billion</td><td class="tdRIGHT">-$290 million</td><td class="tdRIGHT">-1.58%</td></tr>
+          </tbody>
+        </table>
+        <hr class="mhchaps">
+        <br>
+        <h4><strong>Insurers</strong></h4>
+          <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+            <thead><th class="thLEFT">Company</th><th class="thRIGHT">Total revenue</th><th class="thRIGHT">Net income</th><th class="thRIGHT">Margin</th></thead>
+            <tbody>
+              <tr><td class="tdLEFT">UnitedHealth</td><td class="tdRIGHT">$226.3 billion</td><td class="tdRIGHT">$11.9 billion</td><td class="tdRIGHT">5.3%</td></tr>
+              <tr><td class="tdLEFT">Anthem</td><td class="tdRIGHT">$92.1 billion</td><td class="tdRIGHT">$3.8 billion</td><td class="tdRIGHT">4.10%</td></tr>
+              <tr><td class="tdLEFT">Centene</td><td class="tdRIGHT">$60.1 billion</td><td class="tdRIGHT">$894 million</td><td class="tdRIGHT">1.50%</td></tr>
+              <tr><td class="tdLEFT">Humana</td><td class="tdRIGHT">$56.9 billion</td><td class="tdRIGHT">$1.7 billion</td><td class="tdRIGHT">3.00%</td></tr>
+              <tr><td class="tdLEFT">Cigna</td><td class="tdRIGHT">$46.7 billion</td><td class="tdRIGHT">$2.7 billion</td><td class="tdRIGHT">5.4%</td></tr>
+            </tbody>
+          </table>
+          <hr class="mhchaps">
+          <br>
+          <h4><strong>Pharmaceuticals</strong></h4>
+            <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+              <thead><th class="thLEFT">Company</th><th class="thRIGHT">Total revenue</th><th class="thRIGHT">Net income</th><th class="thRIGHT">Margin</th></thead>
+              <tbody>
+                <tr><td class="tdLEFT">Pfizer</td><td class="tdRIGHT">$53.7 billion</td><td class="tdRIGHT">$11.2 billion</td><td class="tdRIGHT">20.9%</td></tr>
+                <tr><td class="tdLEFT">Novartis </td><td class="tdRIGHT">$51.9 billion</td><td class="tdRIGHT">$12.6 billion</td><td class="tdRIGHT">24.3%</td></tr>
+                <tr><td class="tdLEFT">Roche Holding</td><td class="tdRIGHT">$56.9 billion</td><td class="tdRIGHT">$10.5 billion</td><td class="tdRIGHT">18.47%</td></tr>
+                <tr><td class="tdLEFT">Johnson & Johnson</td><td class="tdRIGHT">$81.6 billion</td><td class="tdRIGHT">$15.3 billion</td><td class="tdRIGHT">18.75%</td></tr>
+                <tr><td class="tdLEFT">Sanofi</td><td class="tdRIGHT">$34.5 billion</td><td class="tdRIGHT">$4.4 billion</td><td class="tdRIGHT">12.8%</td></tr>
+              </tbody>
+            </table>
+            <hr class="mhchaps">
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

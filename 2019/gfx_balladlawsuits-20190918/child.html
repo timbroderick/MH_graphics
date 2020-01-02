@@ -1,0 +1,202 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"entry": "Lawsuits filed", "FY2018": "5,372", "FY2019": "5,713", "Change": "341", "percchange": "6.35%"}, {"entry": "Patient accounts referred for legal action", "FY2018": "8,478", "FY2019": "8,026", "Change": "-452", "percchange": "-5.33%"}, {"entry": "Patient discharges", "FY2018": "94,456", "FY2019": "89,371", "Change": "-5,085", "percchange": "-5.38%"}, {"entry": "Lawsuits as percentage of patient discharges", "FY2018": "5.69%", "FY2019": "6.39%", "Change": "0.71*", "percchange": null}, {"entry": "Total patient accounts", "FY2018": "952,587", "FY2019": "1,037,782", "Change": "85,195", "percchange": "8.94%"}, {"entry": "Lawsuits as percentage of total accounts", "FY2018": "0.56%", "FY2019": "0.55%", "Change": "-0.01*", "percchange": null}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>Ballad lawsuits</strong></h2>
+    <p>Ballad Health filed thousands of lawsuits against patients in its mostly rural, 21-county coverage area</p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th >Fiscal 2018</th>
+        <th >Fiscal 2019</th>
+        <th >Change</th>
+        <th >Percentage change</th>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td class="tdLEFT" colspan="4"><strong>Lawsuits filed</strong></td>
+          </tr>
+          <tr>
+              <td>5,372</td>
+              <td>5,713</td>
+              <td>341</td>
+              <td>6.35%</td>
+          </tr>
+        
+          <tr>
+            <td class="tdLEFT" colspan="4"><strong>Patient accounts referred for legal action</strong></td>
+          </tr>
+          <tr>
+              <td>8,478</td>
+              <td>8,026</td>
+              <td>-452</td>
+              <td>-5.33%</td>
+          </tr>
+        
+          <tr>
+            <td class="tdLEFT" colspan="4"><strong>Patient discharges</strong></td>
+          </tr>
+          <tr>
+              <td>94,456</td>
+              <td>89,371</td>
+              <td>-5,085</td>
+              <td>-5.38%</td>
+          </tr>
+        
+          <tr>
+            <td class="tdLEFT" colspan="4"><strong>Lawsuits as percentage of patient discharges</strong></td>
+          </tr>
+          <tr>
+              <td>5.69%</td>
+              <td>6.39%</td>
+              <td>0.71*</td>
+              <td></td>
+          </tr>
+        
+          <tr>
+            <td class="tdLEFT" colspan="4"><strong>Total patient accounts</strong></td>
+          </tr>
+          <tr>
+              <td>952,587</td>
+              <td>1,037,782</td>
+              <td>85,195</td>
+              <td>8.94%</td>
+          </tr>
+        
+          <tr>
+            <td class="tdLEFT" colspan="4"><strong>Lawsuits as percentage of total accounts</strong></td>
+          </tr>
+          <tr>
+              <td>0.56%</td>
+              <td>0.55%</td>
+              <td>-0.01*</td>
+              <td></td>
+          </tr>
+        
+      </tbody>
+    </table>
+</p>
+
+
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">Ballad Health&#8217;s fiscal year is July 1 to June 30.<br>* Percentage-point change
+</p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Ballad Health
+</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1568846927"></script>
+
+
+</body>
+</html>

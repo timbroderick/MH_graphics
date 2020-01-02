@@ -1,0 +1,314 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"cms_id": "490053", "hospital": "Johnston Memorial Hospital", "address1": "16000 Johnston Memorial Drive", "address2": "Abingdon, Va.", "zip": "24211", "op_rev": "$159,027,013", "total_op": "$20,063,446", "net": "$33,856,397", "markup": "612.14"}, {"cms_id": "440063", "hospital": "Johnson City Medical Center", "address1": "400 N. State of Franklin Road", "address2": "Johnson City, Tenn.", "zip": "37604", "op_rev": "$446,727,890", "total_op": "$24,667,327", "net": "$28,342,289", "markup": "679.77"}, {"cms_id": "440184", "hospital": "Franklin Woods Community Hospital", "address1": "300 MedTech Parkway", "address2": "Johnson City, Tenn.", "zip": "37604", "op_rev": "$81,585,251", "total_op": "$10,453,077", "net": "$10,485,269", "markup": "717.91"}, {"cms_id": "490001", "hospital": "Norton Community Hospital", "address1": "100 Fifteenth Street NW", "address2": "Norton, Va.", "zip": "24273", "op_rev": "$60,193,177", "total_op": "$7,303,236", "net": "$9,394,880", "markup": "564.32"}, {"cms_id": "490114", "hospital": "Lonesome Pine Hospital", "address1": "1990 Holton Avenue", "address2": "Big Stone Gap, Va.", "zip": "24219", "op_rev": "$91,110,271", "total_op": "$6,546,782", "net": "$6,588,484", "markup": "443.78"}, {"cms_id": "440012", "hospital": "Bristol Regional Medical Center", "address1": "1 Medical Park Boulevard", "address2": "Bristol, Tenn.", "zip": "37620", "op_rev": "$239,095,327", "total_op": "$2,761,703", "net": "$4,817,640", "markup": "377.76"}, {"cms_id": "490038", "hospital": "Smyth County Community Hospital", "address1": "245 Medical Park Drive", "address2": "Marion, Va.", "zip": "24354", "op_rev": "$48,169,360", "total_op": "$1,645,862", "net": "$3,760,866", "markup": "457.69"}, {"cms_id": "440018", "hospital": "Sycamore Shoals Hospital", "address1": "1501 West Elk Avenue", "address2": "Elizabethton, Tenn.", "zip": "37643", "op_rev": "$45,692,482", "total_op": "$2,802,057", "net": "$2,815,573", "markup": "726.00"}, {"cms_id": "441313", "hospital": "Hancock County Hospital", "address1": "1519 Main Street", "address2": "Sneedville, Tenn.", "zip": "37869", "op_rev": "$8,519,328", "total_op": "$1,492,140", "net": "$1,509,340", "markup": "297.02"}, {"cms_id": "440032", "hospital": "Hawkins County Memorial Hospital", "address1": "851 Locust Street", "address2": "Rogersville, Tenn.", "zip": "37857", "op_rev": "$19,491,797", "total_op": "$624,333", "net": "$632,491", "markup": "382.50"}, {"cms_id": "491303", "hospital": "Dickenson Community Hospital", "address1": "312 Hospital Drive", "address2": "Clintwood, Va.", "zip": "24228", "op_rev": "$9,569,188", "total_op": "-$497,467", "net": "-$452,419", "markup": "277.08"}, {"cms_id": "441304", "hospital": "Johnson County Community Hospital", "address1": "1901 South Shady Street", "address2": "Mountain City, Tenn.", "zip": "37683", "op_rev": "$8,204,672", "total_op": "-$741,049", "net": "-$689,255", "markup": "296.06"}, {"cms_id": "440001", "hospital": "Unicoi County Hospital", "address1": "2030 Temple Hill Road", "address2": "Erwin, Tenn.", "zip": "37650", "op_rev": "$11,513,037", "total_op": "-$3,793,969", "net": "-$3,793,488", "markup": "403.91"}, {"cms_id": "440050", "hospital": "Greeneville Community Hospital West </strong><small>Formerly Takoma Regional Hospital</small>", "address1": "401 Takoma Avenue", "address2": "Greeneville, Tenn.", "zip": "37743", "op_rev": "$60,372,253", "total_op": "-$4,346,117", "net": "-$4,005,308", "markup": "352.40"}, {"cms_id": "440176", "hospital": "Indian Path Community Hospital", "address1": "2000 Brookside Drive", "address2": "Kingsport, Tenn.", "zip": "37660", "op_rev": "$85,100,302", "total_op": "-$5,187,534", "net": "-$5,083,674", "markup": "638.19"}, {"cms_id": "440025", "hospital": "Greeneville Community Hospital East </strong><small>Formerly Laughlin Memorial Hospital</small>", "address1": "1420 Tusculum Boulevard", "address2": "Greeneville, Tenn.", "zip": "37745", "op_rev": "$69,665,133", "total_op": "-$6,265,299", "net": "-$5,474,764", "markup": "277.97"}, {"cms_id": "490002", "hospital": "Russell County Hospital", "address1": "58 Carroll Street", "address2": "Lebanon, Va.", "zip": "24266", "op_rev": "$19,967,338", "total_op": "-$6,003,195", "net": "-$6,020,489", "markup": "429.30"}, {"cms_id": "440017", "hospital": "Holston Valley Medical Center", "address1": "130 West Ravine Road", "address2": "Kingsport, Tenn.", "zip": "37660", "op_rev": "$343,237,764", "total_op": "-$14,679,993", "net": "-$14,559,414", "markup": "386.60"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+td.sz { font-size: 14px }
+
+th.szh { font-size: 14px }
+
+</style>
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>Ballad hospitals</strong></h2>
+    <p>2018 operating revenue, operating profit/lostt and net income.</p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="szh">Operating revenue</th>
+        <th class="szh">Operating profit/loss</th>
+        <th class="szh">Net income</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tdLEFT" colspan="3"><strong>National average</strong></td>
+        </tr>
+        <tr>
+          <td class="sz">$300,902,472</td>
+          <td class="sz">$18,025,095</td>
+          <td class="sz">$20,523,374</td>
+        </tr>
+
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/490053" target="_blank"><strong>Johnston Memorial Hospital</a></strong>, Abingdon, Va.</td>
+        </tr>
+        <tr>
+            <td class="sz">$159,027,013</td>
+            <td class="sz">$20,063,446</td>
+            <td class="sz">$33,856,397</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440063" target="_blank"><strong>Johnson City Medical Center</a></strong>, Johnson City, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$446,727,890</td>
+            <td class="sz">$24,667,327</td>
+            <td class="sz">$28,342,289</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440184" target="_blank"><strong>Franklin Woods Community Hospital</a></strong>, Johnson City, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$81,585,251</td>
+            <td class="sz">$10,453,077</td>
+            <td class="sz">$10,485,269</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/490001" target="_blank"><strong>Norton Community Hospital</a></strong>, Norton, Va.</td>
+        </tr>
+        <tr>
+            <td class="sz">$60,193,177</td>
+            <td class="sz">$7,303,236</td>
+            <td class="sz">$9,394,880</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/490114" target="_blank"><strong>Lonesome Pine Hospital</a></strong>, Big Stone Gap, Va.</td>
+        </tr>
+        <tr>
+            <td class="sz">$91,110,271</td>
+            <td class="sz">$6,546,782</td>
+            <td class="sz">$6,588,484</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440012" target="_blank"><strong>Bristol Regional Medical Center</a></strong>, Bristol, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$239,095,327</td>
+            <td class="sz">$2,761,703</td>
+            <td class="sz">$4,817,640</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/490038" target="_blank"><strong>Smyth County Community Hospital</a></strong>, Marion, Va.</td>
+        </tr>
+        <tr>
+            <td class="sz">$48,169,360</td>
+            <td class="sz">$1,645,862</td>
+            <td class="sz">$3,760,866</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440018" target="_blank"><strong>Sycamore Shoals Hospital</a></strong>, Elizabethton, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$45,692,482</td>
+            <td class="sz">$2,802,057</td>
+            <td class="sz">$2,815,573</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/441313" target="_blank"><strong>Hancock County Hospital</a></strong>, Sneedville, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$8,519,328</td>
+            <td class="sz">$1,492,140</td>
+            <td class="sz">$1,509,340</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440032" target="_blank"><strong>Hawkins County Memorial Hospital</a></strong>, Rogersville, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$19,491,797</td>
+            <td class="sz">$624,333</td>
+            <td class="sz">$632,491</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/491303" target="_blank"><strong>Dickenson Community Hospital</a></strong>, Clintwood, Va.</td>
+        </tr>
+        <tr>
+            <td class="sz">$9,569,188</td>
+            <td class="sz">-$497,467</td>
+            <td class="sz">-$452,419</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/441304" target="_blank"><strong>Johnson County Community Hospital</a></strong>, Mountain City, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$8,204,672</td>
+            <td class="sz">-$741,049</td>
+            <td class="sz">-$689,255</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440001" target="_blank"><strong>Unicoi County Hospital</a></strong>, Erwin, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$11,513,037</td>
+            <td class="sz">-$3,793,969</td>
+            <td class="sz">-$3,793,488</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440050" target="_blank"><strong>Greeneville Community Hospital West </strong><small>Formerly Takoma Regional Hospital</small></a></strong>, Greeneville, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$60,372,253</td>
+            <td class="sz">-$4,346,117</td>
+            <td class="sz">-$4,005,308</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440176" target="_blank"><strong>Indian Path Community Hospital</a></strong>, Kingsport, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$85,100,302</td>
+            <td class="sz">-$5,187,534</td>
+            <td class="sz">-$5,083,674</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440025" target="_blank"><strong>Greeneville Community Hospital East </strong><small>Formerly Laughlin Memorial Hospital</small></a></strong>, Greeneville, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$69,665,133</td>
+            <td class="sz">-$6,265,299</td>
+            <td class="sz">-$5,474,764</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/490002" target="_blank"><strong>Russell County Hospital</a></strong>, Lebanon, Va.</td>
+        </tr>
+        <tr>
+            <td class="sz">$19,967,338</td>
+            <td class="sz">-$6,003,195</td>
+            <td class="sz">-$6,020,489</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><a href="https://metrics.modernhealthcare.com/hospital/summary/440017" target="_blank"><strong>Holston Valley Medical Center</a></strong>, Kingsport, Tenn.</td>
+        </tr>
+        <tr>
+            <td class="sz">$343,237,764</td>
+            <td class="sz">-$14,679,993</td>
+            <td class="sz">-$14,559,414</td>
+        </tr>
+        
+    </tbody>
+  </table>
+</p>
+
+
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">Niswonger Children&#8217;s Hospital and Woodridge Hospital, near Johnson City Medical Center, and Mountain View Regional Hospital, near Norton Community Hospital, do not report seperate cost reports.</p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Modern Healthcare Metrics</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1568841070"></script>
+
+
+</body>
+</html>

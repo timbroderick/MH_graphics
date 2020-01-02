@@ -1,0 +1,127 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="../../static/leaflet/leaflet.css" type="text/css">
+        <script src="../../static/leaflet/leaflet.js"></script> <!-- adding leaflet -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"procedure": "Cesarean section", "physician": "4575.49", "hospital": "8279.09", "physiciantxt": "4,575.49", "hospitaltxt": "8,279.09"}, {"procedure": "Vaginal delivery", "physician": "3664.88", "hospital": "5613.66", "physiciantxt": "3,664.88", "hospitaltxt": "5,613.66"}, {"procedure": "Colonoscopy", "physician": "628.37", "hospital": "1791.04", "physiciantxt": "628.37", "hospitaltxt": "1,791.04"}, {"procedure": "Knee replacement", "physician": "4857.6", "hospital": "24906.25", "physiciantxt": "4,857.60", "hospitaltxt": "24,906.25"}, {"procedure": "Inpatient", "physician": "4056.02", "hospital": "14392.31", "physiciantxt": "4,056.02", "hospitaltxt": "14,392.31"}, {"procedure": "Outpatient", "physician": "347.69", "hospital": "1348.23", "physiciantxt": "347.69", "hospitaltxt": "1,348.23"}];
+</script>
+
+<style type="text/css">
+.graphic { height:325px }
+</style>
+
+    <h2><strong>Hospital and physician prices</strong></h2>
+    <p>Average prices, 2007-2014<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Study of Health Care Cost Institute data via &#8220;Hospital Prices Grew Substantially Faster Than Physician Prices For Hospital-Based Care In 2007-14,&#8221; Hospital Affairs 38</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1549310473"></script>
+
+
+</body>
+</html>

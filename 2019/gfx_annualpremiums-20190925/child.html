@@ -1,0 +1,136 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "1999", "single": "2196.0", "family": "5791.0", "single_txt": "2,196", "family_txt": "5,791"}, {"year": "2000", "single": "2471.0", "family": "6438.0", "single_txt": "2,471", "family_txt": "6,438"}, {"year": "2001", "single": "2689.0", "family": "7061.0", "single_txt": "2,689", "family_txt": "7,061"}, {"year": "2002", "single": "3083.0", "family": "8003.0", "single_txt": "3,083", "family_txt": "8,003"}, {"year": "2003", "single": "3383.0", "family": "9068.0", "single_txt": "3,383", "family_txt": "9,068"}, {"year": "2004", "single": "3695.0", "family": "9950.0", "single_txt": "3,695", "family_txt": "9,950"}, {"year": "2005", "single": "4024.0", "family": "10880.0", "single_txt": "4,024", "family_txt": "10,880"}, {"year": "2006", "single": "4242.0", "family": "11480.0", "single_txt": "4,242", "family_txt": "11,480"}, {"year": "2007", "single": "4479.0", "family": "12160.0", "single_txt": "4,479", "family_txt": "12,160"}, {"year": "2008", "single": "4704.0", "family": "12680.0", "single_txt": "4,704", "family_txt": "12,680"}, {"year": "2009", "single": "4824.0", "family": "13375.0", "single_txt": "4,824", "family_txt": "13,375"}, {"year": "2010", "single": "5049.0", "family": "13770.0", "single_txt": "5,049", "family_txt": "13,770"}, {"year": "2011", "single": "5429.0", "family": "15073.0", "single_txt": "5,429", "family_txt": "15,073"}, {"year": "2012", "single": "5615.0", "family": "15745.0", "single_txt": "5,615", "family_txt": "15,745"}, {"year": "2013", "single": "5884.0", "family": "16351.0", "single_txt": "5,884", "family_txt": "16,351"}, {"year": "2014", "single": "6025.0", "family": "16834.0", "single_txt": "6,025", "family_txt": "16,834"}, {"year": "2015", "single": "6251.0", "family": "17545.0", "single_txt": "6,251", "family_txt": "17,545"}, {"year": "2016", "single": "6435.0", "family": "18142.0", "single_txt": "6,435", "family_txt": "18,142"}, {"year": "2017", "single": "6690.0", "family": "18764.0", "single_txt": "6,690", "family_txt": "18,764"}, {"year": "2018", "single": "6896.0", "family": "19616.0", "single_txt": "6,896", "family_txt": "19,616"}, {"year": "2019", "single": "7188.0", "family": "20576.0", "single_txt": "7,188", "family_txt": "20,576"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:475px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #508ebc;
+}
+.SECOND {
+  background-color: #3d505a;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9fa7d4;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>The steady climb of employer-sponsored insurance premiums</strong></h2>
+    <p>Average annual premiums for single and family coverage, 1999-19<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Source: KFF Employer Health Benefits Survey, 2018-19; Kaiser/HRET Survey of Employer-sponsored Health Benefits, 1999-17</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1569426740"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>The number of uninsured children has increased in most states</strong></h2>
+    <p>Percentage change from 2016-18 in uninsured children under age 19</p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">State</th>
+        <th>2016</th>
+        <th>2018</th>
+        <th>% change</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT">West Virginia</td>
+            <td>9,000</td>
+            <td>13,000</td>
+            <td>44.4</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Tennessee</td>
+            <td>58,000</td>
+            <td>83,000</td>
+            <td>43.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Idaho</td>
+            <td>22,000</td>
+            <td>29,000</td>
+            <td>31.8</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Alabama</td>
+            <td>32,000</td>
+            <td>41,000</td>
+            <td>28.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Ohio</td>
+            <td>104,000</td>
+            <td>133,000</td>
+            <td>27.9</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Montana</td>
+            <td>12,000</td>
+            <td>15,000</td>
+            <td>25.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Illinois</td>
+            <td>82,000</td>
+            <td>102,000</td>
+            <td>24.4</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Utah</td>
+            <td>59,000</td>
+            <td>72,000</td>
+            <td>22.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Georgia</td>
+            <td>179,000</td>
+            <td>217,000</td>
+            <td>21.2</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Massachusetts</td>
+            <td>15,000</td>
+            <td>18,000</td>
+            <td>20.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">South Dakota</td>
+            <td>11,000</td>
+            <td>13,000</td>
+            <td>18.2</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Florida</td>
+            <td>288,000</td>
+            <td>339,000</td>
+            <td>17.7</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Missouri</td>
+            <td>71,000</td>
+            <td>83,000</td>
+            <td>16.9</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Texas</td>
+            <td>752,000</td>
+            <td>873,000</td>
+            <td>16.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Nevada</td>
+            <td>50,000</td>
+            <td>58,000</td>
+            <td>16.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Maine</td>
+            <td>13,000</td>
+            <td>15,000</td>
+            <td>15.4</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Delaware</td>
+            <td>7,000</td>
+            <td>8,000</td>
+            <td>14.3</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Kentucky</td>
+            <td>35,000</td>
+            <td>40,000</td>
+            <td>14.3</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Arkansas</td>
+            <td>30,000</td>
+            <td>34,000</td>
+            <td>13.3</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">North Carolina</td>
+            <td>115,000</td>
+            <td>130,000</td>
+            <td>13.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">South Carolina</td>
+            <td>50,000</td>
+            <td>56,000</td>
+            <td>12.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Kansas</td>
+            <td>34,000</td>
+            <td>38,000</td>
+            <td>11.8</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">United States</td>
+            <td>3,649,000</td>
+            <td>4,055,000</td>
+            <td>11.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Arizona</td>
+            <td>132,000</td>
+            <td>146,000</td>
+            <td>10.6</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Indiana</td>
+            <td>99,000</td>
+            <td>109,000</td>
+            <td>10.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Michigan</td>
+            <td>71,000</td>
+            <td>78,000</td>
+            <td>9.9</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Colorado</td>
+            <td>57,000</td>
+            <td>62,000</td>
+            <td>8.8</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Oregon</td>
+            <td>31,000</td>
+            <td>33,000</td>
+            <td>6.5</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Oklahoma</td>
+            <td>79,000</td>
+            <td>83,000</td>
+            <td>5.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Iowa</td>
+            <td>20,000</td>
+            <td>21,000</td>
+            <td>5.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Nebraska</td>
+            <td>25,000</td>
+            <td>26,000</td>
+            <td>4.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Virginia</td>
+            <td>99,000</td>
+            <td>102,000</td>
+            <td>3.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">New Jersey</td>
+            <td>78,000</td>
+            <td>80,000</td>
+            <td>2.6</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Washington</td>
+            <td>46,000</td>
+            <td>47,000</td>
+            <td>2.2</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Wisconsin</td>
+            <td>50,000</td>
+            <td>51,000</td>
+            <td>2.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Hawaii</td>
+            <td>8,000</td>
+            <td>8,000</td>
+            <td>0.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Louisiana</td>
+            <td>39,000</td>
+            <td>39,000</td>
+            <td>0.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Rhode Island</td>
+            <td>5,000</td>
+            <td>5,000</td>
+            <td>0.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Vermont</td>
+            <td>2,000</td>
+            <td>2,000</td>
+            <td>0.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">California</td>
+            <td>300,000</td>
+            <td>299,000</td>
+            <td>-0.3</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Pennsylvania</td>
+            <td>126,000</td>
+            <td>124,000</td>
+            <td>-1.6</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Minnesota</td>
+            <td>46,000</td>
+            <td>45,000</td>
+            <td>-2.2</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">New Mexico</td>
+            <td>28,000</td>
+            <td>27,000</td>
+            <td>-3.6</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Maryland</td>
+            <td>49,000</td>
+            <td>47,000</td>
+            <td>-4.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">New York</td>
+            <td>113,000</td>
+            <td>107,000</td>
+            <td>-5.3</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Mississippi</td>
+            <td>37,000</td>
+            <td>35,000</td>
+            <td>-5.4</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Alaska</td>
+            <td>20,000</td>
+            <td>18,000</td>
+            <td>-10.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">New Hampshire</td>
+            <td>8,000</td>
+            <td>7,000</td>
+            <td>-12.5</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Connecticut</td>
+            <td>23,000</td>
+            <td>20,000</td>
+            <td>-13.0</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Wyoming</td>
+            <td>13,000</td>
+            <td>10,000</td>
+            <td>-23.1</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">North Dakota</td>
+            <td>15,000</td>
+            <td>11,000</td>
+            <td>-26.7</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">District of Columbia</td>
+            <td>4,000</td>
+            <td>2,000</td>
+            <td>-50.0</td>
+        </tr>
+        
+    </tbody>
+  </table>
+</p>
+
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Georgetown University Center for Children and Families analysis of the U.S. Census Bureau American Community Survey data
+</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1572385021"></script>
+
+
+</body>
+</html>

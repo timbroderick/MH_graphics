@@ -1,0 +1,121 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.src.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"order": "0", "state": "Alabama", "value": "43.5", "legend": "43.5%"}, {"order": "1", "state": "Alaska", "value": "20.7", "legend": "20.7%"}, {"order": "2", "state": "Arizona", "value": "15.1", "legend": "15.1%"}, {"order": "3", "state": "Arkansas", "value": "30.5", "legend": "30.5%"}, {"order": "4", "state": "California", "value": "11.8", "legend": "11.8%"}, {"order": "5", "state": "Colorado", "value": "17.1", "legend": "17.1%"}, {"order": "6", "state": "Connecticut", "value": "14.6", "legend": "14.6%"}, {"order": "7", "state": "Delaware", "value": "34.9", "legend": "34.9%"}, {"order": "8", "state": "District of Columbia", "value": "9.7", "legend": "9.7%"}, {"order": "9", "state": "Florida", "value": "20.5", "legend": "20.5%"}, {"order": "10", "state": "Georgia", "value": "34.3", "legend": "34.3%"}, {"order": "11", "state": "Hawaii", "value": "15.6", "legend": "15.6%"}, {"order": "12", "state": "Idaho", "value": "24.2", "legend": "24.2%"}, {"order": "13", "state": "Illinois", "value": "20.0", "legend": "20.0%"}, {"order": "14", "state": "Indiana", "value": "19.8", "legend": "19.8%"}, {"order": "15", "state": "Iowa", "value": "23.7", "legend": "23.7%"}, {"order": "16", "state": "Kansas", "value": "30.5", "legend": "30.5%"}, {"order": "17", "state": "Kentucky", "value": "19.7", "legend": "19.7%"}, {"order": "18", "state": "Louisiana", "value": "27.8", "legend": "27.8%"}, {"order": "19", "state": "Maine", "value": "21.5", "legend": "21.5%"}, {"order": "20", "state": "Maryland", "value": "15.8", "legend": "15.8%"}, {"order": "21", "state": "Massachusetts", "value": "11.7", "legend": "11.7%"}, {"order": "22", "state": "Michigan", "value": "20.4", "legend": "20.4%"}, {"order": "23", "state": "Minnesota", "value": "21.4", "legend": "21.4%"}, {"order": "24", "state": "Mississippi", "value": "42.6", "legend": "42.6%"}, {"order": "25", "state": "Missouri", "value": "22.9", "legend": "22.9%"}, {"order": "26", "state": "Montana", "value": "34.5", "legend": "34.5%"}, {"order": "27", "state": "Nebraska", "value": "26.3", "legend": "26.3%"}, {"order": "28", "state": "Nevada", "value": "21.8", "legend": "21.8%"}, {"order": "29", "state": "New Hampshire", "value": "24.0", "legend": "24.0%"}, {"order": "30", "state": "New Jersey", "value": "23.7", "legend": "23.7%"}, {"order": "31", "state": "New Mexico", "value": "22.4", "legend": "22.4%"}, {"order": "32", "state": "New York", "value": "11.1", "legend": "11.1%"}, {"order": "33", "state": "North Carolina", "value": "31.0", "legend": "31.0%"}, {"order": "34", "state": "North Dakota", "value": "27.4", "legend": "27.4%"}, {"order": "35", "state": "Ohio", "value": "24.2", "legend": "24.2%"}, {"order": "36", "state": "Oklahoma", "value": "30.5", "legend": "30.5%"}, {"order": "37", "state": "Oregon", "value": "13.6", "legend": "13.6%"}, {"order": "38", "state": "Pennsylvania", "value": "18.5", "legend": "18.5%"}, {"order": "39", "state": "Rhode Island", "value": "16.0", "legend": "16.0%"}, {"order": "40", "state": "South Carolina", "value": "20.1", "legend": "20.1%"}, {"order": "41", "state": "South Dakota", "value": "29.7", "legend": "29.7%"}, {"order": "42", "state": "Tennessee", "value": "31.0", "legend": "31.0%"}, {"order": "43", "state": "Texas", "value": "22.5", "legend": "22.5%"}, {"order": "44", "state": "Utah", "value": "28.7", "legend": "28.7%"}, {"order": "45", "state": "Vermont", "value": "15.8", "legend": "15.8%"}, {"order": "46", "state": "Virginia", "value": "32.8", "legend": "32.8%"}, {"order": "47", "state": "Washington", "value": "10.9", "legend": "10.9%"}, {"order": "48", "state": "West Virginia", "value": "18.4", "legend": "18.4%"}, {"order": "49", "state": "Wisconsin", "value": "14.2", "legend": "14.2%"}, {"order": "50", "state": "Wyoming", "value": "25.1", "legend": "25.1%"}];
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+</style>
+
+    <h2><strong>Where grants drive revenue for community health centers</strong></h2>
+    <p>Share of Section 330 grants as a percentage of 2017 revenue, by state<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Government Accountability Office analysis of Health Resources and Services Adminstration Uniform Data System</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575500814"></script>
+
+
+</body>
+</html>

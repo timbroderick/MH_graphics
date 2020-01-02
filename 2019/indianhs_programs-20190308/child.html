@@ -1,0 +1,168 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"program_name": "Indian Health Service", "program": "Indian Health Service", "spend": "4,078", "structure": "healthcare provider", "pop": "1.6 million members of federally recognized American Indian tribes", "service": "mostly primary care. Some public health functions such as water sanitation"}, {"program_name": "Medicaid", "program": "Medicaid", "spend": "8,109", "structure": "healthcare payer and entitlement program", "pop": "73.5 million low-income individuals", "service": "inpatient and outpatient care and long-term care. Some optional services"}, {"program_name": "Medicare", "program": "Medicare", "spend": "13,185", "structure": "healthcare payer and entitlement program", "pop": "58.4 million individuals 65 and older as well as certain individuals with disabilities and specific illnesses", "service": "outpatient and inpatient care, and kidney dialysis "}, {"program_name": "Veterans Health Administration", "program": "Veterans Health<br>Administration", "spend": "10,692", "structure": "healthcare provider", "pop": "6.8 million, including some who are not veterans", "service": "outpatient and inpatient care, and mental health and residential treatment"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>IHS spending by comparison</strong></h2>
+    <p>The Indian Health Service has been plagued by chronic funding shortfalls for years, adding to major problems with quality and staffing at the agency&#8217;s health centers and hospitals. The agency is one of the few, alongside Veteran&#8217;s Affairs, in the government that provides direct care to Americans. Here is how the IHS funding per capita stacks up compared to the VA, Medicare and Medicaid. <br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    <br>
+    <h4><strong>Characteristics of four federal health programs</strong></h4>
+    <br>
+      <table id="gfx" class="table" width="100%" >
+        <tbody>
+
+          
+          <tr><td class="tdLEFT">
+            <ul>
+              <li><strong>Indian Health Service</strong>, a healthcare provider. Serves <strong>1.6 million members of federally recognized American Indian tribes</strong>. Coverage includes mostly primary care. Some public health functions such as water sanitation.</li>
+            </ul>
+          </td></tr>
+          
+          <tr><td class="tdLEFT">
+            <ul>
+              <li><strong>Medicaid</strong>, a healthcare payer and entitlement program. Serves <strong>73.5 million low-income individuals</strong>. Coverage includes inpatient and outpatient care and long-term care. Some optional services.</li>
+            </ul>
+          </td></tr>
+          
+          <tr><td class="tdLEFT">
+            <ul>
+              <li><strong>Medicare</strong>, a healthcare payer and entitlement program. Serves <strong>58.4 million individuals 65 and older as well as certain individuals with disabilities and specific illnesses</strong>. Coverage includes outpatient and inpatient care, and kidney dialysis .</li>
+            </ul>
+          </td></tr>
+          
+          <tr><td class="tdLEFT">
+            <ul>
+              <li><strong>Veterans Health Administration</strong>, a healthcare provider. Serves <strong>6.8 million, including some who are not veterans</strong>. Coverage includes outpatient and inpatient care, and mental health and residential treatment.</li>
+            </ul>
+          </td></tr>
+          
+      </tbody></table>
+
+          
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: 2017 report from the Government Accountability Office</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+    <br>
+    
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1552591715"></script>
+
+
+</body>
+</html>

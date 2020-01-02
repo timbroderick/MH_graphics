@@ -1,0 +1,135 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2005", "p2010": "16.0", "p2015": "n/a ", "p2017": "n/a ", "p2018": "n/a "}, {"year": "2006", "p2010": "16.1", "p2015": "n/a ", "p2017": "n/a ", "p2018": "n/a "}, {"year": "2007", "p2010": "16.2", "p2015": "n/a ", "p2017": "n/a ", "p2018": "n/a "}, {"year": "2008", "p2010": "16.6", "p2015": "n/a ", "p2017": "n/a ", "p2018": "n/a "}, {"year": "2009", "p2010": "17.6", "p2015": "17.3", "p2017": " ", "p2018": "n/a "}, {"year": "2010", "p2010": "17.6", "p2015": "17.3", "p2017": "17.4", "p2018": "n/a "}, {"year": "2011", "p2010": "17.7", "p2015": "17.4", "p2017": "17.3", "p2018": "17.3"}, {"year": "2012", "p2010": "17.6", "p2015": "17.3", "p2017": "17.3", "p2018": "17.3"}, {"year": "2013", "p2010": "17.6", "p2015": "17.3", "p2017": "17.2", "p2018": "17.2"}, {"year": "2014", "p2010": "18.1", "p2015": "17.5", "p2017": "17.4", "p2018": "17.3"}, {"year": "2015", "p2010": "18.3", "p2015": "17.8", "p2017": "17.7", "p2018": "17.6"}, {"year": "2016", "p2010": "18.6", "p2015": "18.1", "p2017": "17.9", "p2018": "18.0"}, {"year": "2017", "p2010": "18.8", "p2015": "18.2", "p2017": "18.0", "p2018": "17.9"}, {"year": "2018", "p2010": "19.1", "p2015": "18.4", "p2017": "18.2", "p2018": "17.8"}, {"year": "2019", "p2010": "19.4", "p2015": "18.5", "p2017": "18.3", "p2018": "17.8"}, {"year": "2020", "p2010": "19.8", "p2015": "18.7", "p2017": "18.4", "p2018": "17.9"}, {"year": "2021", "p2010": "n/a ", "p2015": "19.0", "p2017": "18.6", "p2018": "18.0"}, {"year": "2022", "p2010": "n/a ", "p2015": "19.2", "p2017": "18.7", "p2018": "18.2"}, {"year": "2023", "p2010": "n/a ", "p2015": "19.6", "p2017": "19.0", "p2018": "18.5"}, {"year": "2024", "p2010": "n/a ", "p2015": "19.9", "p2017": "19.2", "p2018": "18.7"}, {"year": "2025", "p2010": "n/a ", "p2015": "20.1", "p2017": "19.4", "p2018": "18.9"}, {"year": "2026", "p2010": "n/a ", "p2015": "n/a ", "p2017": "19.7", "p2018": "19.2"}, {"year": "2027", "p2010": "n/a ", "p2015": "n/a ", "p2017": "n/a ", "p2018": "19.4"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>CMS projections for growth</strong></h2>
+    <p>Here is how historic estimates match up with the current estimate of national health expenditures as a percentage of GDP<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: CMS</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1550698463"></script>
+
+
+</body>
+</html>

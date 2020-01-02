@@ -1,0 +1,99 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}
+    <br><small><strong>The list below is interactive: </strong><span style="color:red">Click the name</span> to view more.</small></p>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      {% for row in COPY.data %}
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading{{ row.item }}">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ row.item }}" aria-expanded="false" aria-controls="collapse{{ row.item }}">
+                <strong>{{ row.measure }}</strong><br>
+                <small><i>Status: {{ row.status }}</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse{{ row.item }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ row.item }}">
+          <div class="panel-body">
+            <p><strong>Description:</strong> {{ row.description }}</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> {{ row.y2019 }} &#9679; <strong>In 2021:</strong> {{ row.y2021 }}</p>
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

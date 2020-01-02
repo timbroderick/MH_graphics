@@ -1,0 +1,462 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"rank": "1", "name": "Bernard Tyson", "title": "Chairman and CEO", "place": "Kaiser Foundation Health Plan and Hospitals", "location": "Oakland, Calif.", "earn2017": "$16,082,753", "other2017": "8.05", "adjusted": null}, {"rank": "2", "name": "J. Knox Singleton", "title": "President", "place": "Inova Health Care", "location": "Falls Church, Va.", "earn2017": "$14,176,752", "other2017": "58.05", "adjusted": "A"}, {"rank": "3", "name": "Anthony Tersigni", "title": "President and CEO", "place": "Ascension", "location": "St. Louis", "earn2017": "$13,627,686", "other2017": "8.65", "adjusted": null}, {"rank": "4", "name": "Dr. Rod Hochman", "title": "President and CEO", "place": "Providence St. Joseph Health", "location": "Renton, Wash.", "earn2017": "$10,533,384", "other2017": "9.42", "adjusted": "A"}, {"rank": "5", "name": "Lloyd Dean", "title": "President and CEO", "place": "Dignity Health", "location": "San Francisco", "earn2017": "$9,569,824", "other2017": "8.44", "adjusted": "A"}, {"rank": "6", "name": "Peter Fine", "title": "President and CEO", "place": "Banner Health", "location": "Phoenix", "earn2017": "$8,542,030", "other2017": "66.71", "adjusted": "A"}, {"rank": "7", "name": "Robert Henkel", "title": "Executive vice president", "place": "Ascension", "location": "St. Louis", "earn2017": "$8,125,113", "other2017": "7.25", "adjusted": null}, {"rank": "8", "name": "James Skogsbergh", "title": "President and CEO", "place": "Advocate Health Care", "location": "Downers Grove, Ill.", "earn2017": "$7,805,356", "other2017": "51.42", "adjusted": "A"}, {"rank": "9", "name": "Dr. Robert Grossman", "title": "Dean and CEO", "place": "NYU Langone", "location": "New York", "earn2017": "$7,758,904", "other2017": "1.03", "adjusted": null}, {"rank": "10", "name": "Kenneth Samet", "title": "President and CEO", "place": "MedStar Health", "location": "Columbia, Md.", "earn2017": "$7,751,857", "other2017": "27.86", "adjusted": null}, {"rank": "11", "name": "Dr. Delos Cosgrove", "title": "President and CEO", "place": "Cleveland Clinic", "location": "Cleveland", "earn2017": "$7,628,936", "other2017": "6.14", "adjusted": null}, {"rank": "12", "name": "Dr. Kenneth Davis", "title": "CEO", "place": "Mount Sinai Health System", "location": "New York", "earn2017": "$7,270,414", "other2017": "80.19", "adjusted": "A"}, {"rank": "13", "name": "Dr. Steven Corwin", "title": "President and CEO", "place": "New York-Presbyterian", "location": "New York", "earn2017": "$7,048,147", "other2017": "35.41", "adjusted": "A"}, {"rank": "14", "name": "Dr. David Samadi", "title": "Chairman", "place": "Lenox Hill Hospital", "location": "New York", "earn2017": "$6,851,549", "other2017": "0", "adjusted": null}, {"rank": "15", "name": "Philip Incarnati", "title": "President and CEO", "place": "McLaren Health Care Corp.", "location": "Grand Blanc, Mich.", "earn2017": "$6,664,951", "other2017": "47.35", "adjusted": null}, {"rank": "16", "name": "Gregory Adams", "title": "Executive vice president and group president", "place": "Kaiser Foundation Health Plan and Hospitals", "location": "Oakland, Calif.", "earn2017": "$6,589,138", "other2017": "5.72", "adjusted": null}, {"rank": "17", "name": "Dr. Joseph Levine", "title": "Chief of electrophysiology", "place": "St. Francis Hospital", "location": "Roslyn, N.Y.", "earn2017": "$6,465,741", "other2017": "0.07", "adjusted": null}, {"rank": "18", "name": "J. Lindsey Bradley Jr.", "title": "Retired as a regional CEO", "place": "Christus Health", "location": "Irving, Texas", "earn2017": "$6,141,067", "other2017": "75.08", "adjusted": null}, {"rank": "19", "name": "Kevin Lofton", "title": "CEO", "place": "Catholic Health Initiatives", "location": "Englewood, Colo.", "earn2017": "$6,139,336", "other2017": "14.71", "adjusted": "A"}, {"rank": "20", "name": "Jeffrey Romoff", "title": "President and CEO", "place": "UPMC", "location": "Pittsburgh", "earn2017": "$5,739,001", "other2017": "6.93", "adjusted": "A"}, {"rank": "21", "name": "John Fox", "title": "President and CEO", "place": "Beaumont Health", "location": "Southfield, Mich.", "earn2017": "$5,674,842", "other2017": "1.1", "adjusted": null}, {"rank": "22", "name": "John Starcher Jr.", "title": "President and CEO", "place": "Mercy Health", "location": "Cincinnati", "earn2017": "$5,580,929", "other2017": "21.65", "adjusted": null}, {"rank": "23", "name": "Dr. Steven Safyer", "title": "President and CEO", "place": "Montefiore Medical Center", "location": "New York", "earn2017": "$5,461,099", "other2017": "31.19", "adjusted": null}, {"rank": "24", "name": "Harvey Granger", "title": "Senior vice president and general counsel", "place": "Baptist Health", "location": "Jacksonville, Fla.", "earn2017": "$5,338,214", "other2017": "87.85", "adjusted": null}, {"rank": "25", "name": "Dr. Craig Thompson", "title": "President and CEO", "place": "Memorial Sloan Kettering Cancer Center", "location": "New York", "earn2017": "$5,303,958", "other2017": "0.74", "adjusted": "A"}, {"rank": "26", "name": "Ernie Sadau", "title": "President and CEO", "place": "Christus Health", "location": "Irving, Texas", "earn2017": "$5,227,552", "other2017": "0.11", "adjusted": null}, {"rank": "27", "name": "Dean Harrison", "title": "President and CEO", "place": "Northwestern Memorial HealthCare ", "location": "Chicago", "earn2017": "$5,216,245", "other2017": "18.88", "adjusted": null}, {"rank": "28", "name": "Howard  Kern", "title": "President, CEO, ex-officio director", "place": "Sentara Healthcare", "location": "Norfolk, Va.", "earn2017": "$5,200,090", "other2017": "5.31", "adjusted": null}, {"rank": "29", "name": "Richard Kennan", "title": "Senior vice president-finance and chief financial officer", "place": "Valley Hospital ", "location": "Ridgewood, N.J.", "earn2017": "$5,091,673", "other2017": "89.5", "adjusted": "A"}, {"rank": "30", "name": "Anthony Speranzo", "title": "Chief financial officer", "place": "Ascension Health Alliance", "location": "St. Louis", "earn2017": "$5,083,444", "other2017": "10.7", "adjusted": null}, {"rank": "31", "name": "Mike Butler", "title": "President-operations", "place": "St. Joseph Health System", "location": "Irvine, Calif.", "earn2017": "$5,074,135", "other2017": "0.64", "adjusted": "A"}, {"rank": "32", "name": "Dr. Ron Walls", "title": "Executive vice president, chief operating officer at Brigham And Women's Health Care", "place": "Partners HealthCare System ", "location": "Somerville, Mass.", "earn2017": "$5,060,848", "other2017": "71.43", "adjusted": null}, {"rank": "33", "name": "Sarah Krevans", "title": "President and CEO", "place": "Sutter Health", "location": "Sacramento, Calif.", "earn2017": "$4,969,502", "other2017": "3.55", "adjusted": "A"}, {"rank": "34", "name": "Joseph Blake Jr.", "title": "Secretary", "place": "GHS Partners In Health ", "location": "Greenville. S.C.", "earn2017": "$4,885,906", "other2017": "97.15", "adjusted": null}, {"rank": "35", "name": "Ray Thompson", "title": "Director (through November 2016) ", "place": "Christus Health", "location": "Irving, Texas", "earn2017": "$4,839,981", "other2017": "73.68", "adjusted": null}, {"rank": "36", "name": "Barry Arbuckle .", "title": "President and CEO", "place": "MemorialCare Health System", "location": "Fountain Valley, Calif.", "earn2017": "$4,836,501", "other2017": "3.42", "adjusted": null}, {"rank": "37", "name": "Dr. Patricia Maryland", "title": "Chief operating officer", "place": "Ascension Health", "location": "St. Louis", "earn2017": "$4,780,159", "other2017": "11.14", "adjusted": null}, {"rank": "38", "name": "Dr. David Torchiana", "title": "CEO", "place": "Partners HealthCare System ", "location": "Somerville, Mass.", "earn2017": "$4,723,847", "other2017": "40.72", "adjusted": null}, {"rank": "39", "name": "Robert Garrett", "title": "Co-CEO and trustee", "place": "Hackensack Meridian Health ", "location": "Neptune, N.J.", "earn2017": "$4,695,432", "other2017": "19.62", "adjusted": null}, {"rank": "40", "name": "Mike Butler", "title": "President", "place": "Providence St. Joseph Health", "location": "Renton, Wash.", "earn2017": "$4,624,609", "other2017": "0.97", "adjusted": null}, {"rank": "41", "name": "Dr. Richard Shlofmitz", "title": "Chairman of cardiology", "place": "St. Francis Hospital", "location": "Roslyn, N.Y.", "earn2017": "$4,566,882", "other2017": "0.17", "adjusted": null}, {"rank": "42", "name": "Marvin O'Quinn", "title": "Senior executive vice president and chief operating officer", "place": "Dignity Health", "location": "San Francisco", "earn2017": "$4,490,023", "other2017": "8.45", "adjusted": "A"}, {"rank": "43", "name": "David Blom", "title": "President and CEO", "place": "OhioHealth ", "location": "Columbus, Ohio", "earn2017": "$4,442,076", "other2017": "0.74", "adjusted": null}, {"rank": "44", "name": "Fred Manchur", "title": "CEO", "place": "Kettering Medical Center", "location": "Miamisburg, Ohio", "earn2017": "$4,439,909", "other2017": "67.43", "adjusted": "A"}, {"rank": "45", "name": "John  Lloyd", "title": "Co-CEO and trustee", "place": "Hackensack Meridian Health ", "location": "Neptune, N.J.", "earn2017": "$4,393,241", "other2017": "13.31", "adjusted": null}, {"rank": "46", "name": "Thomas Priselac", "title": "President and CEO", "place": "Cedars-Sinai Medical Center", "location": "Los Angeles", "earn2017": "$4,326,820", "other2017": "5.24", "adjusted": null}, {"rank": "47", "name": "Robert Chrencik", "title": "President and CEO", "place": "University Of Maryland Medical System", "location": "Baltimore", "earn2017": "$4,265,077", "other2017": "43.85", "adjusted": null}, {"rank": "48", "name": "Michael Fassler", "title": "Former president and CEO", "place": "CenterLight Healthcare ", "location": "New York", "earn2017": "$4,250,000", "other2017": "37.65", "adjusted": null}, {"rank": "49", "name": "Michael Dowling", "title": "President and CEO", "place": "North Shore University Hospital", "location": "Westbury, N.Y.", "earn2017": "$4,096,767", "other2017": "0.57", "adjusted": null}, {"rank": "50", "name": "Dr. Sathish Subbaiah", "title": "Chief of neurosurgical spine surgery", "place": "St. Charles Hospital", "location": "Port Jefferson, N.Y.", "earn2017": "$4,078,435", "other2017": "0.01", "adjusted": "A"}];
+
+console.log(DATA);
+
+
+$(document).ready(function() {
+
+  var dtable = $('#gfx').DataTable( {
+    responsive: true,
+    "ordering": false,
+    "searching": false,
+    //"order": [[ 0, "asc" ]],
+    "iDisplayLength": 10
+  });
+
+  dtable.on('page.dt', function() {
+    $('html, body').animate({
+      scrollTop: $(".dataTables_wrapper").offset().top
+    }, 'slow');
+    $('thead tr th:first-child').focus().blur();
+  });
+});
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>Top 50</strong></h2>
+    <p>Highest paid not-for-profit health system executives and board members, 2017. Compensation does not include payments for previously reported deferred pay<br>
+      <small><strong>The list below is interactive: <span style="color:red">Page through</span> the list or <span style="color:red">choose to view</span> more at a time with the "Show entries" box.</strong></small></p>
+
+      <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+        <thead>
+          <th class="thLEFT" data-priority='1'>Name</th>
+          <th data-priority='2'>2017 earned*<br>compensation</th>
+          <th data-priority='3'>% in 'other'**<br>compensation</th>
+        </thead>
+        <tbody>
+
+          
+          <tr>
+              <td class="tdLEFT"><strong>1) Bernard Tyson</strong><br><small>Chairman and CEO, Kaiser Foundation Health Plan and Hospitals</small></td>
+              <td>$16,082,753<small><sup></sup></small></td>
+              <td>8.05%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>2) J. Knox Singleton</strong><br><small>President, Inova Health Care</small></td>
+              <td>$14,176,752<small><sup>A</sup></small></td>
+              <td>58.05%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>3) Anthony Tersigni</strong><br><small>President and CEO, Ascension</small></td>
+              <td>$13,627,686<small><sup></sup></small></td>
+              <td>8.65%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>4) Dr. Rod Hochman</strong><br><small>President and CEO, Providence St. Joseph Health</small></td>
+              <td>$10,533,384<small><sup>A</sup></small></td>
+              <td>9.42%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>5) Lloyd Dean</strong><br><small>President and CEO, Dignity Health</small></td>
+              <td>$9,569,824<small><sup>A</sup></small></td>
+              <td>8.44%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>6) Peter Fine</strong><br><small>President and CEO, Banner Health</small></td>
+              <td>$8,542,030<small><sup>A</sup></small></td>
+              <td>66.71%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>7) Robert Henkel</strong><br><small>Executive vice president, Ascension</small></td>
+              <td>$8,125,113<small><sup></sup></small></td>
+              <td>7.25%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>8) James Skogsbergh</strong><br><small>President and CEO, Advocate Health Care</small></td>
+              <td>$7,805,356<small><sup>A</sup></small></td>
+              <td>51.42%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>9) Dr. Robert Grossman</strong><br><small>Dean and CEO, NYU Langone</small></td>
+              <td>$7,758,904<small><sup></sup></small></td>
+              <td>1.03%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>10) Kenneth Samet</strong><br><small>President and CEO, MedStar Health</small></td>
+              <td>$7,751,857<small><sup></sup></small></td>
+              <td>27.86%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>11) Dr. Delos Cosgrove</strong><br><small>President and CEO, Cleveland Clinic</small></td>
+              <td>$7,628,936<small><sup></sup></small></td>
+              <td>6.14%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>12) Dr. Kenneth Davis</strong><br><small>CEO, Mount Sinai Health System</small></td>
+              <td>$7,270,414<small><sup>A</sup></small></td>
+              <td>80.19%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>13) Dr. Steven Corwin</strong><br><small>President and CEO, New York-Presbyterian</small></td>
+              <td>$7,048,147<small><sup>A</sup></small></td>
+              <td>35.41%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>14) Dr. David Samadi</strong><br><small>Chairman, Lenox Hill Hospital</small></td>
+              <td>$6,851,549<small><sup></sup></small></td>
+              <td>0%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>15) Philip Incarnati</strong><br><small>President and CEO, McLaren Health Care Corp.</small></td>
+              <td>$6,664,951<small><sup></sup></small></td>
+              <td>47.35%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>16) Gregory Adams</strong><br><small>Executive vice president and group president, Kaiser Foundation Health Plan and Hospitals</small></td>
+              <td>$6,589,138<small><sup></sup></small></td>
+              <td>5.72%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>17) Dr. Joseph Levine</strong><br><small>Chief of electrophysiology, St. Francis Hospital</small></td>
+              <td>$6,465,741<small><sup></sup></small></td>
+              <td>0.07%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>18) J. Lindsey Bradley Jr.</strong><br><small>Retired as a regional CEO, Christus Health</small></td>
+              <td>$6,141,067<small><sup></sup></small></td>
+              <td>75.08%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>19) Kevin Lofton</strong><br><small>CEO, Catholic Health Initiatives</small></td>
+              <td>$6,139,336<small><sup>A</sup></small></td>
+              <td>14.71%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>20) Jeffrey Romoff</strong><br><small>President and CEO, UPMC</small></td>
+              <td>$5,739,001<small><sup>A</sup></small></td>
+              <td>6.93%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>21) John Fox</strong><br><small>President and CEO, Beaumont Health</small></td>
+              <td>$5,674,842<small><sup></sup></small></td>
+              <td>1.1%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>22) John Starcher Jr.</strong><br><small>President and CEO, Mercy Health</small></td>
+              <td>$5,580,929<small><sup></sup></small></td>
+              <td>21.65%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>23) Dr. Steven Safyer</strong><br><small>President and CEO, Montefiore Medical Center</small></td>
+              <td>$5,461,099<small><sup></sup></small></td>
+              <td>31.19%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>24) Harvey Granger</strong><br><small>Senior vice president and general counsel, Baptist Health</small></td>
+              <td>$5,338,214<small><sup></sup></small></td>
+              <td>87.85%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>25) Dr. Craig Thompson</strong><br><small>President and CEO, Memorial Sloan Kettering Cancer Center</small></td>
+              <td>$5,303,958<small><sup>A</sup></small></td>
+              <td>0.74%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>26) Ernie Sadau</strong><br><small>President and CEO, Christus Health</small></td>
+              <td>$5,227,552<small><sup></sup></small></td>
+              <td>0.11%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>27) Dean Harrison</strong><br><small>President and CEO, Northwestern Memorial HealthCare </small></td>
+              <td>$5,216,245<small><sup></sup></small></td>
+              <td>18.88%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>28) Howard  Kern</strong><br><small>President, CEO, ex-officio director, Sentara Healthcare</small></td>
+              <td>$5,200,090<small><sup></sup></small></td>
+              <td>5.31%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>29) Richard Kennan</strong><br><small>Senior vice president-finance and chief financial officer, Valley Hospital </small></td>
+              <td>$5,091,673<small><sup>A</sup></small></td>
+              <td>89.5%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>30) Anthony Speranzo</strong><br><small>Chief financial officer, Ascension Health Alliance</small></td>
+              <td>$5,083,444<small><sup></sup></small></td>
+              <td>10.7%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>31) Mike Butler</strong><br><small>President-operations, St. Joseph Health System</small></td>
+              <td>$5,074,135<small><sup>A</sup></small></td>
+              <td>0.64%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>32) Dr. Ron Walls</strong><br><small>Executive vice president, chief operating officer at Brigham And Women's Health Care, Partners HealthCare System </small></td>
+              <td>$5,060,848<small><sup></sup></small></td>
+              <td>71.43%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>33) Sarah Krevans</strong><br><small>President and CEO, Sutter Health</small></td>
+              <td>$4,969,502<small><sup>A</sup></small></td>
+              <td>3.55%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>34) Joseph Blake Jr.</strong><br><small>Secretary, GHS Partners In Health </small></td>
+              <td>$4,885,906<small><sup></sup></small></td>
+              <td>97.15%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>35) Ray Thompson</strong><br><small>Director (through November 2016) , Christus Health</small></td>
+              <td>$4,839,981<small><sup></sup></small></td>
+              <td>73.68%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>36) Barry Arbuckle .</strong><br><small>President and CEO, MemorialCare Health System</small></td>
+              <td>$4,836,501<small><sup></sup></small></td>
+              <td>3.42%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>37) Dr. Patricia Maryland</strong><br><small>Chief operating officer, Ascension Health</small></td>
+              <td>$4,780,159<small><sup></sup></small></td>
+              <td>11.14%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>38) Dr. David Torchiana</strong><br><small>CEO, Partners HealthCare System </small></td>
+              <td>$4,723,847<small><sup></sup></small></td>
+              <td>40.72%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>39) Robert Garrett</strong><br><small>Co-CEO and trustee, Hackensack Meridian Health </small></td>
+              <td>$4,695,432<small><sup></sup></small></td>
+              <td>19.62%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>40) Mike Butler</strong><br><small>President, Providence St. Joseph Health</small></td>
+              <td>$4,624,609<small><sup></sup></small></td>
+              <td>0.97%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>41) Dr. Richard Shlofmitz</strong><br><small>Chairman of cardiology, St. Francis Hospital</small></td>
+              <td>$4,566,882<small><sup></sup></small></td>
+              <td>0.17%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>42) Marvin O'Quinn</strong><br><small>Senior executive vice president and chief operating officer, Dignity Health</small></td>
+              <td>$4,490,023<small><sup>A</sup></small></td>
+              <td>8.45%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>43) David Blom</strong><br><small>President and CEO, OhioHealth </small></td>
+              <td>$4,442,076<small><sup></sup></small></td>
+              <td>0.74%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>44) Fred Manchur</strong><br><small>CEO, Kettering Medical Center</small></td>
+              <td>$4,439,909<small><sup>A</sup></small></td>
+              <td>67.43%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>45) John  Lloyd</strong><br><small>Co-CEO and trustee, Hackensack Meridian Health </small></td>
+              <td>$4,393,241<small><sup></sup></small></td>
+              <td>13.31%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>46) Thomas Priselac</strong><br><small>President and CEO, Cedars-Sinai Medical Center</small></td>
+              <td>$4,326,820<small><sup></sup></small></td>
+              <td>5.24%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>47) Robert Chrencik</strong><br><small>President and CEO, University Of Maryland Medical System</small></td>
+              <td>$4,265,077<small><sup></sup></small></td>
+              <td>43.85%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>48) Michael Fassler</strong><br><small>Former president and CEO, CenterLight Healthcare </small></td>
+              <td>$4,250,000<small><sup></sup></small></td>
+              <td>37.65%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>49) Michael Dowling</strong><br><small>President and CEO, North Shore University Hospital</small></td>
+              <td>$4,096,767<small><sup></sup></small></td>
+              <td>0.57%</td>
+          </tr>
+          
+          <tr>
+              <td class="tdLEFT"><strong>50) Dr. Sathish Subbaiah</strong><br><small>Chief of neurosurgical spine surgery, St. Charles Hospital</small></td>
+              <td>$4,078,435<small><sup>A</sup></small></td>
+              <td>0.01%</td>
+          </tr>
+          
+      </tbody>
+    </table>
+  </p>
+
+
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit"><strong>* <i>2017 earned compensation</i></strong> was calculated from salary information in Schedule J of Form 990s, summing total and related total compensation and subtracting from it any compensation reported as deferred on prior Form 990s. Compensation marked with an <small><sup>A</sup></small> indicates entries where previously deferred pay was listed, and the compensation adjusted. <br><strong>** <i>Percentage in &#8220;other&#8221;</i></strong> is the percentage of <i>unadjusted</i> total and related total compensation that can be found in Form 990, column B(iii): &#8220;Other reportable compensation.&#8221; This column can include - but is not limited to - previously reported deferred pay. The percentage reported is provided for context, especially for instances where previously reported deferred pay was not broken out as instructed in the Form 990, and so the 2017 earned compensation was not adjusted.</p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Internal Revenue Service Form 990s, Modern Healthcare System Financials Database, GuideStar, ProPublica, Modern Healthcare reporting
+</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1564158513"></script>
+
+
+</body>
+</html>

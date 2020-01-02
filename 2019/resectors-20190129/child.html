@@ -1,0 +1,111 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+  var DATA = [{"sector": "Real estate debt", "Americas": "32", "APAC": "22", "EMEA": "26"}, {"sector": "Retirement living", "Americas": "20", "APAC": "24", "EMEA": "26"}, {"sector": "Student living", "Americas": "17", "APAC": "17", "EMEA": "37"}, {"sector": "Healthcare", "Americas": "15", "APAC": "21", "EMEA": "16"}, {"sector": "Data center", "Americas": "13", "APAC": "20", "EMEA": "11"}, {"sector": "Infrastructure", "Americas": "11", "APAC": "12", "EMEA": "13"}, {"sector": "Single-family residential", "Americas": "10", "APAC": "8", "EMEA": "18"}, {"sector": "Self-storage", "Americas": "15", "APAC": "4", "EMEA": "12"}, {"sector": "Leasure/entertainment", "Americas": "7", "APAC": "12", "EMEA": "10"}, {"sector": "Cold storage", "Americas": "9", "APAC": "8", "EMEA": "7"}, {"sector": "Automotive/car parks", "Americas": "1", "APAC": "6", "EMEA": "4"}];
+</script>
+
+<style type="text/css">
+.graphic { height:450px }
+</style>
+
+    <h2><strong>Sectors investors are &#8216;actively&#8217; pursuing</strong></h2>
+    <p>By origin of investment<br>
+    <strong><small>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></strong></p>
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: CBRE research, 2018 Global Investor Intentions Survey</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1548972778"></script>
+
+
+</body>
+</html>

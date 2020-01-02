@@ -1,0 +1,263 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<style type="text/css">
+
+h3.ex1 {
+  padding-bottom: 10px;
+}
+
+.graphic { height:350px }
+</style>
+
+    <h3 class="ex1" id="systems"><strong>Health systems</strong></h3>
+    
+      <h4><strong>ProMedica*</strong> | Toledo, Ohio<br><small><small>Added: 8/23/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$3.4 billion</strong></td><td>97.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$3.3 billion</strong></td><td>99.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$27.9 million loss </strong></td><td>-122.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>0.4%</strong></td><td>1.3 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>Discharges: 27,034<br><small>(admissions not provided)</small></strong></td><td>Discharges: -5.8% </td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          <small>* Results are for the six months ended June 30, 2019</small></p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Mayo Clinic*</strong> | Rochester, Minn. <br><small><small>Added: 8/23/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$6.8 billion</strong></td><td>8.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$6.2 billion</strong></td><td>5.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$541 million</strong></td><td>73%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>17.3%</strong></td><td>10.7 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>Not provided</strong></td><td>Not provided </td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Mayo Clinic's medical service revenue grew 8.8% in the first half of 2019, to $5.7 billion. <br><small>*Results are for Q1 and Q2 2019 combined/six months ended June 30, 2019</small></p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Advocate Aurora Health</strong> | Downers Grove, Ill. and Milwaukee<br><small><small>Added: 8/23/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$3.2 billion</strong></td><td>6.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$3 billion</strong></td><td>4.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$183.4 million</strong></td><td>50.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>12.7%</strong></td><td>7.8 percentage points </td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>Discharges: 68,346<br><small>(admissions not provided)</small></strong></td><td>Discharges: -1.8%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Sutter Health</strong> | Sacramento, Calif. <br><small><small>Added: 8/22/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$3.3 billion</strong></td><td>5.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$3.3 billion</strong></td><td>6.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$36 million</strong></td><td>-44.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>3.4%</strong></td><td>1.8 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>94,622</strong></td><td>-0.2%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Sutter Health currently faces a class-action lawsuit alleging its contracting practices have led to high prices and reduced competition in the markets it serves. Trial is scheduled for Sept. 23, 2019. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Kaiser Permanente </strong> | Oakland, Calif. <br><small><small>Added: 8/9/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$21.4 billion</strong></td><td>9.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$20.3 billion</strong></td><td>5.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$1.1 billion</strong></td><td>224%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>9.6%</strong></td><td>6.2 percentage points </td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>Declined to disclose</strong></td><td>Declined to disclose</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Kaiser’s second-quarter results build on what has already been a stellar year for the health system. It drew $2 billion in net income in the quarter, up 214% year-over-year. That’s due in large part to an accounting provision that as of Jan. 1 requires changes in estimated fair value of equity securities be reported in non-operating income. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Tenet Healthcare Corp. </strong> | Dallas<br><small><small>Added: 8/5/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$4.6 billion</strong></td><td>1.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$4.2 billion</strong></td><td>1.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$388 million</strong></td><td>-4.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>0.37%</strong></td><td>-0.21 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>169,352</strong></td><td>0.5%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Tenet Healthcare Corp.'s net income fell 35% in the second quarter of 2019 year-over-year, to $17 million in the recently ended quarter. The company recently announced plans to spin off its revenue-cycle subsidiary, Conifer Health Solutions, after being unable to find a suitable purchase offer. Conifer's revenue from third-party customers declined 13.6% in the quarter year-over-year. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Community Health Systems</strong> | Franklin, Tenn. <br><small><small>Added: 8/5/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$3.3 billion</strong></td><td>-7.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$3.2 billion</strong></td><td>-9.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$111 million</strong></td><td>200%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>-5.1%</strong></td><td>-2 percentage points </td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>139,400</strong></td><td>-11.5%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Community Health Systems widened its net loss to shareholders in the second quarter of 2019. Its admissions fell 11.5% in the quarter year-over-year as it continues to complete hospital divestitures, including seven sales in the six months ended June 30. On a same-facility basis, admissions were up 2.3% in the same period. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Care New England Health System</strong> | Providence, R.I.<br><small><small>Added: 7/30/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$290.7 million</strong></td><td>4.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$283.3 million</strong></td><td>1.9%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$7.4 million </strong></td><td>753.8%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>0.76%</strong></td><td>NA</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>N/A</strong></td><td>N/A</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Care New England Health System reported a healthy operating income in the third quarter after the Providence, R.I.-based health system dropped multiple merger discussions.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>HCA Healthcare</strong> | Nashville<br><small><small>Added: 7/30/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$12.6 billion</strong></td><td>9.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$11.4 billion</strong></td><td>10.8%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$783 million</strong></td><td>-4.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>6.2%</strong></td><td>- 0.9 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>518,253</strong></td><td>4.8%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          HCA Healthcare's share price fell sharply Tuesday following its second-quarter earnings release, which included drops in net income and other important metrics, like revenue per equivalent admission. Executives said HCA saw soft commercial revenue growth and a decline in inpatient surgeries. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Universal Health Services</strong> | King of Prussia, Pa. <br><small><small>Added: 7/25/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$2.86 billion </strong></td><td>6.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$2.5 billion</strong></td><td>6.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$238.3 million</strong></td><td>5.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>8.3%</strong></td><td>-0.08 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>78,879 (acute) / 121,687 (behavioral)</strong></td><td>5.2% (acute) / 1% (behavioral)</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Along with its second-quarter 2019 results, Universal Health Services announced it had reached a $127 million preliminary settlement with the U.S. Department of Justice stemming from an investigation into its behavioral health operations. UHS said the DOJ had also concluded a separate criminal investigation. </p>
+        <hr class="mhchaps">
+    
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1566830409"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+
+    <hr class="mhchaps">
+    <h4><strong>Holston Valley Medical Center</strong></h4>
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th>Fiscal 2017</th>
+        <th>Fiscal 2018</th>
+        <th>Q1, fiscal 2019</th>
+        <th>Fiscal year to date, 2019</th>
+      </thead>
+      <tbody>
+        {% for row in COPY.holston %}
+        <tr>
+          <td class="tdLEFT" colspan="4">{{ row.measure }}</td>
+        </tr>
+        <tr>
+            <td>{{ row.fy17 }}</td>
+            <td>{{ row.fy18 }}</td>
+            <td>{{ row.q1fy19 }}</td>
+            <td>{{ row.fytd19 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <hr class="mhchaps">
+    <h4><strong>Johnson City Medical Center</strong></h4>
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th>Fiscal 2017</th>
+        <th>Fiscal 2018</th>
+        <th>Q1, fiscal 2019</th>
+        <th>Fiscal year to date, 2019</th>
+      </thead>
+      <tbody>
+        {% for row in COPY.johnson %}
+        <tr>
+          <td class="tdLEFT" colspan="4">{{ row.measure }}</td>
+        </tr>
+        <tr>
+            <td>{{ row.fy17 }}</td>
+            <td>{{ row.fy18 }}</td>
+            <td>{{ row.q1fy19 }}</td>
+            <td>{{ row.fytd19 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <hr class="mhchaps">
+    <h4><strong>Ballad Health overall</strong></h4>
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th>Fiscal 2017</th>
+        <th>Fiscal 2018</th>
+        <th>Q1, fiscal 2019</th>
+        <th>Fiscal year to date, 2019</th>
+      </thead>
+      <tbody>
+        {% for row in COPY.ballad %}
+        <tr>
+          <td class="tdLEFT" colspan="4">{{ row.measure }}</td>
+        </tr>
+        <tr>
+            <td>{{ row.fy17 }}</td>
+            <td>{{ row.fy18 }}</td>
+            <td>{{ row.q1fy19 }}</td>
+            <td>{{ row.fytd19 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <!--</div>
+          </div>
+        </div>-->
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

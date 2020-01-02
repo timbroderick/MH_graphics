@@ -1,0 +1,106 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+
+console.log(DATA);
+
+
+$(document).ready(function() {
+
+  var dtable = $('#gfx').DataTable( {
+    responsive: true,
+    "ordering": false,
+    "searching": false,
+    //"order": [[ 0, "asc" ]],
+    "iDisplayLength": 10
+  });
+
+  dtable.on('page.dt', function() {
+    $('html, body').animate({
+      scrollTop: $(".dataTables_wrapper").offset().top
+    }, 'slow');
+    $('thead tr th:first-child').focus().blur();
+  });
+});
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+      <small><strong>The list below is interactive: <span style="color:red">Page through</span> the list or <span style="color:red">choose to view</span> more at a time with the "Show entries" box.</strong></small></p>
+
+      <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+        <thead>
+          <th class="thLEFT" data-priority='1'>Name</th>
+          <th data-priority='2'>2017 earned*<br>compensation</th>
+          <th data-priority='3'>% in 'other'**<br>compensation</th>
+        </thead>
+        <tbody>
+
+          {% for row in COPY.data %}
+          <tr>
+              <td class="tdLEFT"><strong>{{ row.rank }}) {{ row.name }}</strong><br><small>{{ row.title }}, {{ row.place }}</small></td>
+              <td>{{ row.earn2017 }}<small><sup>{{ row.adjusted }}</sup></small></td>
+              <td>{{ row.other2017 }}%</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </p>
+
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <!--</div>
+          </div>
+        </div>-->
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

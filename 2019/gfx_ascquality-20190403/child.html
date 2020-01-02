@@ -1,0 +1,310 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"item": "1", "measure": "ASC-1", "status": "Retired", "y2019": "Yes", "y2021": "No", "description": "Patients burned from procedure"}, {"item": "2", "measure": "ASC-2", "status": "Retired", "y2019": "Yes", "y2021": "No", "description": "Patients who fall in the facility"}, {"item": "3", "measure": "ASC-3", "status": "Retired", "y2019": "Yes", "y2021": "No", "description": "Procedure happens on the wrong site, the wrong side or on the wrong patient"}, {"item": "4", "measure": "ASC-4", "status": "Retired", "y2019": "Yes", "y2021": "No", "description": "Hospital transfer and admission occurs after procedure"}, {"item": "5", "measure": "ASC-8", "status": "Retired", "y2019": "Yes", "y2021": "No", "description": "Employee compliance with influenza vaccination"}, {"item": "6", "measure": "ASC-9", "status": "Continuing", "y2019": "Yes", "y2021": "Yes", "description": "Endoscopy screening occurs on patients with risk for colon polyps"}, {"item": "7", "measure": "ASC-10", "status": "Retired", "y2019": "Yes", "y2021": "No", "description": "Endoscopy screening occurs for patients with a history of adenomas"}, {"item": "8", "measure": "ASC-11*", "status": "Continuing", "y2019": "No", "y2021": "No", "description": "Improvement in patient\u2019s visual function within 30-days of cataract surgery. This is a voluntary measure"}, {"item": "9", "measure": "ASC-12", "status": "Continuing", "y2019": "Yes", "y2021": "Yes", "description": "Seven-day risk-standardized hospital visit-rate after outpatient colonoscopy"}, {"item": "10", "measure": "ASC-13", "status": "New", "y2019": "No", "y2021": "Yes", "description": "Patients have a normal body temperature"}, {"item": "11", "measure": "ASC-14", "status": "New", "y2019": "No", "y2021": "Yes", "description": "Unplanned rupture of eyeball capsule during cataract surgery"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Quality reporting for ambulatory surgical centers</strong></h2>
+    <p>The quality measures that ASCs report in order to receive full annual payment rate will change for payment determination in 2021
+    <br><small><strong>The list below is interactive: </strong><span style="color:red">Click the name</span> to view more.</small></p>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading1">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                <strong>ASC-1</strong><br>
+                <small><i>Status: Retired</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Patients burned from procedure</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> Yes &#9679; <strong>In 2021:</strong> No</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading2">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                <strong>ASC-2</strong><br>
+                <small><i>Status: Retired</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Patients who fall in the facility</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> Yes &#9679; <strong>In 2021:</strong> No</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading3">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                <strong>ASC-3</strong><br>
+                <small><i>Status: Retired</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Procedure happens on the wrong site, the wrong side or on the wrong patient</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> Yes &#9679; <strong>In 2021:</strong> No</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading4">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                <strong>ASC-4</strong><br>
+                <small><i>Status: Retired</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Hospital transfer and admission occurs after procedure</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> Yes &#9679; <strong>In 2021:</strong> No</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading5">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                <strong>ASC-8</strong><br>
+                <small><i>Status: Retired</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Employee compliance with influenza vaccination</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> Yes &#9679; <strong>In 2021:</strong> No</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading6">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                <strong>ASC-9</strong><br>
+                <small><i>Status: Continuing</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Endoscopy screening occurs on patients with risk for colon polyps</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> Yes &#9679; <strong>In 2021:</strong> Yes</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading7">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                <strong>ASC-10</strong><br>
+                <small><i>Status: Retired</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Endoscopy screening occurs for patients with a history of adenomas</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> Yes &#9679; <strong>In 2021:</strong> No</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading8">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                <strong>ASC-11*</strong><br>
+                <small><i>Status: Continuing</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Improvement in patient’s visual function within 30-days of cataract surgery. This is a voluntary measure</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> No &#9679; <strong>In 2021:</strong> No</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading9">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                <strong>ASC-12</strong><br>
+                <small><i>Status: Continuing</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Seven-day risk-standardized hospital visit-rate after outpatient colonoscopy</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> Yes &#9679; <strong>In 2021:</strong> Yes</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading10">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                <strong>ASC-13</strong><br>
+                <small><i>Status: New</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Patients have a normal body temperature</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> No &#9679; <strong>In 2021:</strong> Yes</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading11">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                <strong>ASC-14</strong><br>
+                <small><i>Status: New</i> (click for details)</small></a></h4>
+        </div>
+        <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+          <div class="panel-body">
+            <p><strong>Description:</strong> Unplanned rupture of eyeball capsule during cataract surgery</p>
+            <P><strong>Used for payment determination:</strong><br>
+            &#9679; <strong>In 2019:</strong> No &#9679; <strong>In 2021:</strong> Yes</p>
+          </div>
+        </div>
+      </div>
+        
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">* This measure is voluntary</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: cms.gov</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1554491571"></script>
+
+
+</body>
+</html>

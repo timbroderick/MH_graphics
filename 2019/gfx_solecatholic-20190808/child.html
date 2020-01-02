@@ -1,0 +1,407 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+
+    <h2><strong>Communities where Catholic-owned facilities are the sole community hospital</strong></h2>
+    <img src="js/solecatholic.jpg" class="img-responsive cenblock">
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th class="thLEFT" data-priority='1'>Hospital</th>
+        <th data-priority='4'>City, state</th>
+        <th data-priority='2'>Total profit<br>margin</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT">St. Elizabeth  Community Hospital</td>
+            <td>Red Bluff, Calif.</td>
+            <td>18.83%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Thomas More Hospital</td>
+            <td>Canon City, Colo.</td>
+            <td>0.18%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Mercy Regional Medical Center</td>
+            <td>Durango, Colo.</td>
+            <td>12.3%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Mary's Medical Center</td>
+            <td>Grand Junction, Colo.</td>
+            <td>9.61%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Joseph Regional Medical Center</td>
+            <td>Lewiston, Idaho</td>
+            <td>-1.79%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">OSF St. James - John Albrecht Medical Center</td>
+            <td>Pontiac, Ill.</td>
+            <td>28.08%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Franciscan Health Crawfordsville</td>
+            <td>Crawfordsville, Ind.</td>
+            <td>16.78%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Anthony Regional Hospital</td>
+            <td>Carroll, Iowa</td>
+            <td>7.87%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">MercyOne Clinton Medical Center</td>
+            <td>Clinton, Iowa</td>
+            <td>5.29%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">MercyOne North Iowa Medical Center</td>
+            <td>Mason City, Iowa</td>
+            <td>8.36%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Morton County Hospital</td>
+            <td>Elkhart, Kan.</td>
+            <td>-23.75%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Catherine Hospital</td>
+            <td>Garden City, Kan.</td>
+            <td>-7.59%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Ascension Via Christi Hospital</td>
+            <td>Pittsburg. Kan.</td>
+            <td>-6.29%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Bob Wilson Memorial Grant County Hospital</td>
+            <td>Ulysses, Kan.</td>
+            <td>-15.64%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Claire Regional Medical Center</td>
+            <td>Morehead, Ky.</td>
+            <td>2.59%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Natchitoches Regional Medical Center</td>
+            <td>Natchitoches, La.</td>
+            <td>5.05%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">OSF St. Francis Hospital</td>
+            <td>Escanaba, Mich.</td>
+            <td>4.92%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Ascension St. Joseph Hospital</td>
+            <td>Tawas City, Mich.</td>
+            <td>2.8%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Essentia Health - St. Joseph’s Medical Center</td>
+            <td>Brainerd, Minn.</td>
+            <td>13.01%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Essentia Health St. Mary's - Detroit Lakes</td>
+            <td>Detroit Lakes, Minn.</td>
+            <td>8.05%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Mercy Hospital Lebanon</td>
+            <td>Lebanon, Mo.</td>
+            <td>28.34%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">SSM Health St. Mary's Hospital - Audrain</td>
+            <td>Mexico, Mo.</td>
+            <td>-14.32%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. James Healthcare</td>
+            <td>Butte, Mont.</td>
+            <td>7.72%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">CHI Health Good Samaritan</td>
+            <td>Kearney, Neb.</td>
+            <td>17.82%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Christus St. Vincent Regional Medical Center</td>
+            <td>Santa Fe, N.M.</td>
+            <td>11.58%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Genesis Hospital</td>
+            <td>Zanesville, Ohio</td>
+            <td>4.57%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Mercy Hospital Ada</td>
+            <td>Ada, Okla.</td>
+            <td>0.24%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Mercy Hospital Ardmore</td>
+            <td>Ardmore, Okla.</td>
+            <td>3.11%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Jane Phillips Medical Center</td>
+            <td>Bartlesville, Okla.</td>
+            <td>15.11%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Francis Hospital Vinita</td>
+            <td>Vinita, Okla.</td>
+            <td>NA%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Alphonsus Medical Center - Ontario</td>
+            <td>Ontario, Ore.</td>
+            <td>3.1%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Mercy Medical Center</td>
+            <td>Roseburg, Ore.</td>
+            <td>21.86%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Avera St. Luke's Hospital</td>
+            <td>Aberdeen, S.D.</td>
+            <td>-3.76%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Avera Queen Of Peace Hospital</td>
+            <td>Mitchell, S.D.</td>
+            <td>4.02%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Avera St. Mary's Hospital</td>
+            <td>Pierre, S.D.</td>
+            <td>0.79%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Avera Sacred Heart Hospital</td>
+            <td>Yankton, S.D.</td>
+            <td>13.82%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Christus Spohn Hospital Alice</td>
+            <td>Alice, Texas</td>
+            <td>12.27%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Christus Spohn Hospital Beeville</td>
+            <td>Beeville, Texas</td>
+            <td>18.92%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Ascension Seton Highland Lakes </td>
+            <td>Burnet, Texas</td>
+            <td>1.3%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Christus Spohn Hospital Kleberg</td>
+            <td>Kingsville, Texas</td>
+            <td>14.81%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Covenant Health Plainview</td>
+            <td>Plainview, Texas</td>
+            <td>2.81%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">PeaceHealth St. Joseph Medical Center</td>
+            <td>Bellingham, Wash.</td>
+            <td>3.83%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Providence Centralia Hospital</td>
+            <td>Centralia, Wash.</td>
+            <td>8.33%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">St. Agnes Hospital</td>
+            <td>Fond Du Lac, Wis.</td>
+            <td>1.78%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Ascension St. Mary's Hospital</td>
+            <td>Rhinelander, Wis.</td>
+            <td>18.97%</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT">Howard Young Medical Center</td>
+            <td>Woodruff, Wis.</td>
+            <td>15.41%</td>
+        </tr>
+        
+    </tbody>
+  </table>
+</p>
+
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: MergerWatch, Modern Healthcare Metrics
+</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1565293328"></script>
+
+
+</body>
+</html>

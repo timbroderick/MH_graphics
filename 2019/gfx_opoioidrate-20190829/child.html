@@ -1,0 +1,143 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2000", "any": "3", "other": "0.3", "common": "1.3", "heroin": "0.7"}, {"year": "2001", "any": "3.3", "other": "0.3", "common": "1.7", "heroin": "0.6"}, {"year": "2002", "any": "4.1", "other": "0.4", "common": "2.3", "heroin": "0.7"}, {"year": "2003", "any": "4.5", "other": "0.5", "common": "2.6", "heroin": "0.7"}, {"year": "2004", "any": "4.7", "other": "0.6", "common": "2.9", "heroin": "0.6"}, {"year": "2005", "any": "5.1", "other": "0.6", "common": "3.2", "heroin": "0.7"}, {"year": "2006", "any": "5.9", "other": "0.9", "common": "3.9", "heroin": "0.7"}, {"year": "2007", "any": "6.1", "other": "0.7", "common": "4.2", "heroin": "0.8"}, {"year": "2008", "any": "6.4", "other": "0.8", "common": "4.3", "heroin": "1"}, {"year": "2009", "any": "6.6", "other": "1", "common": "4.4", "heroin": "1.1"}, {"year": "2010", "any": "6.8", "other": "1", "common": "4.7", "heroin": "1"}, {"year": "2011", "any": "7.3", "other": "0.8", "common": "4.9", "heroin": "1.4"}, {"year": "2012", "any": "7.4", "other": "0.8", "common": "4.5", "heroin": "1.9"}, {"year": "2013", "any": "7.9", "other": "1", "common": "4.4", "heroin": "2.7"}, {"year": "2014", "any": "9", "other": "1.8", "common": "4.6", "heroin": "3.4"}, {"year": "2015", "any": "10.4", "other": "3.1", "common": "4.7", "heroin": "4.1"}, {"year": "2016", "any": "13.3", "other": "6.2", "common": "5.2", "heroin": "4.9"}, {"year": "2017", "any": "14.9", "other": "9", "common": "5.2", "heroin": "4.9"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #508ebc;
+}
+.SECOND {
+  background-color: #6d6e71;
+}
+.THIRD {
+  background-color: #f05236;
+}
+.FOURTH {
+  background-color: #FFCD67;
+}
+.FIFTH {
+  background-color: #22366b;
+}
+</style>
+
+    <h2><strong>Opioid overdose deaths</strong></h2>
+    <p>Death rates per 100,000 people,  2000-2017<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">* E.g., fentanyl, tramadol<br>
+** Natural and semi-synthetic opioids and methadone<br></p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: CDC/NCHS, National Vital Statistics System, Mortality.
+</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1571242891"></script>
+
+
+</body>
+</html>

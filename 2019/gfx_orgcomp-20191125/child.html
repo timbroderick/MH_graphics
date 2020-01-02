@@ -1,0 +1,361 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts_mh.js"></script> <!-- adding highcharts -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"place": "AHA", "women": "6", "basew": "484827.0", "totalw": "753118.666667", "men": "3", "basem": "900732.0", "totalm": "1510064.33333", "totalw_txt": "753,119", "totalm_txt": "1,510,064"}, {"place": "AHIP", "women": "5", "basew": "340770.2", "totalw": "413818.2", "men": "4", "basem": "410764.25", "totalm": "467459.0", "totalw_txt": "413,818", "totalm_txt": "467,459"}, {"place": "AMA", "women": "3", "basew": "481285.666667", "totalw": "888147.333333", "men": "6", "basem": "706454.0", "totalm": "1281671.66667", "totalw_txt": "888,147", "totalm_txt": "1,281,672"}, {"place": "FAH", "women": "2", "basew": "363584.0", "totalw": "543635.0", "men": "3", "basem": "682348.666667", "totalm": "1498828.66667", "totalw_txt": "543,635", "totalm_txt": "1,498,829"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:450px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #237a82;
+}
+.SECOND {
+  background-color: #99c2cb;
+}
+.THIRD {
+  background-color: #de6427;
+}
+.FOURTH {
+  background-color: #fbc854;
+}
+.FIFTH {
+  background-color: #5e152d;
+}
+</style>
+
+    <h2><strong>Compensation compared</strong></h2>
+    <p>Average total* compensation for top executives by gender, at the American Hospital Association (AHA), America&#8217;s Health Insurance Plans (AHIP), American Medical Association (AMA) and Federation of American Hospitals (FAH).<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <p class="gfxcredit">* Total equals total compensation minus any previously reported deferred compensation as identified in the 2018 IRS Form 990</p>
+    <hr>
+
+    <br>
+    <h4><strong>Compensation per person</strong></h4>
+    <table id="gfx" class="table table-hover table-condensed table-striped display" width="100%" >
+      <thead>
+        <th class="thLEFT">Person</th>
+        <th>Base pay</th>
+        <th>Total*</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT"><strong>Rick Pollack</strong><br><small>President and CEO, <i>American Hospital Association</i></small></td>
+            <td>$1,549,292</td>
+            <td>$2,517,598</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Tom Nickels</strong><br><small>Executive VP, federal relations, <i>American Hospital Association</i></small></td>
+            <td>$788,105</td>
+            <td>$1,482,591</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Mary Jane Wurth</strong><br><small>Executive VP and chief operating officer, <i>American Hospital Association</i></small></td>
+            <td>$809,318</td>
+            <td>$1,298,087</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Melinda Hatton</strong><br><small>Senior VP and general counsel, <i>American Hospital Association</i></small></td>
+            <td>$635,031</td>
+            <td>$994,527</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Ashley Thompson</strong><br><small>Senior VP, public policy, <i>American Hospital Association</i></small></td>
+            <td>$424,102</td>
+            <td>$636,339</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Christina Fisher</strong><br><small>Senior VP and chief financial officer , <i>American Hospital Association</i></small></td>
+            <td>$422,210</td>
+            <td>$615,275</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Alicia Mitchell</strong><br><small>Senior VP, communications, <i>American Hospital Association</i></small></td>
+            <td>$371,118</td>
+            <td>$556,330</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Douglas Shaw</strong><br><small>Senior VP, field engagement, <i>American Hospital Association</i></small></td>
+            <td>$364,799</td>
+            <td>$530,004</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Gail Lovinger</strong><br><small>Senior VP and secretary, <i>American Hospital Association</i></small></td>
+            <td>$247,183</td>
+            <td>$418,154</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Julie Miller</strong><br><small>General counsel and Secretary, <i>America's Health Insurance Plans</i></small></td>
+            <td>$475,807</td>
+            <td>$546,194</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Mark Hamelburg</strong><br><small>Senior VP , <i>America's Health Insurance Plans</i></small></td>
+            <td>$450,288</td>
+            <td>$515,744</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>David Merritt</strong><br><small>Executive VP, <i>America's Health Insurance Plans</i></small></td>
+            <td>$430,465</td>
+            <td>$498,497</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Thomas Amontree</strong><br><small>Executive VP, <i>America's Health Insurance Plans</i></small></td>
+            <td>$425,303</td>
+            <td>$479,696</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Adrienne Morrell</strong><br><small>Outgoing Executive VP, <i>America's Health Insurance Plans</i></small></td>
+            <td>$334,941</td>
+            <td>$408,052</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Leanne Gassaway</strong><br><small>Senior VP, <i>America's Health Insurance Plans</i></small></td>
+            <td>$331,280</td>
+            <td>$388,161</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Dawn Banda</strong><br><small>Chief financial officer , <i>America's Health Insurance Plans</i></small></td>
+            <td>$273,874</td>
+            <td>$376,790</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Dr. Richard Bankowitz</strong><br><small>Outgoing chief medical officer , <i>America's Health Insurance Plans</i></small></td>
+            <td>$337,001</td>
+            <td>$375,899</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Lisa Shreve</strong><br><small>Senior VP, <i>America's Health Insurance Plans</i></small></td>
+            <td>$287,949</td>
+            <td>$349,894</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Dr. James  Madara</strong><br><small>Executive VP and CEO, <i>American Medical Association</i></small></td>
+            <td>$1,104,152</td>
+            <td>$2,365,021</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Bernard Hengesbaugh</strong><br><small>Chief operating officer, <i>American Medical Association</i></small></td>
+            <td>$699,442</td>
+            <td>$1,345,517</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Kenneth Sharigian</strong><br><small>Chief strategy officer, <i>American Medical Association</i></small></td>
+            <td>$595,866</td>
+            <td>$1,130,659</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Dr. Howard Bauchner</strong><br><small>Senior VP and editor in chief, <i>American Medical Association</i></small></td>
+            <td>$843,852</td>
+            <td>$1,057,572</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Laurie McGraw</strong><br><small>Senior VP, health solutions, <i>American Medical Association</i></small></td>
+            <td>$529,067</td>
+            <td>$1,054,269</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Thomas Easley</strong><br><small>Senior VP, publisher, <i>American Medical Association</i></small></td>
+            <td>$498,167</td>
+            <td>$900,763</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Richard Deem</strong><br><small>Senior VP, advocacy, <i>American Medical Association</i></small></td>
+            <td>$497,245</td>
+            <td>$890,498</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Dr. Modena Wilson</strong><br><small>Senior VP and chief health/science, <i>American Medical Association</i></small></td>
+            <td>$493,965</td>
+            <td>$879,299</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Denise Hagerty</strong><br><small>Chief financial officer , <i>American Medical Association</i></small></td>
+            <td>$420,825</td>
+            <td>$730,874</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Chip Kahn</strong><br><small>President, <i>Federation of American Hospitals</i></small></td>
+            <td>$1,032,989</td>
+            <td>$2,863,497</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Jeffrey Cohen</strong><br><small>Executive VP, <i>Federation of American Hospitals</i></small></td>
+            <td>$544,066</td>
+            <td>$864,294</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Steve Speil</strong><br><small>Executive VP, <i>Federation of American Hospitals</i></small></td>
+            <td>$469,991</td>
+            <td>$768,695</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Kathleen Tenoever</strong><br><small>Senior VP, <i>Federation of American Hospitals</i></small></td>
+            <td>$424,406</td>
+            <td>$672,252</td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT"><strong>Kerry Price</strong><br><small>Senior VP, <i>Federation of American Hospitals</i></small></td>
+            <td>$302,762</td>
+            <td>$415,018</td>
+        </tr>
+        
+    </tbody>
+  </table>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">* Total equals total compensation minus any previously reported deferred compensation as identified in the 2018 IRS Form 990</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: IRS Form 990
+</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1574713913"></script>
+
+
+</body>
+</html>

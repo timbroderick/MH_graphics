@@ -1,0 +1,227 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"drug_id": "00187006410", "count": "13", "drug_name": "Ativan", "drug_info": "Tablets 1mg 1,000s", "man_name": "Valeant Pharmaceuticals North America", "earliest_date": "20140131", "earliest_price": "6,875.04", "latest_date": "20190118", "latest_price": "32,336.20", "earliest_v_latest": "25,461.16", "earliest_v_latest_percchg": "370.34", "earliest_year": "2014"}, {"drug_id": "67386042201", "count": "8", "drug_name": "Xenazine", "drug_info": "25.0mg. 112 Tablets", "man_name": "Lundbeck ", "earliest_date": "20140102", "earliest_price": "11,033.41", "latest_date": "20190107", "latest_price": "28,198.58", "earliest_v_latest": "17,165.17", "earliest_v_latest_percchg": "155.57", "earliest_year": "2014"}, {"drug_id": "11994009112", "count": "5", "drug_name": "LEU TechneLite*", "drug_info": "(Technetium Tc99m Generator)", "man_name": "Lantheus Medical Imaging", "earliest_date": "20150101", "earliest_price": "17,857.06", "latest_date": "20190101", "latest_price": "26,203.96", "earliest_v_latest": "8,346.90", "earliest_v_latest_percchg": "46.74", "earliest_year": "2015"}, {"drug_id": "00078062851", "count": "9", "drug_name": "Afinitor*", "drug_info": "Disperz 5mg", "man_name": "Novartis", "earliest_date": "20140103", "earliest_price": "8,095.77", "latest_date": "20190115", "latest_price": "15,706.71", "earliest_v_latest": "7,610.94", "earliest_v_latest_percchg": "94.01", "earliest_year": "2014"}, {"drug_id": "43068022001", "count": "7", "drug_name": "Hetlioz", "drug_info": "20 mg capsules; bottles of 30", "man_name": "Vanda Pharmaceuticals ", "earliest_date": "20150119", "earliest_price": "7,019.25", "latest_date": "20190101", "latest_price": "15,701.35", "earliest_v_latest": "8,682.10", "earliest_v_latest_percchg": "123.69", "earliest_year": "2015"}, {"drug_id": "11994001601", "count": "5", "drug_name": "Quadramet", "drug_info": "(Samarium Sm 153 Lexidronam Injection)", "man_name": "Lantheus Medical Imaging", "earliest_date": "20150101", "earliest_price": "7,994.00", "latest_date": "20190101", "latest_price": "15,217.64", "earliest_v_latest": "7,223.64", "earliest_v_latest_percchg": "90.36", "earliest_year": "2015"}, {"drug_id": "00003052811", "count": "8", "drug_name": "Sprycel (dasatinib)*", "drug_info": "50 MG Tablet, Bottle of 60 Tablets", "man_name": "Bristol-Myers Squibb", "earliest_date": "20140317", "earliest_price": "9,445.42", "latest_date": "20190101", "latest_price": "15,187.87", "earliest_v_latest": "5,742.45", "earliest_v_latest_percchg": "60.80", "earliest_year": "2014"}, {"drug_id": "00078095166", "count": "1", "drug_name": "Tasigna", "drug_info": "50mg", "man_name": "Novartis", "earliest_date": "20190115", "earliest_price": "13,644.09", "latest_date": "20190115", "latest_price": "14,735.62", "earliest_v_latest": "1,091.53", "earliest_v_latest_percchg": "8.00", "earliest_year": "2019"}, {"drug_id": "67386011101", "count": "6", "drug_name": "Sabril", "drug_info": "500mg. 100 Tablets", "man_name": "Lundbeck ", "earliest_date": "20140102", "earliest_price": "5,636.10", "latest_date": "20190107", "latest_price": "14,611.73", "earliest_v_latest": "8,975.63", "earliest_v_latest_percchg": "159.25", "earliest_year": "2014"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>Most expensive drugs</strong></h2>
+    <p>Drug manufacturers reported their list prices, which do not include discounts or rebates, as of the first quarter 2019 to California&#8217;s Office of Statewide Health Planning and Development. </p>
+
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">Drug<br><small>Manufacturer</small></th>
+        <th>Latest price</th>
+        <th>Change</th>
+      </thead>
+      <tbody>
+
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>Ativan</strong> <small>Tablets 1mg 1,000s</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Valeant Pharmaceuticals North America</small></td>
+            <td>$32,336.20</td>
+            <td>$25,461.16<br><small>or +370.34% since 2014</small></td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>Xenazine</strong> <small>25.0mg. 112 Tablets</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Lundbeck </small></td>
+            <td>$28,198.58</td>
+            <td>$17,165.17<br><small>or +155.57% since 2014</small></td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>LEU TechneLite*</strong> <small>(Technetium Tc99m Generator)</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Lantheus Medical Imaging</small></td>
+            <td>$26,203.96</td>
+            <td>$8,346.90<br><small>or +46.74% since 2015</small></td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>Afinitor*</strong> <small>Disperz 5mg</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Novartis</small></td>
+            <td>$15,706.71</td>
+            <td>$7,610.94<br><small>or +94.01% since 2014</small></td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>Hetlioz</strong> <small>20 mg capsules; bottles of 30</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Vanda Pharmaceuticals </small></td>
+            <td>$15,701.35</td>
+            <td>$8,682.10<br><small>or +123.69% since 2015</small></td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>Quadramet</strong> <small>(Samarium Sm 153 Lexidronam Injection)</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Lantheus Medical Imaging</small></td>
+            <td>$15,217.64</td>
+            <td>$7,223.64<br><small>or +90.36% since 2015</small></td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>Sprycel (dasatinib)*</strong> <small>50 MG Tablet, Bottle of 60 Tablets</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Bristol-Myers Squibb</small></td>
+            <td>$15,187.87</td>
+            <td>$5,742.45<br><small>or +60.80% since 2014</small></td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>Tasigna</strong> <small>50mg</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Novartis</small></td>
+            <td>$14,735.62</td>
+            <td>$1,091.53<br><small>or +8.00% since 2019</small></td>
+        </tr>
+        
+        <tr>
+            <td class="tdLEFT" colspan="3"><strong>Sabril</strong> <small>500mg. 100 Tablets</small></td>
+        </tr>
+        <tr>
+            <td class="tdLEFT"><small>Lundbeck </small></td>
+            <td>$14,611.73</td>
+            <td>$8,975.63<br><small>or +159.25% since 2014</small></td>
+        </tr>
+        
+    </tbody>
+  </table>
+</p>
+
+
+<div class="footnotes">
+    <h4><small><strong>* Notes</strong></small></h4>
+    <p class="gfxcredit"><small>
+<ul>
+<li>There are 26 entries for LEU TechneLite or TechneLite in the data, with latest prices ranging from $3,505.77 to $26,203.96.</li>
+<li>There are seven entries for Afinitor in the data, with latest prices ranging from $14,941.34 to $15,706.71.</li>
+<li>There are six entries for Sprycel (dasatinib) in the data, with latest prices ranging from $7,593.95 to $15,187.87.</li>
+</ul>
+</small></p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: data.chhs.ca.gov
+</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1570643756"></script>
+
+
+</body>
+</html>

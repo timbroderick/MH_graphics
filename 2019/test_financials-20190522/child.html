@@ -1,0 +1,176 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"place": "Community Health Systems", "local": "Franklin, Tenn.", "firstq": "$26 million", "firsta": "And an explanation of who ", "secondq": "3.9%", "seconda": "Operating margin, up from 6%", "thirdq": "$64 million", "thirda": "Each item can be different", "fourthq": "$3.3 billion", "fourtha": "Expenses, up 2%", "fifthq": "15%", "fiftha": "Rise in some kind of measure", "takeaway": "first item, This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. "}, {"place": "Partners HealthCare", "local": "Boston", "firstq": "$5 billion", "firsta": "Revenue, up 10%", "secondq": "6%", "seconda": "Each item can be different", "thirdq": "$8 million", "thirda": "Net income, up 2%", "fourthq": "$6.6 billion", "fourtha": "Each item can be different", "fifthq": "20%", "fiftha": "Fall in some kind of measure", "takeaway": "second item This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. "}, {"place": "HCA Healthcare", "local": "Nashville", "firstq": "$12 billion", "firsta": "Each item can be different", "secondq": "8%", "seconda": "Operating margin, up from 18%", "thirdq": "$12 million", "thirda": "Net income, up 4%", "fourthq": "$9.9 billion", "fourtha": "Expenses, up 6%", "fifthq": "25%", "fiftha": "Each item can be different", "takeaway": "third item This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. "}];
+
+console.log(DATA);
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>Headline for MH chart</strong></h2>
+    <p>Intro text, if needed</p>
+    
+      <hr class="mhchaps">
+      <h4><strong>Community Health Systems</strong> | Franklin, Tenn.</h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <tbody>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$26 million</strong></td><td colspan="3" class="tdLEFT">And an explanation of who </td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>3.9%</strong></td><td colspan="3" class="tdLEFT">Operating margin, up from 6%</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$64 million</strong></td><td colspan="3" class="tdLEFT">Each item can be different</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$3.3 billion</strong></td><td colspan="3" class="tdLEFT">Expenses, up 2%</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>15%</strong></td><td colspan="3" class="tdLEFT">Rise in some kind of measure</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          first item, This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. </p>
+    
+      <hr class="mhchaps">
+      <h4><strong>Partners HealthCare</strong> | Boston</h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <tbody>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$5 billion</strong></td><td colspan="3" class="tdLEFT">Revenue, up 10%</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>6%</strong></td><td colspan="3" class="tdLEFT">Each item can be different</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$8 million</strong></td><td colspan="3" class="tdLEFT">Net income, up 2%</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$6.6 billion</strong></td><td colspan="3" class="tdLEFT">Each item can be different</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>20%</strong></td><td colspan="3" class="tdLEFT">Fall in some kind of measure</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          second item This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. </p>
+    
+      <hr class="mhchaps">
+      <h4><strong>HCA Healthcare</strong> | Nashville</h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <tbody>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$12 billion</strong></td><td colspan="3" class="tdLEFT">Each item can be different</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>8%</strong></td><td colspan="3" class="tdLEFT">Operating margin, up from 18%</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$12 million</strong></td><td colspan="3" class="tdLEFT">Net income, up 4%</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>$9.9 billion</strong></td><td colspan="3" class="tdLEFT">Expenses, up 6%</td></tr>
+            <tr><td colspan="1" class="tdRIGHT"><strong>25%</strong></td><td colspan="3" class="tdLEFT">Each item can be different</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          third item This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. This will be a paragraph with some analysis of the report. Maybe mentioning key details. </p>
+    
+
+<hr class="mhchaps">
+
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">Notes, if needed. Delete this text if not</p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Source: filings</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1559077880"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+This would go above the health systems portion
+<p id="health">Jump to <a href="#insure">Insurers</a> | <a href="#tech">Technology companies</a></p>
+
+This would go above the insurers portion
+<p id="insure">Jump to <a href="#health">Health systems</a> | <a href="#tech">Technology companies</a></p>
+
+This would go above the tech portion
+<p id="tech">Jump to <a href="#health">Health systems</a> | <a href="#insure">Insurers</a></p>
+
+Then when we finally get systems, I'll update those two and and a third

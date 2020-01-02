@@ -1,0 +1,86 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+
+console.log(DATA);
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+
+    <table id="gfx" class="table table-hover table-condensed display" width="100%" >
+      <tbody>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2017</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">October<td class="tdLEFT" colspan="2"><ul><li>Draft guidance for the Breakthrough Devices Program.</li></ul></td></tr>
+          <tr><td class="tdLEFT" colspan="1">November<td class="tdLEFT" colspan="2"><ul><li>Draft guidance for expedited programs for regenerative medicine therapies for serious conditions.</li></ul></td></tr>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2018</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">June<td class="tdLEFT" colspan="2"><ul><li>Draft guidance for patient-focused drug development.</li><li>Draft guidance for the Humanitarian Device Exemption program. Deadline for final guidance not specified.</li></ul></td></tr>
+          <tr><td class="tdLEFT" colspan="1">December<td class="tdLEFT" colspan="2"><ul><li>Final guidance for the Breakthrough Devices program.</li><li>Framework for the Real-World Evidence Program.</li></ul></td></tr>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2019</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">February<td class="tdLEFT" colspan="2"><ul><li>Final guidance for expedited programs for regenerative medicine therapies for serious conditions.</li></ul></td></tr>
+          <tr><td class="tdLEFT" colspan="1">December<td class="tdLEFT" colspan="2"><ul><li>Deadline for draft guidance on the qualification of drug development tools. Deadline for final guidance is six months after the public comment period for the draft closes.</li></ul></td></tr>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2020</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">June<td class="tdLEFT" colspan="2"><ul><li>Deadline for revised or final guidance for patient-focused drug development.</li></ul></td></tr>
+          <tr><td class="tdLEFT" style="background-color: #eee;" colspan="3"><strong>2021</strong></td></tr>
+          <tr><td class="tdLEFT" colspan="1">December<td class="tdLEFT" colspan="2"><ul><li>Deadline for draft guidance on the  Real-World Evidence Program.</li><li>Deadline for revised or final guidance is 18 months after the public comment period for the draft closes.</li></ul></td></tr>
+    </tbody>
+  </table>
+</p>
+
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <!--</div>
+          </div>
+        </div>-->
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

@@ -1,0 +1,231 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<style type="text/css">
+
+h3.ex1 {
+  padding-bottom: 10px;
+}
+
+.graphic { height:350px }
+</style>
+
+    <h3 class="ex1" id="insure"><strong>Insurers</strong></h3>
+    
+      <h4><strong>CVS Health</strong> | Woonsocket, R.I.<br><small><small>Added: 8/7/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$63.4 billion</strong></td><td>35.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$60.1 billion</strong></td><td>24.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$1.9 billion</strong></td><td>+$4.5 billion</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>22.8 million </strong><small>medical membership</small></strong></td><td>N/A</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>84.0%</strong></td><td>N/A</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          CVS Health reported increases in revenue and net income in the second quarter of 2019, driven by its acquisition of health insurer Aetna that closed in late November. An increase in pharmacy claims and brand-name drug price inflation also helped drive the top line. The Aetna insurance business grew Medicare and Medicaid membership, while commercial membership decreased over the first quarter. Note: Change in membership and medical-loss ratio unavailable due to Aetna acquisition.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Cigna Corp.</strong> | Bloomfield, Conn.<br><small><small>Added: 8/1/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$38.8 billion</strong></td><td>238.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$36.7 billion</strong></td><td>255.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$1.4 billion</strong></td><td>74.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>17 million</strong></td><td>1.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>81.6%</strong></td><td>+2.6 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Cigna Corp.’s outsized growth in revenue and net income in the three months ended June 30 was primarily driven by its acquisition of pharmacy benefit manager Express Scripts, which was completed in December 2018. But Cigna’s health insurance segment also contributed to the revenue growth, as the insurer enrolled more commercial insurance members and increased premiums to cover costs.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Molina Healthcare</strong> | Long Beach, Calif.<br><small><small>Added: 7/31/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$4.2 billion</strong></td><td>-14.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$3.9 billion</strong></td><td>-13.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$196 million</strong></td><td>-3.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>3.4 million</strong></td><td>-17.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>85.6%</strong></td><td>+0.3 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Molina Healthcare reported lower revenue and net income in the second quarter, as Medicaid contract losses weighed on its financial results. Because the insurer lost a contract in New Mexico in 2018 and this year is serving fewer Medicaid regions in Florida, it enrolled fewer members and brought in less premium revenue. On the flip side, Molina reported lower medical costs and administrative expenses. The company’s after-tax margin was 4.7%. Molina CEO Joseph Zubretsky said the company’s performance shows it can “sustain an attractive margin profile while pivoting to top-line growth.”</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Humana </strong> | Louisville, Ky.<br><small><small>Added: 7/31/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$16.2 billion</strong></td><td>13.9%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$15.1 billion</strong></td><td>12.9%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$940 million</strong></td><td>387%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>16.6 million</strong></td><td>-0.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>84.40%</strong></td><td>+0.3 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Big membership growth in Humana’s Medicare Advantage plans helped propel the insurer’s top line in the second quarter of 2019. Humana grew individual Advantage membership 15.1% to 3.5 million—the highest growth the company has seen in a decade, CEO Bruce Broussard said. Still, Humana lost members in its Medicare stand-alone prescription drug plans and fully insured commercial employer plans. The company’s big year-over-year increase in net income occurred because Humana sold its long-term care subsidiary at a nearly $800 million loss in the second quarter of last year.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>WellCare Health Plans</strong> | Tampa, Fla.<br><small><small>Added: 7/30/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$7 billion</strong></td><td>51.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$6.8 billion</strong></td><td>53.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$182.8 million</strong></td><td>20.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>6.3 million</strong></td><td>44.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>88.1%</strong></td><td>+4.3 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          WellCare Health Plans’ revenue and net income spiked in the second-quarter of 2019 compared with the year before, thanks to the insurer’s 2018 acquisition of Meridian Health Plan and organic growth in Medicaid and Medicare. WellCare’s Medicaid membership grew 45.5% to 4.1 million, while revenue from those plans jumped 64.1% to $4.7 billion. But high costs in the insurer’s Illinois Medicaid plan continued to be a problem that drove the medical-loss ratio higher.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Anthem</strong> | Indianapolis<br><small><small>Added: 7/24/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$25.5 billion</strong></td><td>11.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$24.0 billion</strong></td><td>12.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$1.1 billion</strong></td><td>8.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>40.9 million</strong></td><td>3.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>86.7%</strong></td><td>+3.3 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Even though Anthem reported an increase in revenue and net income in the second quarter of 2019, those results were overshadowed by continued high medical costs in its Medicaid business. Anthem blamed those costs on rates that don't adequately reflect the needs of its patients, but ensured analysts on Wednesday that it has no plans to exit any state Medicaid programs. Meanwhile, Anthem said transitioning its existing customers to its new in-house pharmacy benefit manager, IngenioRx, is running ahead of schedule. Anthem also landed a contract to provide pharmacy services to new customer Blue Cross of Idaho starting in 2020. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Centene Corp. </strong> | St. Louis<br><small><small>Added: 7/23/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$18.4 billion</strong></td><td>29.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$17.7 billion</strong></td><td>29.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$492 million</strong></td><td>64.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>15 million</strong></td><td>17.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>86.7%</strong></td><td>+1 percentage point</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Enrollment and revenue growth in Centene Corp.’s Medicaid business drove the St. Louis-based insurer’s top line in the second quarter of 2019. But Centene's earnings also benefited from higher enrollment in its ACA marketplace and Medicare plans, as well as from the moratorium for the health insurer fee. Centene CEO Michael Neidorff told investment analysts on Tuesday the insurer has nabbed approval from eight states regarding its acquisition of WellCare Health Plans, and the deal, which is expected to close in the first half of 2020, could be completed even earlier. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>UnitedHealth Group</strong> | Minnetonka, Minn.<br><small><small>Added: 7/18/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$60.6 billion</strong></td><td>8.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$55.9 billion</strong></td><td>7.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$3.4 billion</strong></td><td>12.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>49.5 million</strong></td><td>1.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>83.1%</strong></td><td>+1.2 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          UnitedHealth Group reported an increase in revenue and net income in the second quarter of 2019, driven by higher Medicare Advantage enrollment and revenue within its insurance business, along with revenue growth across each segment of its Optum business. UnitedHealthcare leadership is banking on enrolling more Medicare Advantage members and patients dually eligible for Medicaid and Medicare as it invests in benefits and care coordination: “We see significant macro revenue growth opportunities in these categories for years to come,” Dirk McMahon, the newly appointed UnitedHealthcare CEO, told investment analysts Thursday.</p>
+        <hr class="mhchaps">
+    
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1565210710"></script>
+
+
+</body>
+</html>

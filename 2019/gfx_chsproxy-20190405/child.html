@@ -1,0 +1,257 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"item": "Salary", "smith2017": "1,600,000", "smith2018": "1,600,000", "item2": "Salary", "hing2017": "800,000", "hing2018": "900,000", "item3": "Salary", "aaron2017": "675,000", "aaron2018": "646,875"}, {"item": "Bonus", "smith2017": "--", "smith2018": "--", "item2": "Bonus", "hing2017": "--", "hing2018": "--", "item3": "Bonus", "aaron2017": "--", "aaron2018": "25,000"}, {"item": "Restricted stock awards", "smith2017": "1,378,500", "smith2018": "961,800", "item2": "Restricted stock awards", "hing2017": "689,250", "hing2018": "687,000", "item3": "Restricted stock awards", "aaron2017": "458,000", "aaron2018": "413,150"}, {"item": "Non-equity incentive plan compensation", "smith2017": "812,000", "smith2018": "3,272,000", "item2": "Non-equity incentive plan compensation", "hing2017": "312,000", "hing2018": "1,233,000", "item3": "Non-equity incentive plan compensation", "aaron2017": "745,875", "aaron2018": "646,875"}, {"item": "Change in pension value and nonqualified deferred compensation earnings", "smith2017": "1,055,772", "smith2018": "1,079,836", "item2": "Change in pension value and nonqualified deferred compensation earnings", "hing2017": "393,318", "hing2018": "147,396", "item3": "Change in pension value and nonqualified deferred compensation earnings", "aaron2017": "927", "aaron2018": "--"}, {"item": "All other compensation", "smith2017": "99,720", "smith2018": "111,083", "item2": "All other compensation", "hing2017": "15,258", "hing2018": "15,846", "item3": "All other compensation", "aaron2017": "22,470", "aaron2018": "17,344"}, {"item": "<b>Total compensation</b>", "smith2017": "<b>4,945,992</b>", "smith2018": "<b>7,024,719</b>", "item2": "Total compensation", "hing2017": "<b>2,209,826</b>", "hing2018": "<b>2,983,242</b>", "item3": "Total compensation", "aaron2017": "<b>1,902,272</b>", "aaron2018": "<b>1,749,244</b>"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Community Health Systems executive pay, 2017-2018</strong></h2>
+    <p>For-profit hospital chain CHS paid higher cash incentive pay to its executives in 2018 because the company hit certain financial targets. CEO Wayne Smith&#8217;s incentive pay more than quadrupled year-over-year, for example. </p>
+
+    <h4><strong>Wayne T. Smith</strong><br><small>Chairman of the Board and Chief Executive Officer</small></h4>
+    <table class="table-hover table-striped table-condensed" width="100%" >
+      <thead>
+        <th class="thLEFT"></th>
+        <th>2017</th>
+        <th>2018</th>
+      </thead>
+      <tbody>
+          
+          <tr><td class="tdLEFT"><small>Salary<small></td>
+          <td><small>$1,600,000<small></td>
+          <td><small>$1,600,000<small></td>
+          
+          <tr><td class="tdLEFT"><small>Bonus<small></td>
+          <td><small>$--<small></td>
+          <td><small>$--<small></td>
+          
+          <tr><td class="tdLEFT"><small>Restricted stock awards<small></td>
+          <td><small>$1,378,500<small></td>
+          <td><small>$961,800<small></td>
+          
+          <tr><td class="tdLEFT"><small>Non-equity incentive plan compensation<small></td>
+          <td><small>$812,000<small></td>
+          <td><small>$3,272,000<small></td>
+          
+          <tr><td class="tdLEFT"><small>Change in pension value and nonqualified deferred compensation earnings<small></td>
+          <td><small>$1,055,772<small></td>
+          <td><small>$1,079,836<small></td>
+          
+          <tr><td class="tdLEFT"><small>All other compensation<small></td>
+          <td><small>$99,720<small></td>
+          <td><small>$111,083<small></td>
+          
+          <tr><td class="tdLEFT"><small><b>Total compensation</b><small></td>
+          <td><small>$<b>4,945,992</b><small></td>
+          <td><small>$<b>7,024,719</b><small></td>
+          
+      </tbody>
+    </table>
+    <br>
+    <h4><strong>Tim L. Hingtgen</strong><br><small>President and Chief Operating Officer</small></h4>
+    <table class="table-hover table-striped table-condensed" width="100%" >
+      <thead>
+        <th class="thLEFT"></th>
+        <th>2017</th>
+        <th>2018</th>
+      </thead>
+      <tbody>
+          
+          <tr><td class="tdLEFT"><small>Salary<small></td>
+          <td><small>$800,000<small></td>
+          <td><small>$900,000<small></td>
+          
+          <tr><td class="tdLEFT"><small>Bonus<small></td>
+          <td><small>$--<small></td>
+          <td><small>$--<small></td>
+          
+          <tr><td class="tdLEFT"><small>Restricted stock awards<small></td>
+          <td><small>$689,250<small></td>
+          <td><small>$687,000<small></td>
+          
+          <tr><td class="tdLEFT"><small>Non-equity incentive plan compensation<small></td>
+          <td><small>$312,000<small></td>
+          <td><small>$1,233,000<small></td>
+          
+          <tr><td class="tdLEFT"><small>Change in pension value and nonqualified deferred compensation earnings<small></td>
+          <td><small>$393,318<small></td>
+          <td><small>$147,396<small></td>
+          
+          <tr><td class="tdLEFT"><small>All other compensation<small></td>
+          <td><small>$15,258<small></td>
+          <td><small>$15,846<small></td>
+          
+          <tr><td class="tdLEFT"><small><b>Total compensation</b><small></td>
+          <td><small>$<b>2,209,826</b><small></td>
+          <td><small>$<b>2,983,242</b><small></td>
+          
+      </tbody>
+    </table>
+    <br>
+    <h4><strong>Thomas J. Aaron</strong><br><small>Executive Vice President and Chief Financial Officer</small></h4>
+    <table class="table-hover table-striped table-condensed" width="100%" >
+      <thead>
+        <th class="thLEFT"></th>
+        <th>2017</th>
+        <th>2018</th>
+      </thead>
+      <tbody>
+          
+          <tr><td class="tdLEFT"><small>Salary<small></td>
+          <td><small>$675,000<small></td>
+          <td><small>$646,875<small></td>
+          
+          <tr><td class="tdLEFT"><small>Bonus<small></td>
+          <td><small>$--<small></td>
+          <td><small>$25,000<small></td>
+          
+          <tr><td class="tdLEFT"><small>Restricted stock awards<small></td>
+          <td><small>$458,000<small></td>
+          <td><small>$413,150<small></td>
+          
+          <tr><td class="tdLEFT"><small>Non-equity incentive plan compensation<small></td>
+          <td><small>$745,875<small></td>
+          <td><small>$646,875<small></td>
+          
+          <tr><td class="tdLEFT"><small>Change in pension value and nonqualified deferred compensation earnings<small></td>
+          <td><small>$927<small></td>
+          <td><small>$--<small></td>
+          
+          <tr><td class="tdLEFT"><small>All other compensation<small></td>
+          <td><small>$22,470<small></td>
+          <td><small>$17,344<small></td>
+          
+          <tr><td class="tdLEFT"><small><b>Total compensation</b><small></td>
+          <td><small>$<b>1,902,272</b><small></td>
+          <td><small>$<b>1,749,244</b><small></td>
+          
+      </tbody>
+    </table>
+    <br>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Community Health Systems 2019 proxy statement </i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1554494865"></script>
+
+
+</body>
+</html>

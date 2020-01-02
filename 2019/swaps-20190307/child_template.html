@@ -1,0 +1,97 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+
+console.log(DATA);
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}<br>
+    <small><strong>The list below is interactive: </strong><span style="color:red">Click the name</span> to view more.</small></p>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      {% for row in COPY.data %}
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading{{ row.item }}">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ row.item }}" aria-expanded="false" aria-controls="collapse{{ row.item }}">
+                <strong>{{ row.type }}</strong> <small>(click for details)</small>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse{{ row.item }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ row.item }}">
+          <div class="panel-body">
+            <p><strong>What it is:</strong> {{ row.descrip }}</p>
+            <p><strong>Downsides:</strong> {{ row.down }}</p>
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+
+      <!--  {% for row in COPY.data %}
+        <tr>
+            <td class="tdLEFT">{{ row.state }}</td>
+            <td>{{ row.something }}</td>
+            <td>{{ row.another_thing }}</td>
+        </tr>
+        {% endfor %} -->
+
+
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

@@ -1,0 +1,485 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<style type="text/css">
+
+h3.ex1 {
+  padding-bottom: 10px;
+}
+
+.graphic { height:350px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>Second-quarter 2019 financial results</strong></h2>
+    <p>This chart will be updated regularly as health systems, insurers and technology companies post their second-quarter earnings.</p>
+    <hr class="mhchaps">
+
+    <h3 class="ex1" id="systems"><strong>Health systems</strong></h3>
+    
+      <h4><strong>ProMedica*</strong> | Toledo, Ohio<br><small><small>Added: 8/23/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$3.4 billion</strong></td><td>97.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$3.3 billion</strong></td><td>99.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$27.9 million loss </strong></td><td>-122.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>0.4%</strong></td><td>1.3 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>Discharges: 27,034<br><small>(admissions not provided)</small></strong></td><td>Discharges: -5.8% </td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          <small>* Results are for the six months ended June 30, 2019</small></p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Mayo Clinic*</strong> | Rochester, Minn. <br><small><small>Added: 8/23/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$6.8 billion</strong></td><td>8.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$6.2 billion</strong></td><td>5.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$541 million</strong></td><td>73%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>17.3%</strong></td><td>10.7 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>Not provided</strong></td><td>Not provided </td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Mayo Clinic's medical service revenue grew 8.8% in the first half of 2019, to $5.7 billion. <br><small>*Results are for Q1 and Q2 2019 combined/six months ended June 30, 2019</small></p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Advocate Aurora Health</strong> | Downers Grove, Ill. and Milwaukee<br><small><small>Added: 8/23/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$3.2 billion</strong></td><td>6.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$3 billion</strong></td><td>4.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$183.4 million</strong></td><td>50.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>12.7%</strong></td><td>7.8 percentage points </td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>Discharges: 68,346<br><small>(admissions not provided)</small></strong></td><td>Discharges: -1.8%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Sutter Health</strong> | Sacramento, Calif. <br><small><small>Added: 8/22/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$3.3 billion</strong></td><td>5.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$3.3 billion</strong></td><td>6.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$36 million</strong></td><td>-44.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>3.4%</strong></td><td>1.8 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>94,622</strong></td><td>-0.2%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Sutter Health currently faces a class-action lawsuit alleging its contracting practices have led to high prices and reduced competition in the markets it serves. Trial is scheduled for Sept. 23, 2019. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Kaiser Permanente </strong> | Oakland, Calif. <br><small><small>Added: 8/9/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$21.4 billion</strong></td><td>9.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$20.3 billion</strong></td><td>5.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$1.1 billion</strong></td><td>224%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>9.6%</strong></td><td>6.2 percentage points </td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>Declined to disclose</strong></td><td>Declined to disclose</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Kaiser’s second-quarter results build on what has already been a stellar year for the health system. It drew $2 billion in net income in the quarter, up 214% year-over-year. That’s due in large part to an accounting provision that as of Jan. 1 requires changes in estimated fair value of equity securities be reported in non-operating income. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Tenet Healthcare Corp. </strong> | Dallas<br><small><small>Added: 8/5/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$4.6 billion</strong></td><td>1.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$4.2 billion</strong></td><td>1.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$388 million</strong></td><td>-4.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>0.37%</strong></td><td>-0.21 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>169,352</strong></td><td>0.5%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Tenet Healthcare Corp.'s net income fell 35% in the second quarter of 2019 year-over-year, to $17 million in the recently ended quarter. The company recently announced plans to spin off its revenue-cycle subsidiary, Conifer Health Solutions, after being unable to find a suitable purchase offer. Conifer's revenue from third-party customers declined 13.6% in the quarter year-over-year. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Community Health Systems</strong> | Franklin, Tenn. <br><small><small>Added: 8/5/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$3.3 billion</strong></td><td>-7.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$3.2 billion</strong></td><td>-9.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$111 million</strong></td><td>200%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>-5.1%</strong></td><td>-2 percentage points </td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>139,400</strong></td><td>-11.5%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Community Health Systems widened its net loss to shareholders in the second quarter of 2019. Its admissions fell 11.5% in the quarter year-over-year as it continues to complete hospital divestitures, including seven sales in the six months ended June 30. On a same-facility basis, admissions were up 2.3% in the same period. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Care New England Health System</strong> | Providence, R.I.<br><small><small>Added: 7/30/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$290.7 million</strong></td><td>4.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$283.3 million</strong></td><td>1.9%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$7.4 million </strong></td><td>753.8%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>0.76%</strong></td><td>NA</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>N/A</strong></td><td>N/A</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Care New England Health System reported a healthy operating income in the third quarter after the Providence, R.I.-based health system dropped multiple merger discussions.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>HCA Healthcare</strong> | Nashville<br><small><small>Added: 7/30/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$12.6 billion</strong></td><td>9.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$11.4 billion</strong></td><td>10.8%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$783 million</strong></td><td>-4.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>6.2%</strong></td><td>- 0.9 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>518,253</strong></td><td>4.8%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          HCA Healthcare's share price fell sharply Tuesday following its second-quarter earnings release, which included drops in net income and other important metrics, like revenue per equivalent admission. Executives said HCA saw soft commercial revenue growth and a decline in inpatient surgeries. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Universal Health Services</strong> | King of Prussia, Pa. <br><small><small>Added: 7/25/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$2.86 billion </strong></td><td>6.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Expenses</td><td class="tdRIGHT"><strong>$2.5 billion</strong></td><td>6.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$238.3 million</strong></td><td>5.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Profit margin</td><td class="tdRIGHT"><strong>8.3%</strong></td><td>-0.08 percentage points</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Admissions</td><td class="tdRIGHT"><strong>78,879 (acute) / 121,687 (behavioral)</strong></td><td>5.2% (acute) / 1% (behavioral)</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Along with its second-quarter 2019 results, Universal Health Services announced it had reached a $127 million preliminary settlement with the U.S. Department of Justice stemming from an investigation into its behavioral health operations. UHS said the DOJ had also concluded a separate criminal investigation. </p>
+        <hr class="mhchaps">
+    
+
+    <br>
+    <h3 class="ex1" id="insure"><strong>Insurers</strong></h3>
+    
+      <h4><strong>CVS Health</strong> | Woonsocket, R.I.<br><small><small>Added: 8/7/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$63.4 billion</strong></td><td>35.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$60.1 billion</strong></td><td>24.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$1.9 billion</strong></td><td>+$4.5 billion</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>22.8 million </strong><small>medical membership</small></strong></td><td>N/A</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>84.0%</strong></td><td>N/A</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          CVS Health reported increases in revenue and net income in the second quarter of 2019, driven by its acquisition of health insurer Aetna that closed in late November. An increase in pharmacy claims and brand-name drug price inflation also helped drive the top line. The Aetna insurance business grew Medicare and Medicaid membership, while commercial membership decreased over the first quarter. Note: Change in membership and medical-loss ratio unavailable due to Aetna acquisition.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Cigna Corp.</strong> | Bloomfield, Conn.<br><small><small>Added: 8/1/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$38.8 billion</strong></td><td>238.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$36.7 billion</strong></td><td>255.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$1.4 billion</strong></td><td>74.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>17 million</strong></td><td>1.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>81.6%</strong></td><td>+2.6 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Cigna Corp.’s outsized growth in revenue and net income in the three months ended June 30 was primarily driven by its acquisition of pharmacy benefit manager Express Scripts, which was completed in December 2018. But Cigna’s health insurance segment also contributed to the revenue growth, as the insurer enrolled more commercial insurance members and increased premiums to cover costs.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Molina Healthcare</strong> | Long Beach, Calif.<br><small><small>Added: 7/31/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$4.2 billion</strong></td><td>-14.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$3.9 billion</strong></td><td>-13.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$196 million</strong></td><td>-3.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>3.4 million</strong></td><td>-17.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>85.6%</strong></td><td>+0.3 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Molina Healthcare reported lower revenue and net income in the second quarter, as Medicaid contract losses weighed on its financial results. Because the insurer lost a contract in New Mexico in 2018 and this year is serving fewer Medicaid regions in Florida, it enrolled fewer members and brought in less premium revenue. On the flip side, Molina reported lower medical costs and administrative expenses. The company’s after-tax margin was 4.7%. Molina CEO Joseph Zubretsky said the company’s performance shows it can “sustain an attractive margin profile while pivoting to top-line growth.”</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Humana </strong> | Louisville, Ky.<br><small><small>Added: 7/31/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$16.2 billion</strong></td><td>13.9%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$15.1 billion</strong></td><td>12.9%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$940 million</strong></td><td>387%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>16.6 million</strong></td><td>-0.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>84.40%</strong></td><td>+0.3 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Big membership growth in Humana’s Medicare Advantage plans helped propel the insurer’s top line in the second quarter of 2019. Humana grew individual Advantage membership 15.1% to 3.5 million—the highest growth the company has seen in a decade, CEO Bruce Broussard said. Still, Humana lost members in its Medicare stand-alone prescription drug plans and fully insured commercial employer plans. The company’s big year-over-year increase in net income occurred because Humana sold its long-term care subsidiary at a nearly $800 million loss in the second quarter of last year.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>WellCare Health Plans</strong> | Tampa, Fla.<br><small><small>Added: 7/30/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$7 billion</strong></td><td>51.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$6.8 billion</strong></td><td>53.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$182.8 million</strong></td><td>20.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>6.3 million</strong></td><td>44.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>88.1%</strong></td><td>+4.3 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          WellCare Health Plans’ revenue and net income spiked in the second-quarter of 2019 compared with the year before, thanks to the insurer’s 2018 acquisition of Meridian Health Plan and organic growth in Medicaid and Medicare. WellCare’s Medicaid membership grew 45.5% to 4.1 million, while revenue from those plans jumped 64.1% to $4.7 billion. But high costs in the insurer’s Illinois Medicaid plan continued to be a problem that drove the medical-loss ratio higher.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Anthem</strong> | Indianapolis<br><small><small>Added: 7/24/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$25.5 billion</strong></td><td>11.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$24.0 billion</strong></td><td>12.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$1.1 billion</strong></td><td>8.1%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>40.9 million</strong></td><td>3.3%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>86.7%</strong></td><td>+3.3 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Even though Anthem reported an increase in revenue and net income in the second quarter of 2019, those results were overshadowed by continued high medical costs in its Medicaid business. Anthem blamed those costs on rates that don't adequately reflect the needs of its patients, but ensured analysts on Wednesday that it has no plans to exit any state Medicaid programs. Meanwhile, Anthem said transitioning its existing customers to its new in-house pharmacy benefit manager, IngenioRx, is running ahead of schedule. Anthem also landed a contract to provide pharmacy services to new customer Blue Cross of Idaho starting in 2020. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Centene Corp. </strong> | St. Louis<br><small><small>Added: 7/23/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$18.4 billion</strong></td><td>29.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$17.7 billion</strong></td><td>29.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$492 million</strong></td><td>64.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>15 million</strong></td><td>17.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>86.7%</strong></td><td>+1 percentage point</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Enrollment and revenue growth in Centene Corp.’s Medicaid business drove the St. Louis-based insurer’s top line in the second quarter of 2019. But Centene's earnings also benefited from higher enrollment in its ACA marketplace and Medicare plans, as well as from the moratorium for the health insurer fee. Centene CEO Michael Neidorff told investment analysts on Tuesday the insurer has nabbed approval from eight states regarding its acquisition of WellCare Health Plans, and the deal, which is expected to close in the first half of 2020, could be completed even earlier. </p>
+        <hr class="mhchaps">
+    
+      <h4><strong>UnitedHealth Group</strong> | Minnetonka, Minn.<br><small><small>Added: 7/18/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$60.6 billion</strong></td><td>8.0%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>$55.9 billion</strong></td><td>7.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>$3.4 billion</strong></td><td>12.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>49.5 million</strong></td><td>1.4%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>83.1%</strong></td><td>+1.2 percentage points</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          UnitedHealth Group reported an increase in revenue and net income in the second quarter of 2019, driven by higher Medicare Advantage enrollment and revenue within its insurance business, along with revenue growth across each segment of its Optum business. UnitedHealthcare leadership is banking on enrolling more Medicare Advantage members and patients dually eligible for Medicaid and Medicare as it invests in benefits and care coordination: “We see significant macro revenue growth opportunities in these categories for years to come,” Dirk McMahon, the newly appointed UnitedHealthcare CEO, told investment analysts Thursday.</p>
+        <hr class="mhchaps">
+    
+
+    <br>
+    <h3 class="ex1" id="tech"><strong>Technology companies</strong></h3>
+    
+      <h4><strong>Livongo Health</strong> | Mountain View, Calif.<br><small><small>Added: 9/5/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$40.9 million</strong></td><td>155.8%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Clients</td><td class="tdRIGHT"><strong>720</strong></td><td>125.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Enrolled diabetes members</td><td class="tdRIGHT"><strong>192,934</strong></td><td>140%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>-$14.4 million</strong></td><td>121.50%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Bookings</td><td class="tdRIGHT"><strong>$74.2 million</strong></td><td>199.3%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Livongo Health reported $40.9 million in revenue for the second quarter of 2019, the first quarter since the digital health and chronic disease management company began public trading. Livongo works with health systems, health plans and employers as clients, which subsequently cover costs of program participation for individual members. Revenue growth was driven by sales of the company’s diabetes program, though Livongo’s “cross-sell was very strong in the quarter” as it sold newer programs—focused on services like hypertension and weight management—to its existing client base, CEO Zane Burke said during an earnings call Sept. 5.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Allscripts Healthcare Solutions</strong> | Chicago<br><small><small>Added: 8/8/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$444.5 million</strong></td><td>0.70%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Software delivery, support and maintenance revenue</td><td class="tdRIGHT"><strong>$285 million</strong></td><td>0.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Client services revenue</td><td class="tdRIGHT"><strong>$159.5 million</strong></td><td>1.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$4.7 million</strong></td><td>107.8%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Bookings</td><td class="tdRIGHT"><strong>$276 million</strong></td><td>30.8%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Allscripts Healthcare Solutions reported strong bookings for the second quarter of 2019, primarily driven by growth in its provider and Veradigm payer and life sciences divisions. In the provider market, that included growth in bookings for both the company's Sunrise EHR and the Paragon EHR, a product Allscripts acquired as part of its purchase of McKesson Corp.’s health IT business in 2017, Allscripts President Rick Poulton said during a call with investment analysts Aug. 8. Allscripts has subsequently raised its bookings outlook for 2019 to $1.05 billion to $1.1 billion, up from its previous projection of between $900 million and $1 billion.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Cerner Corp.</strong> | Kansas City, Mo.<br><small><small>Added: 7/24/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$1.4 billion</strong></td><td>4.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Professional services revenue</td><td class="tdRIGHT"><strong>$485.3 million</strong></td><td>8.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Managed services revenue</td><td class="tdRIGHT"><strong>$297.7 million</strong></td><td>4.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$131.1 million</strong></td><td>-37%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Bookings</td><td class="tdRIGHT"><strong>$1.4 billion</strong></td><td>-19.3%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Cerner Corp.’s bookings dropped 19.3% during the second quarter of 2019, in line with the company’s expectations. John Peterzalek, chief client officer, attributed the expected dip to Cerner being more “selective” when considering “low-margin, long-term contract opportunities,” as well as last year’s second quarter including a bump from the initial task order with the Veterans Affairs Department, he said during an earnings call Wednesday. The company expects to see improvements in its operating margin beginning in the fourth quarter, as a result of 165 cost cutting, portfolio management and business simplification initiatives Cerner launched earlier this year, internally referred to as “Cerner.Next,” said CFO Marc Naughton.</p>
+        <hr class="mhchaps">
+    
+    <h4><strong>Teladoc Health</strong> | Purchase, N.Y.<br><small><small>Added: 7/31/2019 </small></small></h4>
+    <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+      <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+        <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+        <tbody>
+          <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$130.3 million</strong></td><td>37.8%</td></tr>
+          <tr><td colspan="1" class="tdLEFT">Subscription fees revenue</td><td class="tdRIGHT"><strong>$111.2 million</strong></td><td>39.4%</td></tr>
+          <tr><td colspan="1" class="tdLEFT">Visit fees revenue</td><td class="tdRIGHT"><strong>$19 million</strong></td><td>28.9%</td></tr>
+          <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>-$29.3 million</strong></td><td>16.9%</td></tr>
+          <tr><td colspan="1" class="tdLEFT">Total visits</td><td class="tdRIGHT"><strong>908,000</strong></td><td>70.4%</td></tr>
+        </tbody>
+      </table></p>
+      <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+        Teladoc Health's visits were up 70.4% during the second quarter of 2019, reflecting "robust growth across all our clinical specialties," CEO Jason Gorevic said during an earnings call July 31. Behavioral health has been one of Teladoc's strongest drivers of visit growth, he added, in both the company's business-to-business and direct-to-consumer offerings. Teladoc's revenue from U.S. subscription fees was up 31.5% at $85.5 million for the quarter, with revenue from international subscription fees up 74.5% at $25.7 million.</p>
+      <hr class="mhchaps">
+<br>
+
+
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">Change is from the same quarter a year ago.</p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Modern Healthcare reporting based on organizational financial filings.</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1567706041"></script>
+
+
+</body>
+</html>

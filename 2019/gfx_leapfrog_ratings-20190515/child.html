@@ -1,0 +1,121 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.src.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"order": "0", "state": "Alabama", "value": "16.28", "legend": "16.28%", "rank2019": "39", "rank2018": "39"}, {"order": "1", "state": "Alaska", "value": "0.01", "legend": "0%", "rank2019": "47", "rank2018": "30"}, {"order": "2", "state": "Arizona", "value": "20.00", "legend": "20%", "rank2019": "34", "rank2018": "37"}, {"order": "3", "state": "Arkansas", "value": "6.90", "legend": "6.9%", "rank2019": "45", "rank2018": "43"}, {"order": "4", "state": "California", "value": "33.98", "legend": "33.98%", "rank2019": "20", "rank2018": "23"}, {"order": "5", "state": "Colorado", "value": "41.03", "legend": "41.03%", "rank2019": "10", "rank2018": "9"}, {"order": "6", "state": "Connecticut", "value": "16.00", "legend": "16%", "rank2019": "40", "rank2018": "47"}, {"order": "7", "state": "Delaware", "value": "0.01", "legend": "0%", "rank2019": "47", "rank2018": "49"}, {"order": "8", "state": "District of Columbia", "value": "0.01", "legend": "0%", "rank2019": "47", "rank2018": "49"}, {"order": "9", "state": "Florida", "value": "35.09", "legend": "35.09%", "rank2019": "17", "rank2018": "19"}, {"order": "10", "state": "Georgia", "value": "35.53", "legend": "35.53%", "rank2019": "15", "rank2018": "17"}, {"order": "11", "state": "Hawaii", "value": "33.33", "legend": "33.33%", "rank2019": "21", "rank2018": "20"}, {"order": "12", "state": "Idaho", "value": "40.00", "legend": "40%", "rank2019": "12", "rank2018": "27"}, {"order": "13", "state": "Illinois", "value": "38.18", "legend": "38.18%", "rank2019": "14", "rank2018": "13"}, {"order": "14", "state": "Indiana", "value": "18.33", "legend": "18.33%", "rank2019": "36", "rank2018": "36"}, {"order": "15", "state": "Iowa", "value": "9.09", "legend": "9.09%", "rank2019": "42", "rank2018": "45"}, {"order": "16", "state": "Kansas", "value": "26.67", "legend": "26.67%", "rank2019": "27", "rank2018": "24"}, {"order": "17", "state": "Kentucky", "value": "21.15", "legend": "21.15%", "rank2019": "33", "rank2018": "33"}, {"order": "18", "state": "Louisiana", "value": "40.74", "legend": "40.74%", "rank2019": "11", "rank2018": "12"}, {"order": "19", "state": "Maine", "value": "50.00", "legend": "50%", "rank2019": "3", "rank2018": "10"}, {"order": "20", "state": "Maryland", "value": "25.00", "legend": "25%", "rank2019": "30", "rank2018": "38"}, {"order": "21", "state": "Massachusetts", "value": "48.28", "legend": "48.28%", "rank2019": "4", "rank2018": "4"}, {"order": "22", "state": "Michigan", "value": "32.10", "legend": "32.1%", "rank2019": "22", "rank2018": "11"}, {"order": "23", "state": "Minnesota", "value": "17.14", "legend": "17.14%", "rank2019": "37", "rank2018": "30"}, {"order": "24", "state": "Mississippi", "value": "25.71", "legend": "25.71%", "rank2019": "29", "rank2018": "18"}, {"order": "25", "state": "Missouri", "value": "25.86", "legend": "25.86%", "rank2019": "28", "rank2018": "34"}, {"order": "26", "state": "Montana", "value": "25.00", "legend": "25%", "rank2019": "30", "rank2018": "20"}, {"order": "27", "state": "Nebraska", "value": "7.14", "legend": "7.14%", "rank2019": "44", "rank2018": "48"}, {"order": "28", "state": "Nevada", "value": "30.00", "legend": "30%", "rank2019": "24", "rank2018": "16"}, {"order": "29", "state": "New Hampshire", "value": "23.08", "legend": "23.08%", "rank2019": "32", "rank2018": "25"}, {"order": "30", "state": "New Jersey", "value": "45.59", "legend": "45.59%", "rank2019": "6", "rank2018": "1"}, {"order": "31", "state": "New Mexico", "value": "20.00", "legend": "20%", "rank2019": "35", "rank2018": "42"}, {"order": "32", "state": "New York", "value": "7.53", "legend": "7.53%", "rank2019": "43", "rank2018": "46"}, {"order": "33", "state": "North Carolina", "value": "34.18", "legend": "34.18%", "rank2019": "19", "rank2018": "6"}, {"order": "34", "state": "North Dakota", "value": "0.01", "legend": "0%", "rank2019": "47", "rank2018": "49"}, {"order": "35", "state": "Ohio", "value": "42.20", "legend": "42.2%", "rank2019": "8", "rank2018": "8"}, {"order": "36", "state": "Oklahoma", "value": "28.95", "legend": "28.95%", "rank2019": "26", "rank2018": "29"}, {"order": "37", "state": "Oregon", "value": "58.06", "legend": "58.06%", "rank2019": "1", "rank2018": "2"}, {"order": "38", "state": "Pennsylvania", "value": "34.38", "legend": "34.38%", "rank2019": "18", "rank2018": "14"}, {"order": "39", "state": "Rhode Island", "value": "42.86", "legend": "42.86%", "rank2019": "7", "rank2018": "7"}, {"order": "40", "state": "South Carolina", "value": "40.00", "legend": "40%", "rank2019": "12", "rank2018": "26"}, {"order": "41", "state": "South Dakota", "value": "10.00", "legend": "10%", "rank2019": "41", "rank2018": "43"}, {"order": "42", "state": "Tennessee", "value": "31.25", "legend": "31.25%", "rank2019": "23", "rank2018": "35"}, {"order": "43", "state": "Texas", "value": "41.43", "legend": "41.43%", "rank2019": "9", "rank2018": "5"}, {"order": "44", "state": "Utah", "value": "48.00", "legend": "48%", "rank2019": "5", "rank2018": "15"}, {"order": "45", "state": "Vermont", "value": "16.67", "legend": "16.67%", "rank2019": "38", "rank2018": "40"}, {"order": "46", "state": "Virginia", "value": "53.03", "legend": "53.03%", "rank2019": "2", "rank2018": "3"}, {"order": "47", "state": "Washington", "value": "29.55", "legend": "29.55%", "rank2019": "25", "rank2018": "32"}, {"order": "48", "state": "West Virginia", "value": "4.35", "legend": "4.35%", "rank2019": "46", "rank2018": "40"}, {"order": "49", "state": "Wisconsin", "value": "35.19", "legend": "35.19%", "rank2019": "16", "rank2018": "22"}, {"order": "50", "state": "Wyoming", "value": "0.01", "legend": "0%", "rank2019": "47", "rank2018": "28"}];
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+</style>
+
+    <h2><strong>&#39;A&#39; grades</strong></h2>
+    <p>Percentage of hospitals in each state receiving an &#8216;A&#8217; in the Spring 2019 Leapfrog Hospital Safety Guide.<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: The Leapfrog Group Hospital Safety Grades, hospitalsafetygrade.org/your-hospitals-safety-grade/state-rankings</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575500860"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+{
+  "scale": "human",
+    "title": {
+      "media": {
+        "caption": "",
+        "credit": "",
+        "url": "",
+        "thumb": 	""
+      },
+      "text": {
+        "headline": "Timeline of the<br>patient safety<br>movement",
+        "text": "<p><strong>By Harris Meyer and Maria Castellucci</strong></p>"
+      }
+    },
+    "events": [
+      {
+        "start_date": {
+          "year": "1991",
+          "month": "",
+          "day": "",
+          "hour": "",
+          "minute": "",
+          "second": "",
+          "millisecond": "",
+          "format": ""
+        },
+        "group": "",
+        "media": {
+          "caption": "",
+          "credit": "",
+          "url": "",
+          "thumb": 	""
+        },
+        "text": {
+          "headline": "",
+          "text": "Harvard Medical Practice Study estimates 98,000 adverse events among 2.7 million New York hospital patients, with 13.6% of the events leading to death. "
+        }
+        },{
+        "background": {
+          "color": "#000",
+          "opacity": 50,
+          "url": null
+          },
+        "start_date": {
+          "year": "1994",
+          "month": "",
+          "day": "",
+          "hour": "",
+          "minute": "",
+          "second": "",
+          "millisecond": "",
+          "format": ""
+        },
+        "group": "",
+        "media": {
+          "caption": "",
+          "credit": "",
+          "url": "",
+          "thumb": 	""
+        },
+        "text": {
+          "headline": "",
+          "text": "Boston Globe health reporter Betsy Lehman dies from a chemotherapy overdose at Dana-Farber Cancer Institute, drawing national attention to preventable errors."
+        }
+      },{
+        "start_date": {
+          "year": "1996",
+          "month": "",
+          "day": "",
+          "hour": "",
+          "minute": "",
+          "second": "",
+          "millisecond": "",
+          "format": ""
+        },
+        "group": "",
+        "media": {
+          "caption": "",
+          "credit": "",
+          "url": "",
+          "thumb": 	""
+        },
+        "text": {
+          "headline": "",
+          "text": "The Joint Commission adopts sentinel event policy, working with hospitals to examine serious patient safety events and how to prevent them from recurring."
+        },
+        "unique_id": ""
+        },{
+          "background": {
+            "color": "#000",
+            "opacity": 50,
+            "url": null
+            },
+            "start_date": {
+              "year": "1998",
+              "month": "",
+              "day": "",
+              "hour": "",
+              "minute": "",
+              "second": "",
+              "millisecond": "",
+              "format": ""
+            },
+            "group": "",
+            "media": {
+              "caption": "",
+              "credit": "",
+              "url": "",
+              "thumb": 	""
+            },
+            "text": {
+              "headline": "",
+              "text": "The CMS launches Nursing Home Compare website for consumers, including inspection report and staffing data; quality measures were added in 2003."
+            },
+            "unique_id": ""
+          },{
+              "start_date": {
+                "year": "1999",
+                "month": "",
+                "day": "",
+                "hour": "",
+                "minute": "",
+                "second": "",
+                "millisecond": "",
+                "format": ""
+              },
+              "group": "",
+              "media": {
+                "caption": "",
+                "credit": "",
+                "url": "",
+                "thumb": 	""
+              },
+              "text": {
+                "headline": "",
+                "text": "&#8226; Institute of Medicine issues its report To Err is Human: Building a Safer Health System. Goals included a nationwide system of reporting medical errors and reduction of those errors by 50% over five years. Neither goal is ever met.<br>&#8226; President Bill Clinton endorses the IOM report and Congress reauthorizes Agency for Healthcare Research and Quality to expand its mandate to include patient safety.<br>&#8226; National Quality Forum created to promote patient protections and healthcare quality through measurement and public reporting."
+              },
+              "unique_id": ""
+            },{
+              "background": {
+                "color": "#000",
+                "opacity": 50,
+                "url": null
+                },
+                "start_date": {
+                  "year": "2001",
+                  "month": "",
+                  "day": "",
+                  "hour": "",
+                  "minute": "",
+                  "second": "",
+                  "millisecond": "",
+                  "format": ""
+                },
+                "group": "",
+                "media": {
+                  "caption": "",
+                  "credit": "",
+                  "url": "",
+                  "thumb": 	""
+                },
+                "text": {
+                  "headline": "",
+                  "text": "Institute of Medicine issues its report Crossing the Quality Chasm: A New Health System for the 21st Century, recommending patient-centered care, increased transparency and reduced waste."
+                },
+                "unique_id": ""
+              },{
+                  "start_date": {
+                    "year": "2002",
+                    "month": "",
+                    "day": "",
+                    "hour": "",
+                    "minute": "",
+                    "second": "",
+                    "millisecond": "",
+                    "format": ""
+                  },
+                  "group": "",
+                  "media": {
+                    "caption": "",
+                    "credit": "",
+                    "url": "",
+                    "thumb": 	""
+                  },
+                  "text": {
+                    "headline": "",
+                    "text": "The Joint Commission establishes National Patient Safety Goals program, requiring hospitals to address patient safety issues to earn accreditation. "
+                  },
+                  "unique_id": ""
+                },{
+                  "background": {
+                    "color": "#000",
+                    "opacity": 50,
+                    "url": null
+                    },
+                    "start_date": {
+                      "year": "2004",
+                      "month": "",
+                      "day": "",
+                      "hour": "",
+                      "minute": "",
+                      "second": "",
+                      "millisecond": "",
+                      "format": ""
+                    },
+                    "group": "",
+                    "media": {
+                      "caption": "",
+                      "credit": "",
+                      "url": "",
+                      "thumb": 	""
+                    },
+                    "text": {
+                      "headline": "",
+                      "text": "Institute for Healthcare Improvement CEO Dr. Don Berwick launches 100,000 Lives Campaign to prevent 100,000 avoidable deaths in hospitals."
+                    },
+                    "unique_id": ""
+                  },{
+                      "start_date": {
+                        "year": "2005",
+                        "month": "",
+                        "day": "",
+                        "hour": "",
+                        "minute": "",
+                        "second": "",
+                        "millisecond": "",
+                        "format": ""
+                      },
+                      "group": "",
+                      "media": {
+                        "caption": "",
+                        "credit": "",
+                        "url": "",
+                        "thumb": 	""
+                      },
+                      "text": {
+                        "headline": "",
+                        "text": "&#8226; Congress passes Patient Safety and Quality Improvement Act establishing a voluntary reporting system for safety issues, with confidentiality protections.<br>&#8226; The CMS launches Hospital Compare website publicizing hospitals’ performance on 10 core process measures, adding star ratings for each hospital in 2016."
+                      },
+                      "unique_id": ""
+                    },{
+                      "background": {
+                        "color": "#000",
+                        "opacity": 50,
+                        "url": null
+                        },
+                        "start_date": {
+                          "year": "2006",
+                          "month": "",
+                          "day": "",
+                          "hour": "",
+                          "minute": "",
+                          "second": "",
+                          "millisecond": "",
+                          "format": ""
+                        },
+                        "group": "",
+                        "media": {
+                          "caption": "",
+                          "credit": "",
+                          "url": "",
+                          "thumb": 	""
+                        },
+                        "text": {
+                          "headline": "",
+                          "text": "Dr. Peter Pronovost publishes NEJM study showing that using a five-item checklist reduced catheter-related bloodstream infections in Michigan ICUs by 66%, saving 1,500 lives and $100 million over 18 months."
+                        },
+                        "unique_id": ""
+                      },{
+                          "start_date": {
+                            "year": "2009",
+                            "month": "",
+                            "day": "",
+                            "hour": "",
+                            "minute": "",
+                            "second": "",
+                            "millisecond": "",
+                            "format": ""
+                          },
+                          "group": "",
+                          "media": {
+                            "caption": "",
+                            "credit": "",
+                            "url": "",
+                            "thumb": 	""
+                          },
+                          "text": {
+                            "headline": "",
+                            "text": "Congress passes the HITECH Act, providing $36 billion to promote nationwide adoption of electronic health records with a goal of preventing medication-related and other errors."
+                          },
+                          "unique_id": ""
+                        },{
+                          "background": {
+                            "color": "#000",
+                            "opacity": 50,
+                            "url": null
+                            },
+                            "start_date": {
+                              "year": "2010",
+                              "month": "",
+                              "day": "",
+                              "hour": "",
+                              "minute": "",
+                              "second": "",
+                              "millisecond": "",
+                              "format": ""
+                            },
+                            "group": "",
+                            "media": {
+                              "caption": "",
+                              "credit": "",
+                              "url": "",
+                              "thumb": 	""
+                            },
+                            "text": {
+                              "headline": "",
+                              "text": "Affordable Care Act enacted, including Medicare financial incentives and penalties for hospitals to reduce hospital-acquired conditions and avoidable readmissions."
+                            },
+                            "unique_id": ""
+                          },{
+                              "start_date": {
+                                "year": "2011",
+                                "month": "",
+                                "day": "",
+                                "hour": "",
+                                "minute": "",
+                                "second": "",
+                                "millisecond": "",
+                                "format": ""
+                              },
+                              "group": "",
+                              "media": {
+                                "caption": "",
+                                "credit": "",
+                                "url": "",
+                                "thumb": 	""
+                              },
+                              "text": {
+                                "headline": "",
+                                "text": "The CMS launches ACA-funded Partnership for Patients to reduce hospital-acquired conditions by 40% and readmissions by 20%. Three years later, CMS reports “statistically significant” improvement in five out of 11 areas of patient harm, with worsening rates of catheter-associated urinary tract infection, pressure ulcers, surgical site infections and falls. The partnership’s efforts lower hospital-acquired conditions by 17% overall, falling short of the 40% goal."
+                              },
+                              "unique_id": ""
+                            },{
+                              "background": {
+                                "color": "#000",
+                                "opacity": 50,
+                                "url": null
+                                },
+                                "start_date": {
+                                  "year": "2012",
+                                  "month": "",
+                                  "day": "",
+                                  "hour": "",
+                                  "minute": "",
+                                  "second": "",
+                                  "millisecond": "",
+                                  "format": ""
+                                },
+                                "group": "",
+                                "media": {
+                                  "caption": "",
+                                  "credit": "",
+                                  "url": "",
+                                  "thumb": 	""
+                                },
+                                "text": {
+                                  "headline": "",
+                                  "text": "&#8226; Leapfrog Group publishes first annual hospital safety grades based on process and outcomes measures.<br>&#8226; The Center for Medicare and Medicaid Innovation launches Medicare Shared Savings Program with financial incentives for accountable care organizations to improve quality and cost performance.<br>&#8226; The CMS starts penalizing hospitals for high rates of Medicare readmissions within 30 days of discharge."
+                                },
+                                "unique_id": ""
+                              },{
+                                  "start_date": {
+                                    "year": "2015",
+                                    "month": "",
+                                    "day": "",
+                                    "hour": "",
+                                    "minute": "",
+                                    "second": "",
+                                    "millisecond": "",
+                                    "format": ""
+                                  },
+                                  "group": "",
+                                  "media": {
+                                    "caption": "",
+                                    "credit": "",
+                                    "url": "",
+                                    "thumb": 	""
+                                  },
+                                  "text": {
+                                    "headline": "",
+                                    "text": "&#8226; The Institute of Medicine issues its report Improving Diagnosis in Health Care, finding that diagnostic errors are underestimated and most patients will experience at least one such error.<br>&#8226; The CMS launches hospital engagement networks to establish a collaborative for reducing patient harm."
+                                  },
+                                  "unique_id": ""
+                                },{
+                                  "background": {
+                                    "color": "#000",
+                                    "opacity": 50,
+                                    "url": null
+                                    },
+                                    "start_date": {
+                                      "year": "2016",
+                                      "month": "",
+                                      "day": "",
+                                      "hour": "",
+                                      "minute": "",
+                                      "second": "",
+                                      "millisecond": "",
+                                      "format": ""
+                                    },
+                                    "group": "",
+                                    "media": {
+                                      "caption": "",
+                                      "credit": "",
+                                      "url": "",
+                                      "thumb": 	""
+                                    },
+                                    "text": {
+                                      "headline": "",
+                                      "text": "BMJ publishes study estimating an annual average of 251,000 inpatient deaths due to medical error."
+                                    },
+                                    "unique_id": ""
+                                  },{
+                                      "start_date": {
+                                        "year": "2017",
+                                        "month": "",
+                                        "day": "",
+                                        "hour": "",
+                                        "minute": "",
+                                        "second": "",
+                                        "millisecond": "",
+                                        "format": ""
+                                      },
+                                      "group": "",
+                                      "media": {
+                                        "caption": "",
+                                        "credit": "",
+                                        "url": "",
+                                        "thumb": 	""
+                                      },
+                                      "text": {
+                                        "headline": "",
+                                        "text": "The CMS launches the Meaningful Measures program to streamline quality and safety reporting."
+                                      },
+                                      "unique_id": ""
+                                    },{
+                                      "background": {
+                                        "color": "#000",
+                                        "opacity": 50,
+                                        "url": null
+                                        },
+                                        "start_date": {
+                                          "year": "2018",
+                                          "month": "",
+                                          "day": "",
+                                          "hour": "",
+                                          "minute": "",
+                                          "second": "",
+                                          "millisecond": "",
+                                          "format": ""
+                                        },
+                                        "group": "",
+                                        "media": {
+                                          "caption": "",
+                                          "credit": "",
+                                          "url": "",
+                                          "thumb": 	""
+                                        },
+                                        "text": {
+                                          "headline": "",
+                                          "text": "The Institute for Healthcare Improvement announces National Steering Committee for Patient Safety."
+                                        },
+                                        "unique_id": ""
+                                      },{
+                                        "background": {
+                                          "color": "#000",
+                                          "opacity": 50,
+                                          "url": null
+                                          },
+                                          "start_date": {
+                                            "year": "2019",
+                                            "month": "",
+                                            "day": "",
+                                            "hour": "",
+                                            "minute": "",
+                                            "second": "",
+                                            "millisecond": "",
+                                            "format": ""
+                                          },
+                                          "group": "",
+                                          "media": {
+                                            "caption": "",
+                                            "credit": "",
+                                            "url": "",
+                                            "thumb": 	""
+                                          },
+                                          "text": {
+                                            "headline": "",
+                                            "text": "&#8226; Betsy Lehman Center for Patient Safety reports 62,000 preventable harm events occurred in Massachusetts in 2017, causing $617 million in additional insurance costs.<br>&#8226; In July, HHS announces formation of the Quality Summit, which brings together stakeholders to discuss how the federal government's quality programs can be changed."
+                                          },
+                                          "unique_id": ""
+                                        }
+        ]
+}

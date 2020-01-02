@@ -1,0 +1,154 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts_mh.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2016", "over4": "31.71", "stars_34": "61.68", "stars3": "39.88", "stars3_5": "21.8", "below3": "6.61", "over4_ct": "40.68", "stars_34_ct": "47.45", "below3_ct": "11.86", "stars3_ct": "25.42", "stars3_5_ct": "22.03", "stars4": "29.95", "stars4_ct": "20.34", "stars45": "1.76", "stars45_ct": "20.34"}, {"year": "2017", "over4": "40.67", "stars_34": "57.39", "stars3": "31.84", "stars3_5": "25.55", "below3": "1.94", "over4_ct": "49.1", "stars_34_ct": "45.45", "below3_ct": "5.45", "stars3_ct": "16.36", "stars3_5_ct": "29.09", "stars4": "37.74", "stars4_ct": "23.64", "stars45": "2.93", "stars45_ct": "25.46"}, {"year": "2018", "over4": "47.34", "stars_34": "44.39", "stars3": "8.0", "stars3_5": "36.39", "below3": "8.26", "over4_ct": "51.85", "stars_34_ct": "40.74", "below3_ct": "7.4", "stars3_ct": "9.26", "stars3_5_ct": "31.48", "stars4": "45.03", "stars4_ct": "29.63", "stars45": "2.31", "stars45_ct": "22.22"}, {"year": "2019", "over4": "3.44", "stars_34": "90.38", "stars3": "21.77", "stars3_5": "68.61", "below3": "6.17", "over4_ct": "30.77", "stars_34_ct": "59.62", "below3_ct": "9.62", "stars3_ct": "30.77", "stars3_5_ct": "28.85", "stars4": "0.83", "stars4_ct": "13.46", "stars45": "2.61", "stars45_ct": "17.31"}, {"year": "2020", "over4": "27.58", "stars_34": "71.57", "stars3": "29.45", "stars3_5": "42.12", "below3": "0.84", "over4_ct": "29.62", "stars_34_ct": "64.82", "below3_ct": "5.56", "stars3_ct": "25.93", "stars3_5_ct": "38.89", "stars4": "25.04", "stars4_ct": "12.96", "stars45": "2.54", "stars45_ct": "16.66"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:375px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #237a82;
+}
+.SECOND {
+  background-color: #99c2cb;
+}
+.THIRD {
+  background-color: #de6427;
+}
+.FOURTH {
+  background-color: #fbc854;
+}
+.FIFTH {
+  background-color: #5e152d;
+}
+</style>
+
+    <h2><strong>Medicare prescription drug plans&#8217; 2020 star ratings</strong></h2>
+    <p>The percentage of Medicare Part D prescription drug plan members in plans with four stars or more in 2020 rose sharply from the year before.<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <div>
+      <hr class="mhchaps">
+      <h4><strong>2020 Medicare Part D contracts</strong></h4>
+      <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+        <thead>
+          <th class="thLEFT"></th><th colspan='2'>Number of contracts</th><th colspan='2'>Percentage of enrollment</th></thead>
+          <tbody
+          <tr><td class="thLEFT"><strong>Rating</strong></td><td><strong>2019</strong></td><td><strong>2020</strong></td><td><strong>2019</strong></td><td><strong>2020</strong></td>
+          <tr><td class="tdLEFT">5 stars</td><td>4</td><td>2</td><td>1.92%</td><td>0.76%</td></tr>
+          <tr><td class="tdLEFT">4.5 stars</td><td>5</td><td>7</td><td>0.69%</td><td>1.78%</td></tr>
+          <tr><td class="tdLEFT">4 stars</td><td>7</td><td>7</td><td>0.83%</td><td>25.04%</td></tr>
+          <tr><td class="tdLEFT">3.5 stars</td><td>15</td><td>21</td><td>68.61%</td><td>42.12%</td></tr>
+          <tr><td class="tdLEFT">3 stars</td><td>16</td><td>14</td><td>21.77%</td><td>29.45%</td></tr>
+          <tr><td class="tdLEFT">2.5 stars</td><td>2</td><td>3</td><td>0.37%</td><td>0.84%</td></tr>
+          <tr><td class="tdLEFT">2 stars</td><td>2</td><td>0</td><td>5.45%</td><td>0%</td></tr>
+          <tr><td class="tdLEFT">1.5 stars</td><td>1</td><td>0</td><td>0.35%</td><td>0%</td></tr>
+      </tbody></table>
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: CMS</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575575389"></script>
+
+
+</body>
+</html>

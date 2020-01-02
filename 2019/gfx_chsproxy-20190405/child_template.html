@@ -1,0 +1,129 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+
+    <h4><strong>Wayne T. Smith</strong><br><small>Chairman of the Board and Chief Executive Officer</small></h4>
+    <table class="table-hover table-striped table-condensed" width="100%" >
+      <thead>
+        <th class="thLEFT"></th>
+        <th>2017</th>
+        <th>2018</th>
+      </thead>
+      <tbody>
+          {% for row in COPY.data %}
+          <tr><td class="tdLEFT"><small>{{ row.item }}<small></td>
+          <td><small>${{ row.smith2017 }}<small></td>
+          <td><small>${{ row.smith2018 }}<small></td>
+          {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h4><strong>Tim L. Hingtgen</strong><br><small>President and Chief Operating Officer</small></h4>
+    <table class="table-hover table-striped table-condensed" width="100%" >
+      <thead>
+        <th class="thLEFT"></th>
+        <th>2017</th>
+        <th>2018</th>
+      </thead>
+      <tbody>
+          {% for row in COPY.data %}
+          <tr><td class="tdLEFT"><small>{{ row.item }}<small></td>
+          <td><small>${{ row.hing2017 }}<small></td>
+          <td><small>${{ row.hing2018 }}<small></td>
+          {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <h4><strong>Thomas J. Aaron</strong><br><small>Executive Vice President and Chief Financial Officer</small></h4>
+    <table class="table-hover table-striped table-condensed" width="100%" >
+      <thead>
+        <th class="thLEFT"></th>
+        <th>2017</th>
+        <th>2018</th>
+      </thead>
+      <tbody>
+          {% for row in COPY.data %}
+          <tr><td class="tdLEFT"><small>{{ row.item }}<small></td>
+          <td><small>${{ row.aaron2017 }}<small></td>
+          <td><small>${{ row.aaron2018 }}<small></td>
+          {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

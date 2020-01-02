@@ -1,0 +1,132 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.src.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"order": "0", "state": "Alabama", "value": "5", "legend": "11.9", "clinic": "5", "infant": "5.6"}, {"order": "1", "state": "Alaska", "value": "-1", "legend": "No data", "clinic": "3", "infant": "7.4"}, {"order": "2", "state": "Arizona", "value": "3", "legend": "18.8", "clinic": "9", "infant": "5.7"}, {"order": "3", "state": "Arkansas", "value": "1", "legend": "34.8", "clinic": "3", "infant": "8.2"}, {"order": "4", "state": "California", "value": "5", "legend": "4.5", "clinic": "152", "infant": "4.2"}, {"order": "5", "state": "Colorado", "value": "5", "legend": "11.3", "clinic": "21", "infant": "4.5"}, {"order": "6", "state": "Connecticut", "value": "5", "legend": "13.2", "clinic": "25", "infant": "4.5"}, {"order": "7", "state": "Delaware", "value": "4", "legend": "14", "clinic": "3", "infant": "6.6"}, {"order": "8", "state": "District of Columbia", "value": "1", "legend": "36.1", "clinic": "5", "infant": "No data"}, {"order": "9", "state": "Florida", "value": "2", "legend": "23.8", "clinic": "71", "infant": "6.1"}, {"order": "10", "state": "Georgia", "value": "1", "legend": "46.2", "clinic": "17", "infant": "7.2"}, {"order": "11", "state": "Hawaii", "value": "5", "legend": "11.7", "clinic": "4", "infant": "5.3"}, {"order": "12", "state": "Idaho", "value": "2", "legend": "21.2", "clinic": "3", "infant": "4.6"}, {"order": "13", "state": "Illinois", "value": "4", "legend": "16.6", "clinic": "24", "infant": "6.1"}, {"order": "14", "state": "Indiana", "value": "1", "legend": "41.4", "clinic": "9", "infant": "7.3"}, {"order": "15", "state": "Iowa", "value": "3", "legend": "17.9", "clinic": "12", "infant": "5.3"}, {"order": "16", "state": "Kansas", "value": "3", "legend": "17.7", "clinic": "4", "infant": "6.1"}, {"order": "17", "state": "Kentucky", "value": "3", "legend": "19.4", "clinic": "2", "infant": "6.5"}, {"order": "18", "state": "Louisiana", "value": "1", "legend": "44.8", "clinic": "5", "infant": "7.1"}, {"order": "19", "state": "Maine", "value": "4", "legend": "15.7", "clinic": "4", "infant": "5.7"}, {"order": "20", "state": "Maryland", "value": "2", "legend": "23.5", "clinic": "25", "infant": "6.4"}, {"order": "21", "state": "Massachusetts", "value": "5", "legend": "6.1", "clinic": "14", "infant": "3.7"}, {"order": "22", "state": "Michigan", "value": "3", "legend": "19.4", "clinic": "20", "infant": "6.8"}, {"order": "23", "state": "Minnesota", "value": "5", "legend": "13", "clinic": "6", "infant": "4.8"}, {"order": "24", "state": "Mississippi", "value": "2", "legend": "22.6", "clinic": "1", "infant": "8.6"}, {"order": "25", "state": "Missouri", "value": "1", "legend": "32.6", "clinic": "1", "infant": "6.2"}, {"order": "26", "state": "Montana", "value": "2", "legend": "24.4", "clinic": "5", "infant": "5.4"}, {"order": "27", "state": "Nebraska", "value": "4", "legend": "16.8", "clinic": "3", "infant": "5.6"}, {"order": "28", "state": "Nevada", "value": "5", "legend": "6.2", "clinic": "8", "infant": "5.8"}, {"order": "29", "state": "New Hampshire", "value": "4", "legend": "16.8", "clinic": "4", "infant": "4.2"}, {"order": "30", "state": "New Jersey", "value": "1", "legend": "38.1", "clinic": "41", "infant": "4.5"}, {"order": "31", "state": "New Mexico", "value": "2", "legend": "25.6", "clinic": "9", "infant": "5.9"}, {"order": "32", "state": "New York", "value": "2", "legend": "20.6", "clinic": "95", "infant": "4.6"}, {"order": "33", "state": "North Carolina", "value": "4", "legend": "15.8", "clinic": "16", "infant": "7.1"}, {"order": "34", "state": "North Dakota", "value": "3", "legend": "18.9", "clinic": "1", "infant": "4.3"}, {"order": "35", "state": "Ohio", "value": "3", "legend": "20.3", "clinic": "12", "infant": "7.2"}, {"order": "36", "state": "Oklahoma", "value": "2", "legend": "23.4", "clinic": "3", "infant": "7.7"}, {"order": "37", "state": "Oregon", "value": "4", "legend": "13.7", "clinic": "15", "infant": "5.4"}, {"order": "38", "state": "Pennsylvania", "value": "4", "legend": "16.3", "clinic": "20", "infant": "6.1"}, {"order": "39", "state": "Rhode Island", "value": "3", "legend": "18.3", "clinic": "3", "infant": "6.2"}, {"order": "40", "state": "South Carolina", "value": "1", "legend": "26.5", "clinic": "3", "infant": "6.5"}, {"order": "41", "state": "South Dakota", "value": "1", "legend": "28", "clinic": "1", "infant": "7.7"}, {"order": "42", "state": "Tennessee", "value": "2", "legend": "23.3", "clinic": "7", "infant": "7.4"}, {"order": "43", "state": "Texas", "value": "1", "legend": "34.2", "clinic": "28", "infant": "5.9"}, {"order": "44", "state": "Utah", "value": "4", "legend": "16.8", "clinic": "2", "infant": "5.9"}, {"order": "45", "state": "Vermont", "value": "-1", "legend": "No data", "clinic": "6", "infant": "4.8"}, {"order": "46", "state": "Virginia", "value": "4", "legend": "15.6", "clinic": "18", "infant": "5.9"}, {"order": "47", "state": "Washington", "value": "4", "legend": "14.8", "clinic": "33", "infant": "3.9"}, {"order": "48", "state": "West Virginia", "value": "5", "legend": "11.7", "clinic": "2", "infant": "7"}, {"order": "49", "state": "Wisconsin", "value": "4", "legend": "14.3", "clinic": "4", "infant": "6.4"}, {"order": "50", "state": "Wyoming", "value": "2", "legend": "24.6", "clinic": "1", "infant": "4.6"}];
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+
+  .highcharts-tooltip span {
+      width:150px;
+      white-space:normal !important;
+  }
+
+</style>
+
+    <h2><strong>Maternal mortality rates and abortion legislation</strong></h2>
+    <p>Many of the states that have passed legislation increasing restrictions on abortion are also among those with the highest maternal mortality rates. <br><i>States that have recently passed abortion restrictions marked with an asterisk (*)</i><br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Maternal mortality rate is the number of deaths per 100,000 from any cause related to or aggravated by pregnancy or its management (excluding accidental or incidental causes)<br>2017 infant mortality rate is per 1,000 live births</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: America&#8217;s Health Rankings analysis of CDC WONDER mortality files, 2011-15; Guttmacher Institute; Centers for Disease Control and Prevention</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575500835"></script>
+
+
+</body>
+</html>

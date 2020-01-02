@@ -1,0 +1,149 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "1995", "qui_tam": "87", "relator_ref": "14,803,782", "relator": "14.803782", "all_ref": "85,681,789", "all": "85.681789", "portion": "70.878007", "all_txt": "85.7", "relator_txt": "14.8"}, {"year": "1996", "qui_tam": "177", "relator_ref": "9,374,568", "relator": "9.374568", "all_ref": "51,576,698", "all": "51.576698", "portion": "42.20213", "all_txt": "51.6", "relator_txt": "9.4"}, {"year": "1997", "qui_tam": "269", "relator_ref": "58,872,855", "relator": "58.872855", "all_ref": "579,079,581", "all": "579.079581", "portion": "520.206726", "all_txt": "579.1", "relator_txt": "58.9"}, {"year": "1998", "qui_tam": "276", "relator_ref": "47,050,372", "relator": "47.050372", "all_ref": "254,350,242", "all": "254.350242", "portion": "207.29987", "all_txt": "254.4", "relator_txt": "47.1"}, {"year": "1999", "qui_tam": "315", "relator_ref": "45,492,385", "relator": "45.492385", "all_ref": "397,768,827", "all": "397.768827", "portion": "352.276442", "all_txt": "397.8", "relator_txt": "45.5"}, {"year": "2000", "qui_tam": "212", "relator_ref": "115,484,746", "relator": "115.484746", "all_ref": "723,486,203", "all": "723.486203", "portion": "608.001457", "all_txt": "723.5", "relator_txt": "115.5"}, {"year": "2001", "qui_tam": "181", "relator_ref": "147,640,200", "relator": "147.6402", "all_ref": "946,254,475", "all": "946.254475", "portion": "798.614275", "all_txt": "946.3", "relator_txt": "147.6"}, {"year": "2002", "qui_tam": "194", "relator_ref": "154,289,403", "relator": "154.289403", "all_ref": "961,248,757", "all": "961.248757", "portion": "806.959354", "all_txt": "961.2", "relator_txt": "154.3"}, {"year": "2003", "qui_tam": "215", "relator_ref": "284,796,601", "relator": "284.796601", "all_ref": "1,307,801,099", "all": "1307.801099", "portion": "1023.004498", "all_txt": "1,307.8", "relator_txt": "284.8"}, {"year": "2004", "qui_tam": "273", "relator_ref": "97,545,278", "relator": "97.545278", "all_ref": "476,110,142", "all": "476.110142", "portion": "378.564864", "all_txt": "476.1", "relator_txt": "97.5"}, {"year": "2005", "qui_tam": "270", "relator_ref": "122,889,393", "relator": "122.889393", "all_ref": "913,328,429", "all": "913.328429", "portion": "790.439036", "all_txt": "913.3", "relator_txt": "122.9"}, {"year": "2006", "qui_tam": "216", "relator_ref": "167,089,981", "relator": "167.089981", "all_ref": "1,243,343,761", "all": "1243.343761", "portion": "1076.25378", "all_txt": "1,243.3", "relator_txt": "167.1"}, {"year": "2007", "qui_tam": "199", "relator_ref": "158,782,799", "relator": "158.782799", "all_ref": "1,082,072,486", "all": "1082.072486", "portion": "923.289687", "all_txt": "1,082.1", "relator_txt": "158.8"}, {"year": "2008", "qui_tam": "231", "relator_ref": "187,455,327", "relator": "187.455327", "all_ref": "969,313,659", "all": "969.313659", "portion": "781.858332", "all_txt": "969.3", "relator_txt": "187.5"}, {"year": "2009", "qui_tam": "279", "relator_ref": "164,110,372", "relator": "164.110372", "all_ref": "1,398,694,974", "all": "1398.694974", "portion": "1234.584602", "all_txt": "1,398.7", "relator_txt": "164.1"}, {"year": "2010", "qui_tam": "386", "relator_ref": "339,723,936", "relator": "339.723936", "all_ref": "1,972,171,568", "all": "1972.171568", "portion": "1632.447632", "all_txt": "1,972.2", "relator_txt": "339.7"}, {"year": "2011", "qui_tam": "417", "relator_ref": "470,946,068", "relator": "470.946068", "all_ref": "2,271,434,067", "all": "2271.434067", "portion": "1800.487999", "all_txt": "2,271.4", "relator_txt": "470.9"}, {"year": "2012", "qui_tam": "417", "relator_ref": "292,417,368", "relator": "292.417368", "all_ref": "2,548,094,567", "all": "2548.094567", "portion": "2255.677199", "all_txt": "2,548.1", "relator_txt": "292.4"}, {"year": "2013", "qui_tam": "504", "relator_ref": "499,503,804", "relator": "499.503804", "all_ref": "2,673,029,320", "all": "2673.02932", "portion": "2173.525516", "all_txt": "2,673.0", "relator_txt": "499.5"}, {"year": "2014", "qui_tam": "470", "relator_ref": "394,785,566", "relator": "394.785566", "all_ref": "2,344,496,462", "all": "2344.496462", "portion": "1949.710896", "all_txt": "2,344.5", "relator_txt": "394.8"}, {"year": "2015", "qui_tam": "426", "relator_ref": "405,496,221", "relator": "405.496221", "all_ref": "1,966,511,070", "all": "1966.51107", "portion": "1561.014849", "all_txt": "1,966.5", "relator_txt": "405.5"}, {"year": "2016", "qui_tam": "503", "relator_ref": "484,455,684", "relator": "484.455684", "all_ref": "2,627,150,052", "all": "2627.150052", "portion": "2142.694368", "all_txt": "2,627.2", "relator_txt": "484.5"}, {"year": "2017", "qui_tam": "495", "relator_ref": "358,416,425", "relator": "358.416425", "all_ref": "2,151,504,294", "all": "2151.504294", "portion": "1793.087869", "all_txt": "2,151.5", "relator_txt": "358.4"}, {"year": "2018", "qui_tam": "446", "relator_ref": "266,637,149", "relator": "266.637149", "all_ref": "1,945,286,632", "all": "1945.286632", "portion": "1678.649483", "all_txt": "1,945.3", "relator_txt": "266.6"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9fa7d4;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Whistleblower cases and settlements on the rise</strong></h2>
+    <p>Qui tam healthcare cases yielded close to $23 billion from fiscal year 2008 to 2018.<br>
+    <small><strong>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+        <h4>Number of HHS-related qui tam lawsuits, <small>1995-2018</small></h4>
+        <div id="graphic" class="graphic">
+                <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+        <hr class="mhchaps">
+
+        <h4>Qui tam settlements, <small>1995-2018</small></h4>
+        <div id="graphic2" class="graphic">
+                <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">The share of settlements to whistleblowers has exceeded $250 million since fiscal year 2010. </p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Department of Justice</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1566502172"></script>
+
+
+</body>
+</html>

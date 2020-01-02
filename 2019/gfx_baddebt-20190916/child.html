@@ -1,0 +1,121 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.src.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"order": "0", "state": "Alabama", "bd_2017": "1,360.20", "bd_2018": "1,215.95", "value": "-10.6", "cc_2017": "3371801.0", "cc_2018": "4219643.0", "cc_change": "25.0"}, {"order": "1", "state": "Alaska", "bd_2017": "938.03", "bd_2018": "1,511.52", "value": "61.14", "cc_2017": "1065943.5", "cc_2018": "1298961.5", "cc_change": "22.0"}, {"order": "2", "state": "Arizona", "bd_2017": "775.03", "bd_2018": "814.12", "value": "5.04", "cc_2017": "9154874.0", "cc_2018": "13373650.5", "cc_change": "46.0"}, {"order": "3", "state": "Arkansas", "bd_2017": "604.15", "bd_2018": "741.44", "value": "22.72", "cc_2017": "793334.5", "cc_2018": "1227717.0", "cc_change": "55.0"}, {"order": "4", "state": "California", "bd_2017": "722.18", "bd_2018": "837.50", "value": "15.97", "cc_2017": "6537266.0", "cc_2018": "8949180.0", "cc_change": "37.0"}, {"order": "5", "state": "Colorado", "bd_2017": "598.94", "bd_2018": "721.15", "value": "20.4", "cc_2017": "1999906.0", "cc_2018": "3022132.5", "cc_change": "51.0"}, {"order": "6", "state": "Connecticut", "bd_2017": "294.95", "bd_2018": "383.42", "value": "29.99", "cc_2017": "8591053.0", "cc_2018": "13445166.0", "cc_change": "57.0"}, {"order": "7", "state": "Delaware", "bd_2017": "719.65", "bd_2018": "671.70", "value": "-6.66", "cc_2017": "8694796.0", "cc_2018": "8851580.5", "cc_change": "2.0"}, {"order": "8", "state": "District of Columbia", "bd_2017": "735.14", "bd_2018": "851.12", "value": "15.78", "cc_2017": "7920788.0", "cc_2018": "10444931.0", "cc_change": "32.0"}, {"order": "9", "state": "Florida", "bd_2017": "1,177.24", "bd_2018": "1,174.39", "value": "-0.24", "cc_2017": "46071342.5", "cc_2018": "62733211.0", "cc_change": "36.0"}, {"order": "10", "state": "Georgia", "bd_2017": "1,509.59", "bd_2018": "1,392.05", "value": "-7.79", "cc_2017": "9372681.5", "cc_2018": "12837439.0", "cc_change": "37.0"}, {"order": "11", "state": "Hawaii", "bd_2017": "727.33", "bd_2018": "688.65", "value": "-5.32", "cc_2017": "263558.0", "cc_2018": "333307.0", "cc_change": "26.0"}, {"order": "12", "state": "Idaho", "bd_2017": "752.85", "bd_2018": "756.06", "value": "0.43", "cc_2017": "482424.0", "cc_2018": "425573.0", "cc_change": "-12.0"}, {"order": "13", "state": "Illinois", "bd_2017": "533.50", "bd_2018": "553.65", "value": "3.78", "cc_2017": "5726021.0", "cc_2018": "6015955.0", "cc_change": "5.0"}, {"order": "14", "state": "Indiana", "bd_2017": "718.68", "bd_2018": "742.68", "value": "3.34", "cc_2017": "3775405.0", "cc_2018": "4216408.0", "cc_change": "12.0"}, {"order": "15", "state": "Iowa", "bd_2017": "278.43", "bd_2018": "351.67", "value": "26.31", "cc_2017": "263541.0", "cc_2018": "329466.0", "cc_change": "25.0"}, {"order": "16", "state": "Kansas", "bd_2017": "667.57", "bd_2018": "546.33", "value": "-18.16", "cc_2017": "137900.0", "cc_2018": "149249.0", "cc_change": "8.0"}, {"order": "17", "state": "Kentucky", "bd_2017": "544.34", "bd_2018": "594.63", "value": "9.24", "cc_2017": "1797986.0", "cc_2018": "1795890.0", "cc_change": "0.0"}, {"order": "18", "state": "Louisiana", "bd_2017": "746.74", "bd_2018": "1,003.54", "value": "34.39", "cc_2017": "993262.0", "cc_2018": "868340.0", "cc_change": "-13.0"}, {"order": "19", "state": "Maine", "bd_2017": "876.33", "bd_2018": "649.15", "value": "-25.92", "cc_2017": "2678271.0", "cc_2018": "2485794.5", "cc_change": "-7.0"}, {"order": "20", "state": "Maryland", "bd_2017": "422.16", "bd_2018": "434.59", "value": "2.94", "cc_2017": "2849139.0", "cc_2018": "3933216.5", "cc_change": "38.0"}, {"order": "21", "state": "Massachusetts", "bd_2017": "302.20", "bd_2018": "276.96", "value": "-8.35", "cc_2017": "3021956.0", "cc_2018": "3589940.5", "cc_change": "19.0"}, {"order": "22", "state": "Michigan", "bd_2017": "391.01", "bd_2018": "481.77", "value": "23.21", "cc_2017": "919602.0", "cc_2018": "1182953.0", "cc_change": "29.0"}, {"order": "23", "state": "Minnesota", "bd_2017": "314.64", "bd_2018": "328.63", "value": "4.45", "cc_2017": "580895.0", "cc_2018": "676499.0", "cc_change": "16.0"}, {"order": "24", "state": "Mississippi", "bd_2017": "1,424.95", "bd_2018": "1,493.89", "value": "4.84", "cc_2017": "2570136.5", "cc_2018": "2131159.0", "cc_change": "-17.0"}, {"order": "25", "state": "Missouri", "bd_2017": "1,095.99", "bd_2018": "991.76", "value": "-9.51", "cc_2017": "4889048.5", "cc_2018": "5316049.0", "cc_change": "9.0"}, {"order": "26", "state": "Montana", "bd_2017": "478.70", "bd_2018": "721.00", "value": "50.61", "cc_2017": "254862.5", "cc_2018": "157517.0", "cc_change": "-38.0"}, {"order": "27", "state": "Nebraska", "bd_2017": "512.61", "bd_2018": "457.82", "value": "-10.69", "cc_2017": "215492.0", "cc_2018": "216440.0", "cc_change": "0.0"}, {"order": "28", "state": "Nevada", "bd_2017": "1,592.90", "bd_2018": "1,653.59", "value": "3.81", "cc_2017": "13158465.0", "cc_2018": "18399258.0", "cc_change": "40.0"}, {"order": "29", "state": "New Hampshire", "bd_2017": "469.12", "bd_2018": "700.88", "value": "49.4", "cc_2017": "2497921.0", "cc_2018": "2751278.5", "cc_change": "10.0"}, {"order": "30", "state": "New Jersey", "bd_2017": "645.66", "bd_2018": "704.29", "value": "9.08", "cc_2017": "38144845.0", "cc_2018": "39303687.0", "cc_change": "3.0"}, {"order": "31", "state": "New Mexico", "bd_2017": "654.83", "bd_2018": "755.33", "value": "15.35", "cc_2017": "3003129.0", "cc_2018": "2902223.0", "cc_change": "-3.0"}, {"order": "32", "state": "New York", "bd_2017": "437.61", "bd_2018": "406.17", "value": "-7.18", "cc_2017": "7598202.0", "cc_2018": "8139762.0", "cc_change": "7.0"}, {"order": "33", "state": "North Carolina", "bd_2017": "1,329.69", "bd_2018": "1,256.91", "value": "-5.47", "cc_2017": "9919985.0", "cc_2018": "12769197.0", "cc_change": "29.0"}, {"order": "34", "state": "North Dakota", "bd_2017": "594.84", "bd_2018": "508.05", "value": "-14.59", "cc_2017": "98592.0", "cc_2018": "162858.0", "cc_change": "65.0"}, {"order": "35", "state": "Ohio", "bd_2017": "605.90", "bd_2018": "561.24", "value": "-7.37", "cc_2017": "4445947.0", "cc_2018": "5034278.5", "cc_change": "13.0"}, {"order": "36", "state": "Oklahoma", "bd_2017": "1,298.77", "bd_2018": "1,028.92", "value": "-20.78", "cc_2017": "2031703.0", "cc_2018": "1879978.0", "cc_change": "-7.0"}, {"order": "37", "state": "Oregon", "bd_2017": "329.75", "bd_2018": "363.05", "value": "10.1", "cc_2017": "4000105.0", "cc_2018": "4122322.0", "cc_change": "3.0"}, {"order": "38", "state": "Pennsylvania", "bd_2017": "397.17", "bd_2018": "457.74", "value": "15.25", "cc_2017": "3373648.0", "cc_2018": "2999590.0", "cc_change": "-11.0"}, {"order": "39", "state": "Rhode Island", "bd_2017": "356.93", "bd_2018": "603.83", "value": "69.18", "cc_2017": "2966664.0", "cc_2018": "5454045.0", "cc_change": "84.0"}, {"order": "40", "state": "South Carolina", "bd_2017": "1,746.52", "bd_2018": "1,703.08", "value": "-2.49", "cc_2017": "16020669.5", "cc_2018": "18655134.0", "cc_change": "16.0"}, {"order": "41", "state": "South Dakota", "bd_2017": "516.96", "bd_2018": "453.05", "value": "-12.36", "cc_2017": "232131.5", "cc_2018": "509584.0", "cc_change": "120.0"}, {"order": "42", "state": "Tennessee", "bd_2017": "834.50", "bd_2018": "883.83", "value": "5.91", "cc_2017": "8768558.0", "cc_2018": "11130079.0", "cc_change": "27.0"}, {"order": "43", "state": "Texas", "bd_2017": "1,182.20", "bd_2018": "1,191.63", "value": "0.8", "cc_2017": "7464414.83", "cc_2018": "14000253.0", "cc_change": "88.0"}, {"order": "44", "state": "Utah", "bd_2017": "712.57", "bd_2018": "681.62", "value": "-4.34", "cc_2017": "4230776.0", "cc_2018": "6539069.0", "cc_change": "55.0"}, {"order": "45", "state": "Vermont", "bd_2017": "511.32", "bd_2018": "449.41", "value": "-12.11", "cc_2017": "1483789.0", "cc_2018": "1365204.0", "cc_change": "-8.0"}, {"order": "46", "state": "Virginia", "bd_2017": "1,059.88", "bd_2018": "889.30", "value": "-16.09", "cc_2017": "23528139.0", "cc_2018": "25948701.0", "cc_change": "10.0"}, {"order": "47", "state": "Washington", "bd_2017": "389.87", "bd_2018": "528.73", "value": "35.62", "cc_2017": "3721987.0", "cc_2018": "6115820.0", "cc_change": "64.0"}, {"order": "48", "state": "West Virginia", "bd_2017": "573.31", "bd_2018": "681.10", "value": "18.8", "cc_2017": "584822.5", "cc_2018": "1021759.0", "cc_change": "75.0"}, {"order": "49", "state": "Wisconsin", "bd_2017": "332.70", "bd_2018": "389.01", "value": "16.92", "cc_2017": "1317807.0", "cc_2018": "1584730.0", "cc_change": "20.0"}, {"order": "50", "state": "Wyoming", "bd_2017": "1,459.30", "bd_2018": "1,346.91", "value": "-7.7", "cc_2017": "1197972.0", "cc_2018": "854355.0", "cc_change": "-29.0"}];
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+</style>
+
+    <h2><strong>Change in median bad debt per adjusted discharge, 2017-18</strong></h2>
+    <p>Bad-debt expense increased 1.2% from 2017 to 2018, to a median of $664.61 per adjusted discharge<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Franklin:BI, FTRatings.com</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575500805"></script>
+
+
+</body>
+</html>

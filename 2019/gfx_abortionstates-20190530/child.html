@@ -1,0 +1,128 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.src.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"order": "0", "state": "Alabama", "value": "1", "legend": "Felony for Alabama doctors to perform or attempt to perform an abortion.<br>No exceptions for rape or incest, only for instances for life of the mother. "}, {"order": "1", "state": "Alaska", "value": "-1", "legend": "No Data"}, {"order": "2", "state": "Arizona", "value": "-1", "legend": "No Data"}, {"order": "3", "state": "Arkansas", "value": "1", "legend": "Banned after 18 weeks, exceptions for rape, incest and medical emergencies.<br>Abortion becomes illegal if Roe v. Wade overturned."}, {"order": "4", "state": "California", "value": "-1", "legend": "No Data"}, {"order": "5", "state": "Colorado", "value": "-1", "legend": "No Data"}, {"order": "6", "state": "Connecticut", "value": "-1", "legend": "No Data"}, {"order": "7", "state": "Delaware", "value": "-1", "legend": "No Data"}, {"order": "8", "state": "District of Columbia", "value": "-1", "legend": "No Data"}, {"order": "9", "state": "Florida", "value": "-1", "legend": "No Data"}, {"order": "10", "state": "Georgia", "value": "1", "legend": "Banned abortions if fetal heartbeat can be detected, as early as six weeks into pregnancy."}, {"order": "11", "state": "Hawaii", "value": "-1", "legend": "No Data"}, {"order": "12", "state": "Idaho", "value": "-1", "legend": "No Data"}, {"order": "13", "state": "Illinois", "value": "3", "legend": "Legislation in the works would remove restrictions on some late-term abortions. End criminal penalties for doctors from a decades-old, unenforced law."}, {"order": "14", "state": "Indiana", "value": "1", "legend": "Banned common method used in second-trimester abortions, with some exceptions.<br>Allows medical professionals the option of not performing or participating in abortions."}, {"order": "15", "state": "Iowa", "value": "-1", "legend": "No Data"}, {"order": "16", "state": "Kansas", "value": "-1", "legend": "No Data"}, {"order": "17", "state": "Kentucky", "value": "1", "legend": "Banned abortions if fetal heartbeat can be detected, as early as six weeks into pregnancy."}, {"order": "18", "state": "Louisiana", "value": "1", "legend": "Ban of abortions if fetal heartbeat can be detected, as early as six weeks into pregnancy, passed by Legislature. Governor expected to sign. No exceptions for rape or incest."}, {"order": "19", "state": "Maine", "value": "3", "legend": "Legislation in the works to allow more types of medical professionals to perform abortions"}, {"order": "20", "state": "Maryland", "value": "-1", "legend": "No Data"}, {"order": "21", "state": "Massachusetts", "value": "-1", "legend": "No Data"}, {"order": "22", "state": "Michigan", "value": "-1", "legend": "No Data"}, {"order": "23", "state": "Minnesota", "value": "-1", "legend": "No Data"}, {"order": "24", "state": "Mississippi", "value": "1", "legend": "Banned abortions if fetal heartbeat can be detected, as early as six weeks into pregnancy."}, {"order": "25", "state": "Missouri", "value": "1", "legend": "Banned abortion after eight weeks with some exceptions but none for rape or incest."}, {"order": "26", "state": "Montana", "value": "-1", "legend": "No Data"}, {"order": "27", "state": "Nebraska", "value": "-1", "legend": "No Data"}, {"order": "28", "state": "Nevada", "value": "3", "legend": "Legislation in the works to remove requirement that doctors tell women about \u201cemotional implications\u201d of abortion. No longer would have to certify woman\u2019s marital status, age and written consent."}, {"order": "29", "state": "New Hampshire", "value": "-1", "legend": "No Data"}, {"order": "30", "state": "New Jersey", "value": "-1", "legend": "No Data"}, {"order": "31", "state": "New Mexico", "value": "-1", "legend": "No Data"}, {"order": "32", "state": "New York", "value": "3", "legend": "Protected some late-term abortions, removes abortion from criminal code and protects medical professionals from prosecution. "}, {"order": "33", "state": "North Carolina", "value": "-1", "legend": "No Data"}, {"order": "34", "state": "North Dakota", "value": "1", "legend": "Banned common method used in second-trimester abortions."}, {"order": "35", "state": "Ohio", "value": "1", "legend": "Banned abortions if fetal heartbeat can be detected, as early as six weeks into pregnancy."}, {"order": "36", "state": "Oklahoma", "value": "-1", "legend": "No Data"}, {"order": "37", "state": "Oregon", "value": "-1", "legend": "No Data"}, {"order": "38", "state": "Pennsylvania", "value": "-1", "legend": "No Data"}, {"order": "39", "state": "Rhode Island", "value": "-1", "legend": "No Data"}, {"order": "40", "state": "South Carolina", "value": "-1", "legend": "No Data"}, {"order": "41", "state": "South Dakota", "value": "-1", "legend": "No Data"}, {"order": "42", "state": "Tennessee", "value": "1", "legend": "Abortion becomes illegal if Roe v. Wade overturned."}, {"order": "43", "state": "Texas", "value": "-1", "legend": "No Data"}, {"order": "44", "state": "Utah", "value": "1", "legend": "Banned abortions after 18 weeks, with some exceptions. <br>Criminal penalties for doctors who perform abortions after 18 weeks of pregnancy"}, {"order": "45", "state": "Vermont", "value": "3", "legend": "Legislation in the works to guarantee right to abortion in the state constitution "}, {"order": "46", "state": "Virginia", "value": "-1", "legend": "No Data"}, {"order": "47", "state": "Washington", "value": "-1", "legend": "No Data"}, {"order": "48", "state": "West Virginia", "value": "-1", "legend": "No Data"}, {"order": "49", "state": "Wisconsin", "value": "-1", "legend": "No Data"}, {"order": "50", "state": "Wyoming", "value": "-1", "legend": "No Data"}];
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+
+  .highcharts-tooltip span {
+       width:150px;
+       white-space:normal !important;
+   }
+
+</style>
+
+    <h2><strong>Recent abortion legislation</strong></h2>
+    <p>Several states have passed new restrictions for abortion, while a few are working to expand access.<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: News reports</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575500844"></script>
+
+
+</body>
+</html>

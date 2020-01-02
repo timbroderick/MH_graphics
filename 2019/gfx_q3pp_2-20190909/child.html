@@ -1,0 +1,176 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"q1": "10% or less", "a1a": "4.4", "a1b": "0", "q2": "Electronic<br>health records", "a2": "100", "q3": "Yes", "a3": "43.5", "q4": "Yes", "a4": "73.9", "q5": "Patient experience<br>surveys", "a5": "100.0"}, {"q1": "11-25%", "a1a": "43.5", "a1b": "17.4", "q2": "Patient-facing<br>mobile apps", "a2": "91.3", "q3": "No", "a3": "56.5", "q4": "No", "a4": "17.4", "q5": "Other quality<br>measures", "a5": "91.3"}, {"q1": "26-50%", "a1a": "17.4", "a1b": "30.4", "q2": "Provider-facing<br>mobile apps", "a2": "69.6", "q3": null, "a3": null, "q4": "Did not answer", "a4": "8.7", "q5": "Patient-reported<br>outcome measures", "a5": "73.9"}, {"q1": "51-75%", "a1a": "13", "a1b": "26.1", "q2": "Wearables", "a2": "26.1", "q3": null, "a3": null, "q4": null, "a4": null, "q5": "Financial<br>performance", "a5": "47.8"}, {"q1": "76-100%", "a1a": "21.7", "a1b": "26.1", "q2": "Chatbots", "a2": "26.1", "q3": null, "a3": null, "q4": null, "a4": null, "q5": null, "a5": null}, {"q1": null, "a1a": null, "a1b": null, "q2": "Voice assistants", "a2": "17.4", "q3": null, "a3": null, "q4": null, "a4": null, "q5": null, "a5": null}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #508ebc;
+}
+.SECOND {
+  background-color: #3d505a;
+}
+.THIRD {
+  background-color: #b4c8df;
+}
+.FOURTH {
+  background-color: #7f919b;
+}
+.FIFTH {
+  background-color: #006aa6;
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+    <h2><strong>Implementation</strong></h2>
+    <p>
+    <small><strong>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+        <hr class="mhchaps">
+        <h4><strong>How much of your strategic plan includes a patient-centered component?</strong></h4>
+        <div id="graphic1" class="graphic">
+          <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+        <hr class="mhchaps">
+        <h4><strong>What digital tools do you use to help patients?</strong><small> Choose more than one</small></strong></h4>
+        <div id="graphic2" class="graphic">
+          <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <hr class="mhchaps">
+            <h4><strong>Do you allow patients to add their own data to their medical records?</strong></h4>
+            <div id="graphic3" class="graphic">
+              <img src="fallback.png" alt="[Chart]" class="fallback" />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <hr class="mhchaps">
+            <h4><strong>Does your organization use patient-reported outcome measures?</strong></h4>
+            <div id="graphic4" class="graphic">
+              <img src="fallback.png" alt="[Chart]" class="fallback" />
+            </div>
+          </div>
+        </div>
+
+
+        <hr class="mhchaps">
+        <h4><strong>How do you track/follow improvement in patient-centered care?</strong><small> Choose more than one</small></strong></h4>
+        <div id="graphic5" class="graphic">
+          <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Modern Healthcare research</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+      </div>
+  </div>
+</div>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1568219521"></script>
+
+
+</body>
+</html>

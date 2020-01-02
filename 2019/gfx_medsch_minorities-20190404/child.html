@@ -1,0 +1,200 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"order": "0", "state": "Alabama", "value": "31.6", "legend": "31.6"}, {"order": "1", "state": "Alaska", "value": "-1.0", "legend": "No data"}, {"order": "2", "state": "Arizona", "value": "51.85", "legend": "51.9"}, {"order": "3", "state": "Arkansas", "value": "23.2", "legend": "23.2"}, {"order": "4", "state": "California", "value": "69.9538461538", "legend": "70.0"}, {"order": "5", "state": "Colorado", "value": "45.8", "legend": "45.8"}, {"order": "6", "state": "Connecticut", "value": "54.5333333333", "legend": "54.5"}, {"order": "7", "state": "Delaware", "value": "-1.0", "legend": "No data"}, {"order": "8", "state": "District of Columbia", "value": "64.1666666667", "legend": "64.2"}, {"order": "9", "state": "Florida", "value": "51.7625", "legend": "51.8"}, {"order": "10", "state": "Georgia", "value": "53.3", "legend": "53.3"}, {"order": "11", "state": "Hawaii", "value": "87.6", "legend": "87.6"}, {"order": "12", "state": "Idaho", "value": "-1.0", "legend": "No data"}, {"order": "13", "state": "Illinois", "value": "53.7", "legend": "53.7"}, {"order": "14", "state": "Indiana", "value": "39.0", "legend": "39.0"}, {"order": "15", "state": "Iowa", "value": "32.9", "legend": "32.9"}, {"order": "16", "state": "Kansas", "value": "26.5", "legend": "26.5"}, {"order": "17", "state": "Kentucky", "value": "24.4", "legend": "24.4"}, {"order": "18", "state": "Louisiana", "value": "30.8", "legend": "30.8"}, {"order": "19", "state": "Maine", "value": "-1.0", "legend": "No data"}, {"order": "20", "state": "Maryland", "value": "47.6666666667", "legend": "47.7"}, {"order": "21", "state": "Massachusetts", "value": "51.125", "legend": "51.1"}, {"order": "22", "state": "Michigan", "value": "47.2833333333", "legend": "47.3"}, {"order": "23", "state": "Minnesota", "value": "33.0333333333", "legend": "33.0"}, {"order": "24", "state": "Mississippi", "value": "25.6", "legend": "25.6"}, {"order": "25", "state": "Missouri", "value": "51.425", "legend": "51.4"}, {"order": "26", "state": "Montana", "value": "-1.0", "legend": "No data"}, {"order": "27", "state": "Nebraska", "value": "25.5", "legend": "25.5"}, {"order": "28", "state": "Nevada", "value": "48.75", "legend": "48.8"}, {"order": "29", "state": "New Hampshire", "value": "53.9", "legend": "53.9"}, {"order": "30", "state": "New Jersey", "value": "58.425", "legend": "58.4"}, {"order": "31", "state": "New Mexico", "value": "62.0", "legend": "62.0"}, {"order": "32", "state": "New York", "value": "55.4714285714", "legend": "55.5"}, {"order": "33", "state": "North Carolina", "value": "43.55", "legend": "43.6"}, {"order": "34", "state": "North Dakota", "value": "20.6", "legend": "20.6"}, {"order": "35", "state": "Ohio", "value": "46.3", "legend": "46.3"}, {"order": "36", "state": "Oklahoma", "value": "37.1", "legend": "37.1"}, {"order": "37", "state": "Oregon", "value": "32.5", "legend": "32.5"}, {"order": "38", "state": "Pennsylvania", "value": "44.3285714286", "legend": "44.3"}, {"order": "39", "state": "Rhode Island", "value": "53.4", "legend": "53.4"}, {"order": "40", "state": "South Carolina", "value": "26.8333333333", "legend": "26.8"}, {"order": "41", "state": "South Dakota", "value": "8.0", "legend": "8.0"}, {"order": "42", "state": "Tennessee", "value": "47.875", "legend": "47.9"}, {"order": "43", "state": "Texas", "value": "58.91", "legend": "58.9"}, {"order": "44", "state": "Utah", "value": "21.1", "legend": "21.1"}, {"order": "45", "state": "Vermont", "value": "35.4", "legend": "35.4"}, {"order": "46", "state": "Virginia", "value": "47.725", "legend": "47.7"}, {"order": "47", "state": "Washington", "value": "32.6", "legend": "32.6"}, {"order": "48", "state": "West Virginia", "value": "26.1", "legend": "26.1"}, {"order": "49", "state": "Wisconsin", "value": "33.45", "legend": "33.5"}, {"order": "50", "state": "Wyoming", "value": "-1.0", "legend": "No data"}];
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+</style>
+
+    <h2><strong>U.S. medical school enrollment, 2018-19</strong></h2>
+    <p>From free tuition to a more holistic review of applicants, medical schools are looking for ways to boost the diversity of their student populations</p>
+    <h4><strong>U.S. medical school enrollment, 2018-2019</strong><br><small>Percentage listed as minority and/or Hispanic, Latino</small></h4>
+    <p><small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+    <h4><strong>Top five/bottom five diverse enrollments</strong><br><small> For graduate medical schools, by 2018-19 enrollment</small></h4>
+    <hr>
+    <p>Top five</p>
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">School</th>
+        <th>Enrollment</th>
+        <th>% white alone</th>
+        <th>% minority</th>
+      </thead>
+      <tbody>
+          
+          <tr><td class="tdLEFT"><small>Charles R. Drew/UCLA Medical Education Program</small></td>
+          <td><small>133</small></td>
+          <td><small>0.0%</small></td>
+          <td><small>100.0%</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Howard University College of Medicine</small></td>
+          <td><small>510</small></td>
+          <td><small>3.1%</small></td>
+          <td><small>96.9%</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Meharry Medical College</small></td>
+          <td><small>476</small></td>
+          <td><small>4.8%</small></td>
+          <td><small>95.2%</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Morehouse School of Medicine</small></td>
+          <td><small>387</small></td>
+          <td><small>9.3%</small></td>
+          <td><small>90.7%</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>University of Hawaii, John A. Burns School of Medicine</small></td>
+          <td><small>290</small></td>
+          <td><small>12.4%</small></td>
+          <td><small>87.6%</small></td></tr>
+          
+      </tbody></table>
+    <hr>
+    <p>Bottom five</p>
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">School</th>
+        <th>Enrollment</th>
+        <th>% white alone</th>
+        <th>% minority</th>
+      </thead>
+      <tbody>
+
+          
+          <tr><td class="tdLEFT"><small>University of South Dakota, Sanford School of Medicine</small></td>
+          <td><small>275</small></td>
+          <td><small>92.0%</small></td>
+          <td><small>8.0%</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>University of Minnesota Medical School, Duluth</small></td>
+          <td><small>70</small></td>
+          <td><small>81.4%</small></td>
+          <td><small>18.6%</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>University of Nebraska College of Medicine</small></td>
+          <td><small>542</small></td>
+          <td><small>80.8%</small></td>
+          <td><small>19.2%</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Louisiana State University School of Medicine in Shreveport</small></td>
+          <td><small>521</small></td>
+          <td><small>79.7%</small></td>
+          <td><small>20.3%</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>University of North Dakota School of Medicine & Health Sciences</small></td>
+          <td><small>310</small></td>
+          <td><small>79.4%</small></td>
+          <td><small>20.6%</small></td></tr>
+          
+      </tbody></table>
+    <br>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Association of American Medical Colleges</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1556904246"></script>
+
+
+</body>
+</html>

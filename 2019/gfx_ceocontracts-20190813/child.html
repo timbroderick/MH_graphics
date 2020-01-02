@@ -1,0 +1,206 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"company": "Community Health Systems", "name": "Larry Cash (former CFO)", "left": "May 2017", "post": "Consultant", "start": "March 17, 2017", "end": "March 31, 2020", "base": "$300,000/year", "time": "N/A", "awards": "None", "bonus": null, "benefits": "Eligible for health benefits (spouse also), expense reimbursement", "link1": "https://www.sec.gov/Archives/edgar/data/1108109/000119312517173367/d400105dex101.htm", "link2": null}, {"company": "HCA Healthcare ", "name": "R. Milton Johnson", "left": "Dec. 31, 2018", "post": "Executive adviser (also chairman through April 26)", "start": "Dec. 31, 2018", "end": "Dec, 31, 2019", "base": "$1.5 million/year", "time": "20% average level service during 36-month period preceding effective date max", "awards": "$750,000 in stock", "bonus": "Bonus of up to $750,000", "benefits": "Eligible for health benefits, pension", "link1": "https://www.sec.gov/Archives/edgar/data/860730/000119312518271892/d604703dex101.htm", "link2": null}, {"company": "Tenet Healthcare Corp.", "name": "Ron Rittenmeyer", "left": "Employment agreement ends June 30, 2021", "post": "Consultant", "start": "June 30, 2021", "end": "June 30, 2023", "base": "$750,000/year", "time": "8 days/month max", "awards": "None", "bonus": null, "benefits": "Eligible for health benefits, other customary benefits on same basis as other senor executives. ", "link1": "https://www.sec.gov/Archives/edgar/data/70318/000119312518095073/d556873dex102.htm  ", "link2": "https://www.sec.gov/Archives/edgar/data/70318/000119312519061221/d698680dex101.htm"}, {"company": "Anthem", "name": "Joseph Swedish", "left": "November 2017", "post": "Senior adviser to the CEO and consultant ", "start": "May 16, 2018", "end": "May 1, 2020", "base": "$4.5 million/year ", "time": "\"From time to time\"", "awards": "Outstanding awards continue to vest", "bonus": null, "benefits": "Eligible for health, welfare and life insurance benefits, retirement savings, access to company aircraft for business travel, access to current administrative assistant ", "link1": "https://www.sec.gov/Archives/edgar/data/1156039/000119312517333500/d332795dex102.htm", "link2": null}, {"company": "DaVita", "name": "Kent Thiry", "left": "June 1, 2019", "post": "Executive chairman ", "start": "June 1, 2019", "end": "June 1, 2020", "base": "$1 million/year", "time": "40%-60% average level service during employment prior to effective date", "awards": null, "bonus": "Bonus: up to 100% base salary ", "benefits": "Eligible for company benefits", "link1": "https://www.sec.gov/Archives/edgar/data/927066/000119312519123788/d726706dex102.htm ", "link2": null}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h2><strong>The perks and pay of post-CEO consulting gigs</strong></h2>
+    <p></p>
+
+    
+      <h4><strong>Larry Cash (former CFO)</strong> | Community Health Systems</h4>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <br>
+          <tbody>
+            <tr><td width=33% class="tdLEFT"><strong><small>Date left role</small></strong></td><td class="tdLEFT">May 2017</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Post-CEO title</small></strong></td><td class="tdLEFT">Consultant</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Start, end date</small></strong></td><td class="tdLEFT">March 17, 2017 - March 31, 2020</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Time commitment per week or month</small></strong></td><td class="tdLEFT">N/A</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Base pay new role</small></strong></td><td class="tdLEFT">$300,000/year</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Equity awards, bonus pay and other</small></strong></td><td class="tdLEFT"><ul><li>None</li></ul></td></tr>
+              <tr><td width=33% class="tdLEFT"><strong><small>Benefits</small></strong></td><td class="tdLEFT">Eligible for health benefits (spouse also), expense reimbursement</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Link to employment agreement(s)</small></strong></td><td class="tdLEFT"><a href="https://www.sec.gov/Archives/edgar/data/1108109/000119312517173367/d400105dex101.htm" target="_blank">Click here</a></td></tr>
+          </tbody>
+        </table>
+        <hr class="mhchaps">
+        
+      <h4><strong>R. Milton Johnson</strong> | HCA Healthcare </h4>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <br>
+          <tbody>
+            <tr><td width=33% class="tdLEFT"><strong><small>Date left role</small></strong></td><td class="tdLEFT">Dec. 31, 2018</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Post-CEO title</small></strong></td><td class="tdLEFT">Executive adviser (also chairman through April 26)</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Start, end date</small></strong></td><td class="tdLEFT">Dec. 31, 2018 - Dec, 31, 2019</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Time commitment per week or month</small></strong></td><td class="tdLEFT">20% average level service during 36-month period preceding effective date max</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Base pay new role</small></strong></td><td class="tdLEFT">$1.5 million/year</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Equity awards, bonus pay and other</small></strong></td><td class="tdLEFT"><ul><li>$750,000 in stock</li><li>Bonus of up to $750,000</li></ul></td></tr>
+              <tr><td width=33% class="tdLEFT"><strong><small>Benefits</small></strong></td><td class="tdLEFT">Eligible for health benefits, pension</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Link to employment agreement(s)</small></strong></td><td class="tdLEFT"><a href="https://www.sec.gov/Archives/edgar/data/860730/000119312518271892/d604703dex101.htm" target="_blank">Click here</a></td></tr>
+          </tbody>
+        </table>
+        <hr class="mhchaps">
+        
+      <h4><strong>Ron Rittenmeyer</strong> | Tenet Healthcare Corp.</h4>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <br>
+          <tbody>
+            <tr><td width=33% class="tdLEFT"><strong><small>Date left role</small></strong></td><td class="tdLEFT">Employment agreement ends June 30, 2021</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Post-CEO title</small></strong></td><td class="tdLEFT">Consultant</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Start, end date</small></strong></td><td class="tdLEFT">June 30, 2021 - June 30, 2023</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Time commitment per week or month</small></strong></td><td class="tdLEFT">8 days/month max</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Base pay new role</small></strong></td><td class="tdLEFT">$750,000/year</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Equity awards, bonus pay and other</small></strong></td><td class="tdLEFT"><ul><li>None</li></ul></td></tr>
+              <tr><td width=33% class="tdLEFT"><strong><small>Benefits</small></strong></td><td class="tdLEFT">Eligible for health benefits, other customary benefits on same basis as other senor executives. </td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Link to employment agreement(s)</small></strong></td><td class="tdLEFT"><a href="https://www.sec.gov/Archives/edgar/data/70318/000119312518095073/d556873dex102.htm  " target="_blank">Click here</a> and <a href="https://www.sec.gov/Archives/edgar/data/70318/000119312519061221/d698680dex101.htm" target="_blank">here</a>.</td></tr>
+          </tbody>
+        </table>
+        <hr class="mhchaps">
+        
+      <h4><strong>Joseph Swedish</strong> | Anthem</h4>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <br>
+          <tbody>
+            <tr><td width=33% class="tdLEFT"><strong><small>Date left role</small></strong></td><td class="tdLEFT">November 2017</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Post-CEO title</small></strong></td><td class="tdLEFT">Senior adviser to the CEO and consultant </td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Start, end date</small></strong></td><td class="tdLEFT">May 16, 2018 - May 1, 2020</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Time commitment per week or month</small></strong></td><td class="tdLEFT">"From time to time"</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Base pay new role</small></strong></td><td class="tdLEFT">$4.5 million/year </td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Equity awards, bonus pay and other</small></strong></td><td class="tdLEFT"><ul><li>Outstanding awards continue to vest</li></ul></td></tr>
+              <tr><td width=33% class="tdLEFT"><strong><small>Benefits</small></strong></td><td class="tdLEFT">Eligible for health, welfare and life insurance benefits, retirement savings, access to company aircraft for business travel, access to current administrative assistant </td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Link to employment agreement(s)</small></strong></td><td class="tdLEFT"><a href="https://www.sec.gov/Archives/edgar/data/1156039/000119312517333500/d332795dex102.htm" target="_blank">Click here</a></td></tr>
+          </tbody>
+        </table>
+        <hr class="mhchaps">
+        
+      <h4><strong>Kent Thiry</strong> | DaVita</h4>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <br>
+          <tbody>
+            <tr><td width=33% class="tdLEFT"><strong><small>Date left role</small></strong></td><td class="tdLEFT">June 1, 2019</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Post-CEO title</small></strong></td><td class="tdLEFT">Executive chairman </td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Start, end date</small></strong></td><td class="tdLEFT">June 1, 2019 - June 1, 2020</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Time commitment per week or month</small></strong></td><td class="tdLEFT">40%-60% average level service during employment prior to effective date</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Base pay new role</small></strong></td><td class="tdLEFT">$1 million/year</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Equity awards, bonus pay and other</small></strong></td><td class="tdLEFT"><ul><li>Bonus: up to 100% base salary </li></ul></td></tr>
+              <tr><td width=33% class="tdLEFT"><strong><small>Benefits</small></strong></td><td class="tdLEFT">Eligible for company benefits</td></tr>
+            <tr><td width=33% class="tdLEFT"><strong><small>Link to employment agreement(s)</small></strong></td><td class="tdLEFT"><a href="https://www.sec.gov/Archives/edgar/data/927066/000119312519123788/d726706dex102.htm " target="_blank">Click here</a></td></tr>
+          </tbody>
+        </table>
+        <hr class="mhchaps">
+        
+    </tbody>
+  </table>
+</p>
+
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Company employment agreements and other communications filed with the U.S. Securities and Exchange Commission</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1565993883"></script>
+
+
+</body>
+</html>

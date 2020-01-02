@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<link href="style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/babel-polyfill@6.26.0/dist/polyfill.js"></script>
+	<script src="https://unpkg.com/custom-event-polyfill@0.3.0/custom-event-polyfill.js"></script>
+	<!-- use babel so that we can use arrow functions and other goodness in this block! -->
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<script src="https://unpkg.com/d3@4.6.0"></script>
+	<script src="https://unpkg.com/d3fc@12.1.0"></script>
+   </head>
+   <body>
+   <div class="fan-chart">
+   		<div class="charthed">Outpatient lab charges to total hospital charges, 2011-2017</div>
+   		<div class="chartchatter">The following hospitals’ outpatient lab charges exceeded 30% of their total charges in either 2016 or 2017, the year of their most recent Medicare cost report.</div>
+   		<div class="annotation">
+   			<div class="hospital-type"><i class="fa fa-square"></i>Critical-access hospitals</div>
+   			<div class="hospital-type"><i class="fa fa-square short-term"></i>Short-term hospitals</div>
+   		</div>
+   		<div class="cf"></div>
+   		<div class="howto">
+	   		<img class="howto-hand float-right" width="20px" src="hand.svg">
+			<p class="howto-text float-right">Hover over the chart to see the ratio</p>
+		</div>
+   		<div class="cf"></div>
+   		<div id='small-multiples'></div>
+   		<div class="source">Source: Modern Healthcare Metrics and Franklin Trust Ratings</div>
+   		<div class="note">* Quartz ,pimtaom is currently called Mangum Regional Medical Center</div>
+   		<div class="note">* Some ratios were calculated using total hospital charges data provided by Modern Healthcare Metrics and others used total hospital charges provided by Franklin Trust Ratings.
+</div>
+   </div>
+
+   </body>
+<script type="text/javascript" src="script.js"></script>
+</html>

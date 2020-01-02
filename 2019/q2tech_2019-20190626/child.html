@@ -1,0 +1,184 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<style type="text/css">
+
+h3.ex1 {
+  padding-bottom: 10px;
+}
+
+.graphic { height:350px }
+</style>
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    <h3 class="ex1" id="tech"><strong>Technology companies</strong></h3>
+    
+      <h4><strong>Livongo Health</strong> | Mountain View, Calif.<br><small><small>Added: 9/5/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$40.9 million</strong></td><td>155.8%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Clients</td><td class="tdRIGHT"><strong>720</strong></td><td>125.7%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Enrolled diabetes members</td><td class="tdRIGHT"><strong>192,934</strong></td><td>140%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>-$14.4 million</strong></td><td>121.50%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Bookings</td><td class="tdRIGHT"><strong>$74.2 million</strong></td><td>199.3%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Livongo Health reported $40.9 million in revenue for the second quarter of 2019, the first quarter since the digital health and chronic disease management company began public trading. Livongo works with health systems, health plans and employers as clients, which subsequently cover costs of program participation for individual members. Revenue growth was driven by sales of the company’s diabetes program, though Livongo’s “cross-sell was very strong in the quarter” as it sold newer programs—focused on services like hypertension and weight management—to its existing client base, CEO Zane Burke said during an earnings call Sept. 5.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Allscripts Healthcare Solutions</strong> | Chicago<br><small><small>Added: 8/8/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$444.5 million</strong></td><td>0.70%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Software delivery, support and maintenance revenue</td><td class="tdRIGHT"><strong>$285 million</strong></td><td>0.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Client services revenue</td><td class="tdRIGHT"><strong>$159.5 million</strong></td><td>1.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$4.7 million</strong></td><td>107.8%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Bookings</td><td class="tdRIGHT"><strong>$276 million</strong></td><td>30.8%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Allscripts Healthcare Solutions reported strong bookings for the second quarter of 2019, primarily driven by growth in its provider and Veradigm payer and life sciences divisions. In the provider market, that included growth in bookings for both the company's Sunrise EHR and the Paragon EHR, a product Allscripts acquired as part of its purchase of McKesson Corp.’s health IT business in 2017, Allscripts President Rick Poulton said during a call with investment analysts Aug. 8. Allscripts has subsequently raised its bookings outlook for 2019 to $1.05 billion to $1.1 billion, up from its previous projection of between $900 million and $1 billion.</p>
+        <hr class="mhchaps">
+    
+      <h4><strong>Cerner Corp.</strong> | Kansas City, Mo.<br><small><small>Added: 7/24/2019 </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$1.4 billion</strong></td><td>4.6%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Professional services revenue</td><td class="tdRIGHT"><strong>$485.3 million</strong></td><td>8.5%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Managed services revenue</td><td class="tdRIGHT"><strong>$297.7 million</strong></td><td>4.2%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating profit</td><td class="tdRIGHT"><strong>$131.1 million</strong></td><td>-37%</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Bookings</td><td class="tdRIGHT"><strong>$1.4 billion</strong></td><td>-19.3%</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          Cerner Corp.’s bookings dropped 19.3% during the second quarter of 2019, in line with the company’s expectations. John Peterzalek, chief client officer, attributed the expected dip to Cerner being more “selective” when considering “low-margin, long-term contract opportunities,” as well as last year’s second quarter including a bump from the initial task order with the Veterans Affairs Department, he said during an earnings call Wednesday. The company expects to see improvements in its operating margin beginning in the fourth quarter, as a result of 165 cost cutting, portfolio management and business simplification initiatives Cerner launched earlier this year, internally referred to as “Cerner.Next,” said CFO Marc Naughton.</p>
+        <hr class="mhchaps">
+    
+    <h4><strong>Teladoc Health</strong> | Purchase, N.Y.<br><small><small>Added: 7/31/2019 </small></small></h4>
+    <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+      <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+        <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+        <tbody>
+          <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>$130.3 million</strong></td><td>37.8%</td></tr>
+          <tr><td colspan="1" class="tdLEFT">Subscription fees revenue</td><td class="tdRIGHT"><strong>$111.2 million</strong></td><td>39.4%</td></tr>
+          <tr><td colspan="1" class="tdLEFT">Visit fees revenue</td><td class="tdRIGHT"><strong>$19 million</strong></td><td>28.9%</td></tr>
+          <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>-$29.3 million</strong></td><td>16.9%</td></tr>
+          <tr><td colspan="1" class="tdLEFT">Total visits</td><td class="tdRIGHT"><strong>908,000</strong></td><td>70.4%</td></tr>
+        </tbody>
+      </table></p>
+      <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+        Teladoc Health's visits were up 70.4% during the second quarter of 2019, reflecting "robust growth across all our clinical specialties," CEO Jason Gorevic said during an earnings call July 31. Behavioral health has been one of Teladoc's strongest drivers of visit growth, he added, in both the company's business-to-business and direct-to-consumer offerings. Teladoc's revenue from U.S. subscription fees was up 31.5% at $85.5 million for the quarter, with revenue from international subscription fees up 74.5% at $25.7 million.</p>
+      <hr class="mhchaps">
+<br>
+
+
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">Change is from the same quarter a year ago.</p>
+</div>
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Modern Healthcare reporting based on organizational financial filings.</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+            <!--</div>
+          </div>
+        </div>-->
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1567706057"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"place": "Hennepin Healthcare", "total": "18443317", "offset": "$18.4 million", "count": "68323.0", "count_txt": "68,323", "average": "269.94", "type": "Government"}, {"place": "Regions Hospital", "total": "11920342", "offset": "$11.9 million", "count": "38875.0", "count_txt": "38,875", "average": "306.63", "type": "Not-for-profit"}, {"place": "North Memorial Ambulance Service", "total": "6930167", "offset": "$6.9 million", "count": "18490.0", "count_txt": "18,490", "average": "374.81", "type": "Not-for-profit"}, {"place": "Allina Medical Transportation", "total": "5698469", "offset": "$5.7 million", "count": "15411.0", "count_txt": "15,411", "average": "369.77", "type": "Not-for-profit"}, {"place": "Northfield Hospital & Clinics", "total": "4535095", "offset": "$4.5 million", "count": "13147.0", "count_txt": "13,147", "average": "344.95", "type": "Government"}, {"place": "Lakewood Health System", "total": "4045345", "offset": "$4 million", "count": "8994.0", "count_txt": "8,994", "average": "449.78", "type": "Other"}, {"place": "FirstLight Health System ", "total": "3509388", "offset": "$3.5 million", "count": "9742.0", "count_txt": "9,742", "average": "360.23", "type": "Government"}, {"place": "Gold Cross Ambulance Service", "total": "3300021", "offset": "$3.3 million", "count": "8898.0", "count_txt": "8,898", "average": "370.87", "type": "Not-for-profit"}, {"place": "Hutchinson Health", "total": "2813289", "offset": "$2.8 million", "count": "7740.0", "count_txt": "7,740", "average": "363.47", "type": "Not-for-profit"}, {"place": "CentraCare Health-Monticello", "total": "2262602", "offset": "$2.3 million", "count": "6480.0", "count_txt": "6,480", "average": "349.17", "type": "Not-for-profit"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:400px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9fa7d4;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+
+.highcharts-data-label text {
+	font-weight: normal;
+  fill: white;
+}
+</style>
+
+    <h2><strong>Quite a collection</strong></h2>
+    <p>Providers in Minnesota collecting the most from patients&#8217; state tax refunds from 2014 through 2018<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Under Minnesota law, a private not-for-profit hospital can only participate in the revenue recapture program if it leases a building from a government entity.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Source: Minnesota Department of Revenue</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1560447470"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"state": "Kaiser Permanente", "y2017": "$3.56 billion", "y2018": "-$1.24 billion", "change": "-4796", "changep": "-$4.8 billion"}, {"state": "Ascension", "y2017": "$1.86 billion", "y2018": "-$159 million", "change": "-2017", "changep": "-$2.02 billion"}, {"state": "Providence St. Joseph Health", "y2017": "$882 million", "y2018": "-$366 million", "change": "-1248", "changep": "-$1.25 billion"}, {"state": "Cleveland Clinic", "y2017": "$896 million", "y2018": "-$191 million", "change": "-1087", "changep": "-$1.09 billion"}, {"state": "Catholic Health Initatives", "y2017": "$801 million", "y2018": "-$164 million", "change": "-964", "changep": "-$964 million"}, {"state": "Trinity Health", "y2017": "$506 million", "y2018": "-$417 million", "change": "-923", "changep": "-$923 million"}, {"state": "Sutter Health", "y2017": "$651 million", "y2018": "-$267 million", "change": "-918", "changep": "-$918 million"}, {"state": "Mayo Clinic", "y2017": "$936 million", "y2018": "$54 million", "change": "-882", "changep": "-$882 million"}, {"state": "UPMC", "y2017": "$416 million", "y2018": "-$367 million", "change": "-783", "changep": "-$783 million"}, {"state": "Partners HealthCare*", "y2017": "$335 million", "y2018": "-$443 million", "change": "-778", "changep": "-$778 million"}, {"state": "Dignity Health", "y2017": "$602 million", "y2018": "-$16 million", "change": "-618", "changep": "-$618 million"}, {"state": "AdventHealth", "y2017": "$392 million", "y2018": "-$156 million", "change": "-548", "changep": "-$548 million"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Stock market&#8217;s 2018 drop hits the country&#8217;s largest health systems</strong></h2>
+    <p>Investment gains and losses ($ in millions), 2017-18<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">*Partners&#8217; Q1 fiscal 2019 reflects new accounting rules requiring investments to be measured at market value rather than at cost. <br>
+Northwell Health that didn&#8217;t release year-end 2018 results by deadline.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Health system financial filings or directly from health systems</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1552683779"></script>
+
+
+</body>
+</html>

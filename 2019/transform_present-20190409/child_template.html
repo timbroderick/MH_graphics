@@ -1,0 +1,283 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_mapping.html' %} <!-- adding leaflet -->
+{% include 'headers/header_charts.html' %} <!-- adding highcharts -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+  var DATA = {{ COPY.data.json() }};
+  var DATA2 = {{ COPY.data2.json() }};
+  var DATA3 = {{ COPY.data3.json() }};
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+
+.cand_row {
+  position:relative;
+  width:100%;
+}
+
+.cand_chartback {
+ width:100%;
+ background:#eee;
+ height:1.5em;
+ border-radius:3px;
+ vertical-align:bottom;
+ position:relative
+}
+
+.cand_chartback span {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  border-top-left-radius:3px;
+  border-bottom-left-radius:3px
+}
+
+.cand_bar_gop {
+ background:#F50000;
+ height:1.5em;
+ vertical-align:bottom;
+ position:relative
+}
+
+.candidate {
+   width:75%;
+ }
+
+td.votepct {
+width:10%;
+text-align: left;
+}
+
+td.voteq {
+width:15%;
+text-align: right;
+}
+
+span.votespace {
+ padding-top: .1em;
+ padding-bottom:3px;
+ vertical-align: bottom;
+ display:block;
+}
+
+</style>
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+    <p><small><strong><span style="color:red">Note: </span></strong>Respondents were asked about the likelihood of various policy changes using a scale of very likely, likely, unlikely, not at all likely or unsure. For purposes of this summary, likelihood is a combination of very and likely responses:<br>
+      <ul>
+        <li>"Likely" = Very likely/likely</li>
+        <li>"Unlikely" = Very unlikely/unlikely</li>
+      </ul>
+    </p>
+    <hr>
+    <h3><strong>Federal policy</strong></h3>
+    <p>There is consensus among industry leaders that the federal government will play a bigger role in shaping the future of healthcare while maintaining it private.</p>
+    <h4>Key findings</h4>
+    <p>
+      <ul>
+        <li>Influence will grow through the Justice Department, the Food and Drug Administration and the Center for Medicare and Medicaid Services.</li>
+        <li>Industry leaders think the federal government will intensify its regulatory oversight in two areas: price controls for prescription drug and limitation on consolidation among hospitals.</li>
+        <li>The majority think it unlikely that Congress will pass Medicare for All.</li>
+      </ul>
+    </p>
+    <br>
+    {% for row in COPY.data %}
+    <p><strong>{{ row.question }}</strong></p>
+      <table id="gfx" class="table" width="100%" >
+        <tbody>
+          <tr>
+            <td class="tdRIGHT voteq">Likely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:{{ row.likely }}%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">{{ row.likely }}%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unlikely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:{{ row.unlikely }}%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">{{ row.unlikely }}%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unsure</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:{{ row.unsure }}%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">{{ row.unsure }}%</td>
+          </tr>
+      </tbody></table>
+    {% endfor %}
+      <hr>
+      <h3><strong>Insurance coverage</strong></h3>
+      <p>Industry leaders do not think there will be major changes in the structure of insurance coverage in the U.S.</p>
+      <h4>Key findings</h4>
+      <p>
+        <ul>
+          <li>Insurance will continue to be a public-private marketplace with growing enrollment in Medicare a major factor in the shift from private to public coverage.</li>
+          <li>Medicare Advantage, offered through private insurers, will play a larger role.</li>
+        </ul>
+      </p>
+      <br>
+      {% for row in COPY.data2 %}
+      <p><strong>{{ row.question }}</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:{{ row.likely }}%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">{{ row.likely }}%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:{{ row.unlikely }}%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">{{ row.unlikely }}%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:{{ row.unsure }}%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">{{ row.unsure }}%</td>
+            </tr>
+        </tbody></table>
+      {% endfor %}
+
+      <hr>
+      <h3><strong>Delivery system reforms</strong></h3>
+      <p>Industry leaders foresee continued pressure on the delivery system.</p>
+      <h4>Key findings</h4>
+      <p>
+        <ul>
+          <li>There will be increased emphasis in primary care services.</li>
+          <li>Social services programs will be integrated with traditional provider services.</li>
+          <li>Expansion of alternative payment models will continue.</li>
+        </ul>
+      </p>
+      <br>
+      {% for row in COPY.data3 %}
+      <p><strong>{{ row.question }}</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:{{ row.likely }}%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">{{ row.likely }}%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:{{ row.unlikely }}%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">{{ row.unlikely }}%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:{{ row.unsure }}%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">{{ row.unsure }}%</td>
+            </tr>
+        </tbody></table>
+      {% endfor %}
+
+      <hr>
+      <h3><strong>Discussion</strong></h3>
+      <p>Industry leaders think federal policy will play a larger role in the future of the U.S. health system. The majority think regulatory pressures will alter the way insurance coverage and the delivery of services are structured. While they do not anticipate passage of Medicare for All, they anticipate these reforms will be substantive and potentially disruptive.</p>
+
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

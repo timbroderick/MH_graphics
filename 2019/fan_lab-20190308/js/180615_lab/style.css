@@ -1,0 +1,149 @@
+
+  .charthed{
+  	font-size: 2em;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  .chartchatter{
+  	font-size: 1.4em;
+    font-weight: 200;
+    margin-bottom: 10px;
+    /* font-weight: bold; */
+    line-height: 1.3;
+    margin-top: 10px;
+  }
+  .series {
+    fill: #cec6b9;
+  }
+  .hospital-type{
+  	margin: 10px;
+  	float:left;
+  }
+
+  .howto{
+  	margin-bottom: 50px;
+  }
+
+  .float-right{
+  	float: right;
+  }
+
+  .cf{
+  	clear:both;
+  }
+
+  .source{
+   	font-size:1.2em;
+    margin-top: 60px;
+
+  }
+
+  .note{
+   	font-size:1.2em;
+   	margin-bottom: 20px;
+   	font-style: oblique;
+  }
+
+
+  .annotation{
+  	font-size: 1.3em;
+  	margin-bottom: 30px
+  }
+
+  .series-2{
+  	fill: #64a29d!important;
+  }
+
+  .fan-chart{
+  	max-width: 800px;
+  	margin:0px auto;
+  	font: 12px Arial, sans-serif;
+  }
+
+  #small-multiples > div {
+    display: inline-block;
+    height: 200px;
+    width: 50%;
+    margin-bottom: 20px;
+  }  
+
+  .fa-square{
+  	color:#CEC6BA;
+  	margin-right:10px;
+  }
+
+  .short-term{
+  	color:#66A29D;
+  }
+
+  .fan-chart svg{
+  	height: 180px;
+    width: 131px;
+    padding-left: 10px;
+  }
+
+  .tick text {
+    font-size: 8px !important;
+  }
+  @media (min-width: 600px) {
+    #small-multiples > div {
+      width: 33%
+    }
+  }
+  @media (min-width: 800px) {
+    #small-multiples > div {
+      width: 25%
+    }
+  }
+  @media (min-width: 1000px) {
+    #small-multiples > div {
+      width: 20%
+    }
+  }
+  .tooltip .x-axis .tick {
+    display: none;
+  }
+  .x-axis .domain, .x-axis .tick path,
+  .y-axis .domain, .y-axis .tick path {
+    display: none;
+  }
+  .plot-area {
+    overflow: visible !important;
+  }
+  .x-axis {
+    height: 1.5em !important;
+  }
+  .gridline-x {
+    stroke: white;
+  }
+  .point {
+    fill: black;
+  }
+  .point text {
+    text-anchor: middle;
+    transform: translateY(-10px);
+    font-size: 10px;
+    stroke: none;
+  }
+  .bottom-handle {
+    text-anchor: middle;
+    alignment-baseline: hanging;
+   	font-size: 10px;
+    transform: translateY(1.5em);
+  }
+  .top-handle {
+    display: none;
+  }
+  .annotation-line line {
+    display: none;
+  }
+
+  .x-axis-label {
+    text-align: right !important;
+    position: relative;
+/*    top: -169px;
+*/    font-weight: bold;
+    color: #036b61;
+    font-size: 10px;
+    /* left: 10px; */
+	}

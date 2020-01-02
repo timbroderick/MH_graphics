@@ -1,0 +1,178 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"company": "UnitedHealth Group", "premiums": "$41.7", "loss_ratio": "37.32", "covered": "29,309", "share": "38.1%"}, {"company": "National General Insurance", "premiums": "$28.4", "loss_ratio": "58.07", "covered": "18,117", "share": "26.0%"}, {"company": "Geneve Holdings (IHC Group)", "premiums": "$17.5", "loss_ratio": "36.22", "covered": "21,075", "share": "16.0%"}, {"company": "Blue Cross of Idaho", "premiums": "$4.1", "loss_ratio": "54.90", "covered": "2,909", "share": "3.8%"}, {"company": "Cambia Health Solutions", "premiums": "$2.8", "loss_ratio": "9.34", "covered": "1,295", "share": "2.6%"}, {"company": "Medical Mutual of Ohio", "premiums": "$2.7", "loss_ratio": "40.04", "covered": "1,565", "share": "2.5%"}, {"company": "Spectrum Health", "premiums": "$2.7", "loss_ratio": "36.11", "covered": "1,951", "share": "2.5%"}, {"company": "Blue Cross and Blue Shield of Kansas City", "premiums": "$2.6", "loss_ratio": "78.88", "covered": "2,321", "share": "2.3%"}, {"company": "Blue Cross and Blue Shield of South Carolina", "premiums": "$1.3", "loss_ratio": "44.22", "covered": "1,221", "share": "1.1%"}];
+var LIST = [{"company": "Cambia Health Solutions", "loss_ratio": "9.34", "avg": "72.57"}, {"company": "Spectrum Health", "loss_ratio": "36.11", "avg": "72.57"}, {"company": "Geneve Holdings<br>(IHC Group)", "loss_ratio": "36.22", "avg": "72.57"}, {"company": "UnitedHealth Group", "loss_ratio": "37.32", "avg": "72.57"}, {"company": "Medical Mutual of Ohio", "loss_ratio": "40.04", "avg": "72.57"}, {"company": "Blue Cross and Blue Shield<br>of South Carolina", "loss_ratio": "44.22", "avg": "72.57"}, {"company": "Blue Cross of Idaho", "loss_ratio": "54.90", "avg": "72.57"}, {"company": "National General Insurance", "loss_ratio": "58.07", "avg": "72.57"}, {"company": "Blue Cross and Blue Shield<br>of Kansas City", "loss_ratio": "78.88", "avg": "72.57"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:375px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9fa7d4;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Loss ratios for short-term health plans in 2018</strong></h2>
+    <p>Short-term medical insurers&#8217; loss ratios, which show the percentage of premiums spent on patients&#8217; medical claims, fall far below the average loss ratio among comprehensive major medical plans. <br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+    <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+      <thead><th class="thLEFT">Year</th><th class="thRIGHT">Premiums earned <small>(millions)</small></th><th class="thRIGHT">Covered members</th><th class="thRIGHT">Market share</th></thead>
+      <tbody>
+
+          
+          <tr><td class="tdLEFT">UnitedHealth Group</td><td class="tdRIGHT">$41.7</td><td class="tdRIGHT">29,309</td><td class="tdRIGHT">38.1%</td></tr>
+          
+          <tr><td class="tdLEFT">National General Insurance</td><td class="tdRIGHT">$28.4</td><td class="tdRIGHT">18,117</td><td class="tdRIGHT">26.0%</td></tr>
+          
+          <tr><td class="tdLEFT">Geneve Holdings (IHC Group)</td><td class="tdRIGHT">$17.5</td><td class="tdRIGHT">21,075</td><td class="tdRIGHT">16.0%</td></tr>
+          
+          <tr><td class="tdLEFT">Blue Cross of Idaho</td><td class="tdRIGHT">$4.1</td><td class="tdRIGHT">2,909</td><td class="tdRIGHT">3.8%</td></tr>
+          
+          <tr><td class="tdLEFT">Cambia Health Solutions</td><td class="tdRIGHT">$2.8</td><td class="tdRIGHT">1,295</td><td class="tdRIGHT">2.6%</td></tr>
+          
+          <tr><td class="tdLEFT">Medical Mutual of Ohio</td><td class="tdRIGHT">$2.7</td><td class="tdRIGHT">1,565</td><td class="tdRIGHT">2.5%</td></tr>
+          
+          <tr><td class="tdLEFT">Spectrum Health</td><td class="tdRIGHT">$2.7</td><td class="tdRIGHT">1,951</td><td class="tdRIGHT">2.5%</td></tr>
+          
+          <tr><td class="tdLEFT">Blue Cross and Blue Shield of Kansas City</td><td class="tdRIGHT">$2.6</td><td class="tdRIGHT">2,321</td><td class="tdRIGHT">2.3%</td></tr>
+          
+          <tr><td class="tdLEFT">Blue Cross and Blue Shield of South Carolina</td><td class="tdRIGHT">$1.3</td><td class="tdRIGHT">1,221</td><td class="tdRIGHT">1.1%</td></tr>
+          
+      </tbody></table>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Chart excludes one insurer with no covered lives as of Dec. 31, 2018. </p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: NAIC 2018 Accident and Health Policy Experience Report</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1565118137"></script>
+
+
+</body>
+</html>

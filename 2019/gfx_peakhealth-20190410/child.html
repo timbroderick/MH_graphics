@@ -1,0 +1,620 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="../../static/leaflet/leaflet.css" type="text/css">
+        <script src="../../static/leaflet/leaflet.js"></script> <!-- adding leaflet -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"service": "Inpatient days", "summit": "5550.0", "denver": "4257.0", "diff": "23.3%", "summittxt": "5,550", "denvertxt": "4,257"}, {"service": "Outpatient days", "summit": "2976.0", "denver": "2077.0", "diff": "30.2%", "summittxt": "2,976", "denvertxt": "2,077"}, {"service": "Ambulatory", "summit": "173.0", "denver": "110.0", "diff": "36.4%", "summittxt": "173", "denvertxt": "110"}];
+console.log(DATA);
+
+
+$(document).ready(function() {
+  var dtable = $('#gfx').DataTable( {
+    responsive: true,
+    "order": [[ 0, "asc" ]],
+    "iDisplayLength": 10
+  });
+  dtable.on('page.dt', function() {
+    $('html, body').animate({
+      scrollTop: $(".dataTables_wrapper").offset().top
+    }, 'slow');
+    $('thead tr th:first-child').focus().blur();
+  });
+});
+
+</script>
+
+<style type="text/css">
+
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+    <h2><strong>Moving a mountain</strong></h2>
+    <p>Residents of Summit County, Colo., want to reduce the unit service cost difference between their county and the Denver Metro area.<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+    <h4><strong>Medical service cost comparisons, Summit County vs. Denver metro</strong></h4>
+    <p>Leif Associates analyzed payment to providers for services in Summit County compared with the Denver metro in 2015 and 2016 using data from the state's all payer claims database and from five self-funded employers in the county. The following represent the amount paid to providers per unit of service.
+      <br><small><strong>The list below is interactive: <span style="color:red">Sort</span> by clicking on the column headings, or <span style="color:red">look for a procedure</span> using the search box. You can also <span style="color:red">choose to view</span> more at a time with the "Show entries" box.</strong></small></p>
+    <table id="gfx" class="table table-hover table-striped table-condensed display responsive" width="100%" >
+      <thead>
+        <th class="thLEFT" data-priority='3'>Service</th>
+        <th class="thLEFT" data-priority='1'>Procedure</th>
+        <th data-priority='2'>Summit County</th>
+        <th data-priority='2'>Denver Metro</th>
+      </thead>
+      <tbody>
+
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Knee & Lower Leg Procedures Except Foot</small></td>
+          <td><small>$53,687</small></td>
+          <td><small>$34,262</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Vaginal Delivery</small></td>
+          <td><small>$7,953</small></td>
+          <td><small>$7,832</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Hip & Femur Procedures For Trauma Except Joint Replacement</small></td>
+          <td><small>$42,083</small></td>
+          <td><small>$38,637</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Cesarean Delivery</small></td>
+          <td><small>$20,094</small></td>
+          <td><small>$13,233</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Major Small & Large Bowel Procedures</small></td>
+          <td><small>$64,949</small></td>
+          <td><small>$33,334</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Craniotomy For Trauma</small></td>
+          <td><small>$256,066</small></td>
+          <td><small>$97,413</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Knee Joint Replacement</small></td>
+          <td><small>$48,162</small></td>
+          <td><small>$25,554</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Major Chest & Respiratory Trauma</small></td>
+          <td><small>$24,843</small></td>
+          <td><small>$19,958</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Other Musculoskeletal System & Connective Tissue Diagnoses</small></td>
+          <td><small>$17,805</small></td>
+          <td><small>$23,605</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Dorsal & Lumbar Fusion Proc Except For Curvature Of Back</small></td>
+          <td><small>$185,172</small></td>
+          <td><small>$67,308</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Musculoskeletal & Other Procedures For Multiple Significant Trauma</small></td>
+          <td><small>$78,728</small></td>
+          <td><small>$152,408</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Other Digestive System & Abdominal Procedures</small></td>
+          <td><small>$75,393</small></td>
+          <td><small>$30,701</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Disorders Of Pancreas Except Malignancy</small></td>
+          <td><small>$23,590</small></td>
+          <td><small>$14,793</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Cervical Spinal Fusion & Other Back/Neck Proc Exc Disc Excis/Decomp</small></td>
+          <td><small>$70,668</small></td>
+          <td><small>$42,256</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Other Digestive System Diagnoses</small></td>
+          <td><small>$16,261</small></td>
+          <td><small>$16,025</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Hip Joint Replacement</small></td>
+          <td><small>$33,587</small></td>
+          <td><small>$25,105</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Other Musculoskeletal System & Connective Tissue Procedures</small></td>
+          <td><small>$48,382</small></td>
+          <td><small>$33,014</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Respiratory System Diagnosis W Ventilator Support 96+ Hours</small></td>
+          <td><small>$92,342</small></td>
+          <td><small>$84,632</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Intestinal Obstruction</small></td>
+          <td><small>$11,657</small></td>
+          <td><small>$11,408</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>inpatient</small></td>
+          <td class="tdLEFT"><small>Osteomyelitis, Septic Arthritis & Other Musculoskeletal Infections</small></td>
+          <td><small>$58,077</small></td>
+          <td><small>$19,717</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Integral Procedure - Pulse Oximetry</small></td>
+          <td><small>$252</small></td>
+          <td><small>$136</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Fasciectomy, Partial Palmar</small></td>
+          <td><small>$9,159</small></td>
+          <td><small>$1,100</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Septoplasty or Submucous Resection</small></td>
+          <td><small>$2,415</small></td>
+          <td><small>$1,554</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Remove Implant Deep Wire Pin Screw Plate</small></td>
+          <td><small>$3,172</small></td>
+          <td><small>$3,190</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Biopsy, breast</small></td>
+          <td><small>$1,836</small></td>
+          <td><small>$1,747</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Tonsillectomy And Adenoidectomy</small></td>
+          <td><small>$5,723</small></td>
+          <td><small>$1,921</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Fasciectomy, Partial Palmar</small></td>
+          <td><small>$7,691</small></td>
+          <td><small>$2,373</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Laparoscopy, Surgical</small></td>
+          <td><small>$11,333</small></td>
+          <td><small>$3,890</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Injection, Anesthetic Agent And/Or Steroid</small></td>
+          <td><small>$580</small></td>
+          <td><small>$960</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Laser Vaporization Of Prostate</small></td>
+          <td><small>$10,534</small></td>
+          <td><small>$2,330</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Hysteroscopy, Surgical</small></td>
+          <td><small>$8,750</small></td>
+          <td><small>$2,479</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Laparoscopy, Surgical</small></td>
+          <td><small>$9,221</small></td>
+          <td><small>$3,817</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Arthrodesis, Thumb Joint</small></td>
+          <td><small>$2,269</small></td>
+          <td><small>$0</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Umbilical Hernia Repair</small></td>
+          <td><small>$5,652</small></td>
+          <td><small>$2,310</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Sling Operation For Stress Incontinence</small></td>
+          <td><small>$6,943</small></td>
+          <td><small>$2,524</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Injection For Hysterosalpingography</small></td>
+          <td><small>$716</small></td>
+          <td><small>$553</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Laparoscopy, Surgical</small></td>
+          <td><small>$5,517</small></td>
+          <td><small>$2,921</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Injection Anesthetic Agent</small></td>
+          <td><small>$4,372</small></td>
+          <td><small>$959</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Colporrhaphy Anterior</small></td>
+          <td><small>$6,025</small></td>
+          <td><small>$1,835</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - hospitals</small></td>
+          <td class="tdLEFT"><small>Cystoscopy w/ Insert Ureter Stent</small></td>
+          <td><small>$5,409</small></td>
+          <td><small>$1,863</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Colonoscopy, Flexible</small></td>
+          <td><small>$1,615</small></td>
+          <td><small>$1,083</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Colonoscopy With Biopsy</small></td>
+          <td><small>$1,704</small></td>
+          <td><small>$1,252</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Injection, Anesthetic Agent And/Or Steroid</small></td>
+          <td><small>$1,275</small></td>
+          <td><small>$836</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Remove Implant Deep Wire Pin Screw Plate</small></td>
+          <td><small>$2,949</small></td>
+          <td><small>$1,760</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Arthroscopy, Knee</small></td>
+          <td><small>$3,893</small></td>
+          <td><small>$2,489</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Arthroscopically Aided Anterior, Cruciate Ligament</small></td>
+          <td><small>$7,427</small></td>
+          <td><small>$4,112</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Injection, Paraverterbral Facet Joint</small></td>
+          <td><small>$1,671</small></td>
+          <td><small>$872</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Neurolysis/Transposit Median</small></td>
+          <td><small>$2,198</small></td>
+          <td><small>$1,668</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Endoscopy, Upper GI w/ Biopsy</small></td>
+          <td><small>$1,306</small></td>
+          <td><small>$1,186</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Open Treatment Of Distal Radial Fracture</small></td>
+          <td><small>$5,564</small></td>
+          <td><small>$4,458</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Colonoscopy, w/ Lesion Abrasion</small></td>
+          <td><small>$1,979</small></td>
+          <td><small>$1,211</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Repair Initial Inguinal Hernia</small></td>
+          <td><small>$3,493</small></td>
+          <td><small>$2,866</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Arthroscopy, Shoulder</small></td>
+          <td><small>$5,736</small></td>
+          <td><small>$2,909</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Tendon Sheath Incision</small></td>
+          <td><small>$1,689</small></td>
+          <td><small>$1,453</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Hallux Valgus (Bunion) Correction</small></td>
+          <td><small>$3,787</small></td>
+          <td><small>$2,435</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Cataract Removal with Insertion of Lens Prosthesis</small></td>
+          <td><small>$2,764</small></td>
+          <td><small>$1,827</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Arthroscopy, Ankle</small></td>
+          <td><small>$4,423</small></td>
+          <td><small>$2,152</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Injection, Paraverterbral Facet Joint</small></td>
+          <td><small>$2,203</small></td>
+          <td><small>$824</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Open Treatment Of Clavicle Fracture</small></td>
+          <td><small>$5,836</small></td>
+          <td><small>$4,391</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Umbilical Hernia Repair</small></td>
+          <td><small>$5,753</small></td>
+          <td><small>$2,574</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Radiology, CT Scans</small></td>
+          <td><small>$1,861</small></td>
+          <td><small>$928</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Professional Services</small></td>
+          <td><small>$1,647</small></td>
+          <td><small>$631</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Cardiology Services</small></td>
+          <td><small>$1,253</small></td>
+          <td><small>$1,103</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Pharmacy</small></td>
+          <td><small>$1,109</small></td>
+          <td><small>$629</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Radiology, Diagnostic</small></td>
+          <td><small>$301</small></td>
+          <td><small>$371</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Radiology, Mammography</small></td>
+          <td><small>$173</small></td>
+          <td><small>$148</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Radiology, Nuclear Medicine</small></td>
+          <td><small>$1,674</small></td>
+          <td><small>$1,330</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Radiology, Oncological</small></td>
+          <td><small>$1,028</small></td>
+          <td><small>$890</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Laboratory</small></td>
+          <td><small>$170</small></td>
+          <td><small>$99</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Radiology, Ultrasound</small></td>
+          <td><small>$524</small></td>
+          <td><small>$352</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Ambulance</small></td>
+          <td><small>$25,087</small></td>
+          <td><small>$6,238</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Ambulatory Surgical Care</small></td>
+          <td><small>$8,366</small></td>
+          <td><small>$1,883</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>IV Therapy</small></td>
+          <td><small>$617</small></td>
+          <td><small>$243</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Blood Products</small></td>
+          <td><small>$896</small></td>
+          <td><small>$849</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Pulmonary Services</small></td>
+          <td><small>$369</small></td>
+          <td><small>$182</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Physical Therapy</small></td>
+          <td><small>$24</small></td>
+          <td><small>$105</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Visit</small></td>
+          <td><small>$136</small></td>
+          <td><small>$176</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Anesthesia</small></td>
+          <td><small>$707</small></td>
+          <td><small>$724</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Speech Therapy</small></td>
+          <td><small>$222</small></td>
+          <td><small>$165</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Psychiatric/Psychological Treatments</small></td>
+          <td><small>$76</small></td>
+          <td><small>$435</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Occupational Therapy</small></td>
+          <td><small>$99</small></td>
+          <td><small>$102</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Respiratory Services</small></td>
+          <td><small>$143</small></td>
+          <td><small>$1,009</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Med/Surg Supplies</small></td>
+          <td><small>$101</small></td>
+          <td><small>$488</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Preventive Services</small></td>
+          <td><small>$64</small></td>
+          <td><small>$21</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Intensive outpatient services - Chemical dependence</small></td>
+          <td><small>$2</small></td>
+          <td><small>$715</small></td></tr>
+          
+          <tr><td class="tdLEFT"><small>Outpatient - ambulatory</small></td>
+          <td class="tdLEFT"><small>Other/Unclassified</small></td>
+          <td><small>$966</small></td>
+          <td><small>$474</small></td></tr>
+          
+      </tbody></table>
+    <br>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Lief Associates</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+          </div>
+        </div>
+      </div>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1555086723"></script>
+
+
+</body>
+</html>

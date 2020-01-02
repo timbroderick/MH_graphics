@@ -1,0 +1,697 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="../../static/leaflet/leaflet.css" type="text/css">
+        <script src="../../static/leaflet/leaflet.js"></script> <!-- adding leaflet -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+  var DATA = [{"question": "Congress will pass a Medicare for All plan.", "likely": "19.1", "unlikely": "57", "unsure": "23.9"}, {"question": "The Department of Justice will set new standards for defining competition in consolidated hospital markets.", "likely": "56.2", "unlikely": "16.9", "unsure": "26.9"}, {"question": "The federal government will turn Medicaid into a block grant program.", "likely": "40", "unlikely": "30.2", "unsure": "29.8"}, {"question": "Congress will impose price controls on drugs.", "likely": "60.2", "unlikely": "23.4", "unsure": "14.6"}, {"question": "The FDA will authorize the importation of drugs made in foreign countries.", "likely": "56.1", "unlikely": "23", "unsure": "20.9"}, {"question": "Prices of hospital, physician and post-acute services will be imposed by federal/state regulators.", "likely": "43.9", "unlikely": "38.0", "unsure": "18.1"}];
+  var DATA2 = [{"question": "The majority (80%) of U.S. healthcare coverage will come from government programs. (I.e., Medicare/Medicaid/CHIP, vs. private payers.", "likely": "52.1", "unlikely": "30.3", "unsure": "17.6"}, {"question": "Private insurers will exit the individual insurance market", "likely": "26.6", "unlikely": "56.5", "unsure": "16.9"}, {"question": "Medicare Advantage, offered by private insurers and funded by the federal government, will be the basis for Medicare for All.", "likely": "43.8", "unlikely": "27.4", "unsure": "27.8"}];
+  var DATA3 = [{"question": "HHS will encourage the integration of health and social services programs and encourage its funding to address social determinants of health.", "likely": "66.8", "unlikely": "15.0", "unsure": "18.2"}, {"question": "Market pressure and innovation in care delivery will slow annual healthcare spending growth to 1% above the GDP vs. 2% historical growth.", "likely": "35.0", "unlikely": "51.7", "unsure": "13.3"}, {"question": "The majority of basic primary care will be delivered by advanced-practice nurses/nurse practitioners in retail/on-site clinic settings.", "likely": "67.8", "unlikely": "20.7", "unsure": "11.5"}, {"question": "Medical education and its funding will be overhauled to address staffing pressures and changes in clinical innovations.", "likely": "50.5", "unlikely": "25.2", "unsure": "24.3"}, {"question": "Alternative payment programs, like accountable care organizations and bundled payments, will fully replace fee-for-service as the dominant payment method for providers.", "likely": "59.1", "unlikely": "22.3", "unsure": "18.6"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+
+.cand_row {
+  position:relative;
+  width:100%;
+}
+
+.cand_chartback {
+ width:100%;
+ background:#eee;
+ height:1.5em;
+ border-radius:3px;
+ vertical-align:bottom;
+ position:relative
+}
+
+.cand_chartback span {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  border-top-left-radius:3px;
+  border-bottom-left-radius:3px
+}
+
+.cand_bar_gop {
+ background:#F50000;
+ height:1.5em;
+ vertical-align:bottom;
+ position:relative
+}
+
+.candidate {
+   width:75%;
+ }
+
+td.votepct {
+width:10%;
+text-align: left;
+}
+
+td.voteq {
+width:15%;
+text-align: right;
+}
+
+span.votespace {
+ padding-top: .1em;
+ padding-bottom:3px;
+ vertical-align: bottom;
+ display:block;
+}
+
+</style>
+
+    <h2><strong>Overview</strong></h2>
+    <p>Between February 20 and March 12, 2019, a panel of U.S. healthcare leaders was surveyed on their views of the future of the industry. The results below reflect the views of 230 respondents in the first of the two-part survey.</p>
+    <p><small><strong><span style="color:red">Note: </span></strong>Respondents were asked about the likelihood of various policy changes using a scale of very likely, likely, unlikely, not at all likely or unsure. For purposes of this summary, likelihood is a combination of very and likely responses:<br>
+      <ul>
+        <li>"Likely" = Very likely/likely</li>
+        <li>"Unlikely" = Very unlikely/unlikely</li>
+      </ul>
+    </p>
+    <hr>
+    <h3><strong>Federal policy</strong></h3>
+    <p>There is consensus among industry leaders that the federal government will play a bigger role in shaping the future of healthcare while maintaining it private.</p>
+    <h4>Key findings</h4>
+    <p>
+      <ul>
+        <li>Influence will grow through the Justice Department, the Food and Drug Administration and the Center for Medicare and Medicaid Services.</li>
+        <li>Industry leaders think the federal government will intensify its regulatory oversight in two areas: price controls for prescription drug and limitation on consolidation among hospitals.</li>
+        <li>The majority think it unlikely that Congress will pass Medicare for All.</li>
+      </ul>
+    </p>
+    <br>
+    
+    <p><strong>Congress will pass a Medicare for All plan.</strong></p>
+      <table id="gfx" class="table" width="100%" >
+        <tbody>
+          <tr>
+            <td class="tdRIGHT voteq">Likely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:19.1%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">19.1%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unlikely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:57%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">57%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unsure</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:23.9%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">23.9%</td>
+          </tr>
+      </tbody></table>
+    
+    <p><strong>The Department of Justice will set new standards for defining competition in consolidated hospital markets.</strong></p>
+      <table id="gfx" class="table" width="100%" >
+        <tbody>
+          <tr>
+            <td class="tdRIGHT voteq">Likely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:56.2%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">56.2%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unlikely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:16.9%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">16.9%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unsure</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:26.9%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">26.9%</td>
+          </tr>
+      </tbody></table>
+    
+    <p><strong>The federal government will turn Medicaid into a block grant program.</strong></p>
+      <table id="gfx" class="table" width="100%" >
+        <tbody>
+          <tr>
+            <td class="tdRIGHT voteq">Likely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:40%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">40%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unlikely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:30.2%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">30.2%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unsure</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:29.8%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">29.8%</td>
+          </tr>
+      </tbody></table>
+    
+    <p><strong>Congress will impose price controls on drugs.</strong></p>
+      <table id="gfx" class="table" width="100%" >
+        <tbody>
+          <tr>
+            <td class="tdRIGHT voteq">Likely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:60.2%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">60.2%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unlikely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:23.4%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">23.4%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unsure</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:14.6%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">14.6%</td>
+          </tr>
+      </tbody></table>
+    
+    <p><strong>The FDA will authorize the importation of drugs made in foreign countries.</strong></p>
+      <table id="gfx" class="table" width="100%" >
+        <tbody>
+          <tr>
+            <td class="tdRIGHT voteq">Likely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:56.1%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">56.1%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unlikely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:23%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">23%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unsure</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:20.9%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">20.9%</td>
+          </tr>
+      </tbody></table>
+    
+    <p><strong>Prices of hospital, physician and post-acute services will be imposed by federal/state regulators.</strong></p>
+      <table id="gfx" class="table" width="100%" >
+        <tbody>
+          <tr>
+            <td class="tdRIGHT voteq">Likely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:43.9%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">43.9%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unlikely</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:38.0%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">38.0%</td>
+          </tr>
+          <tr>
+            <td class="tdRIGHT voteq">Unsure</td>
+            <td>
+              <div class='cand_chartback'>
+                <span style="width:18.1%;" class='cand_bar_gop'></span>
+              </div>
+            </td>
+            <td class="tdLEFT votepct">18.1%</td>
+          </tr>
+      </tbody></table>
+    
+      <hr>
+      <h3><strong>Insurance coverage</strong></h3>
+      <p>Industry leaders do not think there will be major changes in the structure of insurance coverage in the U.S.</p>
+      <h4>Key findings</h4>
+      <p>
+        <ul>
+          <li>Insurance will continue to be a public-private marketplace with growing enrollment in Medicare a major factor in the shift from private to public coverage.</li>
+          <li>Medicare Advantage, offered through private insurers, will play a larger role.</li>
+        </ul>
+      </p>
+      <br>
+      
+      <p><strong>The majority (80%) of U.S. healthcare coverage will come from government programs. (I.e., Medicare/Medicaid/CHIP, vs. private payers.</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:52.1%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">52.1%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:30.3%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">30.3%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:17.6%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">17.6%</td>
+            </tr>
+        </tbody></table>
+      
+      <p><strong>Private insurers will exit the individual insurance market</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:26.6%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">26.6%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:56.5%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">56.5%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:16.9%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">16.9%</td>
+            </tr>
+        </tbody></table>
+      
+      <p><strong>Medicare Advantage, offered by private insurers and funded by the federal government, will be the basis for Medicare for All.</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:43.8%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">43.8%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:27.4%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">27.4%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:27.8%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">27.8%</td>
+            </tr>
+        </tbody></table>
+      
+
+      <hr>
+      <h3><strong>Delivery system reforms</strong></h3>
+      <p>Industry leaders foresee continued pressure on the delivery system.</p>
+      <h4>Key findings</h4>
+      <p>
+        <ul>
+          <li>There will be increased emphasis in primary care services.</li>
+          <li>Social services programs will be integrated with traditional provider services.</li>
+          <li>Expansion of alternative payment models will continue.</li>
+        </ul>
+      </p>
+      <br>
+      
+      <p><strong>HHS will encourage the integration of health and social services programs and encourage its funding to address social determinants of health.</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:66.8%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">66.8%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:15.0%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">15.0%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:18.2%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">18.2%</td>
+            </tr>
+        </tbody></table>
+      
+      <p><strong>Market pressure and innovation in care delivery will slow annual healthcare spending growth to 1% above the GDP vs. 2% historical growth.</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:35.0%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">35.0%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:51.7%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">51.7%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:13.3%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">13.3%</td>
+            </tr>
+        </tbody></table>
+      
+      <p><strong>The majority of basic primary care will be delivered by advanced-practice nurses/nurse practitioners in retail/on-site clinic settings.</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:67.8%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">67.8%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:20.7%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">20.7%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:11.5%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">11.5%</td>
+            </tr>
+        </tbody></table>
+      
+      <p><strong>Medical education and its funding will be overhauled to address staffing pressures and changes in clinical innovations.</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:50.5%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">50.5%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:25.2%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">25.2%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:24.3%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">24.3%</td>
+            </tr>
+        </tbody></table>
+      
+      <p><strong>Alternative payment programs, like accountable care organizations and bundled payments, will fully replace fee-for-service as the dominant payment method for providers.</strong></p>
+        <table id="gfx" class="table" width="100%" >
+          <tbody>
+            <tr>
+              <td class="tdRIGHT voteq">Likely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:59.1%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">59.1%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unlikely</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:22.3%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">22.3%</td>
+            </tr>
+            <tr>
+              <td class="tdRIGHT voteq">Unsure</td>
+              <td>
+                <div class='cand_chartback'>
+                  <span style="width:18.6%;" class='cand_bar_gop'></span>
+                </div>
+              </td>
+              <td class="tdLEFT votepct">18.6%</td>
+            </tr>
+        </tbody></table>
+      
+
+      <hr>
+      <h3><strong>Discussion</strong></h3>
+      <p>Industry leaders think federal policy will play a larger role in the future of the U.S. health system. The majority think regulatory pressures will alter the way insurance coverage and the delivery of services are structured. While they do not anticipate passage of Medicare for All, they anticipate these reforms will be substantive and potentially disruptive.</p>
+
+
+    
+
+    <div class="footer">
+        
+        
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1554844145"></script>
+
+
+</body>
+</html>

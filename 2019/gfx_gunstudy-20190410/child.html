@@ -1,0 +1,141 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"death": "HIV", "pub": "46,672", "funding": "$19,318,328,159", "avg_txt": "$413,916.87", "avg": "413916.87"}, {"death": "Fires", "pub": "3,801", "funding": "$706,367,767", "avg_txt": "$185,837.35", "avg": "185837.35"}, {"death": "Atherosclerosis", "pub": "26,198", "funding": "$4,037,397,953", "avg_txt": "$154,110.92", "avg": "154110.92"}, {"death": "Alzheimer's", "pub": "40,179", "funding": "$5,925,875,891", "avg_txt": "$147,486.89", "avg": "147486.89"}, {"death": "Parkinson's", "pub": "26,605", "funding": "$3,038,436,363", "avg_txt": "$114,205.46", "avg": "114205.46"}, {"death": "Diabetes", "pub": "156,921", "funding": "$14,659,678,132", "avg_txt": "$93,420.75", "avg": "93420.75"}, {"death": "Asphyxia", "pub": "1,491", "funding": "$134,714,254", "avg_txt": "$90,351.61", "avg": "90351.61"}, {"death": "Hypertension", "pub": "70,178", "funding": "$4,889,944,561", "avg_txt": "$69,679.17", "avg": "69679.17"}, {"death": "Sepsis", "pub": "43,477", "funding": "$2,978,734,825", "avg_txt": "$68,512.89", "avg": "68512.89"}, {"death": "Malnutrition", "pub": "30,941", "funding": "$1,802,887,247", "avg_txt": "$58,268.55", "avg": "58268.55"}, {"death": "Cerebrovascular", "pub": "136,502", "funding": "$7,577,203,625", "avg_txt": "$55,509.84", "avg": "55509.84"}, {"death": "Anemia", "pub": "39,895", "funding": "$1,913,274,324", "avg_txt": "$47,957.75", "avg": "47957.75"}, {"death": "Lung", "pub": "259,196", "funding": "$10,881,388,337", "avg_txt": "$41,981.31", "avg": "41981.31"}, {"death": "Heart", "pub": "358,915", "funding": "$12,910,927,202", "avg_txt": "$35,972.10", "avg": "35972.1"}, {"death": "Viral hepatitis", "pub": "49,703", "funding": "$1,516,673,869", "avg_txt": "$30,514.73", "avg": "30514.73"}, {"death": "Flu and pneumonia", "pub": "47,732", "funding": "$1,455,413,419", "avg_txt": "$30,491.36", "avg": "30491.36"}, {"death": "Intestinal infection", "pub": "14,608", "funding": "$432,035,547", "avg_txt": "$29,575.27", "avg": "29575.27"}, {"death": "Inflammatory kidney", "pub": "19,196", "funding": "$545,228,484", "avg_txt": "$28,403.23", "avg": "28403.23"}, {"death": "Liver", "pub": "169,832", "funding": "$4,651,595,537", "avg_txt": "$27,389.39", "avg": "27389.39"}, {"death": "Drowning", "pub": "1,034", "funding": "$21,728,913", "avg_txt": "$21,014.42", "avg": "21014.42"}, {"death": "Cancer", "pub": "1,078,144", "funding": "$20,596,612,634", "avg_txt": "$19,103.77", "avg": "19103.77"}, {"death": "Poisoning", "pub": "39,101", "funding": "$576,633,974", "avg_txt": "$14,747.29", "avg": "14747.29"}, {"death": "Peptic ulcer", "pub": "8,488", "funding": "$120,214,685", "avg_txt": "$14,162.90", "avg": "14162.9"}, {"death": "<strong>GUN VIOLENCE</strong>", "pub": "1,738", "funding": "$22,131,926", "avg_txt": "$12,734.13", "avg": "12734.13"}, {"death": "Motor vehicles", "pub": "44,710", "funding": "$421,039,553", "avg_txt": "$9,417.12", "avg": "9417.12"}, {"death": "Penetrating wounds", "pub": "10,637", "funding": "$81,875,047", "avg_txt": "$7,697.19", "avg": "7697.19"}, {"death": "Biliary tract", "pub": "55,518", "funding": "$337,021,767", "avg_txt": "$6,070.50", "avg": "6070.5"}, {"death": "Hernia", "pub": "21,715", "funding": "$89,024,769", "avg_txt": "$4,099.69", "avg": "4099.69"}];
+</script>
+
+<style type="text/css">
+.graphic { height:750px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Gun research funding lags far behind</strong></h2>
+    <p>A recent study examined the number of publications and amount of funding for research focusing on the top 30 causes of death, as found in the MEDLINE and Federal RePORTER databases between 2004 and 2015.</p>
+    <p><strong>Average funding per publication, by cause of death</strong><br>
+    <small>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Note: Aspiration and accidental falls were omitted as outliers.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Dr. David E. Stark, Nigam H. Shah. Funding and Publication of Research on Gun Violence and Other Leading Causes of Death, JAMA, 2017</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1555095242"></script>
+
+
+</body>
+</html>

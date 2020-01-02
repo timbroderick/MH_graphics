@@ -1,0 +1,194 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="../../static/leaflet/leaflet.css" type="text/css">
+        <script src="../../static/leaflet/leaflet.js"></script> <!-- adding leaflet -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts_mh.js"></script> <!-- adding highcharts -->
+
+    <!-- datatables styles-->
+
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- datatables js -->
+    <script type="text/javascript" src="../../static/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="../../static/datatables/js/responsive.bootstrap.min.js"></script> <!-- adding datatables -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"q1": "Expanding/strengthening the Affordable Care Act", "a1": "66.7", "q2": "Expanding and strengthening the Affordable Care Act", "a2": "58.3", "q3": "More funding", "a3": "91.7", "q4": "Negative", "a4": "75.0", "q5": "Worse", "a5": "41.7"}, {"q1": "Controlling prescription drug costs", "a1": "66.7", "q2": "Deregulating providers and plans", "a2": "25.0", "q3": "Better coordination between agencies", "a3": "41.7", "q4": "Positive", "a4": "8.3", "q5": "Better", "a5": "33.3"}, {"q1": "Deregulating providers and plans", "a1": "16.7", "q2": "Public-option health plans", "a2": "16.7", "q3": "Training more behavioral health providers", "a3": "33.3", "q4": "Little or no impact", "a4": "8.3", "q5": "No response", "a5": "25.0"}, {"q1": "Medicaid block grants and/or state innovation waivers", "a1": "8.3", "q2": "Medicaid block grants and/or state innovation waivers", "a2": "8.3", "q3": "Relaxing privacy rules on sharing patient information", "a3": "16.7", "q4": "No response", "a4": "8.3", "q5": null, "a5": null}, {"q1": null, "a1": null, "q2": "Medicare for All", "a2": "8.3", "q3": "Integrated care demonstrations and better access to outpatient resources for Medicare beneficiaries", "a3": "8.3", "q4": null, "a4": null, "q5": null, "a5": null}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #508ebc;
+}
+.SECOND {
+  background-color: #3d505a;
+}
+.THIRD {
+  background-color: #b4c8df;
+}
+.FOURTH {
+  background-color: #7f919b;
+}
+.FIFTH {
+  background-color: #006aa6;
+}
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+    <h2><strong>Public policy</strong></h2>
+    <p>
+    <small><strong>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+        <hr class="mhchaps">
+        <h4><strong>What new public policy measures at the federal or state level would most help your organization reduce healthcare costs? <small>Could choose more than one</small></strong></h4>
+        <div id="graphic1" class="graphic">
+          <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+        <hr class="mhchaps">
+        <h4><strong>What new public policy measures at the federal or state level would most help your organization expand access to care? <small>Could choose more than one</small></strong></h4>
+        <div id="graphic2" class="graphic">
+          <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+        <hr class="mhchaps">
+        <h4><strong>What new public policy measures at the federal or state level would most help your organization address behavioral and substance use disorders? <small>Could choose more than one</small></strong></h4>
+        <div id="graphic3" class="graphic">
+          <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <hr class="mhchaps">
+            <h4><strong>What impact would a Medicaid block grant or per-capita payment model in your state have on your organization and its members and patients?</strong></h4>
+            <div id="graphic4" class="graphic">
+              <img src="fallback.png" alt="[Chart]" class="fallback" />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <hr class="mhchaps">
+            <h4><strong>Is the current partisan deadlock in Congress better or worse for your organization than having Congress actively passing healthcare legislation?</strong></h4>
+            <div id="graphic5" class="graphic">
+              <img src="fallback.png" alt="[Chart]" class="fallback" />
+            </div>
+          </div>
+        </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">Percentages may not equal 100% due to rounding.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Source: Modern Healthcare research
+</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+          </div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575481452"></script>
+
+
+</body>
+</html>

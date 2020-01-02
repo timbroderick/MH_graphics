@@ -1,0 +1,111 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_charts.html' %} <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.hexmap.json() }};
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+</style>
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+    <h4><strong>U.S. medical school enrollment, 2018-2019</strong><br><small>Percentage listed as minority and/or Hispanic, Latino</small></h4>
+    <p><small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+    <h4><strong>Top five/bottom five diverse enrollments</strong><br><small> For graduate medical schools, by 2018-19 enrollment</small></h4>
+    <hr>
+    <p>Top five</p>
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">School</th>
+        <th>Enrollment</th>
+        <th>% white alone</th>
+        <th>% minority</th>
+      </thead>
+      <tbody>
+          {% for row in COPY.margin %}
+          <tr><td class="tdLEFT"><small>{{ row.sch_t }}</small></td>
+          <td><small>{{ row.enroll_t }}</small></td>
+          <td><small>{{ row.white_t }}%</small></td>
+          <td><small>{{ row.min_t }}%</small></td></tr>
+          {% endfor %}
+      </tbody></table>
+    <hr>
+    <p>Bottom five</p>
+    <table id="gfx" class="table table-hover table-striped table-condensed display" width="100%" >
+      <thead>
+        <th class="thLEFT">School</th>
+        <th>Enrollment</th>
+        <th>% white alone</th>
+        <th>% minority</th>
+      </thead>
+      <tbody>
+
+          {% for row in COPY.margin %}
+          <tr><td class="tdLEFT"><small>{{ row.sch_b }}</small></td>
+          <td><small>{{ row.enroll_b }}</small></td>
+          <td><small>{{ row.white_b }}%</small></td>
+          <td><small>{{ row.min_b }}%</small></td></tr>
+          {% endfor %}
+      </tbody></table>
+    <br>
+
+    {% if COPY.labels.footnote %}
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+        {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.push('js/chart.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

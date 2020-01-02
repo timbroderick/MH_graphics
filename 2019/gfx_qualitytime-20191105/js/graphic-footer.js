@@ -1,0 +1,2 @@
+var pymChild=null;var isMobile=false;var onWindowLoaded=function(){pymChild=new pym.Child();pymChild.onMessage('on-screen',function(bucket){ANALYTICS.trackEvent('on-screen',bucket);});pymChild.onMessage('scroll-depth',function(data){data=JSON.parse(data);ANALYTICS.trackEvent('scroll-depth',data.percent,data.seconds);});};window.onload=onWindowLoaded;
+var timeline=new TL.Timeline('timeline-embed','js/timeline.json',{theme_color:"#288EC3",ga_property_id:"UA-27829802-4"});

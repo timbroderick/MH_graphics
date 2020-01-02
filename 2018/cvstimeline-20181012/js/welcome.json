@@ -440,8 +440,86 @@
                 "format": 		""
             },
             "text": {
-                "headline": "Done",
+                "headline": "Done?",
                 "text": "<p>CVS completes its acquisition of Aetna.</p>"
+            },
+            "unique_id": ""
+        },{
+          "background": {
+              "color": "#000",
+              "opacity": 50,
+              "url": null
+          },
+          "start_date": {
+                "year":			"2018",
+                "month":		"12",
+                "day": 			"3",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "Undone?",
+                "text": "<p>In a highly unusual move, U.S. District Judge Richard Leon tells the companies they can't operate as one and must keep their management separate until he weighs in on the merger. This comes a few days after he told the companies and the Justice Department that he didn't like what he called their \"rubber-stamp approach\" to his role.</p>"
+            },
+            "unique_id": ""
+        },{
+          "start_date": {
+                "year":			"2019",
+                "month":		"6",
+                "day": 			"4",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "Pleading their case",
+                "text": "<p>Proponents of the merger try to assuage Leon of antitrust concerns during two days of hearings. Company executives appeared to make a strong case regarding the selling off of the Part D business. But Leon pressed them on whether the merger boosts CVS' leverage as a pharmacy benefit manager to negotiate drug prices with the pharmaceutical industry.</p>"
+            },
+            "unique_id": ""
+        },{
+          "background": {
+              "color": "#000",
+              "opacity": 50,
+              "url": null
+          },
+          "start_date": {
+                "year":			"2019",
+                "month":		"7",
+                "day": 			"19",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "One more hearing",
+                "text": "<p>Leon holds one more hearing on the merger. He signals that he might consider the deal's overall impact rather than looking solely at the sale of the Part D business. He blasts the DOJ for doubling down on the argument that the court's review must be limited to the divestiture of Aetna's Medicare Part D business.</p>"
+            },
+            "unique_id": ""
+        },{
+          "start_date": {
+                "year":			"2019",
+                "month":		"9",
+                "day": 			"4",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "thumbnail": 	"",
+                "format": 		""
+            },
+            "text": {
+                "headline": "Done",
+                "text": "<p>Leon signs off on the deal, saying \"the proposed settlement is well 'within the reaches' of the public interest.\"</p>"
             },
             "unique_id": ""
         }

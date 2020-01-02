@@ -1,0 +1,152 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"state": "Albuquerque", "vaca": "118", "fill": "275", "total": "393", "perc": "30.0", "ph_vaca": "22", "ph_fill": "70", "ph_total": "92", "ph_perc": "23.9"}, {"state": "Bemidji", "vaca": "62", "fill": "140", "total": "202", "perc": "30.7", "ph_vaca": "11", "ph_fill": "13", "ph_total": "24", "ph_perc": "45.8"}, {"state": "Billings", "vaca": "135", "fill": "311", "total": "446", "perc": "30.3", "ph_vaca": "33", "ph_fill": "39", "ph_total": "72", "ph_perc": "45.8"}, {"state": "Great Plains", "vaca": "234", "fill": "661", "total": "895", "perc": "26.1", "ph_vaca": "44", "ph_fill": "75", "ph_total": "119", "ph_perc": "37.0"}, {"state": "Navajo", "vaca": "464", "fill": "1103", "total": "1567", "perc": "29.6", "ph_vaca": "68", "ph_fill": "218", "ph_total": "286", "ph_perc": "23.8"}, {"state": "Oklahoma City", "vaca": "67", "fill": "464", "total": "531", "perc": "12.6", "ph_vaca": "17", "ph_fill": "63", "ph_total": "80", "ph_perc": "21.3"}, {"state": "Phoenix", "vaca": "223", "fill": "827", "total": "1050", "perc": "21.2", "ph_vaca": "58", "ph_fill": "150", "ph_total": "208", "ph_perc": "27.9"}, {"state": "Portland", "vaca": "30", "fill": "136", "total": "166", "perc": "18.1", "ph_vaca": "8", "ph_fill": "21", "ph_total": "29", "ph_perc": "27.6"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Indian Health Service struggles to fill vacancies</strong></h2>
+    <p>Vacancies in eight Indian Health Service areas with &#8220;substantial direct care responsibilities,&#8221; November 2017<br>
+    <small><strong>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+    <h4><strong>Vacancies for all provider types*</strong><h4>
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+
+    <h4><strong>Vacancies for physicians</strong><h4>
+
+    <div id="graphic2" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    <br>
+
+        <img src="ihs_map.png" class="img-responsive">
+
+        <br>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">* All provider types include physicians, nurses, nurse practitioners, certified registered nurse anesthetists, certified nurse midwives, physician assistants, dentists and pharmacists.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: 2018 Government Accountability Office report to Congress on provider vacancies</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1552591730"></script>
+
+
+</body>
+</html>

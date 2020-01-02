@@ -1,0 +1,86 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_datatables.html' %} <!-- adding datatables -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+<script>
+var DATA = {{ COPY.data.json() }};
+
+console.log(DATA);
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+</style>
+
+<br>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">-->
+
+    {% if COPY.labels.headline %}<h2><strong>{{ COPY.labels.headline|smarty }}</strong></h2>{% endif %}
+    <p>{% if COPY.labels.subhed %}{{ render(COPY.labels.subhed)|smarty }}{% endif %}</p>
+    {% for row in COPY.data %}
+      <hr class="mhchaps">
+      <h4><strong>{{ row.place }}</strong> | {{ row.local }}</h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">{{ row.firstq }}</td><td class="tdRIGHT"><strong>{{ row.firsta }}</strong></td><td>{{ row.firstch }}</td></tr>
+            <tr><td colspan="1" class="tdLEFT">{{ row.secondq }}</td><td class="tdRIGHT"><strong>{{ row.seconda }}</strong></td><td>{{ row.secondch }}</td></tr>
+            <tr><td colspan="1" class="tdLEFT">{{ row.thirdq }}</td><td class="tdRIGHT"><strong>{{ row.thirda }}</strong></td><td>{{ row.thirdch }}</td></tr>
+            <tr><td colspan="1" class="tdLEFT">{{ row.fourthq }}</td><td class="tdRIGHT"><strong>{{ row.fourtha }}</strong></td><td>{{ row.fourthch }}</td></tr>
+            <tr><td colspan="1" class="tdLEFT">{{ row.fifthq }}</td><td class="tdRIGHT"><strong>{{ row.fiftha }}</strong></td><td>{{ row.fifthch }}</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          {{ row.takeaway }}</p>
+    {% endfor %}
+
+<hr class="mhchaps">
+{% if COPY.labels.footnote %}
+<div class="footnotes">
+    <h4><small><strong>Notes</strong></small></h4>
+    <p class="gfxcredit">{{ COPY.labels.footnote|smarty }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+    {% if COPY.labels.source %}<p class="gfxcredit"><i>Source: {{ COPY.labels.source|smarty }}</i></p>{% endif %}
+    {% if COPY.labels.credit %}<p class="credit"><small>{{ COPY.labels.credit|smarty }}</small></p>{% endif %}
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            {% include 'footers/footer_gfx.html' %}
+            <!--</div>
+          </div>
+        </div>-->
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

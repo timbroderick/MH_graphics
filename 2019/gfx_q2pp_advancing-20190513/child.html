@@ -1,0 +1,193 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+  var DATA = [{"state": "More than $50 million", "rank": "11.5"}, {"state": "$20-$49.9 million", "rank": "19.2"}, {"state": "$5-$19.9 million", "rank": "34.6"}, {"state": "$4.9 million or less", "rank": "30.8"}, {"state": "No response", "rank": "3.9"}];
+  var DATA2 = [{"state": "A.I. integration into EHRs", "rank": "38.5", "state2": "A.I. integration<br>into EHRs"}, {"state": "Giving patients ways to aggregate<br>their own medical data", "rank": "19.2", "state2": "Giving patients ways<br>to aggregate their own<br>medical data"}, {"state": "Adding medical features to consumer wearables", "rank": "11.5", "state2": "Adding medical features<br> to consumer wearables"}, {"state": "CMS and ONC's proposed interoperability rules", "rank": "7.7", "state2": "CMS and ONC's proposed<br>interoperability rules"}, {"state": "Other", "rank": "23.1", "state2": "Other"}];
+  var DATA3 = [{"state": "Culture", "rank": "73.1"}, {"state": "Federal regulations", "rank": "53.9"}, {"state": "Documentation burden", "rank": "34.6"}, {"state": "Security", "rank": "30.8"}, {"state": "Workflow", "rank": "19.2"}, {"state": "Other", "rank": "26.9"}];
+  var DATA4 = [{"state": "Greater financial incentives to develop<br>and adopt digital solutions", "rank": "53.9", "state2": "Greater financial incentives<br>to develop and<br>adopt digital solutions"}, {"state": "Use payment to force widespread adoption of standards", "rank": "26.9", "state2": "Use payment to force<br>widespread adoption<br>of standards"}, {"state": "Lead public-private collaborations", "rank": "11.5", "state2": "Lead public-private<br>collaborations"}, {"state": "Create new technology-driven demonstration projects", "rank": "7.7", "state2": "Create new<br>technology-driven<br>demonstration projects"}];
+  var DATA5 = [{"state": "Yes", "rank": "73.1"}, {"state": "No", "rank": "26.9"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+.graphic2 { height:310px }
+.graphic3 { height:370px }
+
+hr.mhchaps {
+  margin-top: 0px !important;
+  margin-bottom: 5px !important;
+  line-height: 1  !important;
+  border-top-color: #bbb;
+}
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9fa7d4;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h2><strong>Advancing innovation</strong></h2>
+      <p><small>The charts shown are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</small></p>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <hr class="mhchaps">
+          <h4><strong>How much did you invest in digital innovation in 2018?</strong></h4>
+          <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <hr class="mhchaps">
+          <h4><strong>What&#8217;s the most innovative development to be announced recently?</strong></h4>
+          <div id="graphic2" class="graphic3">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <hr class="mhchaps">
+      <h4><strong>What are the biggest threats or challenges to innovation?</strong></h4>
+      <div id="graphic3" class="graphic">
+        <img src="fallback.png" alt="[Chart]" class="fallback" />
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col-sm-8">
+          <hr class="mhchaps">
+          <h4><strong>How can the government best encourage digital innovation?</strong></h4>
+          <div id="graphic4" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <hr class="mhchaps">
+          <h4><strong>Do you have an executive in charge of innovation at your organization?</strong></h4>
+          <div id="graphic5" class="graphic2">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="footer">
+          <p class="gfxcredit"><i>Source: Modern Healthcare research</i></p>
+          <p class="credit"><small>Modern Healthcare</small></p>
+      </div>
+
+  </div>
+  </div>
+  </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1557782683"></script>
+
+
+</body>
+</html>

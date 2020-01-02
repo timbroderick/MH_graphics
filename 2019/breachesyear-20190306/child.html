@@ -1,0 +1,141 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2010", "breaches": "199", "indiv": "5,932,276", "top": "Theft", "theft": "130", "unauth": "10", "hack": "8", "other": "51", "top_type": "Laptop"}, {"year": "2011", "breaches": "200", "indiv": "13,162,158", "top": "Theft", "theft": "114", "unauth": "29", "hack": "15", "other": "42", "top_type": "Paper/Films"}, {"year": "2012", "breaches": "218", "indiv": "2,854,525", "top": "Theft", "theft": "122", "unauth": "28", "hack": "10", "other": "58", "top_type": "Laptop"}, {"year": "2013", "breaches": "277", "indiv": "7,022,786", "top": "Theft", "theft": "119", "unauth": "65", "hack": "27", "other": "66", "top_type": "Laptop"}, {"year": "2014", "breaches": "314", "indiv": "17,452,393", "top": "Theft", "theft": "112", "unauth": "86", "hack": "35", "other": "81", "top_type": "Paper/Films"}, {"year": "2015", "breaches": "268", "indiv": "113,269,510", "top": "Unauthorized Access/Disclosure", "theft": "80", "unauth": "102", "hack": "56", "other": "30", "top_type": "Paper/Films"}, {"year": "2016", "breaches": "327", "indiv": "16,655,090", "top": "Unauthorized Access/Disclosure", "theft": "62", "unauth": "129", "hack": "113", "other": "23", "top_type": "Network Server"}, {"year": "2017", "breaches": "359", "indiv": "5,138,179", "top": "Hacking/IT Incident", "theft": "56", "unauth": "127", "hack": "149", "other": "27", "top_type": "Email"}, {"year": "2018*", "breaches": "366", "indiv": "13,243,414", "top": "Hacking/IT Incident", "theft": "42", "unauth": "143", "hack": "159", "other": "22", "top_type": "Email"}, {"year": "2019*", "breaches": "58", "indiv": "1,497,187", "top": "Hacking/IT Incident", "theft": "8", "unauth": "13", "hack": "36", "other": "1", "top_type": "Email"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Healthcare data breaches by type</strong></h2>
+    <p>Hacking and IT incidents became the most common type of breach in 2018*<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit"><small>*2018 numbers are preliminary. <br>
+Prior to 2015, breaches could be assigned multiple types, such as &#8220;Theft and Unauthorized Access/Disclosure.&#8221; These instances were counted seperately, distinct from single-type breaches such as only &#8220;Theft.&#8221;</small></p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: U.S. Department of Health and Human Services, Office for Civil Rights, breach report at ocrportal.hhs.gov/ocr/breach/breach_report.jsf</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1553292406"></script>
+
+
+</body>
+</html>

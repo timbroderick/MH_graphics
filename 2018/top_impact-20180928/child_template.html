@@ -14,11 +14,12 @@
 {% include 'headers/header_begin.html' %} <!-- MUST -->
 
 <!-- *** these MUST be in this order **** **** -->
-<!-- {% include 'headers/header_datatables.html' %} adding datatables -->
-<!-- datatables responsive -->
+{% include 'headers/header_datatables.html' %}
+
+<!-- datatables responsive
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css"/>
 
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script> -->
 
 
 {% include 'headers/header_end.html' %} <!-- MUST -->
@@ -27,12 +28,20 @@
 var DATA = {{ COPY.data.json() }};
 
 $(document).ready(function() {
-    $('#gfx').DataTable( {
-      responsive: true,
-      "order": [[ 1, "asc" ]],
-      "iDisplayLength": 10
-      } );
-} );
+
+  var dtable = $('#gfx').DataTable( {
+    responsive: true,
+    "order": [[ 1, "asc" ]],
+    "iDisplayLength": 10
+  });
+
+  dtable.on('page.dt', function() {
+    $('html, body').animate({
+      scrollTop: $(".dataTables_wrapper").offset().top
+    }, 'slow');
+    $('thead tr th:first-child').focus().blur();
+  });
+});
 
 </script>
 

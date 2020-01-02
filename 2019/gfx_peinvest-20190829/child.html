@@ -1,0 +1,377 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+
+<style type="text/css">
+
+  .graphic { height:350px }
+
+  .firstone {
+    height:400px;
+    width:400px;
+  }
+
+  .pcenter {
+    text-align: center;
+  }
+
+</style>
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+      <div class="col-md-10">
+
+        <h2><strong>Path to fast profit</strong></h2>
+        <p>How private equity deals typically work<br>
+        <small>Note: Values are in millions</small></p>
+        <hr class="mhchaps">
+
+        <div id='button1'>
+          <p class='pcenter'>
+            <input type="button" name="to2" class="to2"
+            onclick="console.log( 'clicked' );"
+            value="NEXT &#x25BA;" >
+          </p>
+          <div class="row">
+            <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <h4><span style="color:#5b4473;">
+                  <strong>Start with physician group valuation</strong></span></h4>
+                  <br>
+                <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+                  <tbody>
+                    <tr><td class="tdLEFT">EBITDA*</td><td>$2</td></tr>
+                    <tr><td class="tdLEFT">EBITDA multiple**</td><td>x 10</td></tr>
+                    <tr><td class="tdLEFT">Enterprise value</td><td>= $20</td></tr>
+                    <tr><td class="tdLEFT"><strong>Equity value</strong></td><td><strong>$20</strong></td></tr>
+                  </tbody>
+                </table>
+                <p><small>* Earnings before interest, taxes, depreciation and amortization (EBITDA) is a way to measure a company's performance.<br>
+                ** Assuming an EBITDA multiple of 10x. As an example, $2 million equals $20 in million enterprise value.</small></p>
+              </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div id='button2'>
+          <p class='pcenter'>
+            <input type="button" name="to1" class="to1"
+            onclick="console.log( 'clicked' );"
+            value="&#x25C4; BACK" > &nbsp;  &nbsp;
+            <input type="button" name="to3" class="to3"
+            onclick="console.log( 'clicked' );"
+            value="NEXT &#x25BA;" >
+          </p>
+          <div class="row">
+            <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <h4><span style="color:#5b4473;"><strong>Private equity invests</strong></span></h4>
+                  <br>
+                <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+                  <tbody>
+                    <tr><td class="tdLEFT">PE investment</td><td>$8</td></tr>
+                    <tr><td class="tdLEFT">Borrowing</td><td>+ $6</td></tr>
+                    <tr style="background-color: #dbe2e2;"><td class="tdLEFT"><strong>Total cash to physician group</strong></td><td><strong>= $14</strong></td></tr>
+                    <tr><td class="tdLEFT">Physician investment or<br>rollover equity*</td><td><br>+ $6</td></tr>
+                    <tr><td class="tdLEFT"><strong>Purchase price:</strong></td><td><strong>= $20</strong></td></tr>
+                  </tbody>
+                </table>
+                <p><small>*Physicians buy in to new company through reduced compensation.</small></p>
+
+              </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div id='button3'>
+          <p class='pcenter'>
+            <input type="button" name="to2" class="to2"
+            onclick="console.log( 'clicked' );"
+            value="&#x25C4; BACK" > &nbsp;  &nbsp;
+            <input type="button" name="to4" class="to4"
+            onclick="console.log( 'clicked' );"
+            value="NEXT &#x25BA;" >
+          </p>
+          <div class="row">
+            <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <h4><span style="color:#5b4473;"><strong>New company capital structure</strong></span></h4>
+                  <br>
+                  <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+                    <tbody>
+                      <tr><td class="tdLEFT">Debt</td><td>$6</td></tr>
+                      <tr><td class="tdLEFT">New equity value</td><td>$14</td></tr>
+                    </tbody>
+                  </table>
+                  <p>Ownership is divided based on percentage of investment ($14):<br>
+                    <ul>
+                      <li><strong>57.1%</strong> PE firm equity ($8)</li>
+                      <li><strong>42.9%</strong> Physician equity ($6)</li>
+                    </ul></p>
+
+              </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div id='button4'>
+          <p class='pcenter'>
+            <input type="button" name="to3" class="to3"
+            onclick="console.log( 'clicked' );"
+            value="&#x25C4; BACK" > &nbsp;  &nbsp;
+            <input type="button" name="to5" class="to5"
+            onclick="console.log( 'clicked' );"
+            value="NEXT &#x25BA;" >
+          </p>
+          <div class="row">
+            <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <h4><span style="color:#5b4473;"><strong>Planned value creation</strong></span></h4>
+                  <p><ul>
+                    <li>Expansion of locations</li>
+                    <li>Increase services offered</li>
+                    <li>Decrease costs through consolidating management functions</li>
+                  </ul></p>
+
+              </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div id='button5'>
+          <p class='pcenter'>
+            <input type="button" name="to4" class="to4"
+            onclick="console.log( 'clicked' );"
+            value="&#x25C4; BACK" > &nbsp;  &nbsp;
+            <input type="button" name="to6" class="to6"
+            onclick="console.log( 'clicked' );"
+            value="NEXT &#x25BA;" >
+          </p>
+          <div class="row">
+            <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <h4><span style="color:#5b4473;"><strong>Five years later: New investors</strong></span></h4>
+                  <br>
+                  <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+                    <tbody>
+                      <tr><td class="tdLEFT">New EBITDA</td><td>$6</td></tr>
+                      <tr><td class="tdLEFT">EBITDA multiple</td><td>x 10</td></tr>
+                      <tr><td class="tdLEFT">Enterprise value</td><td>= $60</td></tr>
+                      <tr><td class="tdLEFT">Less remaining debt</td><td>- $3</td></tr>
+                      <tr><td class="tdLEFT"><strong>Equity value</strong></td><td><strong>= $57</strong></td></tr>
+                    </tbody>
+                  </table>
+
+              </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <div id='button6'>
+          <p class='pcenter'>
+            <input type="button" name="to5" class="to5"
+            onclick="console.log( 'clicked' );"
+            value="&#x25C4; BACK" >
+          </p>
+          <div class="row">
+            <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+          <h4><span style="color:#5b4473;"><strong>Proceeds after sale to new investors</strong></span></h4>
+             <br>
+             <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+               <tbody>
+                 <tr><td class="tdLEFT">To <strong>physicians</strong> with equity at <strong>42.9%</strong></td><td><strong>$24.4</strong></td></tr>
+                 <tr><td class="tdLEFT">To <strong>PE firm</strong> with equity at <strong>57.1%</strong></td><td><strong>$32.6</strong></td></tr>
+                 </tbody>
+             </table>
+
+             <p><strong>Total proceeds to physician group</strong></p>
+             <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+               <tbody>
+                 <tr><td class="tdLEFT">First sale</td><td><strong>$14</strong></td></tr>
+                 <tr><td class="tdLEFT">Second sale</td><td><strong>+ $24.4</strong></td></tr>
+                 <tr style="background-color: #dbe2e2;"><td class="tdLEFT">Total</td><td><strong>= $38.4</strong></td></tr>
+                 </tbody>
+             </table>
+
+              </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+
+        <hr class="mhchaps">
+
+<script>
+
+var junkvar = '0';
+console.log(junkvar);
+
+$('#button1').show();
+$('#button2').hide();
+$('#button3').hide();
+$('#button4').hide();
+$('#button5').hide();
+$('#button6').hide();
+
+  $(".to1").click(function() {
+    junkvar = '1';
+    console.log(junkvar);
+    $('#button1').show();
+    $('#button2').hide();
+    $('#button3').hide();
+    $('#button4').hide();
+    $('#button5').hide();
+    $('#button6').hide();
+  });
+
+  $(".to2").click(function() {
+    junkvar = '2';
+    console.log(junkvar);
+    $('#button1').hide();
+    $('#button2').show();
+    $('#button3').hide();
+    $('#button4').hide();
+    $('#button5').hide();
+    $('#button6').hide();
+  });
+
+  $(".to3").click(function() {
+    junkvar = '3';
+    console.log(junkvar);
+    $('#button1').hide();
+    $('#button2').hide();
+    $('#button3').show();
+    $('#button4').hide();
+    $('#button5').hide();
+    $('#button6').hide();
+  });
+
+  $(".to4").click(function() {
+    junkvar = '4';
+    console.log(junkvar);
+    $('#button1').hide();
+    $('#button2').hide();
+    $('#button3').hide();
+    $('#button4').show();
+    $('#button5').hide();
+    $('#button6').hide();
+  });
+
+  $(".to5").click(function() {
+    junkvar = '5';
+    console.log(junkvar);
+    $('#button1').hide();
+    $('#button2').hide();
+    $('#button3').hide();
+    $('#button4').hide();
+    $('#button5').show();
+    $('#button6').hide();
+  });
+
+  $(".to6").click(function() {
+    junkvar = '6';
+    console.log(junkvar);
+    $('#button1').hide();
+    $('#button2').hide();
+    $('#button3').hide();
+    $('#button4').hide();
+    $('#button5').hide();
+    $('#button6').show();
+  });
+
+</script>
+
+
+
+<div class="footer">
+    <p class="gfxcredit"><i>Source: Epstein Becker & Green; American Medical Association: &#8220;Trends in Private Equity Acquisition of Dermatology Practices in the United States&#8221;
+</i></p>
+    <p class="credit"><small>Modern Healthcare</small></p>
+</div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1567112590"></script>
+
+
+</body>
+</html>

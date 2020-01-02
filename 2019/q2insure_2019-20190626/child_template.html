@@ -1,0 +1,65 @@
+{% extends 'crains_template.html' %}
+
+
+{% block content %}
+<!DOCTYPE HTML>
+{% include 'headers/meta.html' %}
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+{% include 'headers/header_begin.html' %} <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+{% include 'headers/header_charts.html' %} <!-- adding highcharts -->
+
+{% include 'headers/header_end.html' %} <!-- MUST -->
+
+
+<style type="text/css">
+
+h3.ex1 {
+  padding-bottom: 10px;
+}
+
+.graphic { height:350px }
+</style>
+
+    <h3 class="ex1" id="insure"><strong>Insurers</strong></h3>
+    {% for row in COPY.insure_form %}
+      <h4><strong>{{ row.company }}</strong> | {{ row.headquarters }}<br><small><small>Added: {{ row.Timestamp }} </small></small></h4>
+      <p><small><span style="color:red"><strong>THE NUMBERS</strong></span></small><br>
+        <table id="gfx" class="table table-hover table-striped table-condensed" width="100%" >
+          <thead><th></th><th class="thRIGHT">Amount</th><th class="thRIGHT">Change</th></thead>
+          <tbody>
+            <tr><td colspan="1" class="tdLEFT">Revenue</td><td class="tdRIGHT"><strong>{{ row.revenue }}</strong></td><td>{{ row.revenue_chg }}</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Operating expenses/costs</td><td class="tdRIGHT"><strong>{{ row.operating_expenses_costs }}</strong></td><td>{{ row.expenses_chg }}</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Net income</td><td class="tdRIGHT"><strong>{{ row.net_income }}</strong></td><td>{{ row.net_income_chg }}</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Membership</td><td class="tdRIGHT"><strong>{{ row.membership }}</strong></td><td>{{ row.membership_chg }}</td></tr>
+            <tr><td colspan="1" class="tdLEFT">Medical-loss ratio</td><td class="tdRIGHT"><strong>{{ row.medical_loss_ratio }}</strong></td><td>{{ row.medical_loss_ratio_chg }}</td></tr>
+          </tbody>
+        </table></p>
+        <p><small><span style="color:red"><strong>TAKEAWAY</strong></span></small><br>
+          {{ row.takeaway }}</p>
+        <hr class="mhchaps">
+    {% endfor %}
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            {% include 'footers/footer_gfx.html' %}
+            <!--</div>
+          </div>
+        </div>-->
+
+{% endblock content %}
+
+
+
+{% block js %}
+    {{ JS.push('js/graphic.js') }}
+    {{ JS.render('js/graphic-footer.js') }}
+{% endblock js %}

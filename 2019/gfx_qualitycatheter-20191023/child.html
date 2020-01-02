@@ -1,0 +1,146 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"month": "Jan-11", "hosp": "22", "rate": "2.255", "center": "2.5491"}, {"month": "Feb-11", "hosp": "23", "rate": "2.710", "center": "2.5491"}, {"month": "March-11", "hosp": "24", "rate": "2.869", "center": "2.5491"}, {"month": "April-11", "hosp": "24", "rate": "2.625", "center": "2.5491"}, {"month": "May-11", "hosp": "24", "rate": "2.532", "center": "2.5491"}, {"month": "June-11", "hosp": "24", "rate": "2.164", "center": "2.5491"}, {"month": "July-11", "hosp": "24", "rate": "2.316", "center": "2.5491"}, {"month": "Aug-11", "hosp": "24", "rate": "3.660", "center": "2.5491"}, {"month": "Sep-11", "hosp": "26", "rate": "2.568", "center": "2.5491"}, {"month": "Oct-11", "hosp": "26", "rate": "2.872", "center": "2.5491"}, {"month": "Nov-11", "hosp": "26", "rate": "2.325", "center": "2.5491"}, {"month": "Dec-11", "hosp": "26", "rate": "1.708", "center": "2.5491"}, {"month": "Jan-12", "hosp": "68", "rate": "3.439", "center": "2.5491"}, {"month": "Feb-12", "hosp": "68", "rate": "2.644", "center": "2.5491"}, {"month": "March-12", "hosp": "68", "rate": "3.631", "center": "2.5491"}, {"month": "April-12", "hosp": "68", "rate": "2.738", "center": "2.5491"}, {"month": "May-12", "hosp": "69", "rate": "2.150", "center": "2.5491"}, {"month": "June-12", "hosp": "69", "rate": "2.349", "center": "2.5491"}, {"month": "July-12", "hosp": "70", "rate": "1.955", "center": "2.5491"}, {"month": "Aug-12", "hosp": "69", "rate": "1.498", "center": "2.5491"}, {"month": "Sep-12", "hosp": "69", "rate": "2.700", "center": "2.5491"}, {"month": "Oct-12", "hosp": "69", "rate": "1.736", "center": "1.931"}, {"month": "Nov-12", "hosp": "69", "rate": "2.288", "center": "1.931"}, {"month": "Dec-12", "hosp": "69", "rate": "1.897", "center": "1.931"}, {"month": "Jan-13", "hosp": "77", "rate": "2.015", "center": "1.931"}, {"month": "Feb-13", "hosp": "77", "rate": "1.652", "center": "1.931"}, {"month": "Mar-13", "hosp": "77", "rate": "1.968", "center": "1.931"}, {"month": "Apr-13", "hosp": "77", "rate": "2.056", "center": "1.931"}, {"month": "May-13", "hosp": "77", "rate": "1.893", "center": "1.931"}, {"month": "Jun-13", "hosp": "77", "rate": "1.998", "center": "1.931"}, {"month": "July-13", "hosp": "77", "rate": "2.185", "center": "1.931"}, {"month": "Aug-13", "hosp": "77", "rate": "1.496", "center": "1.931"}, {"month": "Sep-13", "hosp": "77", "rate": "2.399", "center": "1.931"}, {"month": "Oct-13", "hosp": "76", "rate": "1.931", "center": "1.931"}, {"month": "Nov-13", "hosp": "76", "rate": "1.509", "center": "1.931"}, {"month": "Dec-13", "hosp": "77", "rate": "1.839", "center": "1.931"}, {"month": "Jan-14", "hosp": "92", "rate": "2.102", "center": "1.931"}, {"month": "Feb-14", "hosp": "92", "rate": "2.438", "center": "1.931"}, {"month": "Mar-14", "hosp": "92", "rate": "2.140", "center": "1.931"}, {"month": "Apr-14", "hosp": "92", "rate": "2.468", "center": "1.931"}, {"month": "May-14", "hosp": "91", "rate": "1.407", "center": "1.931"}, {"month": "Jun-14", "hosp": "92", "rate": "1.522", "center": "1.931"}, {"month": "July-14", "hosp": "92", "rate": "2.098", "center": "1.931"}, {"month": "Aug-14", "hosp": "91", "rate": "1.678", "center": "1.931"}, {"month": "Sep-14", "hosp": "91", "rate": "2.376", "center": "1.931"}, {"month": "Oct-14", "hosp": "92", "rate": "1.511", "center": "1.374"}, {"month": "Nov-14", "hosp": "92", "rate": "1.758", "center": "1.374"}, {"month": "Dec-14", "hosp": "91", "rate": "1.900", "center": "1.374"}, {"month": "Jan-15", "hosp": "100", "rate": "1.409", "center": "1.374"}, {"month": "Feb-15", "hosp": "100", "rate": "1.009", "center": "1.374"}, {"month": "Mar-15", "hosp": "100", "rate": "1.199", "center": "1.374"}, {"month": "Apr-15", "hosp": "99", "rate": "1.142", "center": "1.374"}, {"month": "May-15", "hosp": "100", "rate": "1.483", "center": "1.374"}, {"month": "Jun-15", "hosp": "100", "rate": "1.000", "center": "1.374"}, {"month": "July-15", "hosp": "102", "rate": "1.097", "center": "1.374"}, {"month": "Aug-15", "hosp": "102", "rate": "1.297", "center": "1.374"}, {"month": "Sep-15", "hosp": "102", "rate": "1.049", "center": "1.374"}, {"month": "Oct-15", "hosp": "100", "rate": "1.514", "center": "1.374"}, {"month": "Nov-15", "hosp": "100", "rate": "1.320", "center": "1.374"}, {"month": "Dec-15", "hosp": "100", "rate": "1.286", "center": "1.374"}, {"month": "Jan-16", "hosp": "111", "rate": "1.530", "center": "1.374"}, {"month": "Feb-16", "hosp": "111", "rate": "1.098", "center": "0.98"}, {"month": "Mar-16", "hosp": "111", "rate": "1.359", "center": "0.98"}, {"month": "Apr-16", "hosp": "111", "rate": "1.049", "center": "0.98"}, {"month": "May-16", "hosp": "111", "rate": "0.632", "center": "0.98"}, {"month": "Jun-16", "hosp": "111", "rate": "1.070", "center": "0.98"}, {"month": "July-16", "hosp": "113", "rate": "0.970", "center": "0.98"}, {"month": "Aug-16", "hosp": "113", "rate": "1.145", "center": "0.98"}, {"month": "Sep-16", "hosp": "114", "rate": "1.183", "center": "0.98"}, {"month": "Oct-16", "hosp": "113", "rate": "1.002", "center": "0.98"}, {"month": "Nov-16", "hosp": "114", "rate": "1.011", "center": "0.98"}, {"month": "Dec-16", "hosp": "115", "rate": "0.878", "center": "0.98"}, {"month": "Jan-17", "hosp": "122", "rate": "1.562", "center": "0.98"}, {"month": "Feb-17", "hosp": "122", "rate": "1.593", "center": "0.98"}, {"month": "Mar-17", "hosp": "123", "rate": "0.793", "center": "0.98"}, {"month": "Apr-17", "hosp": "123", "rate": "1.206", "center": "0.98"}, {"month": "May-17", "hosp": "123", "rate": "1.200", "center": "0.98"}, {"month": "Jun-17", "hosp": "124", "rate": "0.736", "center": "0.98"}, {"month": "July-17", "hosp": "124", "rate": "1.445", "center": "0.98"}, {"month": "Aug-17", "hosp": "125", "rate": "1.447", "center": "0.98"}, {"month": "Sep-17", "hosp": "125", "rate": "0.686", "center": "0.98"}, {"month": "Oct-17", "hosp": "125", "rate": "1.140", "center": "0.98"}, {"month": "Nov-17", "hosp": "124", "rate": "1.358", "center": "0.98"}, {"month": "Dec-17", "hosp": "124", "rate": "1.292", "center": "0.98"}, {"month": "Jan-18", "hosp": "127", "rate": "1.069", "center": "0.98"}, {"month": "Feb-18", "hosp": "128", "rate": "0.845", "center": "0.98"}, {"month": "Mar-18", "hosp": "127", "rate": "1.333", "center": "1.26094"}, {"month": "Apr-18", "hosp": "125", "rate": "1.657", "center": "1.26094"}, {"month": "May-18", "hosp": "125", "rate": "1.176", "center": "1.26094"}, {"month": "Jun-18", "hosp": "125", "rate": "1.126", "center": "1.26094"}, {"month": "July-18", "hosp": "126", "rate": "1.116", "center": "1.26094"}, {"month": "Aug-18", "hosp": "128", "rate": "1.106", "center": "1.26094"}, {"month": "Sep-18", "hosp": "128", "rate": "1.589", "center": "1.26094"}, {"month": "Oct-18", "hosp": "128", "rate": "1.128", "center": "1.26094"}, {"month": "Nov-18", "hosp": "129", "rate": "1.030", "center": "1.26094"}, {"month": "Dec-18", "hosp": "124", "rate": "1.184", "center": "1.26094"}, {"month": "Jan-19", "hosp": "129", "rate": "0.968", "center": "1.26094"}, {"month": "Feb-19", "hosp": "129", "rate": "0.744", "center": "1.26094"}, {"month": "Mar-19", "hosp": "128", "rate": "1.594", "center": "1.26094"}, {"month": "Apr-19", "hosp": "126", "rate": "0.857", "center": "1.26094"}, {"month": "May-19", "hosp": "125", "rate": "1.040", "center": "1.26094"}, {"month": "Jun-19", "hosp": "123", "rate": "1.194", "center": "1.26094"}, {"month": "July-19", "hosp": "116", "rate": "1.135", "center": "1.26094"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #508ebc;
+}
+.SECOND {
+  background-color: #6d6e71;
+}
+.THIRD {
+  background-color: #f05236;
+}
+.FOURTH {
+  background-color: #ffcd67;
+}
+.FIFTH {
+  background-color: #22366b;
+}
+</style>
+
+    <h2><strong>Reducing harm</strong></h2>
+    <p>The Children&#8217;s Hospitals&#8217; Solutions for Patient Safety network advocates for best practices to prevent injuries and reduce costs. For one measure, SPS reports a decline of 1.3 infections per 1,000 catheter line days since January 2011, even while the number of participating hospitals increased.<br>
+    <small><strong>The charts below are interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+
+        <hr class="mhchaps">
+        <h4><strong>Infection rate per 1,000 catheter line days</strong></h4>
+        <div id="graphic" class="graphic">
+                <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+        <hr class="mhchaps">
+        <h4><strong>Number of hospitals reporting</strong></h4>
+        <div id="graphic2" class="graphic">
+                <img src="fallback.png" alt="[Chart]" class="fallback" />
+        </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Children&#8217;s Hospitals&#8217; Solutions for Patient Safety network 
+</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1572385520"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2012", "percent": "53"}, {"year": "2013", "percent": "55"}, {"year": "2014", "percent": "61"}, {"year": "2015", "percent": "64"}, {"year": "2016", "percent": "67"}, {"year": "2017", "percent": "67"}];
+var LIST = [{"company": "UnitedHealth Group", "y2013": "47.2", "y2014": "51.7", "y2015": "54.9", "y2016": "57.3", "y2017": "58.2", "net": "80.8"}, {"company": "Humana", "y2013": "63.7", "y2014": "77.5", "y2015": "78.9", "y2016": "79.4", "y2017": "79.6", "net": "42.6"}, {"company": "Anthem", "y2013": "41.1", "y2014": "46.4", "y2015": "49.0", "y2016": "53.6", "y2017": "56.1", "net": "36.7"}, {"company": "Centene Corp.", "y2013": "82.5", "y2014": "81.9", "y2015": "84.9", "y2016": "87.1", "y2017": "89.6", "net": "26.5"}, {"company": "Aetna", "y2013": "36.6", "y2014": "42.8", "y2015": "47.4", "y2016": "50.5", "y2017": "48.6", "net": "25.0"}, {"company": "Molina Healthcare", "y2013": "97.7", "y2014": "97.2", "y2015": "97.7", "y2016": "98.2", "y2017": "98.4", "net": "16.4"}, {"company": "Wellcare Health Plans", "y2013": "91.2", "y2014": "90.4", "y2015": "92.9", "y2016": "93.7", "y2017": "93.9", "net": "14.4"}, {"company": "Independence Health Group", "y2013": "58.1", "y2014": "64.1", "y2015": "68.0", "y2016": "74.3", "y2017": "76.2", "net": "12.0"}, {"company": "Health Care Service Corp.", "y2013": "10.7", "y2014": "21.2", "y2015": "28.4", "y2016": "27.7", "y2017": "31.0", "net": "10.8"}, {"company": "CareSource Management Group Co.", "y2013": "99.9", "y2014": "92.8", "y2015": "88.3", "y2016": "88.7", "y2017": "100.0", "net": "8.6"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:300px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9D85BE;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Insurance industry drifts more heavily into government-linked business</strong></h2>
+    <p>Government business as a percentage of total risk premiums and excluding administrative-services-only/nonrisk business<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+    
+    <div class="footnotes">
+        <h4><small><strong>Note</strong></small></h4>
+        <p class="gfxcredit">Includes individual on-exchange, subsidized coverage, federal employee health, Medicare and, Medicaid. Does not include administrative-services-only fees fees/revenue.                        </p>
+    </div>
+    
+
+    <hr>
+    <h4><strong>Insurers’ government business<br></strong>Ranked by value of net premiums written, 2017</h4>
+    <table class="table-hover table-striped table-condensed" width="100%" >
+      <thead>
+        <th class="thLEFT"></th>
+        <th colspan="2" class="thCENT"><small>Percentage of business</small></th>
+        <th></th>
+      </thead>
+      <thead>
+        <th class="thLEFT">Company</th>
+        <th>2013</th>
+        <th>2017</th>
+        <th>Value of net premiums*</th>
+      </thead>
+      <tbody>
+          
+          <tr><td class="tdLEFT"><small>UnitedHealth Group<small></td>
+          <td><small>47.2%<small></td>
+          <td><small>58.2%<small></td>
+          <td><small>$80.8<small></td>
+          
+          <tr><td class="tdLEFT"><small>Humana<small></td>
+          <td><small>63.7%<small></td>
+          <td><small>79.6%<small></td>
+          <td><small>$42.6<small></td>
+          
+          <tr><td class="tdLEFT"><small>Anthem<small></td>
+          <td><small>41.1%<small></td>
+          <td><small>56.1%<small></td>
+          <td><small>$36.7<small></td>
+          
+          <tr><td class="tdLEFT"><small>Centene Corp.<small></td>
+          <td><small>82.5%<small></td>
+          <td><small>89.6%<small></td>
+          <td><small>$26.5<small></td>
+          
+          <tr><td class="tdLEFT"><small>Aetna<small></td>
+          <td><small>36.6%<small></td>
+          <td><small>48.6%<small></td>
+          <td><small>$25.0<small></td>
+          
+          <tr><td class="tdLEFT"><small>Molina Healthcare<small></td>
+          <td><small>97.7%<small></td>
+          <td><small>98.4%<small></td>
+          <td><small>$16.4<small></td>
+          
+          <tr><td class="tdLEFT"><small>Wellcare Health Plans<small></td>
+          <td><small>91.2%<small></td>
+          <td><small>93.9%<small></td>
+          <td><small>$14.4<small></td>
+          
+          <tr><td class="tdLEFT"><small>Independence Health Group<small></td>
+          <td><small>58.1%<small></td>
+          <td><small>76.2%<small></td>
+          <td><small>$12.0<small></td>
+          
+          <tr><td class="tdLEFT"><small>Health Care Service Corp.<small></td>
+          <td><small>10.7%<small></td>
+          <td><small>31.0%<small></td>
+          <td><small>$10.8<small></td>
+          
+          <tr><td class="tdLEFT"><small>CareSource Management Group Co.<small></td>
+          <td><small>99.9%<small></td>
+          <td><small>100.0%<small></td>
+          <td><small>$8.6<small></td>
+          
+      </tbody>
+    </table>
+    <div class="footnotes">
+        <h4><small><strong>Note</strong></small></h4>
+        <p class="gfxcredit">* $ in billions</p>
+    </div>
+
+
+    <br>
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: Annual National Association of Insurance Commissioners statutory filings, S&P Global Ratings research; A.M. Best</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1553887340"></script>
+
+
+</body>
+</html>

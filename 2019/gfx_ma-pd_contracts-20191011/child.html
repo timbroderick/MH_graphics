@@ -1,0 +1,136 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts_mh.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"year": "2016", "stars5": "10.23", "stars5_ct": "3.25", "stars45": "25.02", "stars45_ct": "17.62", "stars4": "35.71", "stars4_ct": "27.64", "stars35": "19.6", "stars35_ct": "30.62", "below3": "9.44", "below3_ct": "21.39"}, {"year": "2017", "stars5": "9.81", "stars5_ct": "3.86", "stars45": "24.45", "stars45_ct": "19.28", "stars4": "34.9", "stars4_ct": "26.45", "stars35": "22.06", "stars35_ct": "30.03", "below3": "8.79", "below3_ct": "20.39"}, {"year": "2018", "stars5": "11.17", "stars5_ct": "4.16", "stars45": "23.52", "stars45_ct": "15.06", "stars4": "38.19", "stars4_ct": "25.19", "stars35": "22.45", "stars35_ct": "36.1", "below3": "4.68", "below3_ct": "19.48"}, {"year": "2019", "stars5": "8.93", "stars5_ct": "3.72", "stars45": "26.35", "stars45_ct": "17.02", "stars4": "40.08", "stars4_ct": "25.0", "stars35": "17.41", "stars35_ct": "32.98", "below3": "7.23", "below3_ct": "21.27"}, {"year": "2020", "stars5": "10.96", "stars5_ct": "4.99", "stars45": "31.41", "stars45_ct": "17.96", "stars4": "38.82", "stars4_ct": "29.43", "stars35": "15.82", "stars35_ct": "32.67", "below3": "3.0", "below3_ct": "14.97"}];
+
+</script>
+
+<style type="text/css">
+.graphic { height:375px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #237a82;
+}
+.SECOND {
+  background-color: #99c2cb;
+}
+.THIRD {
+  background-color: #de6427;
+}
+.FOURTH {
+  background-color: #fbc854;
+}
+.FIFTH {
+  background-color: #5e152d;
+}
+</style>
+
+    <h2><strong>Higher rated plans get larger share of enrollees</strong></h2>
+    <p>More people were enrolled in Medicare Advantage plans with prescription drug coverage that had 4.5- or 5-star ratings.<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: CMS</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575575397"></script>
+
+
+</body>
+</html>

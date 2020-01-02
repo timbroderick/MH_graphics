@@ -1,0 +1,126 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+<!-- code for tilemap -->
+<script src="../../static/js/code/modules/heatmap.src.js"></script>
+<script src="../../static/js/code/modules/tilemap.js"></script>
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"order": "0", "state": "Alabama", "value": "-1", "legend": null}, {"order": "1", "state": "Alaska", "value": "-1", "legend": null}, {"order": "2", "state": "Arizona", "value": "-1", "legend": null}, {"order": "3", "state": "Arkansas", "value": "-1", "legend": null}, {"order": "4", "state": "California", "value": "1", "legend": "Considering public option bill, but has not moved forward"}, {"order": "5", "state": "Colorado", "value": "4", "legend": "Passed study legislation"}, {"order": "6", "state": "Connecticut", "value": "1", "legend": "Public option bill in limbo after opposition from insurers"}, {"order": "7", "state": "Delaware", "value": "4", "legend": "Completed public options study"}, {"order": "8", "state": "District of Columbia", "value": "-1", "legend": null}, {"order": "9", "state": "Florida", "value": "-1", "legend": null}, {"order": "10", "state": "Georgia", "value": "-1", "legend": null}, {"order": "11", "state": "Hawaii", "value": "-1", "legend": null}, {"order": "12", "state": "Idaho", "value": "-1", "legend": null}, {"order": "13", "state": "Illinois", "value": "-1", "legend": null}, {"order": "14", "state": "Indiana", "value": "-1", "legend": null}, {"order": "15", "state": "Iowa", "value": "1", "legend": "Considering public option bill, but has not moved forward"}, {"order": "16", "state": "Kansas", "value": "-1", "legend": null}, {"order": "17", "state": "Kentucky", "value": "-1", "legend": null}, {"order": "18", "state": "Louisiana", "value": "-1", "legend": null}, {"order": "19", "state": "Maine", "value": "1", "legend": "Considering buy-in/public option legislation"}, {"order": "20", "state": "Maryland", "value": "1", "legend": "Considering public option bill, but has not moved forward"}, {"order": "21", "state": "Massachusetts", "value": "3", "legend": "Considering both"}, {"order": "22", "state": "Michigan", "value": "-1", "legend": null}, {"order": "23", "state": "Minnesota", "value": "1", "legend": "Public option bill passed in House, failed in Senate"}, {"order": "24", "state": "Mississippi", "value": "-1", "legend": null}, {"order": "25", "state": "Missouri", "value": "2", "legend": "Considering study legislation"}, {"order": "26", "state": "Montana", "value": "-1", "legend": null}, {"order": "27", "state": "Nebraska", "value": "-1", "legend": null}, {"order": "28", "state": "Nevada", "value": "1", "legend": "Considering public option bill, but has not moved forward"}, {"order": "29", "state": "New Hampshire", "value": "2", "legend": "Considering study legislation"}, {"order": "30", "state": "New Jersey", "value": "1", "legend": "Considering buy-in/public option legislation"}, {"order": "31", "state": "New Mexico", "value": "4", "legend": "Passed study legislation"}, {"order": "32", "state": "New York", "value": "-1", "legend": null}, {"order": "33", "state": "North Carolina", "value": "-1", "legend": null}, {"order": "34", "state": "North Dakota", "value": "-1", "legend": null}, {"order": "35", "state": "Ohio", "value": "-1", "legend": null}, {"order": "36", "state": "Oklahoma", "value": "-1", "legend": null}, {"order": "37", "state": "Oregon", "value": "1", "legend": "Considering buy-in/public option legislation"}, {"order": "38", "state": "Pennsylvania", "value": "-1", "legend": null}, {"order": "39", "state": "Rhode Island", "value": "-1", "legend": null}, {"order": "40", "state": "South Carolina", "value": "-1", "legend": null}, {"order": "41", "state": "South Dakota", "value": "-1", "legend": null}, {"order": "42", "state": "Tennessee", "value": "-1", "legend": null}, {"order": "43", "state": "Texas", "value": "-1", "legend": null}, {"order": "44", "state": "Utah", "value": "-1", "legend": null}, {"order": "45", "state": "Vermont", "value": "-1", "legend": null}, {"order": "46", "state": "Virginia", "value": "-1", "legend": null}, {"order": "47", "state": "Washington", "value": "5", "legend": "Passed public option legislation"}, {"order": "48", "state": "West Virginia", "value": "-1", "legend": null}, {"order": "49", "state": "Wisconsin", "value": "1", "legend": "Considering public option bill, but has not moved forward"}, {"order": "50", "state": "Wyoming", "value": "1", "legend": "Considering public option bill, but has not moved forward"}];
+
+var w = window.innerWidth *.99;
+var h = window.innerHeight *.8;
+
+</script>
+
+<style type="text/css">
+  .graphic {
+    height:h
+   }
+
+   .highcharts-tooltip span {
+        width:100px;
+        white-space:normal !important;
+    }
+</style>
+
+    <h2><strong>Considering their options</strong></h2>
+    <p>Nearly 20 states are at different stages along the path toward achieving a public-option health plan.<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: State Health and Value Strategies</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1575500853"></script>
+
+
+</body>
+</html>

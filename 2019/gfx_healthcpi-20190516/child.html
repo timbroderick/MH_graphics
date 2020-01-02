@@ -1,0 +1,140 @@
+    
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<meta itemprop="name" content="Modern Healthcare">
+<meta name="keywords" content="Modern Healthcare, graphics, maps, data visualization" />
+<meta name="description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta name="image" content=""> -->
+
+<meta property="og:title" content="Modern Healthcare" />
+<meta name="og:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare." />
+<!-- <meta property="og:image" content=""> -->
+<meta property="og:url" content="http://www.modernhealthcare.com/">
+<meta name="og:site_name" content="Modern Healthcare">
+
+<meta name="twitter:title" content="Modern Healthcare">
+<meta name="twitter:description" content="Special presentations, graphics, maps and other data visualizations by Modern Healthcare.">
+<!-- <meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<title>
+    Graphics base
+</title>
+
+<!-- **************************** -->
+<!-- *** importing libs **** **** -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../static/css/normalize.css" />
+
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap500.css"/>
+    <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap-theme.min.css" />
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../../static/js/jquery-1.11.3.min.js"></script>
+
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- NPR templates  -->
+    <script type="text/javascript" src="../../static/js/lib/underscore.js"></script> <!-- MUST -->
+
+<!-- *** these MUST be in this order **** **** -->
+
+    <!-- highcharts -->
+
+    <script type="text/javascript" src="../../static/js/code/highcharts.js"></script> <!-- adding highcharts -->
+
+
+    <!-- need D3 for pym.js to work -->
+    <script type="text/javascript" src="../../static/js/d3.v3.min.js"></script>
+    <!-- This is our stylesheet -->
+    <link rel="stylesheet" href="../../static/css/layouts.css" />
+
+
+<script>
+var $ = jQuery;
+</script>
+
+    </head>
+    <body> <!-- MUST -->
+
+<script>
+var DATA = [{"state": "Apr<br>2017", "all": "2.2", "medcare": "3.1", "pro": "1.6", "hosp": "5.1", "insure": "2.7", "mmyy": "Apr-2017"}, {"state": "May<br>2017", "all": "1.9", "medcare": "2.5", "pro": "1.0", "hosp": "4.6", "insure": "2.0", "mmyy": "May-2017"}, {"state": "Jun<br>2017", "all": "1.6", "medcare": "2.5", "pro": "0.6", "hosp": "5.3", "insure": "1.7", "mmyy": "Jun-2017"}, {"state": "Jul<br>2017", "all": "1.7", "medcare": "2.3", "pro": "0.2", "hosp": "5.3", "insure": "1.2", "mmyy": "Jul-2017"}, {"state": "Aug<br>2017", "all": "1.9", "medcare": "1.6", "pro": "0.2", "hosp": "4.1", "insure": "0.2", "mmyy": "Aug-2017"}, {"state": "Sep<br>2017", "all": "2.2", "medcare": "1.7", "pro": "0.2", "hosp": "4.3", "insure": "0.1", "mmyy": "Sep-2017"}, {"state": "Oct<br>2017", "all": "2.0", "medcare": "1.9", "pro": "0.4", "hosp": "4.5", "insure": "0.2", "mmyy": "Oct-2017"}, {"state": "Nov<br>2017", "all": "2.2", "medcare": "1.6", "pro": "-0.3", "hosp": "4.7", "insure": "0.0", "mmyy": "Nov-2017"}, {"state": "Dec<br>2017", "all": "2.1", "medcare": "1.6", "pro": "-0.3", "hosp": "4.7", "insure": "0.0", "mmyy": "Dec-2017"}, {"state": "Jan<br>2018", "all": "2.1", "medcare": "2.0", "pro": "-0.2", "hosp": "5.6", "insure": "0.3", "mmyy": "Jan-2018"}, {"state": "Feb<br>2018", "all": "2.2", "medcare": "1.8", "pro": "0.1", "hosp": "4.7", "insure": "-0.1", "mmyy": "Feb-2018"}, {"state": "Mar<br>2018", "all": "2.4", "medcare": "2.1", "pro": "0.6", "hosp": "4.9", "insure": "0.1", "mmyy": "Mar-2018"}, {"state": "Apr<br>2018", "all": "2.5", "medcare": "2.2", "pro": "1.3", "hosp": "4.2", "insure": "0.2", "mmyy": "Apr-2018"}, {"state": "May<br>2018", "all": "2.8", "medcare": "2.3", "pro": "1.1", "hosp": "4.5", "insure": "0.5", "mmyy": "May-2018"}, {"state": "Jun<br>2018", "all": "2.9", "medcare": "2.5", "pro": "1.5", "hosp": "4.5", "insure": "0.5", "mmyy": "Jun-2018"}, {"state": "Jul<br>2018", "all": "2.9", "medcare": "2.3", "pro": "1.4", "hosp": "4.3", "insure": "0.0", "mmyy": "Jul-2018"}, {"state": "Aug<br>2018", "all": "2.7", "medcare": "1.9", "pro": "0.8", "hosp": "4.1", "insure": "-0.3", "mmyy": "Aug-2018"}, {"state": "Sep<br>2018", "all": "2.3", "medcare": "2.0", "pro": "0.9", "hosp": "3.7", "insure": "1.0", "mmyy": "Sep-2018"}, {"state": "Oct<br>2018", "all": "2.5", "medcare": "1.9", "pro": "0.8", "hosp": "3.2", "insure": "2.2", "mmyy": "Oct-2018"}, {"state": "Nov<br>2018", "all": "2.2", "medcare": "2.4", "pro": "1.0", "hosp": "3.5", "insure": "3.9", "mmyy": "Nov-2018"}, {"state": "Dec<br>2018", "all": "1.9", "medcare": "2.6", "pro": "1.0", "hosp": "3.6", "insure": "5.4", "mmyy": "Dec-2018"}, {"state": "Jan<br>2019", "all": "1.6", "medcare": "2.4", "pro": "1.2", "hosp": "2.4", "insure": "6.5", "mmyy": "Jan-2019"}, {"state": "Feb<br>2019", "all": "1.5", "medcare": "2.4", "pro": "1.0", "hosp": "2.1", "insure": "7.7", "mmyy": "Feb-2019"}, {"state": "Mar<br>2019", "all": "1.9", "medcare": "2.3", "pro": "0.4", "hosp": "1.9", "insure": "9.1", "mmyy": "Mar-2019"}, {"state": "Apr<br>2019", "all": "2.0", "medcare": "2.3", "pro": "0.4", "hosp": "1.4", "insure": "10.7", "mmyy": "Apr-2019"}];
+</script>
+
+<style type="text/css">
+.graphic { height:350px }
+
+div.mhbar {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  opacity: 0.8;
+}
+.FIRST {
+  background-color: #0067AC;
+}
+.SECOND {
+  background-color: #67B4A5;
+}
+.THIRD {
+  background-color: #EBAB38;
+}
+.FOURTH {
+  background-color: #9fa7d4;
+}
+.FIFTH {
+  background-color: #AE1B1F;
+}
+</style>
+
+    <h2><strong>Health insurance prices rising faster</strong></h2>
+    <p>Unadjusted percentage change from previous year<br>
+    <small><strong>The chart below is interactive: <span style="color:red">click</span> or <span style="color:red">touch</span> to see more.</strong></small></p>
+
+    <div id="graphic" class="graphic">
+            <img src="fallback.png" alt="[Chart]" class="fallback" />
+    </div>
+
+    
+    <div class="footnotes">
+        <h4><small><strong>Notes</strong></small></h4>
+        <p class="gfxcredit">The medical care services index comprises the professional services, hospital and related services, and health insurance categories of the CPI. Medical care services is one component of the medical care index.</p>
+    </div>
+    
+
+    <div class="footer">
+        <p class="gfxcredit"><i>Source: U.S. Bureau of Labor Statistics monthly consumer price index reports</i></p>
+        <p class="credit"><small>Modern Healthcare</small></p>
+    </div>
+
+
+    <!-- **************************** -->
+    <!-- *** Embedded gfx footer **** -->
+            <br>
+            
+
+<script>
+$.ajaxSetup({ cache: false});
+
+</script>
+
+
+
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    
+    
+    
+    <script type="text/javascript" src="js/graphic-footer.js?1558131876"></script>
+
+
+</body>
+</html>
